@@ -6,3 +6,10 @@ An AI Search Analytic sass platform in phases that can show sentiments, mentions
 
  ## MVP Tech Stack ##
  Tech Stack (MVP): FastAPI backend + React frontend + PostgreSQL + Redis caching + Celery job scheduler. The interesting part: you use ChatGPT only for the API calls to get responses, but use completely free open-source models (Hugging Face) for sentiment analysis, entity extraction, and position tracking.
+
+
+
+I have created few markdown files to start the development of the AI Seach Analytic sass platform.
+
+Use #file:project-overview.md #file:architecture.md and #file:Phase-0-Backend-setup.md and #file:Phase-1-Frontend-Setup.md to start with but do checek other md files if need additional info.
+

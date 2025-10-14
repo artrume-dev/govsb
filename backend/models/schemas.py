@@ -173,11 +173,66 @@ class HistoryResponse(BaseModel):
     """Schema for history response"""
     analyses: List[AnalysisResponse]
     total_count: int
-    
+
     class Config:
         json_schema_extra = {
             "example": {
                 "analyses": [],
                 "total_count": 0
+            }
+        }
+
+
+class WaitlistRequest(BaseModel):
+    """Schema for waitlist signup request"""
+    email: str
+    brand_url: str
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "email": "user@example.com",
+                "brand_url": "https://www.example.com"
+            }
+        }
+
+
+class PreviewData(BaseModel):
+    """Schema for preview analytics data"""
+    brand_name: str
+    sentiment: str
+    mentions: int
+    visibility: float
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "brand_name": "Example",
+                "sentiment": "POSITIVE",
+                "mentions": 3,
+                "visibility": 60.0
+            }
+        }
+
+
+class WaitlistResponse(BaseModel):
+    """Schema for waitlist signup response"""
+    message: str
+    email: str
+    brand_url: str
+    preview: PreviewData
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "message": "Successfully added to waitlist",
+                "email": "user@example.com",
+                "brand_url": "https://www.example.com",
+                "preview": {
+                    "brand_name": "Example",
+                    "sentiment": "POSITIVE",
+                    "mentions": 3,
+                    "visibility": 60.0
+                }
             }
         }

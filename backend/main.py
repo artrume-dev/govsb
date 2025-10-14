@@ -8,6 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from datetime import datetime
 from typing import List
 import sys
+import os
 from pathlib import Path
 
 # Add parent directory to path for imports
@@ -16,6 +17,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from backend.config import config
 from backend.services.brand_analyzer import BrandAnalyzer
 from backend.services.sentiment_analyzer import SentimentAnalyzer
+from backend.services.waitlist_service import WaitlistService
+from backend.services.email_service import EmailService
 from backend.models.schemas import (
     URLRequest,
     AnalysisResponse,
@@ -24,7 +27,10 @@ from backend.models.schemas import (
     SentimentResult,
     UsageMetrics,
     HealthResponse,
-    HistoryResponse
+    HistoryResponse,
+    WaitlistRequest,
+    WaitlistResponse,
+    PreviewData
 )
 
 try:
@@ -54,6 +60,8 @@ app.add_middleware(
 # Initialize services
 brand_analyzer = BrandAnalyzer()
 sentiment_analyzer = SentimentAnalyzer()
+waitlist_service = WaitlistService()
+email_service = EmailService()
 
 # Initialize OpenAI client if available
 openai_client = None
@@ -274,6 +282,123 @@ async def clear_history():
     return {
         "message": "History cleared",
         "items_deleted": count
+    }
+
+
+@app.post("/api/waitlist", response_model=WaitlistResponse, tags=["Waitlist"])
+async def join_waitlist(request: WaitlistRequest):
+    """
+    Join the waitlist for early access
+
+    This endpoint:
+    1. Validates email and brand URL
+    2. Runs a quick brand analysis for preview
+    3. Saves to waitlist (JSON file)
+    4. Sends confirmation email to user
+    5. Sends notification email to admin (if configured)
+    6. Returns preview analytics
+    """
+    try:
+        # Validate email format
+        if not request.email or '@' not in request.email:
+            raise HTTPException(status_code=400, detail="Invalid email address")
+
+        # Fetch brand info and run quick analysis
+        brand_info = await brand_analyzer.fetch_brand_info(request.brand_url)
+        brand_name = brand_info["brand_name"]
+
+        # Generate a subset of queries for quick preview (only 5 queries)
+        preview_queries = brand_analyzer.generate_monitoring_queries(brand_name)[:5]
+
+        # Quick sentiment analysis
+        preview_results = []
+        for query in preview_queries:
+            try:
+                response, _ = get_chatgpt_response(query)
+                sentiment_analysis = sentiment_analyzer.analyze_sentiment(response, brand_name)
+                preview_results.append(sentiment_analysis)
+            except:
+                # If OpenAI fails, provide fallback data
+                preview_results.append({
+                    "mentioned": False,
+                    "sentiment": "NEUTRAL",
+                    "confidence": 0.0,
+                    "position": -1,
+                    "positive_indicators": 0,
+                    "negative_indicators": 0
+                })
+
+        # Calculate preview metrics
+        mentions_count = sum(1 for r in preview_results if r["mentioned"])
+        positive_count = sum(1 for r in preview_results if r["sentiment"] == "POSITIVE")
+        negative_count = sum(1 for r in preview_results if r["sentiment"] == "NEGATIVE")
+
+        # Determine overall sentiment
+        overall_sentiment = "POSITIVE" if positive_count > negative_count else \
+                          "NEGATIVE" if negative_count > positive_count else "NEUTRAL"
+
+        visibility = (mentions_count / len(preview_queries)) * 100 if preview_queries else 0
+
+        preview_data = PreviewData(
+            brand_name=brand_name,
+            sentiment=overall_sentiment,
+            mentions=mentions_count,
+            visibility=round(visibility, 1)
+        )
+
+        # Save to waitlist
+        waitlist_service.add_to_waitlist(
+            email=request.email,
+            brand_url=request.brand_url,
+            preview_data=preview_data.model_dump()
+        )
+
+        # Send confirmation email to user
+        try:
+            email_service.send_waitlist_confirmation(
+                to_email=request.email,
+                brand_url=request.brand_url,
+                preview_data=preview_data.model_dump()
+            )
+        except Exception as e:
+            print(f"Warning: Failed to send confirmation email: {e}")
+
+        # Send notification to admin (if configured)
+        admin_email = os.getenv('ADMIN_EMAIL')
+        if admin_email:
+            try:
+                email_service.send_admin_notification(
+                    admin_email=admin_email,
+                    user_email=request.email,
+                    brand_url=request.brand_url,
+                    preview_data=preview_data.model_dump()
+                )
+            except Exception as e:
+                print(f"Warning: Failed to send admin notification: {e}")
+
+        return WaitlistResponse(
+            message="Successfully added to waitlist! Check your email for confirmation.",
+            email=request.email,
+            brand_url=request.brand_url,
+            preview=preview_data
+        )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to join waitlist: {str(e)}"
+        )
+
+
+@app.get("/api/waitlist/stats", tags=["Waitlist"])
+async def get_waitlist_stats():
+    """Get waitlist statistics (admin endpoint)"""
+    stats = waitlist_service.get_stats()
+    return {
+        "message": "Waitlist statistics",
+        **stats
     }
 
 
