@@ -1,0 +1,15 @@
+[
+  {
+    "email": "spacegigx@gmail.com",
+    "brand_url": "https://www.figma.com",
+    "created_at": "2025-10-20T21:20:37.539907",
+    "status": "pending",
+    "preview_data": {
+      "brand_name": "Figma",
+      "sentiment": "POSITIVE",
+      "mentions": 9,
+      "visibility": 100.0
+    },
+    "updated_at": "2025-10-21T22:34:24.010077"
+  }
+]

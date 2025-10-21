@@ -1,24 +1,29 @@
 import { useState, useEffect, useRef } from 'react'
-import { Moon, Sun, TrendingUp, Activity, MessageSquare, Eye, ArrowRight, Check, Sparkles, BarChart3, Zap } from 'lucide-react'
+import { Moon, Sun, TrendingUp, Activity, MessageSquare, Eye, ArrowRight, Check, Sparkles, BarChart3, Zap, ChartNoAxesGantt, MessageSquareText, SmilePlus, View } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
 import { Alert, AlertDescription } from '@/components/ui/alert'
+import QueryCustomizer from '@/components/QueryCustomizer'
 
 export default function ComingSoon() {
-  const [darkMode, setDarkMode] = useState(true)
-  const [step, setStep] = useState(1) // 1: URL input, 2: Email input, 3: Results
+  const [darkMode, setDarkMode] = useState(false)
+  const [step, setStep] = useState(1) // 1: URL input, 2: Keywords + Email input, 3: Results
   const [brandUrl, setBrandUrl] = useState('')
   const [email, setEmail] = useState('')
+  const [customQueries, setCustomQueries] = useState(null)
+  const [customKeywords, setCustomKeywords] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [preview, setPreview] = useState(null)
   const videoRef = useRef(null)
+  const mainSectionRef = useRef(null)
+  const inputRef = useRef(null)
 
-  // Set dark mode on initial load
+  // Set light mode on initial load
   useEffect(() => {
-    document.documentElement.classList.add('dark')
+    document.documentElement.classList.remove('dark')
   }, [])
 
   // Control video playback based on loading state
@@ -44,7 +49,7 @@ export default function ComingSoon() {
       return
     }
     setError('')
-    setStep(2)
+    setStep(2) // Go to keywords step
   }
 
   const handleEmailSubmit = async (e) => {
@@ -67,6 +72,8 @@ export default function ComingSoon() {
         body: JSON.stringify({
           brand_url: brandUrl,
           email: email,
+          custom_queries: customQueries,
+          custom_keywords: customKeywords,
         }),
       })
 
@@ -76,7 +83,7 @@ export default function ComingSoon() {
 
       const data = await response.json()
       setPreview(data.preview)
-      setStep(3)
+      setStep(3) // Go to results step
     } catch (err) {
       setError(err.message || 'Something went wrong. Please try again.')
     } finally {
@@ -88,44 +95,42 @@ export default function ComingSoon() {
     setStep(1)
     setBrandUrl('')
     setEmail('')
+    setCustomQueries(null)
+    setCustomKeywords(null)
     setPreview(null)
     setError('')
   }
 
+  const scrollToForm = () => {
+    mainSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    setTimeout(() => {
+      inputRef.current?.focus()
+    }, 500)
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-t from-white to-gray-100 dark:from-black dark:to-slate-950 relative">
-  
-      {/* Background Video */}
-      <div className="fixed inset-0 z-0 opacity-30 dark:opacity-20 pointer-events-none">
-        <video
-          ref={videoRef}
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover opacity-30 dark:opacity-40"
-        >
-          <source src="/voice-wave-ai.mp4" type="video/mp4" />
-        </video>
-      </div>
+    <div className="min-h-screen relative">
+  <div class="absolute inset-0 -z-10 h-full w-full bg-slate-400/10 bg-[linear-gradient(to_right,#cccc332a_1px,transparent_1px),linear-gradient(to_bottom,#cccc332a_1px,transparent_1px)] bg-[size:164px_124px]"></div>
+     
 
 
       {/* Header */}
-      <header className="max-w-7xl mx-auto rounded-3xl border-t bg-white/80 dark:bg-slate-900/10 backdrop-blur-sm sticky top-8 z-[100] dark:border-slate-800 shadow-lg relative">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <header className="max-w-[90%] mx-auto rounded-3xl border-b bg-white/90 dark:bg-slate-900/10 backdrop-blur-sm sticky top-8 z-[100] dark:border-slate-800 relative">
+        <div className="mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <BarChart3 className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-            <h1 className="text-2xl font-bold bg-slate-950 dark:bg-white bg-clip-text text-transparent">
+            <ChartNoAxesGantt className="h-8 w-8 text-slate-950 dark:text-white" />
+            <span className="text-2xl font-bold bg-slate-950 dark:bg-white bg-clip-text text-transparent">
               VISIBI
-            </h1>
+            </span>
           </div>
-          <Button
+          {/* <Button
             variant="outline"
             size="icon"
             onClick={toggleDarkMode}
             className="rounded-full"
           >
             {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          </Button>
+          </Button> */}
         </div>
       </header>
 
@@ -134,59 +139,88 @@ export default function ComingSoon() {
       {/** adding new hero header from voyse */}
      
       {/* Hero Section */}
-      <section className="container max-w-7xl mx-auto items-left px-4 py-20 md:py-16 relative">
+      <section className="max-w-[90%] mx-auto items-left px-4 py-24 md:pt-32 mb-4 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
-          <div className="max-w-3xl text-left space-y-8 relative z-10">
+          <div className="max-w-4xl text-left space-y-8 relative z-10">
           <div className="inline-block">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/50 text-blue-700 dark:text-blue-400 text-sm font-medium border dark:border-blue-900">
               <Zap className="h-4 w-4" />
               Launching soon with exclusive early access
             </span>
           </div>
-            <h1 className="text-4xl md:text-6xl tracking-tight font-sans font-bold dark:text-slate-100">
+            <h1 className="font-inter text-4xl md:text-7xl font-bold tracking-tight text-gray-950 dark:text-slate-100">
             Know Where Your Brand appears in AI Conversations
             {/* <span className="block text-gray-900 dark:text-slate-200 mt-2 font-light">Before Your Competitors</span> */}
             </h1>
-            <h2 className="text-2xl md:text-2xl font-light text-blue-700 dark:text-slate-100 mt-4">
-             Your brand's visibility and reputation across ChatGPT, Claude, Gemini, 
+            <h2 className="text-md md:text-xl font-thin text-blue-700 dark:text-slate-100 mt-4">
+             Your brand's visibility and reputation across ChatGPT, Claude, Gemini,
             and Perplexity.
             </h2>
-          {/* <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl">
-            Track, analyze, and optimize your brand&apos;s presence across ChatGPT, Claude, Gemini, 
-            and Perplexity. Get actionable insights to improve your GEO performance.
-          </p> */}
-   
+
+            <div className="py-8">
+              <button
+                onClick={scrollToForm}
+                className="inline-flex items-center px-6 py-3 bg-blue-700 text-white rounded-3xl font-medium hover:bg-blue-800 transition-colors"
+              >
+                Get Visualise
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </button>
+            </div>
+
         </div>
+          {/* Right Column - Image */}
+          <div className="relative w-full max-w-lg mx-auto">
+             {/* Features Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-12 pt-6 border-t border-gray-200 dark:border-gray-800">
+              <Card className="border-1 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
+                <CardHeader>
+                  <SmilePlus size={64} strokeWidth={1.25} absoluteStrokeWidth className=" text-gray-800" />
+                  <CardTitle className="font-inter pb-4">Sentiment Analysis</CardTitle>
+                  <CardDescription className="font-mono text-gray-600 text-lg">
+                    Track how AI models perceive your brand - positive, neutral, or negative
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card className="border-1 hover:border-purple-300 dark:hover:border-purple-700 transition-colors">
+                <CardHeader>
+                   <MessageSquareText size={64} strokeWidth={1.25} absoluteStrokeWidth className=" text-gray-800" />
+                  <CardTitle className="font-inter">Mention Tracking</CardTitle>
+                  <CardDescription className="font-space-mono">
+                    See how often your brand gets mentioned in AI responses
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card className="border-1 hover:border-pink-300 dark:hover:border-pink-700 transition-colors">
+                <CardHeader>
+                  <View size={64} strokeWidth={1.25} absoluteStrokeWidth className=" text-gray-800" />
+                  <CardTitle className="font-inter">Visibility Score</CardTitle>
+                  <CardDescription className="font-space-mono">
+                    Measure your brand's presence across AI platforms
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </div>
+            </div>
       </div>
-     
     </section>
+
+
+    
 
       {/** End new nav header from voyse */}
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-12">
+      <main ref={mainSectionRef} className="max-w-[90%] mx-auto px-6 py-12 relative z-10 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-800 mb-32">
         {step === 1 && (
           <div className="space-y-8">
             {/* Hero Section */}
-            {/* <div className="text-center space-y-4 py-12">
-              <Badge className="mb-4 bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300">
-                <Sparkles className="h-3 w-3 mr-1" />
-                Coming Soon - Early Access
-              </Badge>
-              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                AI Search Analytics
-              </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Discover how your brand appears in AI conversations across ChatGPT, Claude, Perplexity, and Gemini
-              </p>
-            </div> */}
-
-
-            
+    
             {/* URL Input Form */}
-            <Card className="max-w-7xl mx-auto bg-white dark:bg-slate-950 border-grey-200">
+            <Card className="max-w-4xl mx-auto border-0 shadow-none bg-white dark:bg-slate-950">
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Get Your Free Brand Analysis</CardTitle>
+                <CardTitle className="font-space-mono font-thin">Get Your Free Brand Analysis</CardTitle>
                 <CardDescription>
                   Enter your brand URL to get started
                 </CardDescription>
@@ -195,15 +229,16 @@ export default function ComingSoon() {
                 <form onSubmit={handleUrlSubmit} className="space-y-4">
                   <div className="flex gap-3">
                     <Input
+                      ref={inputRef}
                       type="url"
                       placeholder="https://www.yourbrand.com"
                       value={brandUrl}
                       onChange={(e) => setBrandUrl(e.target.value)}
-                      className="flex-1 h-12 text-lg bg-white dark:bg-slate-950 dark:text-white placeholder-gray-500 border-gray-300 dark:border-slate-700"
+                      className="flex-1 h-14 text-md font-space-mono placeholder-blue-500 border-blue-400 bg-blue-100/30 dark:bg-blue-900/50 text-blue-700 dark:text-blue-400 rounded-3xl"
                       required
                     />
-                    <Button type="submit" size="lg" className="h-12 px-8">
-                      Next
+                    <Button type="submit" size="xl" className="h-14 px-8 bg-blue-700 dark:bg-blue-900/50 text-white text-lg font-semibold dark:text-blue-400 rounded-3xl">
+                      Get Visualise
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </div>
@@ -213,8 +248,8 @@ export default function ComingSoon() {
                     </Alert>
                   )}
                 </form>
-                   <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-                  <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+                   <div className="mt-6">
+                  <p className="text-sm text-gray-700 dark:text-gray-400 text-center">
                     Join 100+ brands already monitoring their AI presence
                   </p>
                 </div>
@@ -222,38 +257,7 @@ export default function ComingSoon() {
             </Card>
 
 
-{/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <Card className="border-1 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
-                <CardHeader>
-                  <Activity className="h-10 w-10 text-blue-600 dark:text-blue-400 mb-2" />
-                  <CardTitle>Sentiment Analysis</CardTitle>
-                  <CardDescription>
-                    Track how AI models perceive your brand - positive, neutral, or negative
-                  </CardDescription>
-                </CardHeader>
-              </Card>
 
-              <Card className="border-1 hover:border-purple-300 dark:hover:border-purple-700 transition-colors">
-                <CardHeader>
-                  <MessageSquare className="h-10 w-10 text-purple-600 dark:text-purple-400 mb-2" />
-                  <CardTitle>Mention Tracking</CardTitle>
-                  <CardDescription>
-                    See how often your brand gets mentioned in AI responses
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="border-1 hover:border-pink-300 dark:hover:border-pink-700 transition-colors">
-                <CardHeader>
-                  <Eye className="h-10 w-10 text-pink-600 dark:text-pink-400 mb-2" />
-                  <CardTitle>Visibility Score</CardTitle>
-                  <CardDescription>
-                    Measure your brand's presence across AI platforms
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
 
 
           </div>
@@ -263,35 +267,18 @@ export default function ComingSoon() {
 
         {step === 2 && (
           <div className="mx-auto space-y-6 max-w-7xl">
-            {/* Progress Indicator */}
-            {/* <div className="flex items-center justify-center gap-2 mb-8">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white">
-                  <Check className="h-5 w-5" />
-                </div>
-                <span className="text-sm font-medium text-gray-600 dark:text-gray-400">URL Added</span>
-              </div>
-              <div className="w-12 h-0.5 bg-blue-300 dark:bg-blue-700" />
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
-                  2
-                </div>
-                <span className="text-sm font-medium text-blue-600 dark:text-blue-400">Email</span>
-              </div>
-            </div> */}
-
-            <Card className="shadow-lg bg-white dark:bg-slate-950 dark:border-slate-900 border-grey-200">
+            <Card className="bg-white dark:bg-slate-950 border-0 max-w-4xl mx-auto">
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Get Early Access</CardTitle>
+                <CardTitle className="text-2xl">Customize & Get Early Access</CardTitle>
                 <CardDescription>
-                  Enter your email to receive your free brand analysis report
+                  Add keywords (optional) and enter your email to get your free analysis
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleEmailSubmit} className="space-y-4">
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Brand URL</label>
-                    <div className="flex items-center gap-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <div className="flex items-center gap-2 p-3 bg-green-50 dark:bg-gray-800 rounded-lg">
                       <Check className="h-4 w-4 text-green-500" />
                       <span className="text-sm text-gray-700 dark:text-gray-300">{brandUrl}</span>
                       <Button
@@ -306,6 +293,28 @@ export default function ComingSoon() {
                     </div>
                   </div>
 
+                  {customKeywords && customKeywords.length > 0 && (
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Added Keywords</label>
+                      <div className="flex flex-wrap gap-2 p-3 bg-green-50 dark:bg-blue-900/20 rounded-lg">
+                        {customKeywords.map((keyword, index) => (
+                          <Badge
+                            key={index}
+                            variant="outline"
+                            className="bg-white dark:bg-slate-800"
+                          >
+                            {keyword}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <QueryCustomizer
+                    onQueriesChange={setCustomQueries}
+                    onKeywordsChange={setCustomKeywords}
+                  />
+
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Email Address</label>
                     <Input
@@ -317,11 +326,21 @@ export default function ComingSoon() {
                       required
                     />
                   </div>
-                  <div className="space-y-2 max-w-md mx-auto">
-                  <Button type="submit" size="lg" className="w-full h-12 rounded-3xl dark:bg-white-800 dark:text-slate-950" disabled={loading}>
-                    {loading ? 'Analyzing...' : 'Get My Free Analysis'}
-                    {!loading && <ArrowRight className="ml-2 h-5 w-5" />}
-                  </Button>
+
+                  <div className="flex gap-3 pt-4">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="lg"
+                      className="flex-1"
+                      onClick={() => setStep(1)}
+                    >
+                      Back
+                    </Button>
+                    <Button type="submit" size="lg" className="flex-1 h-12 rounded-3xl dark:bg-white-800 dark:text-slate-950" disabled={loading}>
+                      {loading ? 'Analyzing...' : 'Get My Free Analysis'}
+                      {!loading && <ArrowRight className="ml-2 h-5 w-5" />}
+                    </Button>
                   </div>
 
                   {error && (
@@ -329,10 +348,6 @@ export default function ComingSoon() {
                       <AlertDescription>{error}</AlertDescription>
                     </Alert>
                   )}
-
-                  <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-                    We'll analyze your brand across AI platforms and send you a detailed report. No spam, we promise!
-                  </p>
                 </form>
               </CardContent>
             </Card>
@@ -342,13 +357,13 @@ export default function ComingSoon() {
         {step === 3 && preview && (
           <div className="max-w-7xl mx-auto space-y-12">
             {/* Success Message */}
-            <Card className="bg-white dark:bg-green-950/30 border-none">
+            <Card className="bg-white dark:bg-green-950/30 border-0">
               <CardHeader className="text-center">
                 <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Check className="h-8 w-8 text-green-600 dark:text-green-400" />
                 </div>
                 <CardTitle className="text-2xl">You're on the list!</CardTitle>
-                <CardDescription className="text-base">
+                <CardDescription className="text-base text-gray-600">
                   We'll send your detailed brand analysis report to <strong className="font-semibold text-gray-900 dark:text-gray-100">{email}</strong> soon.
                 </CardDescription>
               </CardHeader>
@@ -356,19 +371,19 @@ export default function ComingSoon() {
 
             {/* Preview Analytics */}
             <div className="space-y-8">
-              <div className="text-center">
+              <div className="text-left">
                 <h3 className="text-xl font-semibold mb-2">Quick Preview</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Here's what we're analyzing for <span className="font-semibold text-lg text-gray-900 dark:text-gray-100">{preview.brand_name}</span>
+                <p className="text-md text-gray-600 dark:text-gray-400">
+                  Here's what we're analysing for <span className="font-semibold text-md dark:text-gray-100">{preview.brand_name}</span>
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <Card className="border-1 hover:border-blue-300 dark:hover:border-blue-700 bg-white dark:bg-slate-950 transition-colors">
+                <Card className="border-1 hover:border-blue-300 dark:hover:border-blue-700 bg-slate-50 dark:bg-slate-950 transition-colors">
                   <CardHeader>
-                    <CardDescription>Overall Sentiment</CardDescription>
+                    <CardDescription className="text-md font-mono text-blue-700 py-4">Overall Sentiment</CardDescription>
                     <CardTitle className="text-3xl flex items-center gap-2">
-                      <Activity className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                      <SmilePlus size={64} strokeWidth={1.25} absoluteStrokeWidth className=" text-gray-800" />
                       <Badge className={`${
                         preview.sentiment === 'POSITIVE'
                           ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
@@ -382,21 +397,21 @@ export default function ComingSoon() {
                   </CardHeader>
                 </Card>
 
-                <Card className="border-1 hover:border-purple-300 dark:hover:border-purple-700 bg-white dark:bg-slate-950 transition-colors">
+                <Card className="border-1 hover:border-purple-300 dark:hover:border-purple-700 bg-slate-50 dark:bg-slate-950 transition-colors">
                   <CardHeader>
-                    <CardDescription>Mentions Found</CardDescription>
+                    <CardDescription className="text-md font-mono text-blue-700 py-4">Mentions Found</CardDescription>
                     <CardTitle className="text-3xl flex items-center gap-2">
-                      <MessageSquare className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+                      <MessageSquareText size={64} strokeWidth={1.25} absoluteStrokeWidth className=" text-gray-800" />
                       {preview.mentions}
                     </CardTitle>
                   </CardHeader>
                 </Card>
 
-                <Card className="border-1 hover:border-pink-300 dark:hover:border-pink-700 bg-white dark:bg-slate-950 transition-colors">
+                <Card className="border-1 hover:border-pink-300 dark:hover:border-pink-700 bg-slate-50 dark:bg-slate-950 transition-colors">
                   <CardHeader>
-                    <CardDescription>Visibility Score</CardDescription>
+                    <CardDescription className="text-md font-mono text-blue-700 py-4">Visibility Score</CardDescription>
                     <CardTitle className="text-3xl flex items-center gap-2">
-                      <Eye className="h-8 w-8 text-pink-600 dark:text-pink-400" />
+                      <View size={64} strokeWidth={1.25} absoluteStrokeWidth className=" text-gray-800" />
                       {preview.visibility}%
                     </CardTitle>
                   </CardHeader>
@@ -412,20 +427,103 @@ export default function ComingSoon() {
             </div>
 
             {/* CTA */}
+
+             <div className="py-2 text-center">
+              <button
+                onClick={resetForm}
+                className="inline-flex items-center px-6 py-3 bg-blue-700 text-white rounded-lg font-medium hover:bg-blue-800 transition-colors"
+              >
+                Visualise another Brand
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </button>
+            </div>
+
+{/* 
             <div className="text-center pt-8">
               <Button variant="outline" size="lg" onClick={resetForm}>
-                Analyze Another Brand
+                Analyse Another Brand
               </Button>
-            </div>
+            </div> */}
           </div>
         )}
       </main>
 
       {/* Footer */}
-      <footer className="max-w-7xl mx-auto px-6 py-8 mt-12 border-t border-gray-200 dark:border-gray-700">
-        <div className="text-center text-sm text-gray-600 dark:text-gray-400">
-          <p>VISIBI - AI Search Analytics Platform</p>
-          <p className="mt-2">Monitor your brand across ChatGPT, Claude, Perplexity, and Gemini</p>
+      <footer className="max-w-[90%] mx-auto px-6 py-12 mt-24 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-950 rounded-xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          {/* Left Column - Logo and Description */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-2">
+              <ChartNoAxesGantt className="h-8 w-8 text-slate-950 dark:text-white" />
+              <span className="text-2xl font-bold bg-slate-950 dark:bg-white bg-clip-text text-transparent">
+                VISIBI
+              </span>
+            </div>
+            <p className="font-space-mono text-lg text-gray-700 dark:text-gray-300 max-w-md leading-relaxed">
+             Track and manage your brand’s presence across leading AI platforms.
+            </p>
+            <div className="flex gap-6">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
+              >
+                Github
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column - Newsletter */}
+          <div className="space-y-6">
+            <div className="">
+              <h3 className="font-sans text-xl text-gray-950 dark:text-white mb-2">
+                Want your brand to stand out in the age of AI conversations?
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Stay informed with expert updates on brand visibility across AI platforms.
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <Input
+                type="email"
+                placeholder="Email Address"
+                className="flex-1 font-space-mono text-sm placeholder:text-gray-400"
+              />
+              <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 font-space-mono text-sm uppercase px-6">
+                Start Now
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Row - Links and Copyright */}
+        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="font-space-mono text-xs text-gray-500 dark:text-gray-500">
+            © 2025 VISIBI — ALL RIGHTS RESERVED
+          </p>
+          <div className="flex gap-6">
+            <a
+              href="#"
+              className="font-space-mono text-xs text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
+            >
+              Terms of Use
+            </a>
+            <a
+              href="#"
+              className="font-space-mono text-xs text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
+            >
+              Privacy Policy
+            </a>
+          </div>
         </div>
       </footer>
     </div>

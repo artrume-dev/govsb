@@ -128,28 +128,34 @@ class BrandAnalyzer:
             }
     
     def generate_monitoring_queries(
-        self, 
-        brand_name: str, 
-        custom_keywords: Optional[List[str]] = None
+        self,
+        brand_name: str,
+        custom_keywords: Optional[List[str]] = None,
+        custom_queries: Optional[List[str]] = None
     ) -> List[str]:
         """
         Generate monitoring queries for a brand
-        
+
         Args:
             brand_name: The brand name
             custom_keywords: Optional list of custom keywords to include
-            
+            custom_queries: Optional list of custom queries to include
+
         Returns:
             List of queries with brand name inserted
         """
         queries = [query.format(brand=brand_name) for query in self.default_queries]
-        
+
+        # Add custom queries if provided
+        if custom_queries:
+            queries.extend(custom_queries)
+
         # Add custom keyword-based queries if provided
         if custom_keywords:
             for keyword in custom_keywords:
                 queries.append(f"How does {brand_name} handle {keyword}?")
                 queries.append(f"What is {brand_name}'s approach to {keyword}?")
-        
+
         return queries
     
     def generate_comparison_queries(

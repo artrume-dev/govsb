@@ -307,8 +307,17 @@ async def join_waitlist(request: WaitlistRequest):
         brand_info = await brand_analyzer.fetch_brand_info(request.brand_url)
         brand_name = brand_info["brand_name"]
 
-        # Generate a subset of queries for quick preview (only 5 queries)
-        preview_queries = brand_analyzer.generate_monitoring_queries(brand_name)[:5]
+        # Generate queries based on custom inputs or defaults
+        if request.custom_queries or request.custom_keywords:
+            # Use custom queries/keywords if provided
+            preview_queries = brand_analyzer.generate_monitoring_queries(
+                brand_name,
+                custom_queries=request.custom_queries,
+                custom_keywords=request.custom_keywords
+            )[:10]  # Allow up to 10 queries for custom analysis
+        else:
+            # Generate a subset of queries for quick preview (only 5 queries)
+            preview_queries = brand_analyzer.generate_monitoring_queries(brand_name)[:5]
 
         # Quick sentiment analysis
         preview_results = []
@@ -386,6 +395,9 @@ async def join_waitlist(request: WaitlistRequest):
     except HTTPException:
         raise
     except Exception as e:
+        import traceback
+        print(f"ERROR in waitlist endpoint: {str(e)}")
+        print(traceback.format_exc())
         raise HTTPException(
             status_code=500,
             detail=f"Failed to join waitlist: {str(e)}"

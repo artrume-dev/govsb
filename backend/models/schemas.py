@@ -187,12 +187,16 @@ class WaitlistRequest(BaseModel):
     """Schema for waitlist signup request"""
     email: str
     brand_url: str
+    custom_queries: Optional[List[str]] = None
+    custom_keywords: Optional[List[str]] = None
 
     class Config:
         json_schema_extra = {
             "example": {
                 "email": "user@example.com",
-                "brand_url": "https://www.example.com"
+                "brand_url": "https://www.example.com",
+                "custom_queries": ["How secure is this product?"],
+                "custom_keywords": ["security", "pricing"]
             }
         }
 

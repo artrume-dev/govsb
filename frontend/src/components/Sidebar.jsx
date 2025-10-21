@@ -5,14 +5,15 @@ import {
   Database, 
   Settings, 
   Clock, 
-  BarChart3, 
+  BarChart3,
   Globe, 
   Bell,
   Users,
   FileText,
   Download,
   Calendar,
-  Zap
+  Zap,
+  ChartNoAxesGantt
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
@@ -121,10 +122,14 @@ export default function Sidebar({ activePage = 'dashboard', onNavigate }) {
     <div className="w-64 bg-card border-r border-border h-screen sticky top-0 flex flex-col">
       {/* Logo/Brand */}
       <div className="p-6 border-b border-border">
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          VISIBI
-        </h1>
-        <p className="text-xs text-muted-foreground mt-1">AI Brand Monitor</p>
+        
+          <div className="flex items-center gap-2">
+            <ChartNoAxesGantt className="h-8 w-8 text-slate-950 dark:text-white" />
+            <h1 className="text-2xl font-bold bg-slate-950 dark:bg-white bg-clip-text text-transparent">
+              VISIBI
+            </h1>
+          </div>
+
       </div>
 
       {/* Menu Items */}

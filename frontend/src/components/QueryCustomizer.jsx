@@ -32,7 +32,13 @@ export default function QueryCustomizer({ onQueriesChange, onKeywordsChange }) {
 
   const addKeyword = () => {
     if (keywordInput.trim()) {
-      const newKeywords = [...customKeywords, keywordInput.trim()]
+      // Split by comma and trim each keyword
+      const keywordsToAdd = keywordInput
+        .split(',')
+        .map(k => k.trim())
+        .filter(k => k.length > 0)
+
+      const newKeywords = [...customKeywords, ...keywordsToAdd]
       setCustomKeywords(newKeywords)
       onKeywordsChange?.(newKeywords)
       setKeywordInput('')
@@ -74,14 +80,14 @@ export default function QueryCustomizer({ onQueriesChange, onKeywordsChange }) {
       </CardHeader>
       <CardContent className="space-y-6">
         {/* Custom Queries */}
-        <div className="space-y-3">
+        {/* <div className="space-y-3">
           <div>
             <label className="text-sm font-medium">Custom Questions</label>
             <p className="text-xs text-muted-foreground mb-2">
               Ask specific questions about the brand
             </p>
           </div>
-          
+
           <div className="flex gap-2">
             <Input
               placeholder="e.g., How secure is this product?"
@@ -111,7 +117,7 @@ export default function QueryCustomizer({ onQueriesChange, onKeywordsChange }) {
               ))}
             </div>
           )}
-        </div>
+        </div> */}
 
         {/* Custom Keywords */}
         <div className="space-y-3">
@@ -124,12 +130,17 @@ export default function QueryCustomizer({ onQueriesChange, onKeywordsChange }) {
           
           <div className="flex gap-2">
             <Input
-              placeholder="e.g., security, pricing, support"
+              placeholder="e.g., security, pricing, support (comma-separated)"
               value={keywordInput}
               onChange={(e) => setKeywordInput(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && addKeyword()}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault()
+                  addKeyword()
+                }
+              }}
             />
-            <Button onClick={addKeyword} size="sm">
+            <Button onClick={addKeyword} type="button" size="sm">
               <Plus className="h-4 w-4" />
             </Button>
           </div>
