@@ -17,8 +17,14 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application
-COPY . .
+# Copy the backend code to /app/backend
+COPY . /app/backend
+
+# Set Python path to include parent directory for imports
+ENV PYTHONPATH=/app
+
+# Change to backend directory
+WORKDIR /app/backend
 
 # Expose port (Railway will override with $PORT)
 EXPOSE 8000
