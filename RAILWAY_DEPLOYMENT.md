@@ -28,9 +28,11 @@ We'll create **TWO separate Railway services** from the same GitHub repository:
 ### 1.2 Configure Backend Service
 1. Go to **Settings** tab
 2. Set **Root Directory**: `backend`
-3. Under **Build** section, verify:
-   - Build Command: (auto-detected from requirements.txt)
-   - Start Command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+3. Railway will auto-detect the `railway.toml` file in the backend folder
+4. Verify the configuration:
+   - Builder: NIXPACKS (auto-detected)
+   - Start Command: `uvicorn main:app --host 0.0.0.0 --port $PORT` (from railway.toml)
+   - Health Check Path: `/health` (from railway.toml)
 
 ### 1.3 Add Environment Variables
 Go to **Variables** tab and add:
@@ -67,9 +69,11 @@ Go to **Variables** tab and add:
 ### 2.2 Configure Frontend Service
 1. Go to **Settings** tab
 2. Set **Root Directory**: `frontend`
-3. Under **Build** section, set:
-   - Build Command: `npm ci && npm run build`
-   - Start Command: `npm run preview -- --host 0.0.0.0 --port $PORT`
+3. Railway will auto-detect the `railway.toml` file in the frontend folder
+4. Verify the configuration:
+   - Builder: NIXPACKS (auto-detected)
+   - Start Command: `npm run preview -- --host 0.0.0.0 --port $PORT` (from railway.toml)
+   - Health Check Path: `/` (from railway.toml)
 
 ### 2.3 Add Environment Variable
 Go to **Variables** tab and add:
