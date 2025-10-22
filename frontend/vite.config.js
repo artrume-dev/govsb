@@ -21,13 +21,9 @@ export default defineConfig({
     }
   },
   preview: {
-    host: '0.0.0.0',
+    host: true,
     port: process.env.PORT || 5173,
-    strictPort: false,
-    allowedHosts: [
-      'govsb-frontend-production.up.railway.app',
-      '.railway.app'
-    ]
+    strictPort: false
   },
   test: {
     globals: true,
