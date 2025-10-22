@@ -1,4 +1,4 @@
-# Use Python 3.10 slim image
+# Use Python 3.10 slim image for Railway deployment
 FROM python:3.10-slim
 
 # Set working directory
