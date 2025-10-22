@@ -176,9 +176,9 @@ export default function ComingSoon() {
             <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-12 pt-6 border-t border-gray-200 dark:border-gray-800">
               <Card className="border-1 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
                 <CardHeader>
-                  <SmilePlus size={64} strokeWidth={1.25} absoluteStrokeWidth className=" text-gray-800" />
-                  <CardTitle className="font-inter pb-4">Sentiment Analysis</CardTitle>
-                  <CardDescription className="font-mono text-gray-600 text-lg">
+                  <SmilePlus size={48} strokeWidth={1.50} absoluteStrokeWidth className="text-gray-700" />
+                  <CardTitle className="font-space-mono pb-4 font-thin">Sentiment Analysis</CardTitle>
+                  <CardDescription className="font-space-mono text-md">
                     Track how AI models perceive your brand - positive, neutral, or negative
                   </CardDescription>
                 </CardHeader>
@@ -186,9 +186,9 @@ export default function ComingSoon() {
 
               <Card className="border-1 hover:border-purple-300 dark:hover:border-purple-700 transition-colors">
                 <CardHeader>
-                   <MessageSquareText size={64} strokeWidth={1.25} absoluteStrokeWidth className=" text-gray-800" />
-                  <CardTitle className="font-inter">Mention Tracking</CardTitle>
-                  <CardDescription className="font-space-mono">
+                   <MessageSquareText size={48} strokeWidth={1.50} absoluteStrokeWidth className="text-gray-700" />
+                  <CardTitle className="font-space-mono pb-4 font-thin">Mention Tracking</CardTitle>
+                  <CardDescription className="font-space-mono text-md">
                     See how often your brand gets mentioned in AI responses
                   </CardDescription>
                 </CardHeader>
@@ -196,9 +196,9 @@ export default function ComingSoon() {
 
               <Card className="border-1 hover:border-pink-300 dark:hover:border-pink-700 transition-colors">
                 <CardHeader>
-                  <View size={64} strokeWidth={1.25} absoluteStrokeWidth className=" text-gray-800" />
-                  <CardTitle className="font-inter">Visibility Score</CardTitle>
-                  <CardDescription className="font-space-mono">
+                  <View size={48} strokeWidth={1.50} absoluteStrokeWidth className="text-gray-700" />
+                  <CardTitle className="font-space-mono pb-4 font-thin">Visibility Score</CardTitle>
+                  <CardDescription className="font-space-mono text-md">
                     Measure your brand's presence across AI platforms
                   </CardDescription>
                 </CardHeader>
