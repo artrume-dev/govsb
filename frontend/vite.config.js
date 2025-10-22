@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 // https://vitejs.dev/config/
+// Updated for Railway deployment
 export default defineConfig({
   plugins: [react()],
   resolve: {
