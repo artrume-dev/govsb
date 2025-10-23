@@ -48,6 +48,14 @@ export default function ComingSoon() {
       setError('Please enter a valid URL')
       return
     }
+
+    // Auto-add https:// if no protocol is provided
+    let formattedUrl = brandUrl.trim()
+    if (!formattedUrl.match(/^https?:\/\//i)) {
+      formattedUrl = 'https://' + formattedUrl
+      setBrandUrl(formattedUrl)
+    }
+
     setError('')
     setStep(2) // Go to keywords step
   }
@@ -231,8 +239,8 @@ export default function ComingSoon() {
                   <div className="flex gap-3">
                     <Input
                       ref={inputRef}
-                      type="url"
-                      placeholder="https://www.yourbrand.com"
+                      type="text"
+                      placeholder="www.yourbrand.com or yourbrand.com"
                       value={brandUrl}
                       onChange={(e) => setBrandUrl(e.target.value)}
                       className="flex-1 h-14 text-md font-space-mono placeholder-blue-500 border-blue-400 bg-blue-100/30 dark:bg-blue-900/50 text-blue-700 dark:text-blue-400 rounded-3xl"
