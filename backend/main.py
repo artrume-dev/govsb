@@ -354,6 +354,7 @@ async def join_waitlist(request: WaitlistRequest):
             brand_name=brand_name,
             sentiment=overall_sentiment,
             mentions=mentions_count,
+            citations=mentions_count,  # Citations = number of times brand was mentioned
             visibility=round(visibility, 1)
         )
 

@@ -206,6 +206,7 @@ class PreviewData(BaseModel):
     brand_name: str
     sentiment: str
     mentions: int
+    citations: int  # Total number of times brand was mentioned across all responses
     visibility: float
 
     class Config:
@@ -214,6 +215,7 @@ class PreviewData(BaseModel):
                 "brand_name": "Example",
                 "sentiment": "POSITIVE",
                 "mentions": 3,
+                "citations": 3,
                 "visibility": 60.0
             }
         }

@@ -409,12 +409,40 @@ export default function ComingSoon() {
                 </Card>
 
                 <Card className="border-1 hover:border-pink-300 dark:hover:border-pink-700 bg-slate-50 dark:bg-slate-950 transition-colors">
-                  <CardHeader>
-                    <CardDescription className="text-md font-mono text-blue-700 py-4">Visibility Score</CardDescription>
-                    <CardTitle className="text-3xl flex items-center gap-2">
-                      <View size={64} strokeWidth={1.25} absoluteStrokeWidth className=" text-gray-800" />
-                      {preview.visibility}%
-                    </CardTitle>
+                  <CardHeader className="flex flex-col items-center justify-center">
+                    <CardDescription className="text-md font-mono text-blue-700 py-4">Citations</CardDescription>
+                    <div className="relative w-32 h-32">
+                      {/* Circular progress background */}
+                      <svg className="w-full h-full transform -rotate-90">
+                        {/* Background circle */}
+                        <circle
+                          cx="64"
+                          cy="64"
+                          r="56"
+                          stroke="#e5e7eb"
+                          strokeWidth="12"
+                          fill="none"
+                        />
+                        {/* Progress circle */}
+                        <circle
+                          cx="64"
+                          cy="64"
+                          r="56"
+                          stroke="#1e293b"
+                          strokeWidth="12"
+                          fill="none"
+                          strokeDasharray={`${(preview.citations / 5) * 351.86} 351.86`}
+                          strokeLinecap="round"
+                          className="transition-all duration-1000 ease-out"
+                        />
+                      </svg>
+                      {/* Center text */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-3xl font-bold text-gray-800 dark:text-white">
+                          {preview.citations}
+                        </span>
+                      </div>
+                    </div>
                   </CardHeader>
                 </Card>
               </div>
