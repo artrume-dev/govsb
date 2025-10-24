@@ -1,15 +1,117 @@
 [
   {
     "email": "spacegigx@gmail.com",
-    "brand_url": "https://www.figma.com",
+    "brand_url": "https://indeed.com",
     "created_at": "2025-10-20T21:20:37.539907",
+    "status": "pending",
+    "preview_data": {
+      "brand_name": "Indeed",
+      "sentiment": "POSITIVE",
+      "mentions": 7,
+      "citations": 55,
+      "visibility": 87.5,
+      "sample_query": "list top platform to hire ai engineer",
+      "sample_response": "Here are some of the top platforms where you can hire AI engineers:\n\n1. **LinkedIn**: A professional networking site where you can post job listings and search for candidates with AI expertise.\n\n2. **Upwork**: A freelance platform where you can hire AI engineers for short-term or project-based work.\n\n3. **Toptal**: A platform that connects businesses with top freelance talent, including AI engineers, after a rigorous screening process.\n\n4. **Hired**: A recruiting platform that matches companies with tech talent, including AI specialists, based on their skills and preferences.\n\n5. **Glassdoor**: In addition to job postings, Glassdoor offers insights about company culture and salaries, which can help attract AI talent.\n\n6. **Indeed**: A popular job board where you can post job openings and search resumes for AI engineers.\n\n7. **AngelList**: A platform focused on startups, where you can find engineers with AI expertise who are interested in working in startup environments.\n\n8. **SimplyHired**: A job search engine that aggregates listings from various sources, making it easier to find AI engineering candidates.\n\n9. **GitHub Jobs**: A job board for tech talent, where you can find engineers who are active contributors to open-source projects, including AI.\n\n10. **Stack Overflow Jobs**: A job board specifically for developers and tech professionals, where you can find candidates with AI skills.\n\n11. **Remote.co**: A platform for remote job listings, which can help you find AI engineers who are open to remote work.\n\n12. **Kaggle**: While primarily a platform for data science competitions, many AI engineers participate in Kaggle, making it a good place to spot talent.\n\nWhen hiring AI engineers, it's important to clearly define the skills and experience you need, as the field can encompass a wide range of specializations.",
+      "citation_urls": [
+        {
+          "query": "list top platform to hire ai engineer",
+          "url": "https://chat.openai.com/?q=list top platform to hire ai engineer",
+          "mentioned": true
+        },
+        {
+          "query": "job posting platform for tech company",
+          "url": "https://chat.openai.com/?q=job posting platform for tech company",
+          "mentioned": false
+        },
+        {
+          "query": "How does Indeed handle talent?",
+          "url": "https://chat.openai.com/?q=How does Indeed handle talent?",
+          "mentioned": true
+        },
+        {
+          "query": "What is Indeed's approach to talent?",
+          "url": "https://chat.openai.com/?q=What is Indeed's approach to talent?",
+          "mentioned": true
+        },
+        {
+          "query": "How does Indeed handle companies?",
+          "url": "https://chat.openai.com/?q=How does Indeed handle companies?",
+          "mentioned": true
+        },
+        {
+          "query": "What is Indeed's approach to companies?",
+          "url": "https://chat.openai.com/?q=What is Indeed's approach to companies?",
+          "mentioned": true
+        },
+        {
+          "query": "How does Indeed handle job?",
+          "url": "https://chat.openai.com/?q=How does Indeed handle job?",
+          "mentioned": true
+        },
+        {
+          "query": "What is Indeed's approach to job?",
+          "url": "https://chat.openai.com/?q=What is Indeed's approach to job?",
+          "mentioned": true
+        }
+      ]
+    },
+    "updated_at": "2025-10-24T23:06:40.788766"
+  },
+  {
+    "email": "samarm20@gmail.com",
+    "brand_url": "https://figma.com",
+    "created_at": "2025-10-24T21:35:19.166370",
     "status": "pending",
     "preview_data": {
       "brand_name": "Figma",
       "sentiment": "POSITIVE",
-      "mentions": 9,
-      "visibility": 100.0
-    },
-    "updated_at": "2025-10-21T22:34:24.010077"
+      "mentions": 10,
+      "citations": 76,
+      "visibility": 100.0,
+      "sample_query": "What do you think about Figma?",
+      "sample_response": "Figma is widely regarded as a powerful and versatile design tool, particularly for user interface (UI) and user experience (UX) design. Here are some of its key features and benefits:\n\n1. **Collaboration**: Figma's real-time collaboration capabilities allow multiple users to work on a design simultaneously, making it an excellent choice for teams. This feature enhances communication and streamlines the design process.\n\n2. **Cloud-Based**: Being cloud-based means that designs are easily accessible from anywhere, and there's no need for extensive software installations. This also simplifies version control and sharing.\n\n3. **Prototyping**: Figma allows designers to create interactive prototypes directly within the platform, which helps in visualizing user flows and interactions without needing to export designs to other tools.\n\n4. **Design Systems**: Figma supports the creation and management of design systems, enabling teams to maintain consistency across projects. Components, styles, and assets can be reused, making the design process more efficient.\n\n5. **Integration**: Figma integrates well with other tools commonly used in the design and development workflow, such as Slack, JIRA, and various handoff tools, which can improve the overall productivity of teams.\n\n6. **Learning Curve**: While Figma is user-friendly, some users may find the transition from other design tools challenging. However, many resources and tutorials are available to help new users get up to speed.\n\nOverall, Figma is highly praised for its collaborative features, ease of use, and flexibility, making it a favorite among designers and teams working on digital products.",
+      "citation_urls": [
+        {
+          "query": "What do you think about Figma?",
+          "url": "https://chat.openai.com/?q=What do you think about Figma?"
+        },
+        {
+          "query": "Is Figma good for businesses?",
+          "url": "https://chat.openai.com/?q=Is Figma good for businesses?"
+        },
+        {
+          "query": "Who are the main competitors of Figma?",
+          "url": "https://chat.openai.com/?q=Who are the main competitors of Figma?"
+        },
+        {
+          "query": "What are the pros and cons of Figma?",
+          "url": "https://chat.openai.com/?q=What are the pros and cons of Figma?"
+        },
+        {
+          "query": "Would you recommend Figma?",
+          "url": "https://chat.openai.com/?q=Would you recommend Figma?"
+        },
+        {
+          "query": "How mcp can be used with Figma?",
+          "url": "https://chat.openai.com/?q=How mcp can be used with Figma?"
+        },
+        {
+          "query": "How does Figma handle mcp?",
+          "url": "https://chat.openai.com/?q=How does Figma handle mcp?"
+        },
+        {
+          "query": "What is Figma's approach to mcp?",
+          "url": "https://chat.openai.com/?q=What is Figma's approach to mcp?"
+        },
+        {
+          "query": "How does Figma handle prototyping?",
+          "url": "https://chat.openai.com/?q=How does Figma handle prototyping?"
+        },
+        {
+          "query": "What is Figma's approach to prototyping?",
+          "url": "https://chat.openai.com/?q=What is Figma's approach to prototyping?"
+        }
+      ]
+    }
   }
 ]
