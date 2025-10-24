@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { Moon, Sun, TrendingUp, Activity, MessageSquare, Eye, ArrowRight, Check, Sparkles, BarChart3, Zap, ChartNoAxesGantt, MessageSquareText, SmilePlus, View } from 'lucide-react'
+import { Moon, Sun, TrendingUp, Activity, MessageSquare, Eye, ArrowRight, Check, Sparkles, BarChart3, Zap, ChartNoAxesGantt, MessageSquareText, SmilePlus, View, ChevronDown, ChevronUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -14,6 +14,7 @@ export default function ComingSoon() {
   const [email, setEmail] = useState('')
   const [customQueries, setCustomQueries] = useState(null)
   const [customKeywords, setCustomKeywords] = useState(null)
+  const [showAdvanced, setShowAdvanced] = useState(true)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [preview, setPreview] = useState(null)
@@ -118,13 +119,13 @@ export default function ComingSoon() {
   }
 
   return (
-    <div className="min-h-screen relative">
-  <div class="absolute inset-0 -z-10 h-full w-full bg-slate-400/10 bg-[linear-gradient(to_right,#cccc332a_1px,transparent_1px),linear-gradient(to_bottom,#cccc332a_1px,transparent_1px)] bg-[size:164px_124px]"></div>
-     
-
-
+    <div className="min-h-screen relative line-pattern">
+       
+  <div className="absolute inset-0 -z-10 h-full w-full bg-slate-400/10 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_204px]"></div>
+      
       {/* Header */}
-      <header className="max-w-[90%] mx-auto rounded-3xl border-b bg-white/90 dark:bg-slate-900/10 backdrop-blur-sm sticky top-8 z-[100] dark:border-slate-800 relative">
+      <header className="max-w-[90%] mx-auto rounded-3xl border-b bg-white/90 dark:bg-slate-900/10 backdrop-blur-sm sticky top-4 z-[100] dark:border-slate-800 relative">
+
         <div className="mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <ChartNoAxesGantt className="h-8 w-8 text-slate-950 dark:text-white" />
@@ -132,37 +133,65 @@ export default function ComingSoon() {
               VISIBI
             </span>
           </div>
-          {/* <Button
-            variant="outline"
-            size="icon"
-            onClick={toggleDarkMode}
-            className="rounded-full"
-          >
-            {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          </Button> */}
+
+          {/* Navigation Links */}
+          <nav className="flex items-center gap-8">
+            <a
+              href="/platform"
+              className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              Platform
+            </a>
+            <a
+              href="/solutions"
+              className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              Solutions
+            </a>
+
+             <a
+              href="/pricing"
+              className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              Pricing
+            </a>
+
+            <a
+              href="/careers"
+              className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              Careers
+            </a>
+          </nav>
         </div>
       </header>
 
 
 
-      {/** adding new hero header from voyse */}
+      {/** adding new hero header */}
      
       {/* Hero Section */}
-      <section className="max-w-[90%] mx-auto items-left px-4 py-24 md:pt-32 mb-4 relative">
+      <section className="max-w-[90%] mx-auto items-left px-12 py-4 md:pt-28 mb-4 relative">
+        <div className="lg:block absolute h-full w-full border-t border-l border-r border-b border-blue-100 dark:border-gray-800 rotate-0 left-0 top-8 pattern-background rounded-xl"></div>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+          
           {/* Left Column - Content */}
           <div className="max-w-4xl text-left space-y-8 relative z-10">
+
           <div className="inline-block">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/50 text-blue-700 dark:text-blue-400 text-sm font-medium border dark:border-blue-900">
               <Zap className="h-4 w-4" />
               Launching soon with exclusive early access
             </span>
           </div>
-            <h1 className="font-inter text-4xl md:text-7xl font-bold tracking-tight text-gray-950 dark:text-slate-100">
-            Know Where Your Brand appears in AI Conversations
+           <div className="inline-block">
+            <h1 className="font-inter text-md md:text-7xl font-bold tracking-tight text-gray-950 dark:text-slate-100">
+            Know where your Brand appears in AI Conversations
             {/* <span className="block text-gray-900 dark:text-slate-200 mt-2 font-light">Before Your Competitors</span> */}
             </h1>
-            <h2 className="text-md md:text-xl font-thin text-blue-700 dark:text-slate-100 mt-4">
+            </div>
+            <h2 className="text-md md:text-2xl font-thin text-blue-700 dark:text-slate-100 mt-4">
              Your brand's visibility and reputation across ChatGPT, Claude, Gemini,
             and Perplexity.
             </h2>
@@ -179,9 +208,10 @@ export default function ComingSoon() {
 
         </div>
           {/* Right Column - Image */}
-          <div className="relative w-full max-w-lg mx-auto">
+          <div className="relative w-full max-w-full mx-auto">
+           
              {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-12 pt-6 border-t border-gray-200 dark:border-gray-800">
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-12 pt-6">
               <Card className="border-1 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
                 <CardHeader>
                   <SmilePlus size={48} strokeWidth={1.50} absoluteStrokeWidth className="text-gray-700" />
@@ -205,7 +235,7 @@ export default function ComingSoon() {
               <Card className="border-1 hover:border-pink-300 dark:hover:border-pink-700 transition-colors">
                 <CardHeader>
                   <View size={48} strokeWidth={1.50} absoluteStrokeWidth className="text-gray-700" />
-                  <CardTitle className="font-space-mono pb-4 font-thin">Visibility Score</CardTitle>
+                  <CardTitle className="font-space-mono pb-4 font-thin">Citation</CardTitle>
                   <CardDescription className="font-space-mono text-md">
                     Measure your brand's presence across AI platforms
                   </CardDescription>
@@ -236,14 +266,14 @@ export default function ComingSoon() {
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleUrlSubmit} className="space-y-4">
-                  <div className="flex gap-3">
+                  <div className="flex gap-3 md:flex-row flex-col">
                     <Input
                       ref={inputRef}
                       type="text"
                       placeholder="www.yourbrand.com or yourbrand.com"
                       value={brandUrl}
                       onChange={(e) => setBrandUrl(e.target.value)}
-                      className="flex-1 h-14 text-md font-space-mono placeholder-blue-500 border-blue-400 bg-blue-100/30 dark:bg-blue-900/50 text-blue-700 dark:text-blue-400 rounded-3xl"
+                      className="flex-1 h-14 px-8 text-md font-space-mono placeholder-blue-500 border-blue-400 bg-blue-100/30 dark:bg-blue-900/50 text-blue-700 dark:text-blue-400 rounded-3xl"
                       required
                     />
                     <Button type="submit" size="xl" className="h-14 px-8 bg-blue-700 dark:bg-blue-900/50 text-white text-lg font-semibold dark:text-blue-400 rounded-3xl">
@@ -264,11 +294,6 @@ export default function ComingSoon() {
                 </div>
               </CardContent>
             </Card>
-
-
-
-
-
           </div>
 
 
@@ -302,9 +327,25 @@ export default function ComingSoon() {
                     </div>
                   </div>
 
+                  {customQueries && customQueries.length > 0 && (
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Custom Questions ({customQueries.length})</label>
+                      <div className="space-y-2 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                        {customQueries.map((query, index) => (
+                          <div
+                            key={index}
+                            className="text-sm p-2 bg-white dark:bg-slate-800 rounded border border-purple-200 dark:border-purple-700"
+                          >
+                            {query}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {customKeywords && customKeywords.length > 0 && (
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Added Keywords</label>
+                      <label className="text-sm font-medium">Added Keywords ({customKeywords.length})</label>
                       <div className="flex flex-wrap gap-2 p-3 bg-green-50 dark:bg-blue-900/20 rounded-lg">
                         {customKeywords.map((keyword, index) => (
                           <Badge
@@ -319,10 +360,31 @@ export default function ComingSoon() {
                     </div>
                   )}
 
-                  <QueryCustomizer
-                    onQueriesChange={setCustomQueries}
-                    onKeywordsChange={setCustomKeywords}
-                  />
+                  {/* Advanced Options Toggle */}
+                  <div className="pt-2">
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setShowAdvanced(!showAdvanced)}
+                      className="w-full justify-between text-muted-foreground hover:text-foreground"
+                    >
+                      <span className="flex items-center gap-2">
+                        <Zap className="h-4 w-4" />
+                        Advanced Options (Custom Queries & Keywords)
+                      </span>
+                      {showAdvanced ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                    </Button>
+
+                    {showAdvanced && (
+                      <div className="mt-4">
+                        <QueryCustomizer
+                          onQueriesChange={setCustomQueries}
+                          onKeywordsChange={setCustomKeywords}
+                        />
+                      </div>
+                    )}
+                  </div>
 
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Email Address</label>
@@ -383,74 +445,123 @@ export default function ComingSoon() {
               <div className="text-left">
                 <h3 className="text-xl font-semibold mb-2">Quick Preview</h3>
                 <p className="text-md text-gray-600 dark:text-gray-400">
-                  Here's what we're analysing for <span className="font-semibold text-md dark:text-gray-100">{preview.brand_name}</span>
+                  Here's what we're analysing for <span className="font-semibold text-blue-700 text-md dark:text-gray-100">{preview.brand_name}</span>
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <Card className="border-1 hover:border-blue-300 dark:hover:border-blue-700 bg-slate-50 dark:bg-slate-950 transition-colors">
-                  <CardHeader>
-                    <CardDescription className="text-md font-mono text-blue-700 py-4">Overall Sentiment</CardDescription>
-                    <CardTitle className="text-3xl flex items-center gap-2">
-                      <SmilePlus size={64} strokeWidth={1.25} absoluteStrokeWidth className=" text-gray-800" />
-                      <Badge className={`${
-                        preview.sentiment === 'POSITIVE'
-                          ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
-                          : preview.sentiment === 'NEGATIVE'
-                          ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300'
-                          : 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300'
-                      }`}>
-                        {preview.sentiment}
-                      </Badge>
-                    </CardTitle>
-                  </CardHeader>
-                </Card>
-
-                <Card className="border-1 hover:border-purple-300 dark:hover:border-purple-700 bg-slate-50 dark:bg-slate-950 transition-colors">
-                  <CardHeader>
-                    <CardDescription className="text-md font-mono text-blue-700 py-4">Mentions Found</CardDescription>
-                    <CardTitle className="text-3xl flex items-center gap-2">
-                      <MessageSquareText size={64} strokeWidth={1.25} absoluteStrokeWidth className=" text-gray-800" />
-                      {preview.mentions}
-                    </CardTitle>
-                  </CardHeader>
-                </Card>
-
-                <Card className="border-1 hover:border-pink-300 dark:hover:border-pink-700 bg-slate-50 dark:bg-slate-950 transition-colors">
-                  <CardHeader className="flex flex-col items-center justify-center">
-                    <CardDescription className="text-md font-mono text-blue-700 py-4">Citations</CardDescription>
-                    <div className="relative w-32 h-32">
-                      {/* Circular progress background */}
+                {/* Mentions Circular Chart - out of 100 */}
+                <Card className="border-1 shadow-sm bg-gray-100/20 dark:bg-slate-950 transition-colors">
+                  <CardHeader className="flex flex-col items-center justify-center py-8">
+                    <div className="relative w-40 h-40 mb-4">
                       <svg className="w-full h-full transform -rotate-90">
-                        {/* Background circle */}
                         <circle
-                          cx="64"
-                          cy="64"
-                          r="56"
-                          stroke="#e5e7eb"
-                          strokeWidth="12"
+                          cx="80"
+                          cy="80"
+                          r="70"
+                          stroke="#d2d5db"
+                          strokeWidth="8"
                           fill="none"
                         />
-                        {/* Progress circle */}
                         <circle
-                          cx="64"
-                          cy="64"
-                          r="56"
+                          cx="80"
+                          cy="80"
+                          r="70"
                           stroke="#1e293b"
-                          strokeWidth="12"
+                          strokeWidth="8"
                           fill="none"
-                          strokeDasharray={`${(preview.citations / 5) * 351.86} 351.86`}
+                          strokeDasharray={`${Math.min((preview.mentions / 100) * 439.8, 439.8)} 439.8`}
                           strokeLinecap="round"
                           className="transition-all duration-1000 ease-out"
                         />
                       </svg>
-                      {/* Center text */}
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-3xl font-bold text-gray-800 dark:text-white">
-                          {preview.citations}
-                        </span>
+                        <div className="text-center">
+                          <div className="text-5xl font-inter font-bold text-gray-700 dark:text-white">
+                            {preview.mentions}
+                          </div>
+                        </div>
                       </div>
                     </div>
+                    <CardDescription className="text-lg font-light font-space-mono text-gray-600 dark:text-gray-400">Total Mentions</CardDescription>
+                  </CardHeader>
+                </Card>
+
+                {/* Citations Circular Chart - out of 100 */}
+                <Card className="border-1 shadow-sm bg-gray-100/20 dark:bg-slate-950 transition-colors">
+                  <CardHeader className="flex flex-col items-center justify-center py-8">
+                    <div className="relative w-40 h-40 mb-4">
+                      <svg className="w-full h-full transform -rotate-90">
+                        <circle
+                          cx="80"
+                          cy="80"
+                          r="70"
+                          stroke="#e5e7eb"
+                          strokeWidth="8"
+                          fill="none"
+                        />
+                        <circle
+                          cx="80"
+                          cy="80"
+                          r="70"
+                          stroke="#1e293b"
+                          strokeWidth="8"
+                          fill="none"
+                          strokeDasharray={`${Math.min((preview.citations / 100) * 439.8, 439.8)} 439.8`}
+                          strokeLinecap="round"
+                          className="transition-all duration-1000 ease-out"
+                        />
+                      </svg>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="text-5xl font-inter font-bold text-gray-700 dark:text-white">
+                            {preview.citations}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <CardDescription className="text-lg font-light font-space-mono text-gray-600 dark:text-gray-400">Citations</CardDescription>
+                  </CardHeader>
+                </Card>
+
+                {/* Sentiment Score Circular Chart - percentage based */}
+                <Card className="border-1 shadow-sm bg-gray-100/20 dark:bg-slate-950 transition-colors">
+                  <CardHeader className="flex flex-col items-center justify-center py-8">
+                    <div className="relative w-40 h-40 mb-4">
+                      <svg className="w-full h-full transform -rotate-90">
+                        <circle
+                          cx="80"
+                          cy="80"
+                          r="70"
+                          stroke="#e5e7eb"
+                          strokeWidth="8"
+                          fill="none"
+                        />
+                        <circle
+                          cx="80"
+                          cy="80"
+                          r="70"
+                          stroke={preview.sentiment === 'POSITIVE' ? '#10b981' : preview.sentiment === 'NEGATIVE' ? '#ef4444' : '#6b7280'}
+                          strokeWidth="8"
+                          fill="none"
+                          strokeDasharray={`${(preview.visibility / 100) * 439.8} 439.8`}
+                          strokeLinecap="round"
+                          className="transition-all duration-1000 ease-out"
+                        />
+                      </svg>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className={`text-5xl font-inter font-bold ${
+                            preview.sentiment === 'POSITIVE' ? 'text-green-600 dark:text-green-400' :
+                            preview.sentiment === 'NEGATIVE' ? 'text-red-600 dark:text-red-400' :
+                            'text-gray-600 dark:text-gray-400'
+                          }`}>
+                            {Math.round(preview.visibility)}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <CardDescription className="text-lg font-light font-space-mono text-gray-600 dark:text-gray-400">Sentiment Score</CardDescription>
                   </CardHeader>
                 </Card>
               </div>
@@ -461,6 +572,92 @@ export default function ComingSoon() {
                   The full report will include detailed sentiment breakdown, competitive analysis, position tracking, and actionable insights.
                 </AlertDescription>
               </Alert>
+
+              {/* Sample Query & Answer */}
+              {preview.sample_query && preview.sample_response && (
+                <Card className="mt-6 bg-white dark:bg-slate-950 border-2 border-blue-200 dark:border-blue-800">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <MessageSquare className="h-5 w-5 text-blue-600" />
+                      Sample AI Response
+                    </CardTitle>
+                    <CardDescription>Example of how AI models mention your brand</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div>
+                      <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">
+                        Question:
+                      </div>
+                      <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-gray-800 dark:text-gray-200">
+                        {preview.sample_query}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">
+                        AI Response:
+                      </div>
+                      <div className="p-3 bg-gray-50 dark:bg-gray-900/50 rounded-lg text-gray-800 dark:text-gray-200 leading-relaxed">
+                        {preview.sample_response.split(new RegExp(`(${preview.brand_name})`, 'gi')).map((part, index) =>
+                          part.toLowerCase() === preview.brand_name.toLowerCase() ? (
+                            <mark key={index} className="bg-yellow-200 dark:bg-yellow-600 font-semibold px-1 rounded">
+                              {part}
+                            </mark>
+                          ) : (
+                            <span key={index}>{part}</span>
+                          )
+                        )}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
+              {/* Citation URLs */}
+              {preview.citation_urls && preview.citation_urls.length > 0 && (
+                <Card className="mt-4 bg-white dark:bg-slate-950 border-2 border-purple-200 dark:border-purple-800">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Activity className="h-5 w-5 text-purple-600" />
+                      Query Sources ({preview.citation_urls.length})
+                    </CardTitle>
+                    <CardDescription>All queries analyzed for your brand</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {preview.citation_urls.map((citation, index) => (
+                        <div key={index} className={`p-3 rounded-lg border ${citation.mentioned ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800' : 'bg-gray-50 dark:bg-gray-900/20 border-gray-200 dark:border-gray-800'}`}>
+                          <div className="flex items-start gap-2">
+                            <Badge variant="outline" className={`mt-1 ${citation.mentioned ? 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 border-green-300 dark:border-green-700' : 'bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700'}`}>
+                              {index + 1}
+                            </Badge>
+                            <div className="flex-1">
+                              <div className="flex items-center gap-2 mb-2">
+                                <div className="text-sm text-gray-800 dark:text-gray-200 flex-1">
+                                  {citation.query}
+                                </div>
+                                {citation.mentioned && (
+                                  <Badge className="bg-green-600 text-white text-xs">
+                                    Brand Mentioned
+                                  </Badge>
+                                )}
+                              </div>
+                              <a
+                                href={citation.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`text-xs hover:underline flex items-center gap-1 ${citation.mentioned ? 'text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300' : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-300'}`}
+                              >
+                                <span>View in ChatGPT</span>
+                                <ArrowRight className="h-3 w-3" />
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
             </div>
 
             {/* CTA */}

@@ -31,14 +31,40 @@ class SentimentAnalyzer:
             "limited", "restrictive", "outdated", "unstable", "disappointing"
         }
     
+    def count_brand_occurrences(self, text: str, brand_name: str) -> int:
+        """
+        Count total occurrences of brand name in text (case-insensitive)
+
+        Args:
+            text: The text to search in
+            brand_name: The brand name to count
+
+        Returns:
+            int: Total number of times brand appears in text
+        """
+        text_lower = text.lower()
+        brand_lower = brand_name.lower()
+
+        # Count overlapping occurrences
+        count = 0
+        start = 0
+        while True:
+            pos = text_lower.find(brand_lower, start)
+            if pos == -1:
+                break
+            count += 1
+            start = pos + 1
+
+        return count
+
     def analyze_sentiment(self, text: str, brand_name: str) -> Dict:
         """
         Analyze sentiment of text regarding a brand
-        
+
         Args:
             text: The text to analyze
             brand_name: The brand name to search for
-            
+
         Returns:
             Dictionary with sentiment analysis results containing:
             - mentioned: bool (whether brand is mentioned)

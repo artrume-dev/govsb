@@ -80,7 +80,7 @@ export default function QueryCustomizer({ onQueriesChange, onKeywordsChange }) {
       </CardHeader>
       <CardContent className="space-y-6">
         {/* Custom Queries */}
-        {/* <div className="space-y-3">
+        <div className="space-y-3">
           <div>
             <label className="text-sm font-medium">Custom Questions</label>
             <p className="text-xs text-muted-foreground mb-2">
@@ -93,9 +93,14 @@ export default function QueryCustomizer({ onQueriesChange, onKeywordsChange }) {
               placeholder="e.g., How secure is this product?"
               value={queryInput}
               onChange={(e) => setQueryInput(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && addQuery()}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault()
+                  addQuery()
+                }
+              }}
             />
-            <Button onClick={addQuery} size="sm">
+            <Button onClick={addQuery} type="button" size="sm">
               <Plus className="h-4 w-4" />
             </Button>
           </div>
@@ -117,7 +122,7 @@ export default function QueryCustomizer({ onQueriesChange, onKeywordsChange }) {
               ))}
             </div>
           )}
-        </div> */}
+        </div>
 
         {/* Custom Keywords */}
         <div className="space-y-3">

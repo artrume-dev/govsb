@@ -233,6 +233,63 @@ class TestMultipleResponsesAnalysis:
         ]
         brand = "Slack"
         result = analyzer.analyze_multiple_responses(responses, brand)
-        
+
         assert "average_confidence" in result
         assert 0 <= result["average_confidence"] <= 1.0
+
+
+class TestBrandOccurrencesCounting:
+    """Test suite for counting brand occurrences (citations)"""
+
+    @pytest.fixture
+    def analyzer(self):
+        return SentimentAnalyzer()
+
+    def test_count_single_occurrence(self, analyzer):
+        """Test counting a single brand occurrence"""
+        text = "Slack is great for team communication"
+        brand = "Slack"
+        count = analyzer.count_brand_occurrences(text, brand)
+
+        assert count == 1
+
+    def test_count_multiple_occurrences(self, analyzer):
+        """Test counting multiple brand occurrences"""
+        text = "Slack is great. I love Slack and Slack's features are amazing"
+        brand = "Slack"
+        count = analyzer.count_brand_occurrences(text, brand)
+
+        assert count == 3
+
+    def test_count_zero_occurrences(self, analyzer):
+        """Test counting zero occurrences"""
+        text = "Teams is great for collaboration"
+        brand = "Slack"
+        count = analyzer.count_brand_occurrences(text, brand)
+
+        assert count == 0
+
+    def test_count_case_insensitive(self, analyzer):
+        """Test that counting is case-insensitive"""
+        text = "slack is great. SLACK is amazing. Slack is useful"
+        brand = "Slack"
+        count = analyzer.count_brand_occurrences(text, brand)
+
+        assert count == 3
+
+    def test_count_overlapping_brand_names(self, analyzer):
+        """Test counting with overlapping brand names"""
+        text = "Go is great and Go's performance is amazing"
+        brand = "Go"
+        count = analyzer.count_brand_occurrences(text, brand)
+
+        # Should count both "Go" occurrences
+        assert count >= 2
+
+    def test_count_brand_in_different_contexts(self, analyzer):
+        """Test counting brand mentions in different sentence positions"""
+        text = "I use Slack daily. Slack helps my team collaborate. Without Slack, we'd be lost."
+        brand = "Slack"
+        count = analyzer.count_brand_occurrences(text, brand)
+
+        assert count == 3

@@ -64,21 +64,24 @@ class BrandAnalyzer:
     async def fetch_brand_info(self, url: str) -> Dict[str, str]:
         """
         Fetch brand information from URL
-        
+
         Args:
             url: The URL to fetch from
-            
+
         Returns:
             Dictionary with brand info including:
             - brand_name: str
             - url: str
             - description: Optional[str]
         """
+        # Always extract brand from domain as primary source
+        domain_brand = self.extract_brand_name(url)
+
         try:
             headers = {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
             }
-            
+
             # Run blocking request in executor to avoid blocking async loop
             loop = asyncio.get_event_loop()
             response = await loop.run_in_executor(
@@ -86,43 +89,31 @@ class BrandAnalyzer:
                 lambda: requests.get(url, timeout=5, headers=headers)
             )
             response.raise_for_status()
-            
+
             soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Try to get title
-            title = soup.find('title')
-            title_text = title.string if title else None
-            
+
             # Try to get meta description
             description_meta = soup.find('meta', attrs={'name': 'description'})
             description = description_meta.get('content') if description_meta else None
-            
-            # Clean up title (remove common suffixes)
-            if title_text:
-                # Remove common separators and everything after
-                for separator in ['|', '-', '–', ':']:
-                    if separator in title_text:
-                        title_text = title_text.split(separator)[0].strip()
-                        break
-            else:
-                title_text = self.extract_brand_name(url)
-            
+
+            # Use domain-based brand name (more reliable than page title)
+            # Page titles often contain taglines and descriptions
             return {
-                "brand_name": title_text,
+                "brand_name": domain_brand,
                 "url": url,
                 "description": description
             }
         except requests.exceptions.Timeout:
             print(f"Timeout fetching {url}")
             return {
-                "brand_name": self.extract_brand_name(url),
+                "brand_name": domain_brand,
                 "url": url,
                 "description": None
             }
         except Exception as e:
             print(f"Error fetching brand info from {url}: {e}")
             return {
-                "brand_name": self.extract_brand_name(url),
+                "brand_name": domain_brand,
                 "url": url,
                 "description": None
             }
@@ -144,17 +135,22 @@ class BrandAnalyzer:
         Returns:
             List of queries with brand name inserted
         """
-        queries = [query.format(brand=brand_name) for query in self.default_queries]
+        # Only use custom queries/keywords if provided, otherwise use defaults
+        if custom_queries or custom_keywords:
+            queries = []
 
-        # Add custom queries if provided
-        if custom_queries:
-            queries.extend(custom_queries)
+            # Add custom queries if provided
+            if custom_queries:
+                queries.extend(custom_queries)
 
-        # Add custom keyword-based queries if provided
-        if custom_keywords:
-            for keyword in custom_keywords:
-                queries.append(f"How does {brand_name} handle {keyword}?")
-                queries.append(f"What is {brand_name}'s approach to {keyword}?")
+            # Add custom keyword-based queries if provided
+            if custom_keywords:
+                for keyword in custom_keywords:
+                    queries.append(f"How does {brand_name} handle {keyword}?")
+                    queries.append(f"What is {brand_name}'s approach to {keyword}?")
+        else:
+            # Use default queries only if no custom input provided
+            queries = [query.format(brand=brand_name) for query in self.default_queries]
 
         return queries
     

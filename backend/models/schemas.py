@@ -3,7 +3,7 @@ Pydantic schemas for request/response validation
 """
 
 from pydantic import BaseModel, HttpUrl
-from typing import List, Optional
+from typing import List, Optional, Dict
 from datetime import datetime
 
 
@@ -92,18 +92,20 @@ class SummaryMetrics(BaseModel):
     """Schema for summary metrics"""
     total_queries: int
     mentions_count: int
+    citations: int  # Total number of brand occurrences across all responses
     visibility: float  # Percentage of queries where brand was mentioned
     positive: int
     negative: int
     neutral: int
     overall_sentiment: str
     average_confidence: float
-    
+
     class Config:
         json_schema_extra = {
             "example": {
                 "total_queries": 5,
                 "mentions_count": 5,
+                "citations": 8,
                 "visibility": 100.0,
                 "positive": 4,
                 "negative": 0,
@@ -201,6 +203,12 @@ class WaitlistRequest(BaseModel):
         }
 
 
+class CitationURL(BaseModel):
+    """Schema for citation URL data"""
+    query: str
+    url: str
+    mentioned: bool
+
 class PreviewData(BaseModel):
     """Schema for preview analytics data"""
     brand_name: str
@@ -208,6 +216,9 @@ class PreviewData(BaseModel):
     mentions: int
     citations: int  # Total number of times brand was mentioned across all responses
     visibility: float
+    sample_query: Optional[str] = None
+    sample_response: Optional[str] = None
+    citation_urls: Optional[List[CitationURL]] = None  # List of queries with mention status
 
     class Config:
         json_schema_extra = {
@@ -216,7 +227,9 @@ class PreviewData(BaseModel):
                 "sentiment": "POSITIVE",
                 "mentions": 3,
                 "citations": 3,
-                "visibility": 60.0
+                "visibility": 60.0,
+                "sample_query": "What do you think about Example?",
+                "sample_response": "Example is a great tool..."
             }
         }
 

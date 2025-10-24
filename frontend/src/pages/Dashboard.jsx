@@ -155,7 +155,7 @@ export default function Dashboard() {
         {analysis && !loading && (
           <div className="space-y-6">
             {/* Summary Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
               <Card>
                 <CardHeader className="pb-3">
                   <CardDescription>Brand</CardDescription>
@@ -180,6 +180,16 @@ export default function Dashboard() {
                   <CardTitle className="text-2xl flex items-center gap-2">
                     <MessageSquare className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                     {analysis.summary.mentions_count}
+                  </CardTitle>
+                </CardHeader>
+              </Card>
+
+              <Card>
+                <CardHeader className="pb-3">
+                  <CardDescription>Citations</CardDescription>
+                  <CardTitle className="text-2xl flex items-center gap-2">
+                    <Activity className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+                    {analysis.summary.citations}
                   </CardTitle>
                 </CardHeader>
               </Card>

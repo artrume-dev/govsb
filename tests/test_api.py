@@ -133,7 +133,7 @@ class TestAnalyzeEndpoint:
             summary = data["summary"]
             
             required_fields = [
-                "total_queries", "mentions_count", "visibility",
+                "total_queries", "mentions_count", "citations", "visibility",
                 "positive", "negative", "neutral",
                 "overall_sentiment", "average_confidence"
             ]

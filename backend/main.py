@@ -70,8 +70,14 @@ openai_client = None
 if OpenAI and config.OPENAI_API_KEY:
     try:
         openai_client = OpenAI(api_key=config.OPENAI_API_KEY)
+        print(f"✅ OpenAI client initialized successfully with key: {config.OPENAI_API_KEY[:20]}...")
     except Exception as e:
-        print(f"Warning: Failed to initialize OpenAI client: {e}")
+        print(f"❌ Warning: Failed to initialize OpenAI client: {e}")
+else:
+    if not OpenAI:
+        print("❌ OpenAI package not installed")
+    if not config.OPENAI_API_KEY:
+        print(f"❌ OPENAI_API_KEY not found in environment (value: '{config.OPENAI_API_KEY}')")
 
 # In-memory storage for MVP (will be replaced with database in Phase 2)
 analysis_history: List[dict] = []
@@ -191,6 +197,13 @@ async def analyze_brand(request: URLRequest):
         
         # Calculate summary metrics
         mentions_count = sum(1 for a in analysis_results if a.sentiment_analysis.mentioned)
+
+        # Calculate total citations (total occurrences of brand across all responses)
+        citations_count = sum(
+            sentiment_analyzer.count_brand_occurrences(a.response, brand_name)
+            for a in analysis_results
+        )
+
         positive_count = sum(1 for a in analysis_results if a.sentiment_analysis.sentiment == "POSITIVE")
         negative_count = sum(1 for a in analysis_results if a.sentiment_analysis.sentiment == "NEGATIVE")
         neutral_count = sum(1 for a in analysis_results if a.sentiment_analysis.sentiment == "NEUTRAL")
@@ -209,6 +222,7 @@ async def analyze_brand(request: URLRequest):
         summary = SummaryMetrics(
             total_queries=len(queries),
             mentions_count=mentions_count,
+            citations=citations_count,
             visibility=(mentions_count / len(queries)) * 100 if queries else 0,
             positive=positive_count,
             negative=negative_count,
@@ -318,18 +332,30 @@ async def join_waitlist(request: WaitlistRequest):
                 custom_keywords=request.custom_keywords
             )[:10]  # Allow up to 10 queries for custom analysis
         else:
-            # Generate a subset of queries for quick preview (only 5 queries)
-            preview_queries = brand_analyzer.generate_monitoring_queries(brand_name)[:5]
+            # Comment out default queries - only use custom queries from user
+            # preview_queries = brand_analyzer.generate_monitoring_queries(brand_name)[:5]
+            preview_queries = []  # No default queries - user must provide custom queries
 
         # Quick sentiment analysis
         preview_results = []
+        preview_responses = []  # Store responses to count citations
         for query in preview_queries:
             try:
+                print(f"\n=== Query: {query} ===")
                 response, _ = get_chatgpt_response(query)
+                print(f"=== Response (first 100 chars): {response[:100]}... ===")
                 sentiment_analysis = sentiment_analyzer.analyze_sentiment(response, brand_name)
+                print(f"=== Sentiment: {sentiment_analysis['sentiment']}, Mentioned: {sentiment_analysis['mentioned']} ===")
                 preview_results.append(sentiment_analysis)
-            except:
+                preview_responses.append(response)
+            except Exception as e:
                 # If OpenAI fails, provide fallback data
+                error_msg = str(e) if str(e) else repr(e)
+                error_detail = getattr(e, 'detail', 'No detail')
+                print(f"!!! ERROR calling OpenAI for query '{query}' !!!")
+                print(f"!!! Error type: {type(e).__name__} !!!")
+                print(f"!!! Error message: {error_msg} !!!")
+                print(f"!!! Error detail: {error_detail} !!!")
                 preview_results.append({
                     "mentioned": False,
                     "sentiment": "NEUTRAL",
@@ -338,11 +364,18 @@ async def join_waitlist(request: WaitlistRequest):
                     "positive_indicators": 0,
                     "negative_indicators": 0
                 })
+                preview_responses.append("")
 
         # Calculate preview metrics
         mentions_count = sum(1 for r in preview_results if r["mentioned"])
         positive_count = sum(1 for r in preview_results if r["sentiment"] == "POSITIVE")
         negative_count = sum(1 for r in preview_results if r["sentiment"] == "NEGATIVE")
+
+        # Calculate total citations (total occurrences of brand across all preview responses)
+        citations_count = sum(
+            sentiment_analyzer.count_brand_occurrences(response, brand_name)
+            for response in preview_responses
+        )
 
         # Determine overall sentiment
         overall_sentiment = "POSITIVE" if positive_count > negative_count else \
@@ -350,12 +383,39 @@ async def join_waitlist(request: WaitlistRequest):
 
         visibility = (mentions_count / len(preview_queries)) * 100 if preview_queries else 0
 
+        # Get a sample query and response (first one with mention if available)
+        sample_query = None
+        sample_response = None
+        citation_urls = []  # Collect all queries that were asked
+
+        for i, result in enumerate(preview_results):
+            if i < len(preview_queries) and i < len(preview_responses):
+                # Collect ALL queries (not just ones with brand mentions)
+                citation_urls.append({
+                    "query": preview_queries[i],
+                    "url": f"https://chat.openai.com/?q={preview_queries[i][:50]}",  # Simulated ChatGPT URL
+                    "mentioned": result["mentioned"]  # Track if brand was mentioned
+                })
+
+                # Get first sample for display (prefer ones with mentions)
+                if result["mentioned"] and sample_query is None:
+                    sample_query = preview_queries[i]
+                    sample_response = preview_responses[i]
+
+        # If no queries had mentions, use the first query as sample
+        if sample_query is None and len(preview_queries) > 0:
+            sample_query = preview_queries[0]
+            sample_response = preview_responses[0]
+
         preview_data = PreviewData(
             brand_name=brand_name,
             sentiment=overall_sentiment,
             mentions=mentions_count,
-            citations=mentions_count,  # Citations = number of times brand was mentioned
-            visibility=round(visibility, 1)
+            citations=citations_count,
+            visibility=round(visibility, 1),
+            sample_query=sample_query,
+            sample_response=sample_response,
+            citation_urls=citation_urls if citation_urls else None
         )
 
         # Save to waitlist
