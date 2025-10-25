@@ -219,12 +219,12 @@ export default function ComingSoon() {
           </div>
            <div className="inline-block">
 
-            <h1 className="font-inter text-md text-5xl md:text-7xl font-bold tracking-tight text-gray-950 dark:text-slate-100">
+            <h1 className="font-inter text-md text-5xl md:text-7xl font-bold tracking-tight text-slate-950 dark:text-slate-100">
             Know where your Brand appears in AI Conversations
             {/* <span className="block text-gray-900 dark:text-slate-200 mt-2 font-light">Before Your Competitors</span> */}
             </h1>
             </div>
-            <h2 className="md:w-[90%] text-md md:text-2xl font-thin text-blue-700 dark:text-slate-100 mt-4 md:mt-6 mb-0">
+            <h2 className="md:w-[90%] text-md md:text-xl font-thin text-slate-700 tracking-tight dark:text-slate-100 mt-4 md:mt-6 mb-0">
              Your brand's visibility and reputation across ChatGPT, Claude, Gemini, and Perplexity.
             </h2>
 
@@ -242,9 +242,10 @@ export default function ComingSoon() {
           {/* Right Column - Image */}
 
 
-          <div className="relative w-full max-w-full mx-auto">
+          <div className="max-w-2xl text-center space-y-8 relative z-10">
 
-<img src='./sample-dash.png' alt='sample dashboard'></img>
+            <img src='./sample-dash.png' alt='sample dashboard' className="rounded-xl border border-slate-200 pattern-background p-2"></img>
+
 
 
 
@@ -283,42 +284,37 @@ export default function ComingSoon() {
             </div> */}
 
             </div>
-
-
-
-         
-
       </div>
 
-         <div className="relative w-full py-8 mx-auto">
+         <div className="relative w-full py-8 mt-16 mx-auto">
             
              {/* Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 py-0  border-slate-300 border transition-colors pattern-background">
               <Card className="rounded-none border-0 shadow-none md:border-r border-slate-300 transition-colors">
-                <CardHeader>
+                <CardHeader className="w-3/4  mx-auto py-12">
                   <SmilePlus size={32} strokeWidth={1.25} absoluteStrokeWidth className="text-blue-700" />
-                  <CardTitle className="font-inter pb-2 text-xl font-bolder">Sentiment Analysis</CardTitle>
-                  <CardDescription className="font-space-mono text-sm">
+                  <CardTitle className="font-space-mono pb-2 text-xl font-normal uppercase">Sentiment Analysis</CardTitle>
+                  <CardDescription className="font-space-mono text-sm text-blue-700 dark:text-gray-400">
                     Track how AI models perceive your brand - positive, neutral, or negative
                   </CardDescription>
                 </CardHeader>
               </Card>
 
               <Card className="rounded-none border-0 shadow-none md:border-r md:border-l  border-slate-300 transition-colors">
-                <CardHeader>
+                <CardHeader className="w-3/4 mx-auto py-12">
                    <MessageSquareText size={32} strokeWidth={1.25} absoluteStrokeWidth className="text-blue-700" />
-                  <CardTitle className="font-inter pb-2 text-xl font-bolder">Mention Tracking</CardTitle>
-                  <CardDescription className="font-space-mono text-sm">
+                  <CardTitle className="font-space-mono pb-2 text-xl font-normal uppercase">Mention Tracking</CardTitle>
+                  <CardDescription className="font-space-mono text-sm text-blue-700 dark:text-gray-400">
                     See how often your brand gets mentioned in AI responses
                   </CardDescription>
                 </CardHeader>
               </Card>
 
               <Card className="rounded-none border-0 shadow-none md:border-l border-slate-300 transition-colors">
-                <CardHeader>
+                <CardHeader className="w-3/4 mx-auto py-12">
                   <View size={32} strokeWidth={1.25} absoluteStrokeWidth className="text-blue-700" />
-                  <CardTitle className="font-inter pb-2 text-xl font-bolder">Citation</CardTitle>
-                  <CardDescription className="font-space-mono text-sm">
+                  <CardTitle className="font-space-mono pb-2 text-xl font-normal uppercase">Citation</CardTitle>
+                  <CardDescription className="font-space-mono text-sm text-blue-700 dark:text-gray-400">
                     Measure your brand's presence across AI platforms
                   </CardDescription>
                 </CardHeader>
@@ -334,8 +330,8 @@ export default function ComingSoon() {
       <main ref={mainSectionRef} className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white dark:bg-gray-950 rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 dark:border-gray-800 mb-32">
 
       {/** lines Section */}
-      <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-blue-200 dark:border-gray-800 left-0 top-0 pattern-background rounded-bl-xl"></div>
-      <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-blue-200 dark:border-gray-800 right-0 top-0 pattern-background rounded-br-xl"></div>
+      <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 dark:border-gray-800 left-0 top-0 pattern-background rounded-bl-xl"></div>
+      <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 dark:border-gray-800 right-0 top-0 pattern-background rounded-br-xl"></div>
         
         {step === 1 && (
           <div className="space-y-8">
@@ -769,7 +765,7 @@ export default function ComingSoon() {
       </main>
 
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-6 py-12 mt-24 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-950 rounded-xl">
+      <footer className="max-w-[90%] mx-auto px-24 py-12 mt-24 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-950">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Left Column - Logo and Description */}
           <div className="space-y-6">
@@ -803,7 +799,7 @@ export default function ComingSoon() {
           </div>
 
           {/* Right Column - Newsletter */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div className="">
               <h3 className="font-sans text-xl text-gray-950 dark:text-white mb-2">
                 Want your brand to stand out in the age of AI conversations?
@@ -816,9 +812,9 @@ export default function ComingSoon() {
               <Input
                 type="email"
                 placeholder="Email Address"
-                className="flex-1 font-space-mono text-sm placeholder:text-gray-400"
+                className="flex-1 font-space-mono text-sm placeholder:text-gray-400 rounded-full text-gray-900 dark:text-gray-100"
               />
-              <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 font-space-mono text-sm uppercase px-6">
+              <Button className="bg-slate-900 dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 font-space-mono text-sm uppercase px-6 rounded-full">
                 Start Now
               </Button>
             </div>
