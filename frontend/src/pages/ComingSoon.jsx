@@ -244,7 +244,7 @@ export default function ComingSoon() {
 
           <div className="relative w-full max-w-full mx-auto">
 
-<img src='./public/sample-dash.png' alt='sample dashboard'></img>
+<img src='./sample-dash.png' alt='sample dashboard'></img>
 
 
 
