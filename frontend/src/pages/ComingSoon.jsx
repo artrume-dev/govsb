@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { Moon, Sun, TrendingUp, Activity, MessageSquare, Eye, ArrowRight, Check, Sparkles, BarChart3, Zap, ChartNoAxesGantt, MessageSquareText, SmilePlus, View, ChevronDown, ChevronUp } from 'lucide-react'
+import { Moon, Sun, TrendingUp, Activity, MessageSquare, Eye, ArrowRight, Check, Sparkles, BarChart3, Zap, ChartNoAxesGantt, MessageSquareText, SmilePlus, View, ChevronDown, ChevronUp, Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -15,6 +15,7 @@ export default function ComingSoon() {
   const [customQueries, setCustomQueries] = useState(null)
   const [customKeywords, setCustomKeywords] = useState(null)
   const [showAdvanced, setShowAdvanced] = useState(true)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [preview, setPreview] = useState(null)
@@ -121,11 +122,10 @@ export default function ComingSoon() {
   return (
     <div className="min-h-screen relative line-pattern">
        
-  <div className="absolute inset-0 -z-10 h-full w-full bg-slate-400/10 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_204px]"></div>
+  <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
       
       {/* Header */}
-      <header className="max-w-[90%] mx-auto rounded-3xl border-b bg-white/90 dark:bg-slate-900/10 backdrop-blur-sm sticky top-4 z-[100] dark:border-slate-800 relative">
-
+      <header className="max-w-[90%] mx-auto rounded-full border-b bg-white/90 dark:bg-slate-900/10 backdrop-blur-sm sticky top-4 z-[100] dark:border-slate-800 relative">
         <div className="mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <ChartNoAxesGantt className="h-8 w-8 text-slate-950 dark:text-white" />
@@ -134,8 +134,8 @@ export default function ComingSoon() {
             </span>
           </div>
 
-          {/* Navigation Links */}
-          <nav className="flex items-center gap-8">
+          {/* Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center gap-8">
             <a
               href="/platform"
               className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -148,22 +148,52 @@ export default function ComingSoon() {
             >
               Solutions
             </a>
-
-             <a
+            <a
               href="/pricing"
               className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               Pricing
             </a>
-
-            <a
-              href="/careers"
-              className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              Careers
-            </a>
           </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
+
+        {/* Mobile Dropdown Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900/95 backdrop-blur-sm">
+            <nav className="px-6 py-4 flex flex-col gap-4">
+              <a
+                href="/platform"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
+              >
+                Platform
+              </a>
+              <a
+                href="/solutions"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
+              >
+                Solutions
+              </a>
+              <a
+                href="/pricing"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
+              >
+                Pricing
+              </a>
+            </nav>
+          </div>
+        )}
       </header>
 
 
@@ -171,29 +201,31 @@ export default function ComingSoon() {
       {/** adding new hero header */}
      
       {/* Hero Section */}
-      <section className="max-w-[90%] mx-auto items-left px-12 py-4 md:pt-28 mb-4 relative">
-        <div className="lg:block absolute h-full w-full border-t border-l border-r border-b border-blue-100 dark:border-gray-800 rotate-0 left-0 top-8 pattern-background rounded-xl"></div>
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="max-w-[90%] mx-auto items-left px-[5rem] py-4 pt-4 md:pt-28 mb-4 relative">
 
+        <div className="lg:block absolute h-full w-full bg-white/90 border border-slate-300 dark:border-gray-800 left-0 top-8 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200"></div>
+        
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Column - Content */}
           <div className="max-w-4xl text-left space-y-8 relative z-10">
+            
 
           <div className="inline-block">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/50 text-blue-700 dark:text-blue-400 text-sm font-medium border dark:border-blue-900">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100/60 dark:bg-blue-900/50 text-orange-700 dark:text-blue-400 text-sm font-medium border border-orange-200">
               <Zap className="h-4 w-4" />
               Launching soon with exclusive early access
             </span>
           </div>
            <div className="inline-block">
-            <h1 className="font-inter text-md md:text-7xl font-bold tracking-tight text-gray-950 dark:text-slate-100">
+
+            <h1 className="font-inter text-md text-5xl md:text-7xl font-bold tracking-tight text-gray-950 dark:text-slate-100">
             Know where your Brand appears in AI Conversations
             {/* <span className="block text-gray-900 dark:text-slate-200 mt-2 font-light">Before Your Competitors</span> */}
             </h1>
             </div>
-            <h2 className="text-md md:text-2xl font-thin text-blue-700 dark:text-slate-100 mt-4">
-             Your brand's visibility and reputation across ChatGPT, Claude, Gemini,
-            and Perplexity.
+            <h2 className="md:w-[90%] text-md md:text-2xl font-thin text-blue-700 dark:text-slate-100 mt-4 md:mt-6 mb-0">
+             Your brand's visibility and reputation across ChatGPT, Claude, Gemini, and Perplexity.
             </h2>
 
             <div className="py-8">
@@ -208,58 +240,110 @@ export default function ComingSoon() {
 
         </div>
           {/* Right Column - Image */}
+
+
           <div className="relative w-full max-w-full mx-auto">
-           
+
+<img src='./public/sample-dash.png' alt='sample dashboard'></img>
+
+
+
              {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-12 pt-6">
-              <Card className="border-1 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
+{/*             
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 pt-8">
+              <Card className="border hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
                 <CardHeader>
                   <SmilePlus size={48} strokeWidth={1.50} absoluteStrokeWidth className="text-gray-700" />
                   <CardTitle className="font-space-mono pb-4 font-thin">Sentiment Analysis</CardTitle>
-                  <CardDescription className="font-space-mono text-md">
+                  <CardDescription className="font-space-mono text-sm">
                     Track how AI models perceive your brand - positive, neutral, or negative
                   </CardDescription>
                 </CardHeader>
               </Card>
 
-              <Card className="border-1 hover:border-purple-300 dark:hover:border-purple-700 transition-colors">
+              <Card className="border hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
                 <CardHeader>
                    <MessageSquareText size={48} strokeWidth={1.50} absoluteStrokeWidth className="text-gray-700" />
                   <CardTitle className="font-space-mono pb-4 font-thin">Mention Tracking</CardTitle>
-                  <CardDescription className="font-space-mono text-md">
+                  <CardDescription className="font-space-mono text-sm">
                     See how often your brand gets mentioned in AI responses
                   </CardDescription>
                 </CardHeader>
               </Card>
 
-              <Card className="border-1 hover:border-pink-300 dark:hover:border-pink-700 transition-colors">
+              <Card className="border hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
                 <CardHeader>
                   <View size={48} strokeWidth={1.50} absoluteStrokeWidth className="text-gray-700" />
                   <CardTitle className="font-space-mono pb-4 font-thin">Citation</CardTitle>
-                  <CardDescription className="font-space-mono text-md">
+                  <CardDescription className="font-space-mono text-sm">
+                    Measure your brand's presence across AI platforms
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </div> */}
+
+            </div>
+
+
+
+         
+
+      </div>
+
+         <div className="relative w-full py-8 mx-auto">
+            
+             {/* Features Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 py-0  border-slate-300 border transition-colors pattern-background">
+              <Card className="rounded-none border-0 shadow-none md:border-r border-slate-300 transition-colors">
+                <CardHeader>
+                  <SmilePlus size={32} strokeWidth={1.25} absoluteStrokeWidth className="text-blue-700" />
+                  <CardTitle className="font-inter pb-2 text-xl font-bolder">Sentiment Analysis</CardTitle>
+                  <CardDescription className="font-space-mono text-sm">
+                    Track how AI models perceive your brand - positive, neutral, or negative
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card className="rounded-none border-0 shadow-none md:border-r md:border-l  border-slate-300 transition-colors">
+                <CardHeader>
+                   <MessageSquareText size={32} strokeWidth={1.25} absoluteStrokeWidth className="text-blue-700" />
+                  <CardTitle className="font-inter pb-2 text-xl font-bolder">Mention Tracking</CardTitle>
+                  <CardDescription className="font-space-mono text-sm">
+                    See how often your brand gets mentioned in AI responses
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card className="rounded-none border-0 shadow-none md:border-l border-slate-300 transition-colors">
+                <CardHeader>
+                  <View size={32} strokeWidth={1.25} absoluteStrokeWidth className="text-blue-700" />
+                  <CardTitle className="font-inter pb-2 text-xl font-bolder">Citation</CardTitle>
+                  <CardDescription className="font-space-mono text-sm">
                     Measure your brand's presence across AI platforms
                   </CardDescription>
                 </CardHeader>
               </Card>
             </div>
             </div>
-      </div>
+
     </section>
 
 
-    
-
       {/** End new nav header from voyse */}
       {/* Main Content */}
-      <main ref={mainSectionRef} className="max-w-[90%] mx-auto px-6 py-12 relative z-10 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-800 mb-32">
+      <main ref={mainSectionRef} className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white dark:bg-gray-950 rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 dark:border-gray-800 mb-32">
+
+      {/** lines Section */}
+      <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-blue-200 dark:border-gray-800 left-0 top-0 pattern-background rounded-bl-xl"></div>
+      <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-blue-200 dark:border-gray-800 right-0 top-0 pattern-background rounded-br-xl"></div>
+        
         {step === 1 && (
           <div className="space-y-8">
-            {/* Hero Section */}
-    
+ 
             {/* URL Input Form */}
-            <Card className="max-w-4xl mx-auto border-0 shadow-none bg-white dark:bg-slate-950">
+            <Card className="max-w-3xl mx-auto border-0 shadow-none bg-white dark:bg-slate-950">
               <CardHeader className="text-center">
-                <CardTitle className="font-space-mono font-thin">Get Your Free Brand Analysis</CardTitle>
+                <CardTitle className="font-inner font-normal">Get Your Free Brand Analysis</CardTitle>
                 <CardDescription>
                   Enter your brand URL to get started
                 </CardDescription>
@@ -273,10 +357,10 @@ export default function ComingSoon() {
                       placeholder="www.yourbrand.com or yourbrand.com"
                       value={brandUrl}
                       onChange={(e) => setBrandUrl(e.target.value)}
-                      className="flex-1 h-14 px-8 text-md font-space-mono placeholder-blue-500 border-blue-400 bg-blue-100/30 dark:bg-blue-900/50 text-blue-700 dark:text-blue-400 rounded-3xl"
+                      className="flex-1 h-14 px-8 text-md font-space-mono placeholder-blue-500 border-blue-400 bg-blue-100/30 dark:bg-blue-900/50 text-blue-700 dark:text-blue-400 rounded-full"
                       required
                     />
-                    <Button type="submit" size="xl" className="h-14 px-8 bg-blue-700 dark:bg-blue-900/50 text-white text-lg font-semibold dark:text-blue-400 rounded-3xl">
+                    <Button type="submit" size="xl" className="h-14 px-8 bg-blue-700 dark:bg-blue-900/50 text-white text-lg font-semibold dark:text-blue-400 rounded-full">
                       Get Visualise
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
@@ -294,6 +378,7 @@ export default function ComingSoon() {
                 </div>
               </CardContent>
             </Card>
+
           </div>
 
 
@@ -303,7 +388,7 @@ export default function ComingSoon() {
           <div className="mx-auto space-y-6 max-w-7xl">
             <Card className="bg-white dark:bg-slate-950 border-0 max-w-4xl mx-auto">
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Customize & Get Early Access</CardTitle>
+                <CardTitle className="text-2xl">Customise & Get Early Access</CardTitle>
                 <CardDescription>
                   Add keywords (optional) and enter your email to get your free analysis
                 </CardDescription>
@@ -423,6 +508,7 @@ export default function ComingSoon() {
               </CardContent>
             </Card>
           </div>
+          
         )}
 
         {step === 3 && preview && (
@@ -434,22 +520,22 @@ export default function ComingSoon() {
                   <Check className="h-8 w-8 text-green-600 dark:text-green-400" />
                 </div>
                 <CardTitle className="text-2xl">You're on the list!</CardTitle>
-                <CardDescription className="text-base text-gray-600">
-                  We'll send your detailed brand analysis report to <strong className="font-semibold text-gray-900 dark:text-gray-100">{email}</strong> soon.
+                <CardDescription className="text-base text-gray-700">
+                  We'll send your detailed brand analysis report to <strong className="font-semibold text-blue-700 dark:text-gray-100">{email}</strong> soon.
                 </CardDescription>
               </CardHeader>
             </Card>
 
             {/* Preview Analytics */}
             <div className="space-y-8">
-              <div className="text-left">
-                <h3 className="text-xl font-semibold mb-2">Quick Preview</h3>
+              <div className="text-center">
+                <h3 className="text-4xl font-inter font-semibold mb-2">Quick Preview</h3>
                 <p className="text-md text-gray-600 dark:text-gray-400">
                   Here's what we're analysing for <span className="font-semibold text-blue-700 text-md dark:text-gray-100">{preview.brand_name}</span>
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-3 gap-4">
                 {/* Mentions Circular Chart - out of 100 */}
                 <Card className="border-1 shadow-sm bg-gray-100/20 dark:bg-slate-950 transition-colors">
                   <CardHeader className="flex flex-col items-center justify-center py-8">

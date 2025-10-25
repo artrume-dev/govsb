@@ -1,61 +1,36 @@
 [
   {
     "email": "spacegigx@gmail.com",
-    "brand_url": "https://indeed.com",
+    "brand_url": "https://notion.com",
     "created_at": "2025-10-20T21:20:37.539907",
     "status": "pending",
     "preview_data": {
-      "brand_name": "Indeed",
+      "brand_name": "Notion",
       "sentiment": "POSITIVE",
-      "mentions": 7,
-      "citations": 55,
-      "visibility": 87.5,
-      "sample_query": "list top platform to hire ai engineer",
-      "sample_response": "Here are some of the top platforms where you can hire AI engineers:\n\n1. **LinkedIn**: A professional networking site where you can post job listings and search for candidates with AI expertise.\n\n2. **Upwork**: A freelance platform where you can hire AI engineers for short-term or project-based work.\n\n3. **Toptal**: A platform that connects businesses with top freelance talent, including AI engineers, after a rigorous screening process.\n\n4. **Hired**: A recruiting platform that matches companies with tech talent, including AI specialists, based on their skills and preferences.\n\n5. **Glassdoor**: In addition to job postings, Glassdoor offers insights about company culture and salaries, which can help attract AI talent.\n\n6. **Indeed**: A popular job board where you can post job openings and search resumes for AI engineers.\n\n7. **AngelList**: A platform focused on startups, where you can find engineers with AI expertise who are interested in working in startup environments.\n\n8. **SimplyHired**: A job search engine that aggregates listings from various sources, making it easier to find AI engineering candidates.\n\n9. **GitHub Jobs**: A job board for tech talent, where you can find engineers who are active contributors to open-source projects, including AI.\n\n10. **Stack Overflow Jobs**: A job board specifically for developers and tech professionals, where you can find candidates with AI skills.\n\n11. **Remote.co**: A platform for remote job listings, which can help you find AI engineers who are open to remote work.\n\n12. **Kaggle**: While primarily a platform for data science competitions, many AI engineers participate in Kaggle, making it a good place to spot talent.\n\nWhen hiring AI engineers, it's important to clearly define the skills and experience you need, as the field can encompass a wide range of specializations.",
+      "mentions": 3,
+      "citations": 20,
+      "visibility": 100.0,
+      "sample_query": "best platform for project management",
+      "sample_response": "Choosing the best platform for project management depends on your team's specific needs, project type, and workflow. However, here are some of the most popular and highly rated project management tools as of 2023:\n\n1. **Trello**: Great for smaller teams and straightforward projects. It uses a card/board system that's visually appealing and easy to use.\n\n2. **Asana**: Offers a flexible interface with task assignments, due dates, and project tracking features. It's suitable for teams of all sizes.\n\n3. **Monday.com**: Known for its customization options and visual project tracking. It\u2019s versatile and works well for various types of projects.\n\n4. **Jira**: Ideal for software development teams. It provides robust features for bug tracking, agile project management, and sprint planning.\n\n5. **ClickUp**: A highly customizable platform that combines tasks, docs, goals, and chat in one place. It\u2019s suitable for teams looking for an all-in-one solution.\n\n6. **Basecamp**: Focused on simplicity and ease of use, it\u2019s a good choice for teams looking for a straightforward tool to manage projects and communicate.\n\n7. **Microsoft Project**: A more traditional project management tool that offers powerful scheduling and resource management features, ideal for larger organizations.\n\n8. **Wrike**: Provides advanced reporting and analytics features, suitable for teams that need to manage multiple projects simultaneously.\n\n9. **Smartsheet**: A spreadsheet-like interface that is great for teams familiar with Excel but looking for enhanced project management features.\n\n10. **Notion**: A flexible tool for note-taking and project management that allows teams to create custom workflows and databases.\n\nWhen selecting a project management tool, consider factors like ease of use, integrations, scalability, and budget. It's often beneficial to take advantage of free trials to see which platform fits your team's workflow best.",
       "citation_urls": [
         {
-          "query": "list top platform to hire ai engineer",
-          "url": "https://chat.openai.com/?q=list top platform to hire ai engineer",
+          "query": "best platform for project management",
+          "url": "https://chat.openai.com/?q=best platform for project management",
           "mentioned": true
         },
         {
-          "query": "job posting platform for tech company",
-          "url": "https://chat.openai.com/?q=job posting platform for tech company",
-          "mentioned": false
-        },
-        {
-          "query": "How does Indeed handle talent?",
-          "url": "https://chat.openai.com/?q=How does Indeed handle talent?",
+          "query": "How does Notion handle project?",
+          "url": "https://chat.openai.com/?q=How does Notion handle project?",
           "mentioned": true
         },
         {
-          "query": "What is Indeed's approach to talent?",
-          "url": "https://chat.openai.com/?q=What is Indeed's approach to talent?",
-          "mentioned": true
-        },
-        {
-          "query": "How does Indeed handle companies?",
-          "url": "https://chat.openai.com/?q=How does Indeed handle companies?",
-          "mentioned": true
-        },
-        {
-          "query": "What is Indeed's approach to companies?",
-          "url": "https://chat.openai.com/?q=What is Indeed's approach to companies?",
-          "mentioned": true
-        },
-        {
-          "query": "How does Indeed handle job?",
-          "url": "https://chat.openai.com/?q=How does Indeed handle job?",
-          "mentioned": true
-        },
-        {
-          "query": "What is Indeed's approach to job?",
-          "url": "https://chat.openai.com/?q=What is Indeed's approach to job?",
+          "query": "What is Notion's approach to project?",
+          "url": "https://chat.openai.com/?q=What is Notion's approach to project?",
           "mentioned": true
         }
       ]
     },
-    "updated_at": "2025-10-24T23:06:40.788766"
+    "updated_at": "2025-10-25T11:52:58.189400"
   },
   {
     "email": "samarm20@gmail.com",
