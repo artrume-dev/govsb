@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { ChartNoAxesGantt, Brain, Search, TrendingUp, Target, BookOpen, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -103,6 +104,25 @@ export default function InsightsPage() {
 
   return (
     <div className="min-h-screen relative line-pattern">
+      <Helmet>
+        <title>AI Visibility Insights & Research - GEO Strategy Frameworks | VISIBI</title>
+        <meta name="description" content="Deep dives, case studies, and strategic frameworks for mastering visibility in generative AI. Learn how to optimize for ChatGPT, Gemini, and Perplexity with expert insights." />
+        <meta name="keywords" content="GEO insights, AI visibility research, ChatGPT optimization guide, AI search strategy, generative AI marketing, SEO case studies" />
+        <link rel="canonical" href="https://visibi.com/insights" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://visibi.com/insights" />
+        <meta property="og:title" content="AI Visibility Insights & Research - GEO Strategy Frameworks | VISIBI" />
+        <meta property="og:description" content="Expert insights, case studies, and frameworks for optimizing brand visibility across AI platforms." />
+        <meta property="og:site_name" content="VISIBI" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Visibility Insights & Research | VISIBI" />
+        <meta name="twitter:description" content="Learn how to dominate AI-powered discovery with expert frameworks and case studies." />
+      </Helmet>
+
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
 
       <Navigation currentPage="insights" />

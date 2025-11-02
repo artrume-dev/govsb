@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { ChartNoAxesGantt, Heart, Brain, Target, Users, TrendingUp, Shield, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -118,6 +119,25 @@ export default function HowWeWorkPage() {
 
   return (
     <div className="min-h-screen relative line-pattern">
+      <Helmet>
+        <title>How We Work - Strategy, Transparency & Trust | VISIBI</title>
+        <meta name="description" content="Partner with VISIBI for data-driven AI visibility strategy. Learn our values, process, and approach to building lasting Gen AI presence through ethical tactics and relentless optimization." />
+        <meta name="keywords" content="GEO methodology, AI visibility strategy, transparent SEO agency, data-driven marketing, ethical optimization" />
+        <link rel="canonical" href="https://visibi.com/how-we-work" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://visibi.com/how-we-work" />
+        <meta property="og:title" content="How We Work - Strategy, Transparency & Trust | VISIBI" />
+        <meta property="og:description" content="Discover our values, methodology, and commitment to transparent, data-driven AI visibility optimization." />
+        <meta property="og:site_name" content="VISIBI" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How We Work | VISIBI" />
+        <meta name="twitter:description" content="Strategy, transparency, and trust in AI visibility optimization." />
+      </Helmet>
+
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
 
       <Navigation currentPage="how-we-work" />

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ChartNoAxesGantt, ArrowRight } from 'lucide-react'
+import { Helmet } from 'react-helmet-async'
+import { ChartNoAxesGantt, ArrowRight, Award, Eye, TrendingUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
@@ -14,6 +15,25 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen relative line-pattern">
+      <Helmet>
+        <title>About VISIBI - 20+ Years Search Expertise | AI Visibility Pioneers</title>
+        <meta name="description" content="VISIBI was founded by search marketing veterans with 20+ years experience. We combine deep SEO expertise with cutting-edge AI research to help brands dominate AI-powered discovery." />
+        <meta name="keywords" content="VISIBI team, AI visibility experts, SEO professionals, GEO consultants, search marketing veterans" />
+        <link rel="canonical" href="https://visibi.com/about" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://visibi.com/about" />
+        <meta property="og:title" content="About VISIBI - 20+ Years Search Expertise | AI Visibility Pioneers" />
+        <meta property="og:description" content="Founded by search marketing veterans with 20+ years experience. We help brands dominate AI-powered discovery across ChatGPT, Gemini, and Perplexity." />
+        <meta property="og:site_name" content="VISIBI" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About VISIBI - AI Visibility Pioneers" />
+        <meta name="twitter:description" content="20+ years of search expertise reimagined for the AI era. Learn about our mission and team." />
+      </Helmet>
+
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
 

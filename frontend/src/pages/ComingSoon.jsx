@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { Moon, Sun, TrendingUp, Activity, MessageSquare, Eye, ArrowRight, Check, Sparkles, BarChart3, Zap, ChartNoAxesGantt, MessageSquareText, SmilePlus, View } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -121,6 +122,61 @@ export default function ComingSoon() {
 
   return (
     <div className="min-h-screen relative line-pattern">
+      <Helmet>
+        <title>VISIBI - Track Your Brand in AI Conversations | AI Visibility Platform</title>
+        <meta name="description" content="Know where your brand appears in AI conversations across ChatGPT, Claude, Gemini, and Perplexity. Get free AI brand visibility analysis and sentiment tracking." />
+        <meta name="keywords" content="AI visibility, brand tracking, ChatGPT mentions, AI platform analytics, GEO, generative engine optimization" />
+        <link rel="canonical" href="https://visibi.com/" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://visibi.com/" />
+        <meta property="og:title" content="VISIBI - Track Your Brand in AI Conversations" />
+        <meta property="og:description" content="Know where your brand appears in AI conversations across ChatGPT, Claude, Gemini, and Perplexity. Get free AI brand visibility analysis." />
+        <meta property="og:site_name" content="VISIBI" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="VISIBI - Track Your Brand in AI Conversations" />
+        <meta name="twitter:description" content="Know where your brand appears in AI conversations across ChatGPT, Claude, Gemini, and Perplexity." />
+
+        {/* Structured Data - Organization */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VISIBI",
+            "url": "https://visibi.com",
+            "logo": "https://visibi.com/logo.png",
+            "description": "AI visibility tracking and optimization platform. Track your brand mentions across ChatGPT, Gemini, Perplexity, and Claude.",
+            "foundingDate": "2023",
+            "sameAs": [
+              "https://linkedin.com/company/visibi",
+              "https://github.com/visibi"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "itemOffered": [
+                {
+                  "@type": "Service",
+                  "name": "GEO - Generative Engine Optimization",
+                  "description": "Optimize your brand's visibility across AI platforms like ChatGPT, Gemini, and Perplexity"
+                },
+                {
+                  "@type": "Service",
+                  "name": "AI Visibility Tracking",
+                  "description": "Track mentions, citations, and sentiment across all major AI platforms"
+                },
+                {
+                  "@type": "Service",
+                  "name": "AI-Ready SEO",
+                  "description": "Search engine optimization that feeds both Google rankings and AI citations"
+                }
+              ]
+            }
+          })}
+        </script>
+      </Helmet>
 
   <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
 
@@ -175,7 +231,7 @@ export default function ComingSoon() {
 
           <div className="max-w-2xl text-center space-y-8 relative z-10">
 
-            <img src='./sample-dash.png' alt='sample dashboard' className="rounded-xl border border-slate-200 pattern-background p-2"></img>
+            <img src='./sample-dash.png' alt='VISIBI AI visibility dashboard showing brand mentions, citations, and sentiment analysis across ChatGPT, Gemini, and Perplexity' className="rounded-xl border border-slate-200 pattern-background p-2"></img>
 
 
 

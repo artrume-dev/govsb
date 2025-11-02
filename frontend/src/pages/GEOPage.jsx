@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { ChartNoAxesGantt, Target, FileText, BarChart3, RefreshCw, CheckCircle2, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -45,6 +46,25 @@ export default function GEOPage() {
 
   return (
     <div className="min-h-screen relative line-pattern">
+      <Helmet>
+        <title>GEO Services - Generative Engine Optimization | VISIBI</title>
+        <meta name="description" content="Get discovered and cited by ChatGPT, Gemini, and Perplexity. Expert GEO (Generative Engine Optimization) services to maximize your AI visibility and brand mentions." />
+        <meta name="keywords" content="GEO, generative engine optimization, ChatGPT optimization, AI platform visibility, Gemini SEO, Perplexity optimization" />
+        <link rel="canonical" href="https://visibi.com/geo" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://visibi.com/geo" />
+        <meta property="og:title" content="GEO Services - Generative Engine Optimization | VISIBI" />
+        <meta property="og:description" content="Get discovered and cited by ChatGPT, Gemini, and Perplexity. Expert GEO services to maximize your AI visibility." />
+        <meta property="og:site_name" content="VISIBI" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="GEO Services - Generative Engine Optimization" />
+        <meta name="twitter:description" content="Maximize your brand's visibility across AI platforms. Get cited by ChatGPT, Gemini, and Perplexity." />
+      </Helmet>
+
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
 

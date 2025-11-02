@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { ChartNoAxesGantt, Search, Share2, Briefcase, Video, Target, TrendingUp, Zap, Activity, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -12,6 +13,25 @@ export default function PPCPage() {
 
   return (
     <div className="min-h-screen relative line-pattern">
+      <Helmet>
+        <title>PPC Management Services - Paid Media That Amplifies Visibility | VISIBI</title>
+        <meta name="description" content="Performance-driven PPC campaigns across Google Ads, LinkedIn, Meta, and YouTube. Boost visibility, drive conversions, and reinforce your organic and AI search presence." />
+        <meta name="keywords" content="PPC management, Google Ads, LinkedIn advertising, Meta ads, YouTube ads, paid media strategy, performance marketing" />
+        <link rel="canonical" href="https://visibi.com/ppc" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://visibi.com/ppc" />
+        <meta property="og:title" content="PPC Management Services - Paid Media That Amplifies Visibility | VISIBI" />
+        <meta property="og:description" content="Data-driven PPC campaigns across Google Ads, LinkedIn, Meta, and YouTube that amplify your brand visibility." />
+        <meta property="og:site_name" content="VISIBI" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="PPC Management Services | VISIBI" />
+        <meta name="twitter:description" content="Performance campaigns that boost visibility and drive conversions across all major platforms." />
+      </Helmet>
+
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
 
       <Navigation currentPage="ppc" />

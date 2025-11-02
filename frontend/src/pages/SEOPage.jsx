@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { ChartNoAxesGantt, Search, FileText, Link2, BarChart3, CheckCircle2, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -58,6 +59,25 @@ export default function SEOPage() {
 
   return (
     <div className="min-h-screen relative line-pattern">
+      <Helmet>
+        <title>AI-Ready SEO Services - Search + AI Optimization | VISIBI</title>
+        <meta name="description" content="SEO that feeds your AI visibility. Build search rankings and AI citations simultaneously with technical SEO, content strategy, and authority building that works across Google and AI platforms." />
+        <meta name="keywords" content="AI-ready SEO, technical SEO, content optimization, link building, E-E-A-T, search engine optimization, AI citations" />
+        <link rel="canonical" href="https://visibi.com/seo" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://visibi.com/seo" />
+        <meta property="og:title" content="AI-Ready SEO Services - Search + AI Optimization | VISIBI" />
+        <meta property="og:description" content="SEO that powers both Google rankings and AI platform citations. Technical excellence meets AI-first content strategy." />
+        <meta property="og:site_name" content="VISIBI" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI-Ready SEO Services | VISIBI" />
+        <meta name="twitter:description" content="SEO that feeds your AI visibility. Build rankings and citations simultaneously." />
+      </Helmet>
+
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
 
       <Navigation currentPage="seo" />

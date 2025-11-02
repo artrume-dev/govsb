@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { ChartNoAxesGantt, Eye, MessageSquare, Heart, TrendingUp, Users, Download, Zap, BarChart3, Sparkles, ChevronDown, ChevronUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -95,6 +96,25 @@ export default function ToolPage() {
 
   return (
     <div className="min-h-screen relative line-pattern">
+      <Helmet>
+        <title>AI Visibility Tracking Tool - Monitor Brand Mentions Across AI Platforms | VISIBI</title>
+        <meta name="description" content="Track mentions, citations, sentiment, and competitive positioning across ChatGPT, Gemini, Perplexity, and Claude. Proprietary AI visibility analytics platform with real-time alerts." />
+        <meta name="keywords" content="AI visibility tool, ChatGPT tracking, AI mention monitoring, brand sentiment analysis, AI platform analytics, citation tracking" />
+        <link rel="canonical" href="https://visibi.com/tool" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://visibi.com/tool" />
+        <meta property="og:title" content="AI Visibility Tracking Tool - Monitor Brand Mentions | VISIBI" />
+        <meta property="og:description" content="Track your brand's mentions, citations, and sentiment across all major AI platforms with powerful analytics and real-time alerts." />
+        <meta property="og:site_name" content="VISIBI" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Visibility Tracking Tool | VISIBI" />
+        <meta name="twitter:description" content="Monitor how AI platforms mention and cite your brand. Get actionable insights and competitive intelligence." />
+      </Helmet>
+
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
 
       <Navigation currentPage="tool" />
@@ -204,7 +224,7 @@ export default function ToolPage() {
               </div>
               <div className="bg-white p-12 text-center">
                 <div className="max-w-3xl mx-auto">
-                   <img src='./sample-dash.png' alt='sample dashboard' className="rounded-xl border border-slate-200 pattern-background p-2 mb-8"></img>
+                   <img src='./sample-dash.png' alt='VISIBI AI visibility tracking dashboard interface showing mention trends, citation analysis, sentiment scores, and competitive positioning metrics across AI platforms' className="rounded-xl border border-slate-200 pattern-background p-2 mb-8"></img>
                   {/* <BarChart3 className="w-32 h-32 text-slate-950 mx-auto mb-6" strokeWidth={1.25} /> */}
                   <p className="font-open-sans text-md leading-[1.5] text-slate-950">
                     Interactive dashboards showing real-time AI visibility metrics, historical trends, competitive benchmarks, and actionable recommendations.
