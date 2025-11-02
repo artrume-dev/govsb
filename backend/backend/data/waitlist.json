@@ -1,36 +1,61 @@
 [
   {
     "email": "spacegigx@gmail.com",
-    "brand_url": "https://notion.com",
+    "brand_url": "https://canon.co.uk",
     "created_at": "2025-10-20T21:20:37.539907",
     "status": "pending",
     "preview_data": {
-      "brand_name": "Notion",
+      "brand_name": "Canon",
       "sentiment": "POSITIVE",
-      "mentions": 3,
-      "citations": 20,
-      "visibility": 100.0,
-      "sample_query": "best platform for project management",
-      "sample_response": "Choosing the best platform for project management depends on your team's specific needs, project type, and workflow. However, here are some of the most popular and highly rated project management tools as of 2023:\n\n1. **Trello**: Great for smaller teams and straightforward projects. It uses a card/board system that's visually appealing and easy to use.\n\n2. **Asana**: Offers a flexible interface with task assignments, due dates, and project tracking features. It's suitable for teams of all sizes.\n\n3. **Monday.com**: Known for its customization options and visual project tracking. It\u2019s versatile and works well for various types of projects.\n\n4. **Jira**: Ideal for software development teams. It provides robust features for bug tracking, agile project management, and sprint planning.\n\n5. **ClickUp**: A highly customizable platform that combines tasks, docs, goals, and chat in one place. It\u2019s suitable for teams looking for an all-in-one solution.\n\n6. **Basecamp**: Focused on simplicity and ease of use, it\u2019s a good choice for teams looking for a straightforward tool to manage projects and communicate.\n\n7. **Microsoft Project**: A more traditional project management tool that offers powerful scheduling and resource management features, ideal for larger organizations.\n\n8. **Wrike**: Provides advanced reporting and analytics features, suitable for teams that need to manage multiple projects simultaneously.\n\n9. **Smartsheet**: A spreadsheet-like interface that is great for teams familiar with Excel but looking for enhanced project management features.\n\n10. **Notion**: A flexible tool for note-taking and project management that allows teams to create custom workflows and databases.\n\nWhen selecting a project management tool, consider factors like ease of use, integrations, scalability, and budget. It's often beneficial to take advantage of free trials to see which platform fits your team's workflow best.",
+      "mentions": 7,
+      "citations": 74,
+      "visibility": 87.5,
+      "sample_query": "best camera for street photography",
+      "sample_response": "Choosing the best camera for street photography depends on various factors, including your budget, preferred shooting style, and specific features you value. Here are some highly regarded options across different categories:\n\n### Mirrorless Cameras\n1. **Fujifilm X100V**\n   - Compact and lightweight\n   - Fixed 23mm f/2 lens (equivalent to 35mm)\n   - Excellent image quality and color rendition\n   - Hybrid viewfinder (optical and electronic)\n   - Film simulation modes for creative shooting\n\n2. **Sony A7C**\n   - Full-frame sensor in a compact body\n   - Versatile with interchangeable lenses\n   - Excellent autofocus and low-light performance\n   - Good battery life for long shooting sessions\n\n3. **Ricoh GR III**\n   - Extremely compact and lightweight\n   - Fixed 28mm f/2.8 lens (equivalent to 28mm)\n   - Great image quality and sharpness\n   - Fast startup time and quick autofocus\n   - Ideal for discreet shooting\n\n### DSLRs\n4. **Nikon D7500**\n   - Good balance of size, weight, and performance\n   - Versatile with a wide range of compatible lenses\n   - Excellent low-light performance\n   - Reliable autofocus system\n\n5. **Canon EOS Rebel T8i (EOS 850D)**\n   - Great entry-level DSLR for beginners\n   - Good image quality and decent autofocus\n   - Vari-angle touchscreen for creative angles\n\n### Compact Cameras\n6. **Sony RX100 VII**\n   - Pocket-sized with a 1-inch sensor\n   - Versatile zoom range (24-200mm equivalent)\n   - Fast autofocus and good low-light performance\n   - Great for candid shots without drawing attention\n\n### Additional Considerations\n- **Lenses:** If you're using a mirrorless or DSLR camera, consider investing in prime lenses (like a 35mm or 50mm) for sharpness and low-light capabilities.\n- **Size and Weight:** Street photography often requires you to be discreet and mobile, so a compact camera or a lightweight mirrorless system might be more convenient.\n- **Discretion:** Cameras that don\u2019t draw attention (like compacts or rangefinders) can be beneficial for candid shots.\n- **Autofocus and Burst Mode:** Fast autofocus and burst shooting capabilities can help capture fleeting moments.\n\nUltimately, the best camera is one that fits your personal style and allows you to capture",
       "citation_urls": [
         {
-          "query": "best platform for project management",
-          "url": "https://chat.openai.com/?q=best platform for project management",
+          "query": "best camera for street photography",
+          "url": "https://chat.openai.com/?q=best camera for street photography",
           "mentioned": true
         },
         {
-          "query": "How does Notion handle project?",
-          "url": "https://chat.openai.com/?q=How does Notion handle project?",
+          "query": "what lense to choose for sports photography, zoom or prime?",
+          "url": "https://chat.openai.com/?q=what lense to choose for sports photography, zoom ",
+          "mentioned": false
+        },
+        {
+          "query": "How does Canon handle sports?",
+          "url": "https://chat.openai.com/?q=How does Canon handle sports?",
           "mentioned": true
         },
         {
-          "query": "What is Notion's approach to project?",
-          "url": "https://chat.openai.com/?q=What is Notion's approach to project?",
+          "query": "What is Canon's approach to sports?",
+          "url": "https://chat.openai.com/?q=What is Canon's approach to sports?",
+          "mentioned": true
+        },
+        {
+          "query": "How does Canon handle lense?",
+          "url": "https://chat.openai.com/?q=How does Canon handle lense?",
+          "mentioned": true
+        },
+        {
+          "query": "What is Canon's approach to lense?",
+          "url": "https://chat.openai.com/?q=What is Canon's approach to lense?",
+          "mentioned": true
+        },
+        {
+          "query": "How does Canon handle street photography?",
+          "url": "https://chat.openai.com/?q=How does Canon handle street photography?",
+          "mentioned": true
+        },
+        {
+          "query": "What is Canon's approach to street photography?",
+          "url": "https://chat.openai.com/?q=What is Canon's approach to street photography?",
           "mentioned": true
         }
       ]
     },
-    "updated_at": "2025-10-25T11:52:58.189400"
+    "updated_at": "2025-10-26T15:58:13.151297"
   },
   {
     "email": "samarm20@gmail.com",

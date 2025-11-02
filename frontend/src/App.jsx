@@ -1,12 +1,29 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ComingSoon from './pages/ComingSoon'
-//import Dashboard from './pages/Dashboard'
+import AboutPage from './pages/AboutPage'
+import GEOPage from './pages/GEOPage'
+import SEOPage from './pages/SEOPage'
+import PPCPage from './pages/PPCPage'
+import InsightsPage from './pages/InsightsPage'
+import ToolPage from './pages/ToolPage'
+import HowWeWorkPage from './pages/HowWeWorkPage'
 import './index.css'
 
 function App() {
-  // Currently showing Coming Soon page
-  // To switch to Dashboard, uncomment the import above and change the return
-  return <ComingSoon />
-  //return <Dashboard />
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<ComingSoon />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/geo" element={<GEOPage />} />
+        <Route path="/seo" element={<SEOPage />} />
+        <Route path="/ppc" element={<PPCPage />} />
+        <Route path="/insights" element={<InsightsPage />} />
+        <Route path="/tool" element={<ToolPage />} />
+        <Route path="/how-we-work" element={<HowWeWorkPage />} />
+      </Routes>
+    </Router>
+  )
 }
 
 export default App

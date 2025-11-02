@@ -17,6 +17,7 @@ export default {
       fontFamily: {
         'space-mono': ['"Space Mono"', 'monospace'],
         'inter': ['"Inter"', 'sans-serif'],
+        'open-sans': ['"Open Sans"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
