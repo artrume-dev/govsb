@@ -55,14 +55,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
-dist/
 dist-ssr/
 *.local
 .vite/
 .cache/
 
-# Frontend build outputs
-frontend/dist/
+# Frontend build outputs (allow frontend/dist/ for SSG)
+# frontend/dist/ - COMMENTED OUT to allow GitHub Actions to commit pre-rendered pages
 frontend/build/
 frontend/.vite/
 
