@@ -1,19 +1,18 @@
-import { 
-  LayoutDashboard, 
-  Search, 
-  TrendingUp, 
-  Database, 
-  Settings, 
-  Clock, 
+import {
+  LayoutDashboard,
+  Search,
+  TrendingUp,
+  Database,
+  Settings,
+  Clock,
   BarChart3,
-  Globe, 
+  Globe,
   Bell,
   Users,
   FileText,
   Download,
   Calendar,
-  Zap,
-  ChartNoAxesGantt
+  Zap
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
@@ -124,7 +123,7 @@ export default function Sidebar({ activePage = 'dashboard', onNavigate }) {
       <div className="p-6 border-b border-border">
         
           <div className="flex items-center gap-2">
-            <ChartNoAxesGantt className="h-8 w-8 text-slate-950 dark:text-white" />
+            <img src="/goVisibi-icon.svg" alt="VISIBI Logo" className="h-8 w-8" />
             <h1 className="text-2xl font-bold bg-slate-950 dark:bg-white bg-clip-text text-transparent">
               VISIBI
             </h1>

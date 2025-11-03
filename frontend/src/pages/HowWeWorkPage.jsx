@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { ChartNoAxesGantt, Heart, Brain, Target, Users, TrendingUp, Shield, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react'
+import { Heart, Brain, Target, Users, TrendingUp, Shield, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Navigation from '@/components/Navigation'
@@ -159,7 +159,7 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* Main Content */}
-      <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-2">
+      <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white border-t border-b border-r border-l border-slate-300 mb-2">
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
 
@@ -286,15 +286,25 @@ export default function HowWeWorkPage() {
               </div>
             </div>
           </section>
+        </div>
+      </main>
 
-          {/* CTA */}
-          <section className="py-24 mb-12 border-t border-slate-200">
-            <div className="max-w-3xl mx-auto md:px-16 text-center">
-              <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
+             {/* CTA Section */}
+
+          <section className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white dark:bg-gray-950 rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 dark:border-gray-800 mb-32">
+            
+             <div className="lg:block absolute h-full w-0 md:w-10 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 dark:border-gray-800 left-0 top-0 pattern-background rounded-bl-xl"></div>
+            <div className="lg:block absolute h-full w-0 md:w-10 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 dark:border-gray-800 right-0 top-0 pattern-background rounded-br-xl"></div>
+        
+        
+            <div className="max-w-3xl mx-auto text-center space-y-6">
+              <h2 className="font-open-sans font-medium text-4xl md:leading-[1.3] text-slate-950 dark:text-white">
                 Ready to Work Together?
               </h2>
-              <p className="font-open-sans text-xl leading-[1.5] text-slate-950 mb-8">
+              <p className="font-open-sans text-xl leading-[1.7] text-slate-950 dark:text-gray-300 pb-8">
                 Let's discuss your AI visibility goals and explore whether VISIBI is the right partner for your brand.
+
+
               </p>
               <Link to="/">
                 <Button
@@ -304,15 +314,14 @@ export default function HowWeWorkPage() {
               </Link>
             </div>
           </section>
-        </div>
-      </main>
+
 
       {/* Footer */}
       <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <ChartNoAxesGantt className="h-8 w-8 text-slate-950" />
+              <img src="/goVisibi-icon.svg" alt="VISIBI Logo" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">

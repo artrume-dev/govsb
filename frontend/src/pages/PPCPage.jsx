@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { ChartNoAxesGantt, Search, Share2, Briefcase, Video, Target, TrendingUp, Zap, Activity, Sparkles } from 'lucide-react'
+import { Search, Share2, Briefcase, Video, Target, TrendingUp, Zap, Activity, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Navigation from '@/components/Navigation'
@@ -60,8 +60,8 @@ export default function PPCPage() {
 
       {/* Main Content */}
       <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-2">
-        <div className="lg:block absolute h-full w-0 md:w-8 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
-        <div className="lg:block absolute h-full w-0 md:w-8 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
+        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
+        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
 
         <div className="max-w-7xl mx-auto">
           {/* Channels & Platforms */}
@@ -221,7 +221,7 @@ export default function PPCPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <ChartNoAxesGantt className="h-8 w-8 text-slate-950" />
+              <img src="/goVisibi-icon.svg" alt="VISIBI Logo" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">

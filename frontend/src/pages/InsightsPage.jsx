@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { ChartNoAxesGantt, Brain, Search, TrendingUp, Target, BookOpen, ArrowRight } from 'lucide-react'
+import { Brain, Search, TrendingUp, Target, BookOpen, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Navigation from '@/components/Navigation'
@@ -207,7 +207,7 @@ export default function InsightsPage() {
           {/* Newsletter CTA */}
           <section className="py-12 mb-12 border-t border-slate-200">
             <div className="max-w-4xl mx-auto md:px-16 text-center">
-              <h2 className="font-inter font-medium text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
+              <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
                 Stay Ahead of AI Search Evolution
               </h2>
               <p className="font-open-sans text-xl leading-[1.5] text-slate-950 mb-8">
@@ -233,7 +233,7 @@ export default function InsightsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <ChartNoAxesGantt className="h-8 w-8 text-slate-950" />
+              <img src="/goVisibi-icon.svg" alt="VISIBI Logo" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">

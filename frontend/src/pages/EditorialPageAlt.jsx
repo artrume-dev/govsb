@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ChartNoAxesGantt, Menu, X, Target, Eye, TrendingUp, Award } from 'lucide-react'
+import { Menu, X, Target, Eye, TrendingUp, Award } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
@@ -26,7 +26,7 @@ export default function EditorialPageAlt() {
       <header className="max-w-[90%] mx-auto rounded-xl bg-white/90 dark:bg-slate-900/10 backdrop-blur-sm sticky top-8 z-[100] shadow-sm relative">
         <div className="mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <ChartNoAxesGantt className="h-8 w-8 text-slate-950 dark:text-white" />
+            <img src="/goVisibi-icon.svg" alt="VISIBI Logo" className="h-8 w-8" />
             <span className="text-2xl font-bold bg-slate-950 dark:bg-white bg-clip-text text-transparent">
               VISIBI
             </span>
@@ -291,7 +291,7 @@ export default function EditorialPageAlt() {
           {/* Left Column - Logo and Description */}
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <ChartNoAxesGantt className="h-8 w-8 text-slate-950 dark:text-white" />
+              <img src="/goVisibi-icon.svg" alt="VISIBI Logo" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 dark:bg-white bg-clip-text text-transparent">
                 VISIBI
               </span>

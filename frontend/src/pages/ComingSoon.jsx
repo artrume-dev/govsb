@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { Moon, Sun, TrendingUp, Activity, MessageSquare, Eye, ArrowRight, Check, Sparkles, BarChart3, Zap, ChartNoAxesGantt, MessageSquareText, SmilePlus, View } from 'lucide-react'
+import { Moon, Sun, TrendingUp, Activity, MessageSquare, Eye, ArrowRight, Check, Sparkles, BarChart3, Zap, MessageSquareText, SmilePlus, View } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -757,7 +757,7 @@ export default function ComingSoon() {
           {/* Left Column - Logo and Description */}
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <ChartNoAxesGantt className="h-8 w-8 text-slate-950 dark:text-white" />
+              <img src="/goVisibi-icon.svg" alt="VISIBI Logo" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 dark:bg-white bg-clip-text text-transparent">
                 VISIBI
               </span>

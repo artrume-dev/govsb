@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ChartNoAxesGantt, Menu, X, ChevronDown, ChevronUp } from 'lucide-react'
+import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react'
 
 export default function Navigation({ currentPage = 'home' }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -15,7 +15,7 @@ export default function Navigation({ currentPage = 'home' }) {
     <header className="max-w-[90%] mx-auto rounded-xl bg-white/90 backdrop-blur-sm sticky top-8 z-[100] shadow-sm relative">
       <div className="mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 cursor-pointer">
-          <ChartNoAxesGantt className="h-8 w-8 text-slate-950" />
+          <img src="/goVisibi-icon.svg" alt="VISIBI Logo" className="h-8 w-8" />
           <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
         </Link>
 
