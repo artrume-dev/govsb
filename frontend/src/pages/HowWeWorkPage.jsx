@@ -193,28 +193,24 @@ export default function HowWeWorkPage() {
           </section>
 
           {/* Process */}
-          <section className="py-12 mb-12">
-            <div className="max-w-4xl mx-auto md:px-16">
-              <div className="text-left mb-12">
-                <h2 className="font-inter font-medium text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
+          <section className="py-12 mb-12 border-t border-slate-200">
+            <div className="max-w-7xl mx-auto md:px-16">
+              <div className="text-center mb-12">
+                <h2 className="font-open-sans font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
                   Our Client Process
                 </h2>
                 <p className="font-open-sans text-xl leading-[1.5] text-slate-950">
                   From first conversation to ongoing optimization—here's what working with VISIBI looks like.
                 </p>
               </div>
-              <div className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6 pattern-background p-4 border-slate-300 border">
                 {processSteps.map((step, index) => (
-                  <div key={index} className="flex gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-slate-950 text-white rounded-full flex items-center justify-center font-inter font-semibold text-md">
-                        {index + 1}
-                      </div>
+                  <div key={index} className="bg-white border border-slate-300 p-8">
+                    <div className="w-12 h-12 bg-slate-950 text-white rounded-full flex items-center justify-center font-inter font-semibold text-md mb-6">
+                      {index + 1}
                     </div>
-                    <div className="flex-1 border border-slate-300 rounded-xl p-6">
-                      <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-2 uppercase">{step.phase}</h3>
-                      <p className="font-open-sans text-md leading-[1.5] text-slate-950">{step.description}</p>
-                    </div>
+                    <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">{step.phase}</h3>
+                    <p className="font-open-sans text-md leading-[1.5] text-slate-950">{step.description}</p>
                   </div>
                 ))}
               </div>
@@ -259,21 +255,21 @@ export default function HowWeWorkPage() {
           </section>
 
           {/* FAQ */}
-          <section className="py-12 mb-12 border-t border-slate-200">
+          <section className="py-24 mb-12 border-t border-slate-200">
             <div className="max-w-4xl mx-auto md:px-16">
-              <div className="text-left mb-12">
-                <h2 className="font-inter font-medium text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
+              <div className="text-center mb-12">
+                <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
                   Frequently Asked Questions
                 </h2>
               </div>
               <div className="space-y-4">
                 {faqs.map((faq, index) => (
-                  <div key={index} className="bg-white border border-slate-300 rounded-xl overflow-hidden">
+                  <div key={index} className="bg-white border border-slate-300 overflow-hidden">
                     <button
                       onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
                       className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                     >
-                      <h3 className="font-space-mono font-normal text-lg text-slate-950 uppercase pr-4">{faq.question}</h3>
+                      <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">{faq.question}</h3>
                       {openFaqIndex === index ? (
                         <ChevronUp className="w-5 h-5 text-slate-950 flex-shrink-0" />
                       ) : (
@@ -282,7 +278,7 @@ export default function HowWeWorkPage() {
                     </button>
                     {openFaqIndex === index && (
                       <div className="px-8 pb-6">
-                        <p className="font-open-sans text-md leading-[1.5] text-slate-950">{faq.answer}</p>
+                        <p className="font-open-sans text-md md:leading-[1.7] my-8 text-slate-950">{faq.answer}</p>
                       </div>
                     )}
                   </div>
@@ -292,16 +288,17 @@ export default function HowWeWorkPage() {
           </section>
 
           {/* CTA */}
-          <section className="py-12 mb-12 border-t border-slate-200">
-            <div className="max-w-4xl mx-auto md:px-16 text-center">
-              <h2 className="font-inter font-medium text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
+          <section className="py-24 mb-12 border-t border-slate-200">
+            <div className="max-w-3xl mx-auto md:px-16 text-center">
+              <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
                 Ready to Work Together?
               </h2>
               <p className="font-open-sans text-xl leading-[1.5] text-slate-950 mb-8">
                 Let's discuss your AI visibility goals and explore whether VISIBI is the right partner for your brand.
               </p>
               <Link to="/">
-                <Button className="inline-flex items-center px-8 py-3 bg-slate-950 text-white rounded-full font-medium hover:bg-slate-800 transition-colors">
+                <Button
+                className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
                   Start a Conversation
                 </Button>
               </Link>
