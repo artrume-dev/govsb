@@ -50,8 +50,9 @@ export default function Navigation({ currentPage = 'home' }) {
             </button>
 
             {consultingDropdownOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[332px] z-[150]">
-                <div className="bg-white border border-slate-200 rounded-lg shadow-xl mt-2">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[332px] z-[150]">
+                <div className="h-2"></div>
+                <div className="bg-white border border-slate-200 rounded-lg shadow-xl">
                   <div className="py-2">
                     <Link
                       to="/geo"
@@ -115,8 +116,9 @@ export default function Navigation({ currentPage = 'home' }) {
             </button>
 
             {platformDropdownOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[332px] z-[150]">
-                <div className="bg-white border border-slate-200 rounded-lg shadow-xl mt-2">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-[332px] z-[150]">
+                <div className="h-2"></div>
+                <div className="bg-white border border-slate-200 rounded-lg shadow-xl">
                   <div className="py-2">
                     <Link
                       to="/tool"
