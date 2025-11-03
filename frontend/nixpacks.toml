@@ -2,10 +2,11 @@
 nixPkgs = ["nodejs-18_x"]
 
 [phases.install]
-cmds = ["npm ci"]
+cmds = ["npm ci --omit=dev"]
 
-[phases.build]
-cmds = ["npm run build"]
+# Skip build phase - GitHub Actions already pre-rendered the files
+# [phases.build]
+# cmds = ["npm run build"]
 
 [start]
 cmd = "npm run serve"

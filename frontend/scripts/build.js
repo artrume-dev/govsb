@@ -97,6 +97,20 @@ async function build() {
     await runCommand('npm', ['run', 'build:csr']);
     log('✓ Vite build completed successfully!', colors.green);
 
+    // Check if running on Railway - skip pre-rendering to avoid timeout
+    if (process.env.RAILWAY_ENVIRONMENT || process.env.RAILWAY_SERVICE_NAME) {
+      log('\n========================================', colors.yellow);
+      log('⚠️  RAILWAY DETECTED: Skipping pre-rendering', colors.yellow);
+      log('========================================', colors.yellow);
+      log('   SSG disabled on Railway to avoid build timeout', colors.yellow);
+      log('   Pages will use Client-Side Rendering (CSR)', colors.yellow);
+      log('   SEO meta tags still work via React Helmet', colors.yellow);
+      log('\n========================================', colors.green);
+      log('✓ BUILD COMPLETED (CSR MODE)', colors.green);
+      log('========================================', colors.green);
+      return;
+    }
+
     // Step 2: Start preview server
     log('\n========================================', colors.cyan);
     log('STEP 2: Starting preview server', colors.cyan);
