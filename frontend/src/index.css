@@ -65,7 +65,6 @@
     --pattern-fg: #1d4ed81A; /* Blue with 10% opacity */
 }
 
-
 .pattern-background {
     background-image: repeating-linear-gradient(315deg, var(--pattern-fg) 0, var(--pattern-fg) 1px, transparent 0, transparent 50%);
     background-size: 10px 10px;
