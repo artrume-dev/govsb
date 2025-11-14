@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
 import ComingSoon from './pages/ComingSoon'
 import AboutPage from './pages/AboutPage'
 import GEOPage from './pages/GEOPage'
@@ -13,7 +14,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<ComingSoon />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/geo" element={<GEOPage />} />
         <Route path="/seo" element={<SEOPage />} />
