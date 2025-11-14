@@ -229,7 +229,7 @@ export default function InsightsPage() {
       </main>
 
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl">
+      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
@@ -239,6 +239,25 @@ export default function InsightsPage() {
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
               Track and manage your brand's presence across leading AI platforms.
             </p>
+                        <div className="flex gap-6">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
+              >
+                Github
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
+              >
+                LinkedIn
+              </a>
+            </div>
+            
           </div>
           <div className="space-y-8">
             <div>

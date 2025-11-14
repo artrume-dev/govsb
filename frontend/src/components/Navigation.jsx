@@ -12,11 +12,11 @@ export default function Navigation({ currentPage = 'home' }) {
   const isActive = (page) => currentPage === page
 
   return (
-    <header className="max-w-[90%] mx-auto rounded-xl bg-white/90 backdrop-blur-sm sticky top-8 z-[100] shadow-sm relative">
+    <header className="max-w-[90%] mx-auto rounded-xl bg-white/90 backdrop-blur-sm sticky top-4 z-[100] shadow-sm relative">
       <div className="mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 cursor-pointer">
-          <img src="/goVisibi-icon.svg" alt="VISIBI Logo" className="h-8 w-8" />
-          <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
+        <Link to="/" className="flex items-center gap-1 cursor-pointer">
+          <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-6 w-6" />
+          <span className="text-xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -166,9 +166,19 @@ export default function Navigation({ currentPage = 'home' }) {
                 : 'text-slate-900 hover:text-blue-600'
             }`}
           >
-            About 
+            About
           </Link>
 
+          <Link
+            to="/contact"
+            className={`text-sm font-medium px-6 py-2 rounded-full transition-colors ${
+              isActive('contact')
+                ? 'bg-blue-700 text-white'
+                : 'bg-slate-950 text-white hover:bg-blue-700'
+            }`}
+          >
+            Contact
+          </Link>
 
         </nav>
 
@@ -317,6 +327,18 @@ export default function Navigation({ currentPage = 'home' }) {
               }`}
             >
               About
+            </Link>
+
+            <Link
+              to="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`text-base font-medium px-6 py-3 rounded-full transition-colors text-center ${
+                isActive('contact')
+                  ? 'bg-blue-700 text-white'
+                  : 'bg-slate-950 text-white hover:bg-blue-700'
+              }`}
+            >
+              Contact
             </Link>
           </nav>
         </div>

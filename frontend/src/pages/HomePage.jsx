@@ -1,14 +1,20 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import {
   Sparkles, ArrowRight, Database, Search, Users, Shield, Heart,
   BarChart3, Workflow, Award, Bot, BrainCircuit, FileText,
-  Link2, GraduationCap, Settings, ChevronDown, ChevronUp
+  Link2, GraduationCap, Settings, ChevronDown, ChevronUp,
+  Speaker, MessageSquareMore, Check, Zap,
+  ArrowLeft
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Alert, AlertDescription } from '@/components/ui/alert'
+import { Badge } from '@/components/ui/badge'
 import Navigation from '@/components/Navigation'
+import QueryCustomizer from '@/components/QueryCustomizer'
 
 export default function HomePage() {
   useEffect(() => {
@@ -16,8 +22,103 @@ export default function HomePage() {
   }, [])
 
   const [openFaqIndex, setOpenFaqIndex] = useState(null)
+  const [step, setStep] = useState(1)
+  const [brandUrl, setBrandUrl] = useState('')
+  const [email, setEmail] = useState('')
+  const [customQueries, setCustomQueries] = useState(null)
+  const [customKeywords, setCustomKeywords] = useState(null)
+  const [showAdvanced, setShowAdvanced] = useState(true)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [preview, setPreview] = useState(null)
+  const inputRef = useRef(null)
+  const mainSectionRef = useRef(null)
 
   const aiEngines = ['ChatGPT', 'Gemini', 'Claude', 'Bing Copilot', 'Perplexity', 'Mistral', 'Grok']
+
+  const handleUrlSubmit = (e) => {
+    e.preventDefault()
+    if (!brandUrl.trim()) {
+      setError('Please enter a valid URL')
+      return
+    }
+
+    let formattedUrl = brandUrl.trim()
+    if (!formattedUrl.match(/^https?:\/\//i)) {
+      formattedUrl = 'https://' + formattedUrl
+      setBrandUrl(formattedUrl)
+    }
+
+    setError('')
+    setStep(2)
+  }
+
+  const handleEmailSubmit = async (e) => {
+    e.preventDefault()
+
+    if (!email.trim() || !email.includes('@')) {
+      setError('Please enter a valid email address')
+      return
+    }
+
+    setLoading(true)
+    setError('')
+
+    try {
+      // TEMPORARY: Skip OpenAI analysis, just send email notification
+      // Use simplified brand-analysis endpoint instead of waitlist endpoint
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+      const response = await fetch(`${apiUrl}/api/brand-analysis`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          brand_url: brandUrl,
+          email: email,
+          custom_queries: customQueries,
+          custom_keywords: customKeywords,
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to submit brand analysis request')
+      }
+
+      const data = await response.json()
+
+      // Set a simple preview object without OpenAI data
+      setPreview({
+        brand_name: brandUrl.replace(/^https?:\/\/(www\.)?/, '').split('/')[0],
+        mentions: '-',
+        citations: '-',
+        visibility: '-',
+        sentiment: 'PENDING'
+      })
+      setStep(3)
+    } catch (err) {
+      setError(err.message || 'Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const resetForm = () => {
+    setStep(1)
+    setBrandUrl('')
+    setEmail('')
+    setCustomQueries(null)
+    setCustomKeywords(null)
+    setPreview(null)
+    setError('')
+  }
+
+  const scrollToForm = () => {
+    mainSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    setTimeout(() => {
+      inputRef.current?.focus()
+    }, 500)
+  }
 
   const geoMeans = [
     {
@@ -171,17 +272,17 @@ export default function HomePage() {
       <Navigation currentPage="home" />
 
       {/* Hero */}
-      <section className="max-w-[90%] mx-auto items-center lg:px-[5rem] mb-0 mt-12 relative bg-white border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200">
+      <section className="max-w-[90%] mx-auto items-left lg:px-[5rem] mb-0 mt-12 relative bg-white border border-b border-slate-200 rounded-xl rounded-bl-none rounded-br-none">
         <div className="lg:block h-full w-full">
-          <div className="relative z-10 py-24 flex flex-col items-center gap-8 border-l border-r border-slate-200">
-            <div className="max-w-4xl px-16 space-y-8 text-center">
+          <div className="relative z-10 py-24 flex flex-col items-left gap-8 border-l border-r border-slate-200">
+            <div className="max-w-4xl px-16 space-y-8 text-left">
               <h1 className="font-open-sans text-4xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
                 Generative Engine Optimisation (GEO): Visibility That Moves Beyond Search
               </h1>
               <h2 className="text-md md:text-xl md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
                 We optimise your brand for the new discovery layer, where platforms like ChatGPT, Gemini, and Perplexity determine which businesses to recommend. VISIBI ensures your content is visible, accurately interpreted, and positively referenced by Gen AI systems.
               </h2>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-left">
                 <Link to="/tool">
                   <Button className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
                     <Sparkles className="w-5 h-5 mr-2" />
@@ -201,9 +302,9 @@ export default function HomePage() {
       </section>
 
       {/* AI Engines Marquee */}
-      <section className="max-w-[90%] mx-auto bg-white border-l border-r border-slate-300 py-16">
+      <section className="max-w-[90%] mx-auto bg-white border-l border-r border-b border-slate-200 py-16">
         <div className="px-4 lg:px-8">
-          <p className="font-space-mono text-sm text-gray-600 text-center mb-8 uppercase tracking-wide">
+          <p className="font-space-mono text-sm text-slate-950 text-center mb-8 uppercase tracking-wide">
             Visible where decisions start
           </p>
 
@@ -232,6 +333,230 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Brand Analysis Section */}
+      <main ref={mainSectionRef} className="max-w-[90%] mx-auto px-8 py-12 relative z-10 bg-white border-l border-r border-slate-300 mb-2">
+        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
+        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background"></div>
+
+        {step === 1 && (
+          <div className="space-y-8">
+            <Card className="max-w-4xl mx-auto border-0 shadow-none bg-white">
+              <CardHeader className="text-center">
+                <CardTitle className="font-open-sans text-slate-950 font-semibold text-3xl">Request Gen AI visibility audit - Free <span className='text-blue-700'><Sparkles size={10} strokeWidth={1.25} className="inline-block h-6 w-6 text-blue-700" /></span></CardTitle>
+                <CardDescription className="font-open-sans text-lg">
+                  Enter your brand URL to get started
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleUrlSubmit} className="space-y-4">
+                  <div className="flex gap-3 md:flex-row flex-col">
+                    <Input
+                      ref={inputRef}
+                      type="text"
+                      placeholder="www.yourbrand.com or yourbrand.com"
+                      value={brandUrl}
+                      onChange={(e) => setBrandUrl(e.target.value)}
+                      className="flex-1 h-14 px-8 text-md font-space-mono placeholder-blue-500 border-blue-400 bg-slate-200/20 text-blue-700 rounded-full"
+                      required
+                    />
+                    <Button type="submit" size="xl" className="h-14 px-8 bg-blue-700 text-white text-lg font-semibold rounded-full">
+                      Get Analysis
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </div>
+                  {error && (
+                    <Alert variant="destructive">
+                      <AlertDescription>{error}</AlertDescription>
+                    </Alert>
+                  )}
+                </form>
+                <div className="mt-6">
+                  <p className="text-sm text-gray-700 text-center">
+                    Join 100+ brands already monitoring their AI presence
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
+        {step === 2 && (
+          <div className="mx-auto space-y-6 max-w-7xl">
+            <Card className="bg-white border-0 max-w-4xl mx-auto">
+              <CardHeader className="text-center mb-8">
+                <CardTitle className="text-2xl font-open-sans font-semibold">Request Gen AI visibility audit - <span className='text-blue-700'>Free</span> <Sparkles size={10} strokeWidth={1.25} className="inline-block h-6 w-6 text-blue-700" /></CardTitle>
+                <CardDescription className="font-open-sans text-slate-950 text-base">
+                  Add Custome queries or keywords (optional) and enter your email to get your free analysis
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleEmailSubmit} className="space-y-4">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium font-space-mono">Brand URL</label>
+                    <div className="flex items-center gap-2 p-3 bg-green-50 rounded-lg">
+                      <Check className="h-4 w-4 text-green-500" />
+                      <span className="text-sm text-gray-700 font-space-mono">{brandUrl}</span>
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => setStep(1)}
+                        className="ml-auto"
+                      >
+                        Change
+                      </Button>
+                    </div>
+                  </div>
+
+                  {customQueries && customQueries.length > 0 && (
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium font-space-mono">Custom Questions ({customQueries.length})</label>
+                      <div className="space-y-2 p-3 bg-purple-50 rounded-lg">
+                        {customQueries.map((query, index) => (
+                          <div
+                            key={index}
+                            className="text-sm p-2 bg-white rounded border border-purple-200 font-space-mono"
+                          >
+                            {query}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {customKeywords && customKeywords.length > 0 && (
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium font-space-mono">Added Keywords ({customKeywords.length})</label>
+                      <div className="flex flex-wrap gap-2 p-3 bg-green-50 rounded-lg">
+                        {customKeywords.map((keyword, index) => (
+                          <Badge
+                            key={index}
+                            variant="outline"
+                            className="bg-white"
+                          >
+                            {keyword}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="border border-slate-100">
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="lg"
+                      onClick={() => setShowAdvanced(!showAdvanced)}
+                      className="w-full justify-between text-muted-foreground hover:text-foreground rounded-none py-2 px-4"
+                    >
+                      <span className="flex items-center gap-2 font-space-mono text-slate-950">
+                        <Zap className="h-4 w-4" />
+                         Advanced Options (Custom Queries & Keywords)
+                      </span>
+                      {showAdvanced ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                    </Button>
+
+                    {showAdvanced && (
+                      <div className="mt-4">
+                        <QueryCustomizer
+                          onQueriesChange={setCustomQueries}
+                          onKeywordsChange={setCustomKeywords}
+                        />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium font-space-mono">Email Address</label>
+                    <Input
+                      type="email"
+                      placeholder="you@company.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="h-12 text-lg bg-white placeholder-gray-500 border-gray-300 font-space-mono text-sm"
+                      required
+                    />
+                  </div>
+
+                  <div className="flex gap-3 pt-4">
+                    
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="lg"
+                      className="flex-1 h-12 rounded-3xl"
+                      onClick={() => setStep(1)}
+                    >
+                      <ArrowLeft className="mr-2 h-5 w-5" />Back
+                    </Button>
+                    
+                    <Button type="submit" size="lg" className="flex-1 h-12 rounded-3xl bg-blue-700 text-white" disabled={loading}>
+                      {loading ? 'Analyzing...' : 'Get my Free Analysis'}
+                      {!loading && <ArrowRight className="ml-2 h-5 w-5" />}
+                    </Button>
+                  </div>
+
+                  {error && (
+                    <Alert variant="destructive">
+                      <AlertDescription>{error}</AlertDescription>
+                    </Alert>
+                  )}
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
+        {step === 3 && preview && (
+          <div className="max-w-4xl mx-auto space-y-8">
+            <Card className="bg-white border-2 border-blue-700">
+              <CardHeader className="text-center py-12">
+                <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Check className="h-10 w-10 text-blue-700" />
+                </div>
+                <CardTitle className="text-3xl font-open-sans font-semibold text-slate-950 mb-4">
+                  Thank You!
+                </CardTitle>
+                <CardDescription className="text-lg text-gray-700 font-open-sans max-w-2xl mx-auto">
+                  We've received your request for <strong className="font-semibold text-blue-700">{preview.brand_name}</strong>.
+                  Our team will analyze your brand's AI visibility and send a detailed report to <strong className="font-semibold text-blue-700">{email}</strong> within 24-48 hours.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="text-center pb-8">
+                <div className="space-y-4 mb-8">
+                  <h4 className="font-space-mono text-sm uppercase text-slate-950 font-semibold">What's included in your report:</h4>
+                  <ul className="text-left max-w-md mx-auto space-y-3 font-open-sans text-md text-slate-950">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" />
+                      <span>AI visibility analysis across ChatGPT, Gemini, Perplexity</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" />
+                      <span>Brand mention frequency and sentiment analysis</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" />
+                      <span>Competitive positioning insights</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" />
+                      <span>Actionable recommendations for improvement</span>
+                    </li>
+                  </ul>
+                </div>
+                <button
+                  onClick={resetForm}
+                  className="inline-flex items-center px-6 py-3 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors"
+                >
+                  Analyse Another Brand
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </button>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+      </main>
+
       {/* Main Content */}
       <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-2">
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
@@ -239,7 +564,7 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto">
           {/* The Gen AI Search Revolution */}
-          <section className="py-24 mb-12 border-b border-slate-200">
+          <section className="py-16 mb-12 border-b border-slate-200">
             <div className="max-w-4xl mx-auto md:px-16">
               <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-8">
                 The Gen AI Search Revolution
@@ -259,7 +584,7 @@ export default function HomePage() {
           </section>
 
           {/* What GEO Really Means */}
-          <section className="py-24 mb-12 border-b border-slate-200">
+          <section className="py-16 mb-12 border-b border-slate-200 mx-auto">
             <div className="max-w-7xl mx-auto md:px-16">
               <div className="text-center mb-12">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
@@ -292,7 +617,7 @@ export default function HomePage() {
           </section>
 
           {/* Core Services */}
-          <section className="py-24 mb-12 border-b border-slate-200">
+          <section className="py-16 mb-12">
             <div className="max-w-7xl mx-auto md:px-16">
               <div className="text-center mb-12">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
@@ -337,18 +662,19 @@ export default function HomePage() {
           </section>
 
           {/* CTA Divider */}
-          <section className="py-8 border-b border-slate-200">
+          <section className="pt-0 pb-16 border-b border-slate-200 mx-auto">
             <div className="text-center">
               <Link to="/how-we-work">
-                <Button className="inline-flex items-center px-6 py-3 bg-white text-slate-950 border border-slate-950 rounded-full font-medium hover:bg-slate-950 hover:text-white transition-colors">
+                <Button className="inline-flex items-center px-6 py-6 bg-white text-slate-950 border border-slate-950 rounded-full font-medium hover:bg-slate-950 hover:text-white transition-colors">
                   Learn more about our strategies
+                  <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
             </div>
           </section>
 
           {/* Why VISIBI */}
-          <section className="py-24 mb-12 border-b border-slate-200">
+          <section className="py-24 mb-12">
             <div className="max-w-7xl mx-auto md:px-16">
               <div className="text-center mb-12">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
@@ -378,11 +704,12 @@ export default function HomePage() {
           </section>
 
           {/* CTA Divider */}
-          <section className="py-8 border-b border-slate-200">
+          <section className="py-16 border-b border-slate-200">
             <div className="text-center">
               <Link to="/tool">
-                <Button className="inline-flex items-center px-6 py-3 bg-white text-slate-950 border border-slate-950 rounded-full font-medium hover:bg-slate-950 hover:text-white transition-colors">
+                <Button className="inline-flex items-center px-6 py-6 bg-white text-slate-950 border border-slate-950 rounded-full font-medium hover:bg-slate-950 hover:text-white transition-colors">
                   Talk to our GEO Experts
+                   <MessageSquareMore className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
             </div>
@@ -426,6 +753,7 @@ export default function HomePage() {
                 <Link to="/insights">
                   <Button className="inline-flex items-center px-6 py-3 bg-white text-slate-950 border border-slate-300 rounded-full font-medium hover:bg-slate-50 transition-colors">
                     View All Insights
+                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </Link>
               </div>
@@ -500,7 +828,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl">
+      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl rounded-tl-none rounded-tr-none mb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
@@ -511,10 +839,10 @@ export default function HomePage() {
               Track and manage your brand's presence across leading AI platforms.
             </p>
             <div className="flex gap-6">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+              <a href="https://github.com" className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide">
                 Github
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+              <a href="https://linkedin.com" className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide">
                 LinkedIn
               </a>
             </div>

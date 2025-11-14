@@ -1,61 +1,56 @@
 [
   {
     "email": "spacegigx@gmail.com",
-    "brand_url": "https://canon.co.uk",
+    "brand_url": "https://figma.com",
     "created_at": "2025-10-20T21:20:37.539907",
     "status": "pending",
     "preview_data": {
-      "brand_name": "Canon",
+      "brand_name": "Figma",
       "sentiment": "POSITIVE",
       "mentions": 7,
-      "citations": 74,
-      "visibility": 87.5,
-      "sample_query": "best camera for street photography",
-      "sample_response": "Choosing the best camera for street photography depends on various factors, including your budget, preferred shooting style, and specific features you value. Here are some highly regarded options across different categories:\n\n### Mirrorless Cameras\n1. **Fujifilm X100V**\n   - Compact and lightweight\n   - Fixed 23mm f/2 lens (equivalent to 35mm)\n   - Excellent image quality and color rendition\n   - Hybrid viewfinder (optical and electronic)\n   - Film simulation modes for creative shooting\n\n2. **Sony A7C**\n   - Full-frame sensor in a compact body\n   - Versatile with interchangeable lenses\n   - Excellent autofocus and low-light performance\n   - Good battery life for long shooting sessions\n\n3. **Ricoh GR III**\n   - Extremely compact and lightweight\n   - Fixed 28mm f/2.8 lens (equivalent to 28mm)\n   - Great image quality and sharpness\n   - Fast startup time and quick autofocus\n   - Ideal for discreet shooting\n\n### DSLRs\n4. **Nikon D7500**\n   - Good balance of size, weight, and performance\n   - Versatile with a wide range of compatible lenses\n   - Excellent low-light performance\n   - Reliable autofocus system\n\n5. **Canon EOS Rebel T8i (EOS 850D)**\n   - Great entry-level DSLR for beginners\n   - Good image quality and decent autofocus\n   - Vari-angle touchscreen for creative angles\n\n### Compact Cameras\n6. **Sony RX100 VII**\n   - Pocket-sized with a 1-inch sensor\n   - Versatile zoom range (24-200mm equivalent)\n   - Fast autofocus and good low-light performance\n   - Great for candid shots without drawing attention\n\n### Additional Considerations\n- **Lenses:** If you're using a mirrorless or DSLR camera, consider investing in prime lenses (like a 35mm or 50mm) for sharpness and low-light capabilities.\n- **Size and Weight:** Street photography often requires you to be discreet and mobile, so a compact camera or a lightweight mirrorless system might be more convenient.\n- **Discretion:** Cameras that don\u2019t draw attention (like compacts or rangefinders) can be beneficial for candid shots.\n- **Autofocus and Burst Mode:** Fast autofocus and burst shooting capabilities can help capture fleeting moments.\n\nUltimately, the best camera is one that fits your personal style and allows you to capture",
+      "citations": 83,
+      "visibility": 100.0,
+      "sample_query": "What is best UI design tool for web",
+      "sample_response": "The best UI design tool for web design can vary based on your specific needs, preferences, and the type of project you are working on. However, as of my last knowledge update in October 2023, here are some of the most popular and widely regarded UI design tools for web design:\n\n1. **Figma**: \n   - A cloud-based design tool that allows for real-time collaboration. It's great for UI/UX design, prototyping, and feedback. Figma's vector graphics capabilities and extensive plugin ecosystem make it a favorite among designers.\n\n2. **Adobe XD**:\n   - Part of the Adobe Creative Cloud, XD is designed for wireframing, UI design, and prototyping. It integrates well with other Adobe products and offers collaboration features.\n\n3. **Sketch**:\n   - A vector graphics editor for macOS that has become a standard in UI/UX design. It offers a wide range of plugins and is ideal for designing interfaces and prototypes.\n\n4. **InVision**:\n   - Primarily a prototyping tool, InVision allows designers to create interactive mockups for web and mobile applications. It also offers collaboration features and integrates with other design tools.\n\n5. **Axure RP**:\n   - A powerful tool for creating wireframes and interactive prototypes. It offers advanced features for creating complex interactions and is often used for larger projects.\n\n6. **Webflow**:\n   - A design tool that allows designers to create responsive websites visually, without needing to write code. It combines design, CMS, and hosting in one platform.\n\n7. **Canva**:\n   - While more focused on graphic design, Canva can be useful for creating UI assets and mockups, especially for those who may not have extensive design experience.\n\n8. **Affinity Designer**:\n   - A vector graphic design tool that is a strong alternative to Adobe Illustrator, suitable for creating UI designs and assets.\n\n9. **Marvel**:\n   - A design and prototyping tool that is user-friendly and great for creating simple designs and interactive prototypes quickly.\n\n10. **Protopie**:\n    - A prototyping tool that excels in creating high-fidelity prototypes with complex interactions without requiring any coding.\n\nWhen choosing a UI design tool, consider factors like collaboration features, ease of use, integration with other tools, platform compatibility, and your specific project requirements. Many of these tools offer free trials, so you can test them out before making a decision.",
       "citation_urls": [
         {
-          "query": "best camera for street photography",
-          "url": "https://chat.openai.com/?q=best camera for street photography",
+          "query": "What is best UI design tool for web",
+          "url": "https://chat.openai.com/?q=What is best UI design tool for web",
           "mentioned": true
         },
         {
-          "query": "what lense to choose for sports photography, zoom or prime?",
-          "url": "https://chat.openai.com/?q=what lense to choose for sports photography, zoom ",
-          "mentioned": false
-        },
-        {
-          "query": "How does Canon handle sports?",
-          "url": "https://chat.openai.com/?q=How does Canon handle sports?",
+          "query": "How does Figma handle figma ai?",
+          "url": "https://chat.openai.com/?q=How does Figma handle figma ai?",
           "mentioned": true
         },
         {
-          "query": "What is Canon's approach to sports?",
-          "url": "https://chat.openai.com/?q=What is Canon's approach to sports?",
+          "query": "What is Figma's approach to figma ai?",
+          "url": "https://chat.openai.com/?q=What is Figma's approach to figma ai?",
           "mentioned": true
         },
         {
-          "query": "How does Canon handle lense?",
-          "url": "https://chat.openai.com/?q=How does Canon handle lense?",
+          "query": "How does Figma handle figma API?",
+          "url": "https://chat.openai.com/?q=How does Figma handle figma API?",
           "mentioned": true
         },
         {
-          "query": "What is Canon's approach to lense?",
-          "url": "https://chat.openai.com/?q=What is Canon's approach to lense?",
+          "query": "What is Figma's approach to figma API?",
+          "url": "https://chat.openai.com/?q=What is Figma's approach to figma API?",
           "mentioned": true
         },
         {
-          "query": "How does Canon handle street photography?",
-          "url": "https://chat.openai.com/?q=How does Canon handle street photography?",
+          "query": "How does Figma handle Figma make?",
+          "url": "https://chat.openai.com/?q=How does Figma handle Figma make?",
           "mentioned": true
         },
         {
-          "query": "What is Canon's approach to street photography?",
-          "url": "https://chat.openai.com/?q=What is Canon's approach to street photography?",
+          "query": "What is Figma's approach to Figma make?",
+          "url": "https://chat.openai.com/?q=What is Figma's approach to Figma make?",
           "mentioned": true
         }
       ]
     },
-    "updated_at": "2025-10-26T15:58:13.151297"
+    "updated_at": "2025-11-14T16:44:26.542939"
   },
   {
     "email": "samarm20@gmail.com",

@@ -168,8 +168,8 @@ export default function HowWeWorkPage() {
           <section className="py-24 mb-12 border-b border-slate-200">
             <div className="md:max-w-7xl max-w-full mx-auto md:text-left md:px-16 px-0">
               <div className="mb-12 text-left">
-                <h2 className="text-md md:text-xl md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
-                  What We Value (And Hire For)
+                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
+                  What we value (and hire for)
                 </h2>
                 <p className="font-open-sans text-xl leading-[1.5] text-slate-950 max-w-2xl">
                   These attributes define how we work, make decisions, and partner with clients.
@@ -180,7 +180,7 @@ export default function HowWeWorkPage() {
                   const Icon = attr.icon
                   return (
                     <div key={index} className="bg-white p-8 hover:border-blue-700 transition-all">
-                      <div className="w-12 h-12 bg-white border border-slate-950 rounded-xl flex items-center justify-center mb-6 flex-shrink-0">
+                      <div className="w-12 h-12 bg-white flex items-center justify-center mb-6 flex-shrink-0">
                         <Icon className="w-6 h-6 text-slate-950" />
                       </div>
                       <h3 className="font-space-mono pb-2 text-xl font-normal uppercase text-slate-950 mb-3">{attr.title}</h3>
@@ -206,7 +206,7 @@ export default function HowWeWorkPage() {
               <div className="grid md:grid-cols-2 gap-6 pattern-background p-4 border-slate-300 border">
                 {processSteps.map((step, index) => (
                   <div key={index} className="bg-white border border-slate-300 p-8">
-                    <div className="w-12 h-12 bg-slate-950 text-white rounded-full flex items-center justify-center font-inter font-semibold text-md mb-6">
+                    <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-6">
                       {index + 1}
                     </div>
                     <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">{step.phase}</h3>
@@ -317,7 +317,7 @@ export default function HowWeWorkPage() {
 
 
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl">
+      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
@@ -327,6 +327,26 @@ export default function HowWeWorkPage() {
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
               Track and manage your brand's presence across leading AI platforms.
             </p>
+
+                        <div className="flex gap-6">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
+              >
+                Github
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
+              >
+                LinkedIn
+              </a>
+            </div>
+            
           </div>
           <div className="space-y-8">
             <div>

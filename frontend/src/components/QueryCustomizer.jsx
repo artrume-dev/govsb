@@ -59,15 +59,14 @@ export default function QueryCustomizer({ onQueriesChange, onKeywordsChange }) {
   }
 
   return (
-    <Card>
+    <Card className="bg-white border-0 rounded-none max-w-7xl mx-auto bg-slate-50/30 shadow-none">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle className="flex items-center gap-2">
-              <Sparkles className="h-5 w-5" />
-              Customize Analysis
+            <CardTitle className="flex items-center gap-2 mb-2">
+              Customise Analysis
             </CardTitle>
-            <CardDescription>
+            <CardDescription className="text-xs text-muted-foreground">
               Add your own questions or keywords for deeper insights
             </CardDescription>
           </div>

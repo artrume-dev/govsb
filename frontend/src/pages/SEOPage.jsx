@@ -130,7 +130,7 @@ export default function SEOPage() {
                   const Icon = item.icon
                   return (
                     <div key={index} className="bg-white border-0 border-slate-300 p-8">
-                      <Icon size={32} strokeWidth={1.25} className="text-blue-700 mb-4" />
+                      <Icon size={32} strokeWidth={1.25} className="text-slate-950 mb-4" />
                       <h3 className="font-space-mono pb-2 text-xl font-normal uppercase text-slate-950 mb-3">{item.title}</h3>
                       <p className="font-open-sans text-md text-slate-950">{item.description}</p>
                     </div>
@@ -160,7 +160,7 @@ export default function SEOPage() {
                     
                     <div className="flex-1 bg-white p-6 mb-4 border border-slate-300">
                       <div className="flex-shrink-0">
-                      <div className="w-12 h-12 border border-blue-700 text-blue-700 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-4">
+                      <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-4">
                         {index + 1}
                       </div>
                     </div>
@@ -242,7 +242,7 @@ export default function SEOPage() {
       </main>
 
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl">
+      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
@@ -252,6 +252,24 @@ export default function SEOPage() {
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
               Track and manage your brand's presence across leading AI platforms.
             </p>
+                        <div className="flex gap-6">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
+              >
+                Github
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
           <div className="space-y-8">
             <div>

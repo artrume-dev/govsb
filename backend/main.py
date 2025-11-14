@@ -30,7 +30,11 @@ from backend.models.schemas import (
     HistoryResponse,
     WaitlistRequest,
     WaitlistResponse,
-    PreviewData
+    PreviewData,
+    ContactRequest,
+    ContactResponse,
+    BrandAnalysisRequest,
+    BrandAnalysisResponse
 )
 
 try:
@@ -475,6 +479,122 @@ async def get_waitlist_stats():
         "message": "Waitlist statistics",
         **stats
     }
+
+
+@app.post("/api/send-email", response_model=ContactResponse, tags=["Contact"])
+async def send_contact_email(request: ContactRequest):
+    """
+    Send contact form email
+
+    This endpoint:
+    1. Validates contact form data
+    2. Sends confirmation email to user
+    3. Sends notification email to admin (spacegigx@gmail.com)
+    4. Returns success response
+    """
+    try:
+        # Validate email format
+        if not request.email or '@' not in request.email:
+            raise HTTPException(status_code=400, detail="Invalid email address")
+
+        # Send confirmation email to user
+        try:
+            email_service.send_contact_confirmation(
+                to_email=request.email,
+                name=request.name
+            )
+        except Exception as e:
+            print(f"Warning: Failed to send confirmation email: {e}")
+
+        # Send notification to admin
+        admin_email = os.getenv('ADMIN_EMAIL', 'spacegigx@gmail.com')
+        try:
+            email_service.send_contact_notification(
+                admin_email=admin_email,
+                name=request.name,
+                company=request.company,
+                user_email=request.email,
+                topic=request.topic,
+                message=request.message
+            )
+        except Exception as e:
+            print(f"Warning: Failed to send admin notification: {e}")
+
+        return ContactResponse(
+            message="Thank you for your message! We'll respond within 24 hours.",
+            email=request.email
+        )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        import traceback
+        print(f"ERROR in contact endpoint: {str(e)}")
+        print(traceback.format_exc())
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to send contact message: {str(e)}"
+        )
+
+
+@app.post("/api/brand-analysis", response_model=BrandAnalysisResponse, tags=["Brand Analysis"])
+async def submit_brand_analysis(request: BrandAnalysisRequest):
+    """
+    Submit brand analysis request (simplified - no OpenAI, just sends email)
+
+    This endpoint:
+    1. Validates form data
+    2. Sends confirmation email to user
+    3. Sends notification email to admin with form details
+    4. Returns success response
+    """
+    try:
+        # Validate email format
+        if not request.email or '@' not in request.email:
+            raise HTTPException(status_code=400, detail="Invalid email address")
+
+        # Validate brand URL
+        if not request.brand_url:
+            raise HTTPException(status_code=400, detail="Brand URL is required")
+
+        # Send confirmation email to user
+        try:
+            email_service.send_brand_analysis_confirmation(
+                to_email=request.email,
+                brand_url=request.brand_url
+            )
+        except Exception as e:
+            print(f"Warning: Failed to send confirmation email: {e}")
+
+        # Send notification to admin
+        admin_email = os.getenv('ADMIN_EMAIL', 'spacegigx@gmail.com')
+        try:
+            email_service.send_brand_analysis_notification(
+                admin_email=admin_email,
+                brand_url=request.brand_url,
+                user_email=request.email,
+                custom_queries=request.custom_queries,
+                custom_keywords=request.custom_keywords
+            )
+        except Exception as e:
+            print(f"Warning: Failed to send admin notification: {e}")
+
+        return BrandAnalysisResponse(
+            message="Thank you! We'll send your brand analysis report to your email within 24-48 hours.",
+            email=request.email,
+            brand_url=request.brand_url
+        )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        import traceback
+        print(f"ERROR in brand analysis endpoint: {str(e)}")
+        print(traceback.format_exc())
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to submit brand analysis request: {str(e)}"
+        )
 
 
 # Startup event

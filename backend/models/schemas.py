@@ -255,3 +255,71 @@ class WaitlistResponse(BaseModel):
                 }
             }
         }
+
+
+class ContactRequest(BaseModel):
+    """Schema for contact form submission"""
+    name: str
+    company: str
+    email: str
+    topic: str
+    message: str
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "name": "John Doe",
+                "company": "Acme Corp",
+                "email": "john@acme.com",
+                "topic": "geo",
+                "message": "I'm interested in learning more about GEO services."
+            }
+        }
+
+
+class ContactResponse(BaseModel):
+    """Schema for contact form response"""
+    message: str
+    email: str
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "message": "Thank you for your message! We'll respond within 24 hours.",
+                "email": "john@acme.com"
+            }
+        }
+
+
+class BrandAnalysisRequest(BaseModel):
+    """Schema for brand analysis form submission (simplified)"""
+    brand_url: str
+    email: str
+    custom_queries: Optional[List[str]] = None
+    custom_keywords: Optional[List[str]] = None
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "brand_url": "https://www.example.com",
+                "email": "user@example.com",
+                "custom_queries": ["What do you think about Example?"],
+                "custom_keywords": ["AI", "visibility"]
+            }
+        }
+
+
+class BrandAnalysisResponse(BaseModel):
+    """Schema for brand analysis response"""
+    message: str
+    email: str
+    brand_url: str
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "message": "Thank you! We'll send your brand analysis report soon.",
+                "email": "user@example.com",
+                "brand_url": "https://www.example.com"
+            }
+        }

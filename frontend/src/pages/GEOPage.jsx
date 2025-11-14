@@ -122,7 +122,7 @@ export default function GEOPage() {
           <section className="py-24 mb-12 border-t border-b border-slate-200">
             <div className="md:max-w-7xl max-w-full mx-auto md:text-left md:px-16 px-0">
               <div className="mb-12 text-left">
-                <h2 className="font-inter font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
+                <h2 className="font-open-sans font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
                   The VISIBI GEO Framework
                 </h2>
                 <p className="font-open-sans text-xl leading-[1.5] text-slate-950 max-w-2xl">
@@ -134,7 +134,7 @@ export default function GEOPage() {
                   const Icon = item.icon
                   return (
                     <div key={index} className="bg-white border-0 border-slate-300 p-8">
-                      <Icon size={32} strokeWidth={1.25} className="text-blue-700 mb-4" />
+                      <Icon size={32} strokeWidth={1.25} className="text-slate-950 mb-4" />
                       <h3 className="font-space-mono pb-2 text-xl font-normal uppercase text-slate-950 mb-3">{item.title}</h3>
                       <p className="font-open-sans text-md text-slate-950">{item.description}</p>
                     </div>
@@ -148,7 +148,7 @@ export default function GEOPage() {
           <section className="py-12 mb-12">
             <div className="max-w-4xl mx-auto md:px-16">
               <div className="text-left mb-12">
-                <h2 className="font-inter font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
+                <h2 className="font-open-sans font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
                   SEO vs GEO: Understanding the Difference
                 </h2>
               </div>
@@ -210,7 +210,7 @@ export default function GEOPage() {
       </main>
 
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl">
+      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
@@ -220,6 +220,26 @@ export default function GEOPage() {
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
               Track and manage your brand's presence across leading AI platforms.
             </p>
+
+                        <div className="flex gap-6">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
+              >
+                Github
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
+              >
+                LinkedIn
+              </a>
+            </div>
+            
           </div>
           <div className="space-y-8">
             <div>

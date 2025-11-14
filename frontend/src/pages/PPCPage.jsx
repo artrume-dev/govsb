@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { Search, Share2, Briefcase, Video, Target, TrendingUp, Zap, Activity, Sparkles } from 'lucide-react'
+import { Search, Share2, Briefcase, Video, Target, TrendingUp, Zap, Activity, Sparkles, } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Navigation from '@/components/Navigation'
@@ -77,28 +77,28 @@ export default function PPCPage() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 border-slate-300 border transition-colors pattern-background">
                 <div className="bg-white p-8 hover:border-blue-700 transition-all">
-                  <Search size={32} strokeWidth={1.25} className="text-blue-700 mb-4" />
+                  <Search size={32} strokeWidth={1.25} className="text-slate-950 mb-4" />
                   <h3 className="font-space-mono pb-2 text-xl font-normal uppercase text-slate-950 mb-3">Google & Bing Search</h3>
                   <p className="font-open-sans text-md text-slate-950">
                     High-intent search campaigns targeting buyers actively looking for solutions.
                   </p>
                 </div>
                 <div className="bg-white p-8 hover:border-blue-700 transition-all">
-                  <Share2 size={32} strokeWidth={1.25} className="text-blue-700 mb-4" />
+                  <Share2 size={32} strokeWidth={1.25} className="text-slate-950 mb-4" />
                   <h3 className="font-space-mono pb-2 text-xl font-normal uppercase text-slate-950 mb-3">Meta (Facebook & Instagram)</h3>
                   <p className="font-open-sans text-md text-slate-950">
                     Brand awareness and demand generation with sophisticated audience targeting.
                   </p>
                 </div>
                 <div className="bg-white p-8 hover:border-blue-700 transition-all">
-                  <Briefcase size={32} strokeWidth={1.25} className="text-blue-700 mb-4" />
+                  <Briefcase size={32} strokeWidth={1.25} className="text-slate-950 mb-4" />
                   <h3 className="font-space-mono pb-2 text-xl font-normal uppercase text-slate-950 mb-3">LinkedIn Campaigns</h3>
                   <p className="font-open-sans text-md text-slate-950">
                     Precision B2B targeting by job title, industry, company size, and seniority.
                   </p>
                 </div>
                 <div className="bg-white p-8 hover:border-blue-700 transition-all">
-                  <Video size={32} strokeWidth={1.25} className="text-blue-700 mb-4" />
+                  <Video size={32} strokeWidth={1.25} className="text-slate-950 mb-4" />
                   <h3 className="font-space-mono pb-2 text-xl font-normal uppercase text-slate-950 mb-3">YouTube Video Ads</h3>
                   <p className="font-open-sans text-md text-slate-950">
                     Video campaigns for brand storytelling and engagement with visual audiences.
@@ -110,19 +110,19 @@ export default function PPCPage() {
 
           {/* Our Approach */}
           <section className="py-12 mb-12">
-            <div className="max-w-4xl mx-auto md:px-16">
+            <div className="max-w-7xl mx-auto md:px-16">
               <div className="mb-12 text-left">
-                <h2 className="font-inter font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
+                <h2 className="font-open-sans font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
                   Our Approach
                 </h2>
                 <p className="font-open-sans text-xl md:leading-[1.5] text-slate-950">
                   Data-driven campaigns optimized for both immediate conversions and long-term brand visibility.
                 </p>
               </div>
-              <div className="bg-white border border-slate-300 p-4">
+              <div className="bg-white border border-slate-300 p-8">
                 <div className="p-8 grid md:grid-cols-2 gap-16">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white border border-slate-950 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-white flex items-center justify-center flex-shrink-0">
                       <Target className="w-6 h-6 text-slate-950" />
                     </div>
                     <div>
@@ -131,7 +131,7 @@ export default function PPCPage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white border border-slate-950 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-white flex items-center justify-center flex-shrink-0">
                       <Zap className="w-6 h-6 text-slate-950" />
                     </div>
                     <div>
@@ -140,7 +140,7 @@ export default function PPCPage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white border border-slate-950 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-white flex items-center justify-center flex-shrink-0">
                       <Activity className="w-6 h-6 text-slate-950" />
                     </div>
                     <div>
@@ -149,7 +149,7 @@ export default function PPCPage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white border border-slate-950 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-white flex items-center justify-center flex-shrink-0">
                       <TrendingUp className="w-6 h-6 text-slate-950" />
                     </div>
                     <div>
@@ -175,16 +175,17 @@ export default function PPCPage() {
               </div>
               <div className="grid md:grid-cols-2 gap-6 pattern-background p-4 border-slate-300 border">
                 <div className="bg-white border border-slate-300 p-8">
-                  <div className="w-12 h-12 bg-slate-950 text-white rounded-full flex items-center justify-center font-inter font-semibold text-md mb-6">
+                  <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-6">
                     1
                   </div>
+
                   <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">Plan</h3>
                   <p className="font-open-sans text-md leading-[1.5] text-slate-950">
                     Define objectives, research audiences, select channels, and establish KPIs and budget allocation strategy.
                   </p>
                 </div>
                 <div className="bg-white border border-slate-300 p-8">
-                  <div className="w-12 h-12 bg-slate-950 text-white rounded-full flex items-center justify-center font-inter font-semibold text-md mb-6">
+                  <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-6">
                     2
                   </div>
                   <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">Launch</h3>
@@ -193,7 +194,7 @@ export default function PPCPage() {
                   </p>
                 </div>
                 <div className="bg-white border border-slate-300 p-8">
-                  <div className="w-12 h-12 bg-slate-950 text-white rounded-full flex items-center justify-center font-inter font-semibold text-md mb-6">
+                  <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-6">
                     3
                   </div>
                   <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">Optimise</h3>
@@ -202,7 +203,7 @@ export default function PPCPage() {
                   </p>
                 </div>
                 <div className="bg-white border border-slate-300 p-8">
-                  <div className="w-12 h-12 bg-slate-950 text-white rounded-full flex items-center justify-center font-inter font-semibold text-md mb-6">
+                  <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-6">
                     4
                   </div>
                   <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">Scale</h3>
@@ -217,7 +218,7 @@ export default function PPCPage() {
       </main>
 
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl">
+      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
@@ -227,6 +228,24 @@ export default function PPCPage() {
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
               Track and manage your brand's presence across leading AI platforms.
             </p>
+                        <div className="flex gap-6">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
+              >
+                Github
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
           <div className="space-y-8">
             <div>
