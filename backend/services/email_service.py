@@ -437,7 +437,7 @@ This is an automated notification from VISIBI Contact Form.
                 <!-- Header with Logo -->
                 <tr>
                     <td style="background-color: #f1f5f9; padding: 40px 30px; text-align: center; border-bottom: 1px solid #e2e8f0;">
-                        <img src="https://govisibi.up.railway.app/goVisibi-icon.svg" 
+                        <img src="https://govisibi.up.railway.app/govisibi-logo.png" 
                              alt="VISIBI Logo" 
                              width="50" 
                              height="50" 
