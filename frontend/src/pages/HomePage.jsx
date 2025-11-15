@@ -272,29 +272,49 @@ export default function HomePage() {
       <Navigation currentPage="home" />
 
       {/* Hero */}
-      <section className="max-w-[90%] mx-auto items-left lg:px-[5rem] mb-0 mt-12 relative bg-white border border-b border-slate-200 rounded-xl rounded-bl-none rounded-br-none">
+      <section className="max-w-[90%] mx-auto items-left lg:px-[5rem] mb-0 mt-12 relative bg-[#FAFAFB] border border-b border-slate-200 rounded-xl rounded-bl-none rounded-br-none overflow-hidden">
+        {/* Graph paper style background with gradient fade at bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-64 pointer-events-none">
+          {/* Graph paper grid pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
+          {/* Gradient fade from white to gray-50 */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
+        </div>
+
         <div className="lg:block h-full w-full">
-          <div className="relative z-10 py-24 flex flex-col items-left gap-8 border-l border-r border-slate-200">
-            <div className="max-w-4xl px-16 space-y-8 text-left">
-              <h1 className="font-open-sans text-4xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
-                Generative Engine Optimisation (GEO): Visibility That Moves Beyond Search
-              </h1>
-              <h2 className="text-md md:text-xl md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
-                We optimise your brand for the new discovery layer, where platforms like ChatGPT, Gemini, and Perplexity determine which businesses to recommend. VISIBI ensures your content is visible, accurately interpreted, and positively referenced by Gen AI systems.
-              </h2>
-              <div className="flex flex-col sm:flex-row gap-4 justify-left">
-                <Link to="/tool">
-                  <Button className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
-                    <Sparkles className="w-5 h-5 mr-2" />
-                    Request My Gen AI Visibility Audit
-                  </Button>
-                </Link>
-                <Link to="/geo">
-                  <Button className="inline-flex items-center px-8 py-6 bg-white text-slate-950 border border-slate-300 rounded-full font-medium hover:bg-slate-50 transition-colors">
-                    Learn How GEO Works
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </Link>
+          <div className="relative z-10 py-24 border-l border-r border-slate-200">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
+              {/* Left Column - 60% (3 out of 5 columns) */}
+              <div className="lg:col-span-3 space-y-8 text-left">
+                <h1 className="font-open-sans text-3xl md:text-5xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
+                  Generative Engine Optimisation (GEO): Visibility That Moves Beyond Search
+                </h1>
+                <h2 className="text-md md:text-lg md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
+                  We optimise your brand for the new discovery layer, where platforms like ChatGPT, Gemini, and Perplexity determine which businesses to recommend. VISIBI ensures your content is visible, accurately interpreted, and positively referenced by Gen AI systems.
+                </h2>
+                <div className="flex flex-col sm:flex-row gap-4 justify-left">
+                  <Link to="/tool">
+                    <Button className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
+                      <Sparkles className="w-5 h-5 mr-2" />
+                      Request My Gen AI Visibility Audit
+                    </Button>
+                  </Link>
+                  <Link to="/geo">
+                    <Button className="inline-flex items-center px-8 py-6 bg-white text-slate-950 border border-slate-300 rounded-full font-medium hover:bg-slate-50 transition-colors">
+                      Learn How GEO Works
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Column - 40% (2 out of 5 columns) */}
+              <div className="lg:col-span-2 flex items-center justify-center">
+                <img 
+                  src="/visibi-llm.png" 
+                  alt="Person analyzing AI-generated content discovery with magnifying glass over networked documents" 
+                  className="w-full h-auto max-w-lg"
+                />
               </div>
             </div>
           </div>
