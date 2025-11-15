@@ -17,14 +17,8 @@ sys.path.insert(0, str(backend_dir))
 # Set environment variable for .env file location
 os.environ.setdefault("ENV_FILE", str(backend_dir / ".env"))
 
-try:
-    # Import the FastAPI app
-    from main import app
+# Import the FastAPI app - Vercel will use the 'app' variable
+from main import app
 
-    # Vercel will use this as the ASGI application
-    app = app
-except Exception as e:
-    print(f"Error importing FastAPI app: {e}")
-    import traceback
-    traceback.print_exc()
-    raise
+# This makes the app available to Vercel
+__all__ = ['app']
