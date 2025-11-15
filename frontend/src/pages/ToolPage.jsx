@@ -120,22 +120,42 @@ export default function ToolPage() {
       <Navigation currentPage="tool" />
 
       {/* Hero */}
-      <section className="max-w-[90%] mx-auto items-center lg:px-[5rem] mb-0 mt-12 relative bg-white border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200">
+      <section className="max-w-[90%] mx-auto items-center lg:px-[5rem] mb-0 mt-12 relative bg-[#FAFAFB] border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200 overflow-hidden">
+        {/* Graph paper style background with gradient fade at bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-64 pointer-events-none">
+          {/* Graph paper grid pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
+          {/* Gradient fade from white to gray-50 */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
+        </div>
+
         <div className="lg:block h-full w-full">
-          <div className="relative z-10 py-24 flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16 border-l border-r border-slate-200">
-            <div className="max-w-3xl px-16 space-y-8">
-              <h1 className="font-open-sans text-4xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
-                See how Gen AI talks about your Brand
-              </h1>
-              <h2 className="text-md md:text-xl md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
-                Track mentions, citations, sentiment, and competitive positioning across ChatGPT, Gemini, Perplexity, and other Gen AI platforms.
-              </h2>
-              <Link to="/">
-                <Button className="inline-flex items-center px-6 py-3 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  Request Early Access
-                </Button>
-              </Link>
+          <div className="relative z-10 py-24 border-l border-r border-slate-200">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
+              {/* Left Column - 60% (3 out of 5 columns) */}
+              <div className="lg:col-span-3 space-y-8 text-left">
+                <h1 className="font-open-sans text-4xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
+                  See how Gen AI talks about your Brand
+                </h1>
+                <h2 className="text-md md:text-xl md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
+                  Track mentions, citations, sentiment, and competitive positioning across ChatGPT, Gemini, Perplexity, and other Gen AI platforms.
+                </h2>
+                <Link to="/">
+                  <Button className="inline-flex items-center px-6 py-3 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
+                    <Sparkles className="w-5 h-5 mr-2" />
+                    Request Early Access
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Right Column - 40% (2 out of 5 columns) */}
+              <div className="lg:col-span-2 flex items-center justify-center">
+                <img 
+                  src="/vi/visibi-welcome.png" 
+                  alt="AI visibility tracking and monitoring platform interface" 
+                  className="w-full h-auto max-w-md"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -167,7 +187,7 @@ export default function ToolPage() {
                   return (
                     <div key={index} className="bg-white p-8 hover:border-blue-700 transition-all">
                       <div className="w-12 h-12 bg-white flex items-center justify-center mb-6 flex-shrink-0">
-                        <Icon className="w-6 h-6 text-blue-700" />
+                        <Icon size={32} strokeWidth={1.25} className="text-slate-950" />
                       </div>
                       <h3 className="font-space-mono pb-2 text-xl font-normal uppercase text-slate-950 mb-3">{feature.title}</h3>
                       <p className="font-open-sans text-md text-slate-950">{feature.description}</p>

@@ -70,7 +70,7 @@ export default function PPCPage() {
               {/* Right Column - 40% (2 out of 5 columns) */}
               <div className="lg:col-span-2 flex items-center justify-center">
                 <img 
-                  src="/visibi-ppc.png" 
+                  src="/vi/visibi-ppc-ai.png" 
                   alt="Digital advertising and paid media campaign management illustration" 
                   className="w-full h-auto max-w-md"
                 />
@@ -223,11 +223,19 @@ export default function PPCPage() {
             <div className="max-w-7xl mx-auto md:px-16">
               <div className="text-center mb-12">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
-                  Process → Plan → Launch → Optimise → Scale
+                  Paid media campaign process
                 </h2>
-                <p className="font-open-sans text-xl leading-[1.5] text-slate-950">
+                <p className="font-open-sans text-xl leading-[1.5] text-slate-950 mb-8">
                   Our systematic approach to building high-performing paid media campaigns.
                 </p>
+                {/* Campaign Lifecycle Image */}
+                <div className="flex justify-center mb-12">
+                  <img 
+                    src="/vi/visibi-ppc-ai.png" 
+                    alt="PPC campaign lifecycle process visualization" 
+                    className="w-full h-auto max-w-4xl"
+                  />
+                </div>
               </div>
               <div className="grid md:grid-cols-2 gap-6 pattern-background p-4 border-slate-300 border">
                 <div className="bg-white border border-slate-300 p-8">

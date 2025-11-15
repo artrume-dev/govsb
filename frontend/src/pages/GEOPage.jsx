@@ -102,7 +102,7 @@ export default function GEOPage() {
               {/* Right Column - 40% (2 out of 5 columns) */}
               <div className="lg:col-span-2 flex items-center justify-center">
                 <img 
-                  src="/visibi-geo.png" 
+                  src="/vi/visibi-geo-ai.png" 
                   alt="Person analyzing AI-generated content discovery with magnifying glass over networked documents" 
                   className="w-full h-auto max-w-md"
                 />

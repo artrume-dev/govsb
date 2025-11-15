@@ -285,11 +285,11 @@ export default function HomePage() {
           <div className="relative z-10 py-24 border-l border-r border-slate-200">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
               {/* Left Column - 60% (3 out of 5 columns) */}
-              <div className="lg:col-span-3 space-y-8 text-left">
-                <h1 className="font-open-sans text-3xl md:text-5xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
+              <div className="lg:col-span-3 space-y-4 text-left">
+                <h1 className="font-open-sans text-3xl md:text-4xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
                   Generative Engine Optimisation (GEO): Visibility That Moves Beyond Search
                 </h1>
-                <h2 className="text-md md:text-lg md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
+                <h2 className="text-md md:text-md md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
                   We optimise your brand for the new discovery layer, where platforms like ChatGPT, Gemini, and Perplexity determine which businesses to recommend. VISIBI ensures your content is visible, accurately interpreted, and positively referenced by Gen AI systems.
                 </h2>
                 <div className="flex flex-col sm:flex-row gap-4 justify-left">
@@ -311,9 +311,9 @@ export default function HomePage() {
               {/* Right Column - 40% (2 out of 5 columns) */}
               <div className="lg:col-span-2 flex items-center justify-center">
                 <img 
-                  src="/visibi-llm.png" 
-                  alt="Person analyzing AI-generated content discovery with magnifying glass over networked documents" 
-                  className="w-full h-auto max-w-lg"
+                  src="/vi/visibi-llms.png" 
+                  alt="AI platforms and visibility optimization illustration" 
+                  className="w-full h-auto max-w-md"
                 />
               </div>
             </div>
@@ -621,7 +621,7 @@ export default function HomePage() {
                   return (
                     <div key={index} className="bg-white p-8">
                       <div className="w-12 h-12 bg-white flex items-center justify-center mb-6 flex-shrink-0">
-                        <Icon className="w-6 h-6 text-blue-700" />
+                        <Icon size={32} strokeWidth={1.25} className="text-slate-950" />
                       </div>
                       <h3 className="font-space-mono pb-2 text-xl font-normal uppercase text-slate-950 mb-3">{item.title}</h3>
                       <p className="font-open-sans text-md text-slate-950">{item.description}</p>
@@ -651,7 +651,7 @@ export default function HomePage() {
                   return (
                     <div key={index} className="bg-white border border-slate-300 p-8">
                       <div className="mb-6">
-                        <Icon className="w-10 h-10 text-blue-700" />
+                        <Icon size={32} strokeWidth={1.25} className="text-slate-950" />
                       </div>
                       <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-4 uppercase">
                         {service.title}
@@ -708,7 +708,7 @@ export default function HomePage() {
                   return (
                     <div key={index} className="text-center">
                       <div className="flex justify-center mb-6">
-                        <Icon className="w-12 h-12 text-blue-700" />
+                        <Icon size={32} strokeWidth={1.25} className="text-slate-950" />
                       </div>
                       <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">
                         {item.title}
@@ -750,7 +750,7 @@ export default function HomePage() {
                   return (
                     <div key={index} className="bg-white border border-slate-300 p-8">
                       <div className="mb-6">
-                        <Icon className="w-10 h-10 text-blue-700" />
+                        <Icon size={32} strokeWidth={1.25} className="text-slate-950" />
                       </div>
                       <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-4 uppercase">
                         {insight.title}

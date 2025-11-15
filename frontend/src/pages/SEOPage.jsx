@@ -114,8 +114,8 @@ export default function SEOPage() {
               {/* Right Column - 40% (2 out of 5 columns) */}
               <div className="lg:col-span-2 flex items-center justify-center">
                 <img 
-                  src="/visibi-seo.png" 
-                  alt="Search engine optimization and AI-ready content strategy illustration" 
+                  src="/vi/visibi-seo-ai.png" 
+                  alt="Search engine optimization strategy and content planning illustration" 
                   className="w-full h-auto max-w-md"
                 />
               </div>

@@ -113,9 +113,9 @@ export default function AIAgentsPage() {
 
               {/* Right Column - 40% (2 out of 5 columns) */}
               <div className="lg:col-span-2 flex items-center justify-center">
-                <img
-                  src="/visibi-ai-agents.png"
-                  alt="AI agents and intelligent automation illustration"
+                <img 
+                  src="/vi/visibi-ai-agents.png"
+                  alt="AI agent development and automation illustration"
                   className="w-full h-auto max-w-md"
                 />
               </div>
