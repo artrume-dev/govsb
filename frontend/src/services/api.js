@@ -1,4 +1,7 @@
-const API_BASE_URL = 'http://localhost:8000'
+// Use environment variable or default to localhost for development
+const API_BASE_URL = import.meta.env.VITE_API_URL || (
+  import.meta.env.PROD ? '' : 'http://localhost:8000'
+)
 
 /**
  * Analyze brand from URL
