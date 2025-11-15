@@ -354,7 +354,7 @@ export default function HomePage() {
       </section>
 
       {/* Brand Analysis Section */}
-      <main ref={mainSectionRef} className="max-w-[90%] mx-auto px-8 py-12 relative z-10 bg-white border-l border-r border-slate-300 mb-2">
+      <main ref={mainSectionRef} className="max-w-[90%] mx-auto px-8 py-12 relative z-10 bg-white border-l border-r border-slate-300 mb-1">
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background"></div>
 
@@ -578,7 +578,7 @@ export default function HomePage() {
       </main>
 
       {/* Main Content */}
-      <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-2">
+      <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-none border-t border-b border-r border-l border-slate-300 mb-1">
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
 
@@ -781,11 +781,11 @@ export default function HomePage() {
           </section>
 
           {/* FAQ */}
-          <section className="py-24 mb-12 border-b border-slate-200">
+          <section className="py-16 mb-12">
             <div className="max-w-4xl mx-auto md:px-16">
               <div className="text-center mb-12">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
-                  GoVisibi FAQs
+                  Frequently Asked Questions
                 </h2>
               </div>
               <div className="space-y-4">
@@ -814,10 +814,10 @@ export default function HomePage() {
           </section>
 
           {/* CTA Divider */}
-          <section className="py-8 border-b border-slate-200">
+          <section className="py-8">
             <div className="text-center">
               <Link to="/how-we-work">
-                <Button className="inline-flex items-center px-6 py-3 bg-white text-slate-950 border border-slate-950 rounded-full font-medium hover:bg-slate-950 hover:text-white transition-colors">
+                <Button className="inline-flex items-center px-6 py-6 bg-white text-slate-950 border border-slate-950 rounded-full font-medium hover:bg-slate-950 hover:text-white transition-colors">
                   Learn more about our strategies
                 </Button>
               </Link>
@@ -827,9 +827,9 @@ export default function HomePage() {
       </main>
 
       {/* Final CTA Section */}
-      <section className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-32">
-        <div className="lg:block absolute h-full w-0 md:w-10 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
-        <div className="lg:block absolute h-full w-0 md:w-10 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
+      <section className="max-w-[90%] mx-auto px-12 py-24 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-32">
+        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
+        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
 
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <h2 className="font-open-sans font-thin text-4xl md:text-5xl md:leading-[1.3] text-slate-950">
@@ -838,21 +838,22 @@ export default function HomePage() {
           <p className="font-open-sans text-xl leading-[1.7] text-slate-950 pb-8">
             Request a free audit to learn how frequently and positively your business appears in Gen AI results.
           </p>
-          <Link to="/tool">
-            <Button className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
-              <Sparkles className="w-5 h-5 mr-2" />
-              Request My Audit
-            </Button>
-          </Link>
+          <Button
+            onClick={scrollToForm}
+            className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors"
+          >
+            <Sparkles className="w-5 h-5 mr-2" />
+            Request My Audit
+          </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl rounded-tl-none rounded-tr-none mb-16">
+      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-0 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/goVisibi-icon.svg" alt="VISIBI Logo" className="h-8 w-8" />
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">

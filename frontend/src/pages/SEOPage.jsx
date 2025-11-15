@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { Search, FileText, Link2, BarChart3, CheckCircle2, Sparkles } from 'lucide-react'
+import { Search, FileText, Link2, BarChart3, CheckCircle2, Sparkles, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Navigation from '@/components/Navigation'
@@ -56,6 +56,47 @@ export default function SEOPage() {
       description: "Performance tracking, Gen AI visibility monitoring, continuous optimization, quarterly strategy reviews"
     }
   ]
+
+  const faqs = [
+    {
+      question: "What's different between SEO and GEO?",
+      answer: "SEO optimizes for search engine rankings and organic traffic, while GEO focuses on getting your brand cited and mentioned within AI-generated responses. SEO creates the foundation—authoritative content, technical health, backlinks—that AI platforms use when sourcing information. They work together: strong SEO feeds GEO success."
+    },
+    {
+      question: "How long does it take to see results?",
+      answer: "Initial technical improvements can show within 4-6 weeks. Meaningful organic traffic growth typically develops over 3-6 months as content gains authority and rankings improve. SEO is a long-term investment with compounding returns—the earlier you start, the stronger your foundation becomes."
+    },
+    {
+      question: "Do you support multi-language sites?",
+      answer: "Yes. We implement international SEO strategies including hreflang tags, geo-targeting, multi-regional content optimization, and localized keyword research. Our team has extensive EMEA market experience across multiple languages and regional search behaviors."
+    },
+    {
+      question: "Can you fix my technical SEO issues?",
+      answer: "Absolutely. We conduct comprehensive technical audits to identify crawl errors, broken links, duplicate content, page speed issues, mobile usability problems, and schema implementation gaps. We either fix these directly or provide detailed recommendations for your development team."
+    },
+    {
+      question: "How do you measure visibility in AI platforms?",
+      answer: "Through our proprietary VISIBI Tool, which tracks brand mentions, citations, and sentiment across ChatGPT, Gemini, Perplexity, and other AI engines. This data complements traditional SEO metrics (rankings, traffic, conversions) to give you complete visibility intelligence."
+    },
+    {
+      question: "What makes VISIBI's SEO different?",
+      answer: "We optimize every element with AI visibility in mind. Our content isn't just keyword-focused—it's structured for AI comprehension and citation. Our schema markup goes beyond basic implementation to include entity relationships that AI platforms recognize. We think holistically about discoverability."
+    },
+    {
+      question: "Do you create content or just optimize existing content?",
+      answer: "Both. We audit and optimize your existing content for better performance, and we create new content based on strategic gaps, keyword opportunities, and AI citation potential. All content follows E-E-A-T principles (Experience, Expertise, Authoritativeness, Trustworthiness)."
+    },
+    {
+      question: "How do you approach link building?",
+      answer: "We focus on earning high-quality, contextually relevant backlinks through digital PR, thought leadership, strategic partnerships, and content collaboration. No spam, no link farms, no shortcuts—only white-hat tactics that build sustainable authority recognized by both search engines and AI platforms."
+    }
+  ]
+
+  const [openFaqIndex, setOpenFaqIndex] = useState(null)
+
+  const toggleFaq = (index) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index)
+  }
 
   return (
     <div className="min-h-screen relative line-pattern">
@@ -258,6 +299,108 @@ export default function SEOPage() {
               </div>
             </div>
           </section>
+
+          {/* Why Choose VISIBI */}
+          <section className="py-12 mb-12 border-t border-b border-slate-200">
+            <div className="md:max-w-3xl max-w-full mx-0 md:text-left md:px-16 px-0">
+              <div className="text-center mb-12">
+                <h2 className="font-open-sans font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
+                  Why Choose VISIBI for SEO
+                </h2>
+              </div>
+            </div>
+            <div className="md:max-w-5xl max-w-full mx-auto md:px-16">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 border border-slate-950 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Search className="w-8 h-8 text-slate-950" />
+                  </div>
+                  <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3">AI-First Approach</h3>
+                  <p className="font-open-sans text-md leading-[1.5] text-slate-950">
+                    Every optimization considers how AI platforms will interpret and cite your content
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 border border-slate-950 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <BarChart3 className="w-8 h-8 text-slate-950" />
+                  </div>
+                  <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3">Complete Visibility Tracking</h3>
+                  <p className="font-open-sans text-md leading-[1.5] text-slate-950">
+                    Monitor rankings, traffic, AND AI citations in one unified dashboard
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 border border-slate-950 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle2 className="w-8 h-8 text-slate-950" />
+                  </div>
+                  <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3">White-Hat Only</h3>
+                  <p className="font-open-sans text-md leading-[1.5] text-slate-950">
+                    Sustainable, ethical tactics that build lasting authority and trust
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section className="py-12 mb-12 border-b border-slate-200">
+            <div className="md:max-w-3xl max-w-full mx-auto md:text-left md:px-16 px-0">
+              <div className="text-center mb-12">
+                <h2 className="font-open-sans font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
+                  Frequently Asked Questions
+                </h2>
+                <p className="font-open-sans text-xl leading-[1.5] text-slate-950">
+                  Common questions about AI-ready SEO services.
+                </p>
+              </div>
+            </div>
+            <div className="md:max-w-4xl max-w-full mx-auto md:px-16">
+              <div className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <div key={index} className="border border-slate-300 bg-white">
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
+                    >
+                      <h3 className="font-space-mono font-normal text-md md:text-lg text-slate-950 pr-4">
+                        {faq.question}
+                      </h3>
+                      <ChevronDown
+                        className={`w-5 h-5 text-slate-950 flex-shrink-0 transition-transform ${
+                          openFaqIndex === index ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {openFaqIndex === index && (
+                      <div className="px-6 pb-6 pt-2">
+                        <p className="font-open-sans text-md leading-[1.6] text-slate-950">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Final CTA Section */}
+          <section className="py-12 mb-12">
+            <div className="max-w-3xl mx-auto text-center space-y-6 md:px-16">
+              <h2 className="font-open-sans font-thin text-4xl md:text-5xl md:leading-[1.3] text-slate-950">
+                Ready to Build AI-Ready SEO?
+              </h2>
+              <p className="font-open-sans text-xl leading-[1.7] text-slate-950 pb-8">
+                Get a comprehensive SEO audit that includes AI visibility analysis
+              </p>
+              <Link to="/contact">
+                <Button className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
+                  <Sparkles className="w-5 h-5 mr-2" />
+                  Request Your SEO Audit
+                </Button>
+              </Link>
+            </div>
+          </section>
         </div>
       </main>
 
@@ -266,7 +409,7 @@ export default function SEOPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/goVisibi-icon.svg" alt="VISIBI Logo" className="h-8 w-8" />
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
