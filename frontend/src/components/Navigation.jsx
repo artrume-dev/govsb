@@ -40,7 +40,7 @@ export default function Navigation({ currentPage = 'home' }) {
           >
             <button
               className={`text-sm font-medium transition-colors flex items-center gap-1 ${
-                isActive('geo') || isActive('seo') || isActive('ppc')
+                isActive('geo') || isActive('seo') || isActive('ppc') || isActive('ai-agents')
                   ? 'text-blue-600'
                   : 'text-slate-900 hover:text-blue-600'
               }`}
@@ -82,13 +82,26 @@ export default function Navigation({ currentPage = 'home' }) {
                     <Link
                       to="/ppc"
                       onClick={() => setConsultingDropdownOpen(false)}
-                      className="block px-6 py-4 hover:bg-slate-50 transition-colors"
+                      className="block px-6 py-4 hover:bg-slate-50 transition-colors border-b border-slate-100 last:border-0"
                     >
                       <h3 className="text-base font-semibold text-slate-900 mb-1">
                         PPC
                       </h3>
                       <p className="text-sm text-slate-600">
                         Paid advertising strategies for maximum ROI
+                      </p>
+                    </Link>
+
+                    <Link
+                      to="/ai-agents"
+                      onClick={() => setConsultingDropdownOpen(false)}
+                      className="block px-6 py-4 hover:bg-slate-50 transition-colors"
+                    >
+                      <h3 className="text-base font-semibold text-slate-900 mb-1">
+                        AI Agents
+                      </h3>
+                      <p className="text-sm text-slate-600">
+                        Custom intelligent automation and AI workflows
                       </p>
                     </Link>
                   </div>
@@ -212,7 +225,7 @@ export default function Navigation({ currentPage = 'home' }) {
               <button
                 onClick={() => setMobileConsultingOpen(!mobileConsultingOpen)}
                 className={`w-full flex items-center justify-between text-base font-medium transition-colors py-2 ${
-                  isActive('geo') || isActive('seo') || isActive('ppc')
+                  isActive('geo') || isActive('seo') || isActive('ppc') || isActive('ai-agents')
                     ? 'text-blue-600'
                     : 'text-gray-700 hover:text-blue-600'
                 }`}
@@ -257,6 +270,18 @@ export default function Navigation({ currentPage = 'home' }) {
                     }`}
                   >
                     PPC - Pay-Per-Click Advertising
+                  </Link>
+
+                  <Link
+                    to="/ai-agents"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block text-sm transition-colors py-2 ${
+                      isActive('ai-agents')
+                        ? 'text-blue-600'
+                        : 'text-gray-600 hover:text-blue-600'
+                    }`}
+                  >
+                    AI Agents - Intelligent Automation
                   </Link>
                 </div>
               )}
