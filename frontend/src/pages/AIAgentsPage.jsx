@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { Bot, Workflow, Zap, BarChart3, CheckCircle2, Sparkles } from 'lucide-react'
+import { Bot, Workflow, Zap, Database, Users, TrendingUp, CheckCircle2, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Navigation from '@/components/Navigation'
@@ -11,71 +11,154 @@ export default function AIAgentsPage() {
     document.documentElement.classList.remove('dark')
   }, [])
 
-  const frameworkItems = [
-    {
-      icon: Bot,
-      title: "Intelligent Automation",
-      description: "Custom AI agents that understand context, make decisions, and execute complex workflows autonomously"
-    },
+  const benefitItems = [
     {
       icon: Workflow,
-      title: "Seamless Integration",
-      description: "Connect with your existing tools, APIs, and data sources for unified intelligent operations"
+      title: "Automate complex workflows",
+      description: "Handle multi-step processes that previously needed human coordination."
+    },
+    {
+      icon: TrendingUp,
+      title: "Reduce operational overhead",
+      description: "Remove repetitive manual work, reduce errors and free teams for higher-value tasks."
     },
     {
       icon: Zap,
-      title: "Real-Time Processing",
-      description: "Lightning-fast response times with continuous learning and optimization capabilities"
+      title: "Improve responsiveness",
+      description: "Deliver faster decisions, instant support and real-time actions across systems."
     },
     {
-      icon: BarChart3,
-      title: "Performance Analytics",
-      description: "Track agent efficiency, decision accuracy, cost savings, and business impact metrics"
+      icon: Database,
+      title: "Unlock value from existing data",
+      description: "Let agents query, summarise and act on your internal data in natural language."
+    },
+    {
+      icon: Users,
+      title: "Scale operations 24/7",
+      description: "Run processes continuously without additional headcount."
+    },
+    {
+      icon: CheckCircle2,
+      title: "Competitive advantage",
+      description: "Agentic AI is not 'nice to have'. It's becoming a competitive advantage."
+    }
+  ]
+
+  const prototypeCards = [
+    {
+      title: "Live prototypes",
+      description: "You see your agent working with your data, processes and tools — not generic demo videos."
+    },
+    {
+      title: "Agent templates",
+      description: "Reusable patterns for support, operations, content, sales and insight agents tailored to your context."
+    },
+    {
+      title: "Transparent engineering",
+      description: "Clear architecture, behaviours and guardrails — no black boxes, no mystery."
+    },
+    {
+      title: "You own everything",
+      description: "You retain ownership of the code, workflows and architecture. No vendor lock-in."
+    }
+  ]
+
+  const agentTypes = [
+    {
+      icon: Users,
+      title: "Customer Support Agents",
+      description: "Handle routine queries, escalate intelligently and provide consistent, always-on support."
+    },
+    {
+      icon: Database,
+      title: "Internal Knowledge (RAG) Agents",
+      description: "Deliver instant, grounded answers from documentation, knowledge bases and internal systems."
+    },
+    {
+      icon: Workflow,
+      title: "Operations & Workflow Agents",
+      description: "Automate document processing, onboarding, approvals, reporting and back-office workflows."
+    },
+    {
+      icon: Bot,
+      title: "Content & SEO/GEO Agents",
+      description: "Analyse, generate and optimise content across search engines and generative platforms."
+    },
+    {
+      icon: TrendingUp,
+      title: "Sales & Lead Qualification Agents",
+      description: "Qualify leads, summarise interactions, update your CRM and route opportunities to the right team."
+    },
+    {
+      icon: Database,
+      title: "Data & Insight Agents",
+      description: "Query your internal data using natural language and receive accurate, contextual insights."
     }
   ]
 
   const processSteps = [
     {
-      title: "Discovery & Planning",
-      description: "Workflow analysis, use case identification, requirements gathering, AI capability assessment, ROI modeling"
+      title: "Discovery & Workflow Mapping",
+      description: "We identify high-value processes and define success metrics for your agents."
     },
     {
-      title: "Agent Design",
-      description: "Architecture planning, prompt engineering, tool integration strategy, decision tree mapping, safety protocols"
+      title: "Data Audit & Architecture",
+      description: "We assess data readiness, structure access, and design how agents will interact with your systems."
     },
     {
-      title: "Development & Training",
-      description: "Agent implementation, custom model fine-tuning, integration development, testing protocols, quality assurance"
+      title: "Rapid Prototyping (0–7 Days)",
+      description: "We build a working agent specific to one of your workflows to validate value and feasibility."
     },
     {
-      title: "Deployment & Monitoring",
-      description: "Production rollout, performance monitoring, continuous optimization, A/B testing, user feedback integration"
+      title: "Development & Integration",
+      description: "We refine behaviours, add tools and connectors, and embed guardrails to ensure safe operation."
     },
     {
-      title: "Scale & Optimize",
-      description: "Expansion planning, multi-agent orchestration, cost optimization, capability enhancement, strategic evolution"
+      title: "Evaluation & Refinement",
+      description: "We test for reliability, accuracy, safety and user experience across real-world scenarios."
+    },
+    {
+      title: "Deployment & Scaling",
+      description: "We deploy agents into production workflows and monitor performance for continuous optimisation."
     }
+  ]
+
+  const technologies = [
+    "LangGraph",
+    "CrewAI",
+    "LlamaIndex",
+    "AutoGen",
+    "OpenAI (GPT)",
+    "Claude",
+    "Google Gemini",
+    "AWS Bedrock",
+    "Vector databases",
+    "RAG pipelines",
+    "Tool-based AI",
+    "Secure API integrations",
+    "MCP Server Engineering",
+    "Custom multi-agent orchestrators"
   ]
 
   return (
     <div className="min-h-screen relative line-pattern">
       <Helmet>
-        <title>AI Agents Development - Custom Intelligent Automation | VISIBI</title>
-        <meta name="description" content="Build custom AI agents that automate complex workflows, make intelligent decisions, and integrate seamlessly with your business operations. Enterprise-grade AI automation solutions." />
-        <meta name="keywords" content="AI agents, intelligent automation, custom AI development, workflow automation, AI integration, autonomous agents" />
+        <title>Agentic AI Development - Custom Intelligent Automation | VISIBI</title>
+        <meta name="description" content="Build intelligent AI agents that automate workflows, make decisions, and scale your operations. We design, develop and deploy agentic AI systems built safely and transparently." />
+        <meta name="keywords" content="agentic AI, AI agents, intelligent automation, custom AI development, workflow automation, AI integration, autonomous agents" />
         <link rel="canonical" href="https://visibi.com/ai-agents" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://visibi.com/ai-agents" />
-        <meta property="og:title" content="AI Agents Development - Custom Intelligent Automation | VISIBI" />
-        <meta property="og:description" content="Enterprise AI agents that understand, decide, and execute complex workflows autonomously." />
+        <meta property="og:title" content="Agentic AI Development | VISIBI" />
+        <meta property="og:description" content="Intelligent AI agents that automate workflows, make decisions, and scale operations." />
         <meta property="og:site_name" content="VISIBI" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Agents Development | VISIBI" />
-        <meta name="twitter:description" content="Build custom AI agents that automate complex workflows and make intelligent decisions." />
+        <meta name="twitter:title" content="Agentic AI Development | VISIBI" />
+        <meta name="twitter:description" content="Build intelligent AI agents that automate complex workflows and make autonomous decisions." />
       </Helmet>
 
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
@@ -86,9 +169,7 @@ export default function AIAgentsPage() {
       <section className="max-w-[90%] mx-auto items-center lg:px-[5rem] mb-0 mt-12 relative bg-[#FAFAFB] border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200 overflow-hidden">
         {/* Graph paper style background with gradient fade at bottom */}
         <div className="absolute inset-x-0 bottom-0 h-64 pointer-events-none">
-          {/* Graph paper grid pattern */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
-          {/* Gradient fade from white to gray-50 */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
         </div>
 
@@ -98,23 +179,30 @@ export default function AIAgentsPage() {
               {/* Left Column - 60% (3 out of 5 columns) */}
               <div className="lg:col-span-3 space-y-8 text-left">
                 <h1 className="font-open-sans text-4xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
-                  AI Agents that work for you
+                  Agentic AI Development
                 </h1>
                 <h2 className="text-md md:text-xl md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
-                  We build custom AI agents that automate complex workflows, make intelligent decisions, and integrate seamlessly with your business operations — delivering measurable efficiency gains and competitive advantages.
+                  Build intelligent AI agents that automate workflows, make decisions, and scale your operations. We design, develop and deploy agentic AI systems that work across your data, tools and processes — built safely, transparently and fully aligned with your business goals.
                 </h2>
-                <Link to="/contact">
-                  <Button className="inline-flex items-center px-6 py-3 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
-                    <Sparkles className="w-5 h-5 mr-2" />
-                    Discuss Your AI Agent
-                  </Button>
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to="/contact">
+                    <Button className="inline-flex items-center px-6 py-3 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
+                      <Sparkles className="w-5 h-5 mr-2" />
+                      Book a Discovery Call
+                    </Button>
+                  </Link>
+                  <Link to="/contact">
+                    <Button variant="outline" className="inline-flex items-center px-6 py-3 bg-white text-slate-950 border-2 border-slate-950 rounded-full font-medium hover:bg-slate-950 hover:text-white transition-colors">
+                      Talk to an AI Consultant
+                    </Button>
+                  </Link>
+                </div>
               </div>
 
               {/* Right Column - 40% (2 out of 5 columns) */}
               <div className="lg:col-span-2 flex items-center justify-center">
-                <img 
-                  src="/vi/visibi-ai-agents.png"
+                <img
+                  src="/visibi-ai-agents.png"
                   alt="AI agent development and automation illustration"
                   className="w-full h-auto max-w-md"
                 />
@@ -130,28 +218,44 @@ export default function AIAgentsPage() {
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
 
         <div className="max-w-7xl mx-auto">
-          {/* AI Agents Framework */}
+          {/* Intro Section */}
+          <section className="py-12 mb-12 border-b border-slate-200">
+            <div className="md:max-w-4xl max-w-full mx-auto md:px-16">
+              <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-6 text-center">
+                Intelligent AI agents built for real business impact
+              </h2>
+              <div className="space-y-6 font-open-sans text-md md:text-lg leading-[1.6] text-slate-950">
+                <p>
+                  Agentic AI represents the next wave of automation. Unlike traditional chatbots or scripts, agents can understand context, take action, execute multi-step tasks, and work autonomously inside your workflows.
+                </p>
+                <p>
+                  At VISIBI, we help organisations move from AI experimentation to working, production-ready agentic systems — designed using the same principles we apply across our GEO, SEO and PPC consulting: precision, clarity, and measurable results.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Why Agentic AI Now */}
           <section className="py-12 mb-12 border-b border-slate-200">
             <div className="md:max-w-3xl max-w-full mx-0 md:text-left md:px-16 px-0">
               <div className="mb-12 text-left">
-
-               <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
-                  The VISIBI AI Agent Framework
+                <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
+                  Why businesses are investing in agentic AI now
                 </h2>
-                <p className="font-open-sans text-xl leading-[1.5] text-slate-950 max-w-2xl">
-                  Our approach combines cutting-edge AI technology with proven enterprise integration
+                <p className="font-open-sans text-md md:text-lg leading-[1.5] text-slate-950 max-w-2xl">
+                  Agentic AI allows organisations to go beyond simple automation and unlock new operational capabilities.
                 </p>
               </div>
-              </div>
+            </div>
 
-               <div className="md:max-w-7xl max-w-full mx-auto md:text-left md:px-16 px-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 border-slate-300 border transition-colors pattern-background">
-                {frameworkItems.map((item, index) => {
+            <div className="md:max-w-7xl max-w-full mx-auto md:text-left md:px-16 px-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border-slate-300 border transition-colors pattern-background">
+                {benefitItems.map((item, index) => {
                   const Icon = item.icon
                   return (
                     <div key={index} className="bg-white border-0 border-slate-300 p-8">
                       <Icon size={32} strokeWidth={1.25} className="text-slate-950 mb-4" />
-                      <h3 className="font-space-mono pb-2 text-xl font-normal uppercase text-slate-950 mb-3">{item.title}</h3>
+                      <h3 className="font-space-mono pb-2 text-lg font-normal uppercase text-slate-950 mb-3">{item.title}</h3>
                       <p className="font-open-sans text-md text-slate-950">{item.description}</p>
                     </div>
                   )
@@ -160,31 +264,90 @@ export default function AIAgentsPage() {
             </div>
           </section>
 
-          {/* Process Timeline */}
-          <section className="py-12 mb-12">
-
-              <div className="md:max-w-4xl max-w-full mx-0 md:text-left md:px-16 px-0">
-              <div className="text-left mb-12">
+          {/* Prototypes Instead of Case Studies */}
+          <section className="py-12 mb-12 border-b border-slate-200">
+            <div className="md:max-w-3xl max-w-full mx-0 md:text-left md:px-16 px-0">
+              <div className="mb-12 text-left">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
-                  How We Build Your AI Agents
+                  We focus on prototypes, not portfolios
                 </h2>
-                <p className="font-open-sans text-xl leading-[1.5] text-slate-950">
-                  A structured 5-phase approach to intelligent automation
+                <p className="font-open-sans text-md md:text-lg leading-[1.5] text-slate-950 max-w-2xl">
+                  Agentic AI is a rapidly evolving field — and legacy case studies rarely reflect current capabilities. Instead of showcasing outdated examples, we show you working systems built around your world.
                 </p>
               </div>
+            </div>
+
+            <div className="md:max-w-7xl max-w-full mx-auto md:px-16">
+              <div className="grid md:grid-cols-2 gap-8 mb-16">
+                {prototypeCards.map((card, index) => (
+                  <div key={index} className="border border-slate-300 p-8">
+                    <h3 className="font-space-mono font-normal text-xl md:text-2xl leading-[1.3] text-slate-950 mb-4">{card.title}</h3>
+                    <p className="font-open-sans text-md leading-[1.5] text-slate-950">{card.description}</p>
+                  </div>
+                ))}
               </div>
-              <div className="max-w-7xl mx-0 md:px-16">
+
+              <div className="max-w-4xl mx-auto text-center">
+                <p className="font-open-sans font-semibold text-xl md:text-2xl leading-[1.4] text-slate-950 border-l-4 border-slate-950 pl-6 py-4 text-left">
+                  You're not hiring us for what we built last year — you're hiring us for the agent we build for you next.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* What We Build (Agent Types) */}
+          <section className="py-12 mb-12 border-b border-slate-200">
+            <div className="md:max-w-3xl max-w-full mx-0 md:text-left md:px-16 px-0">
+              <div className="mb-12 text-left">
+                <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
+                  Agentic systems tailored to your needs
+                </h2>
+                <p className="font-open-sans text-md md:text-lg leading-[1.5] text-slate-950 max-w-2xl">
+                  We design agents around your specific workflows, data and systems — not generic one-size-fits-all bots.
+                </p>
+              </div>
+            </div>
+
+            <div className="md:max-w-7xl max-w-full mx-auto md:px-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border-slate-300 border transition-colors pattern-background">
+                {agentTypes.map((agent, index) => {
+                  const Icon = agent.icon
+                  return (
+                    <div key={index} className="bg-white border-0 border-slate-300 p-8">
+                      <Icon size={32} strokeWidth={1.25} className="text-slate-950 mb-4" />
+                      <h3 className="font-space-mono pb-2 text-lg font-normal uppercase text-slate-950 mb-3">{agent.title}</h3>
+                      <p className="font-open-sans text-md text-slate-950">{agent.description}</p>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* Our Process */}
+          <section className="py-12 mb-12 border-b border-slate-200">
+            <div className="md:max-w-4xl max-w-full mx-0 md:text-left md:px-16 px-0">
+              <div className="text-left mb-12">
+                <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
+                  How we design and deploy agentic AI
+                </h2>
+                <p className="font-open-sans text-md md:text-lg leading-[1.5] text-slate-950">
+                  We use a structured, transparent framework that aligns technical decisions with clear business outcomes.
+                </p>
+              </div>
+            </div>
+
+            <div className="max-w-7xl mx-0 md:px-16">
               <div className="mx-auto p-4 grid md:grid-cols-1 lg:grid-cols-2 gap-4 border-slate-300 border transition-colors pattern-background">
                 {processSteps.map((step, index) => (
                   <div key={index} className="flex gap-6">
-
                     <div className="flex-1 bg-white p-6 mb-4 border border-slate-300">
                       <div className="flex-shrink-0">
-                      <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-4">
-                        {index + 1}
+                        <div className="w-8 h-8 bg-slate-950 text-white rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-4">
+                          {index + 1}
+                        </div>
                       </div>
-                    </div>
-                      <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-2 uppercase">{step.title}</h3>
+                      <h3 className="font-space-mono font-normal text-lg leading-[1.3] text-slate-950 mb-2 uppercase">{step.title}</h3>
                       <p className="font-open-sans text-md leading-[1.5] text-slate-950">{step.description}</p>
                     </div>
                   </div>
@@ -193,68 +356,56 @@ export default function AIAgentsPage() {
             </div>
           </section>
 
-          {/* AI Agents Comparison */}
-          <section className="py-12 mb-12 border-t border-slate-200">
-            <div className="max-w-4xl mx-auto md:px-16">
-              <div className="text-left mb-12">
-                <h2 className="font-open-sans font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
-                  Custom AI Agents vs Generic Automation
+          {/* Technology We Use */}
+          <section className="py-12 mb-12 border-b border-slate-200">
+            <div className="md:max-w-3xl max-w-full mx-0 md:text-left md:px-16 px-0">
+              <div className="mb-12 text-left">
+                <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
+                  Modern agentic AI, built with leading frameworks
                 </h2>
-                <p className="font-open-sans text-xl md:leading-[1.5] text-slate-950">
-                  The difference that delivers real business value
+                <p className="font-open-sans text-md md:text-lg leading-[1.5] text-slate-950 max-w-2xl">
+                  We work across a range of agentic and generative AI technologies to design the right solution for your environment.
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="border border-slate-300 p-8">
-                  <h3 className="font-space-mono font-normal text-2xl leading-[1.3] text-slate-950 mb-6">Generic Automation</h3>
-                  <ul className="space-y-3 font-open-sans text-md leading-[1.5] text-slate-950">
-                    <li className="flex items-start gap-2">
-                      <span className="text-slate-400 flex-shrink-0 mt-0.5">•</span>
-                      <span>Rule-based, rigid workflows</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-slate-400 flex-shrink-0 mt-0.5">•</span>
-                      <span>Requires manual updates for changes</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-slate-400 flex-shrink-0 mt-0.5">•</span>
-                      <span>Limited to predefined scenarios</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-slate-400 flex-shrink-0 mt-0.5">•</span>
-                      <span>Breaks with edge cases</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-slate-400 flex-shrink-0 mt-0.5">•</span>
-                      <span>No learning or adaptation</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="border-2 border-blue-700 p-8">
-                  <h3 className="font-space-mono font-normal text-2xl leading-[1.3] text-slate-950 mb-6">VISIBI AI Agents</h3>
-                  <ul className="space-y-3 font-open-sans text-md leading-[1.5] text-slate-950">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" />
-                      <span>Context-aware intelligent decisions</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" />
-                      <span>Self-improving through learning</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" />
-                      <span>Handles complex, dynamic scenarios</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" />
-                      <span>Graceful handling of edge cases</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" />
-                      <span>Continuous optimization & adaptation</span>
-                    </li>
-                  </ul>
-                </div>
+            </div>
+
+            <div className="md:max-w-7xl max-w-full mx-auto md:px-16">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+                {technologies.map((tech, index) => (
+                  <div key={index} className="border border-slate-300 p-6 text-center flex items-center justify-center">
+                    <p className="font-space-mono font-semibold text-sm text-slate-950">{tech}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="text-center">
+                <p className="font-open-sans text-md md:text-lg leading-[1.5] text-slate-950 max-w-3xl mx-auto">
+                  You get fully transparent documentation, code, architecture and ownership of everything we build.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Why VISIBI */}
+          <section className="py-12 mb-12">
+            <div className="md:max-w-4xl max-w-full mx-auto md:px-16">
+              <h2 className="font-open-sans font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-12 text-center">
+                Why VISIBI
+              </h2>
+
+              <div className="space-y-6 font-open-sans text-md md:text-lg leading-[1.6] text-slate-950">
+                <p>
+                  VISIBI is built on precision. Our consulting roots are in GEO, SEO and PPC — disciplines that demand rigorous analysis, structured thinking and measurable outcomes.
+                </p>
+                <p>
+                  We bring the same discipline to agentic AI development: clear scoping, transparent architecture, and a relentless focus on business impact rather than technology for its own sake.
+                </p>
+                <p>
+                  We combine strong AI technical architecture, deep understanding of user behaviour, expertise in search, optimisation and automation, and a consultative approach focused on clarity and business alignment.
+                </p>
+                <p>
+                  Agentic AI is the natural extension of our mission: helping organisations achieve visibility, efficiency and intelligence across their digital ecosystem.
+                </p>
               </div>
             </div>
           </section>
