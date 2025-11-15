@@ -9,6 +9,7 @@ import InsightsPage from './pages/InsightsPage'
 import ToolPage from './pages/ToolPage'
 import HowWeWorkPage from './pages/HowWeWorkPage'
 import ContactPage from './pages/ContactPage'
+import AIAgentsPage from './pages/AIAgentsPage'
 import ScrollToTop from './components/ScrollToTop'
 import './index.css'
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/geo" element={<GEOPage />} />
         <Route path="/seo" element={<SEOPage />} />
         <Route path="/ppc" element={<PPCPage />} />
+        <Route path="/ai-agents" element={<AIAgentsPage />} />
         <Route path="/insights" element={<InsightsPage />} />
         <Route path="/tool" element={<ToolPage />} />
         <Route path="/how-we-work" element={<HowWeWorkPage />} />
