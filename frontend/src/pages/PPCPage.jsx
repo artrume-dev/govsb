@@ -231,9 +231,9 @@ export default function PPCPage() {
                 {/* Campaign Lifecycle Image */}
                 <div className="flex justify-center mb-12">
                   <img 
-                    src="/vi/visibi-ppc-ai.png" 
+                    src="/vi/visibi-lifecycle.png" 
                     alt="PPC campaign lifecycle process visualization" 
-                    className="w-full h-auto max-w-4xl"
+                    className="w-full h-auto max-w-lg"
                   />
                 </div>
               </div>
@@ -615,6 +615,24 @@ export default function PPCPage() {
                   </Link>
                 </div>
               </div>
+            </div>
+          </section>
+
+          {/* Final CTA Section */}
+          <section className="py-12 mb-12 border-t border-slate-200">
+            <div className="max-w-3xl mx-auto text-center space-y-6 md:px-16">
+              <h2 className="font-open-sans font-thin text-4xl md:text-5xl md:leading-[1.3] text-slate-950">
+                Amplify Your Reach. Accelerate Your Conversions.
+              </h2>
+              <p className="font-open-sans text-xl leading-[1.7] text-slate-950 pb-8">
+                Get a comprehensive paid media audit and discover how to drive immediate visibility while building long-term authority.
+              </p>
+              <Link to="/contact">
+                <Button className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
+                  <Sparkles className="w-5 h-5 mr-2" />
+                  Book Paid Media Audit
+                </Button>
+              </Link>
             </div>
           </section>
         </div>
