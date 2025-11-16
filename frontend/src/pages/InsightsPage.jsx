@@ -152,10 +152,19 @@ export default function InsightsPage() {
 
               {/* Right Column - 40% (2 out of 5 columns) */}
               <div className="lg:col-span-2 flex items-center justify-center">
+                <style>{`
+                  @keyframes subtleBounce {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                  }
+                  .animate-subtle-bounce {
+                    animation: subtleBounce 4s ease-in-out infinite;
+                  }
+                `}</style>
                 <img 
-                  src="/vi/visibi-overview.png" 
+                  src="/vi/visibi-insights.png" 
                   alt="AI visibility insights, research and strategic frameworks" 
-                  className="w-full h-auto max-w-md"
+                  className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
               </div>
             </div>
