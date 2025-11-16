@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react'
 
@@ -8,6 +8,27 @@ export default function Navigation({ currentPage = 'home' }) {
   const [platformDropdownOpen, setPlatformDropdownOpen] = useState(false)
   const [mobileConsultingOpen, setMobileConsultingOpen] = useState(false)
   const [mobilePlatformOpen, setMobilePlatformOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      
+      // Check if scrolling down and past a threshold (e.g., 100px)
+      if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+        setIsScrolled(true)
+      } else if (currentScrollY < 50) {
+        // Reset when near top of page
+        setIsScrolled(false)
+      }
+      
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
 
   const isActive = (page) => currentPage === page
 
@@ -15,8 +36,24 @@ export default function Navigation({ currentPage = 'home' }) {
     <header className="max-w-[90%] mx-auto rounded-xl bg-white/90 backdrop-blur-sm sticky top-4 z-[100] shadow-sm relative">
       <div className="mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-1 cursor-pointer">
-          <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-6 w-6" />
-          <span className="text-xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
+          <div className="flex-shrink-0">
+            <img 
+              src="/govisibi-logo.png" 
+              alt="VISIBI Logo" 
+              className={`h-6 w-6 transition-transform duration-500 ease-out ${
+                isScrolled ? 'rotate-[360deg]' : 'rotate-[315deg]'
+              }`}
+            />
+          </div>
+          <div className="overflow-hidden">
+            <span 
+              className={`text-xl font-bold bg-slate-950 bg-clip-text text-transparent transition-all duration-500 ease-out whitespace-nowrap inline-block ${
+                isScrolled ? 'opacity-0 -translate-x-full' : 'opacity-100 translate-x-0'
+              }`}
+            >
+              VISIBI
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

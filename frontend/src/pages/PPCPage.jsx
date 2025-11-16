@@ -69,10 +69,19 @@ export default function PPCPage() {
 
               {/* Right Column - 40% (2 out of 5 columns) */}
               <div className="lg:col-span-2 flex items-center justify-center">
+                <style>{`
+                  @keyframes subtleBounce {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                  }
+                  .animate-subtle-bounce {
+                    animation: subtleBounce 4s ease-in-out infinite;
+                  }
+                `}</style>
                 <img 
                   src="/vi/visibi-ppc-ai.png" 
                   alt="Digital advertising and paid media campaign management illustration" 
-                  className="w-full h-auto max-w-md"
+                  className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
               </div>
             </div>
@@ -81,7 +90,7 @@ export default function PPCPage() {
       </section>
 
       {/* Main Content */}
-      <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-2">
+      <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none rounded-bl-none rounded-br-none border-t border-r border-l border-slate-300 mb-2">
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
 
@@ -340,7 +349,7 @@ export default function PPCPage() {
           </section>
 
           {/* FAQ */}
-          <section className="py-12 mb-12 border-t border-slate-200">
+          <section className="py-12 mb-12">
             <div className="max-w-7xl mx-auto md:px-16">
               <div className="mb-12 text-center">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
@@ -356,7 +365,7 @@ export default function PPCPage() {
                     onClick={() => setOpenFaqIndex(openFaqIndex === 0 ? null : 0)}
                     className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                   >
-                    <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">What PPC platforms do you manage?</h3>
+                    <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">What PPC platforms do you manage?</h3>
                     {openFaqIndex === 0 ? (
                       <ChevronUp className="w-5 h-5 text-slate-950 flex-shrink-0" />
                     ) : (
@@ -365,7 +374,7 @@ export default function PPCPage() {
                   </button>
                   {openFaqIndex === 0 && (
                     <div className="px-8 pb-6">
-                      <p className="font-open-sans text-md md:leading-[1.7] my-8 text-slate-950">
+                      <p className="font-open-sans text-sm md:leading-[1.7] my-8 text-slate-950">
                         We manage Google Ads (Search, Display, Shopping, YouTube), Microsoft Ads (Bing), LinkedIn Ads for B2B targeting, and Meta (Facebook & Instagram) campaigns. We select platforms based on where your target audience is most active and where we can achieve the best ROI for your specific goals.
                       </p>
                     </div>
@@ -377,7 +386,7 @@ export default function PPCPage() {
                     onClick={() => setOpenFaqIndex(openFaqIndex === 1 ? null : 1)}
                     className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                   >
-                    <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">How do you use AI in ad optimisation?</h3>
+                    <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">How do you use AI in ad optimisation?</h3>
                     {openFaqIndex === 1 ? (
                       <ChevronUp className="w-5 h-5 text-slate-950 flex-shrink-0" />
                     ) : (
@@ -386,7 +395,7 @@ export default function PPCPage() {
                   </button>
                   {openFaqIndex === 1 && (
                     <div className="px-8 pb-6">
-                      <p className="font-open-sans text-md md:leading-[1.7] my-8 text-slate-950">
+                      <p className="font-open-sans text-sm md:leading-[1.7] my-8 text-slate-950">
                         We leverage AI-powered bidding strategies, automated audience targeting, dynamic creative optimization, and predictive performance modeling. We also use AI tools to test ad copy variations, analyze competitor strategies, and identify high-performing audience segments—all while maintaining strategic human oversight.
                       </p>
                     </div>
@@ -398,7 +407,7 @@ export default function PPCPage() {
                     onClick={() => setOpenFaqIndex(openFaqIndex === 2 ? null : 2)}
                     className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                   >
-                    <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">Can PPC help improve AI visibility?</h3>
+                    <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">Can PPC help improve AI visibility?</h3>
                     {openFaqIndex === 2 ? (
                       <ChevronUp className="w-5 h-5 text-slate-950 flex-shrink-0" />
                     ) : (
@@ -407,7 +416,7 @@ export default function PPCPage() {
                   </button>
                   {openFaqIndex === 2 && (
                     <div className="px-8 pb-6">
-                      <p className="font-open-sans text-md md:leading-[1.7] my-8 text-slate-950">
+                      <p className="font-open-sans text-sm md:leading-[1.7] my-8 text-slate-950">
                         Yes. Paid campaigns drive traffic to high-quality content that signals authority to AI platforms. They also generate user engagement data, test messaging that can inform GEO strategies, and amplify content that's already optimized for AI citations—creating a virtuous cycle between paid, organic, and AI visibility.
                       </p>
                     </div>
@@ -419,7 +428,7 @@ export default function PPCPage() {
                     onClick={() => setOpenFaqIndex(openFaqIndex === 3 ? null : 3)}
                     className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                   >
-                    <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">What's your minimum ad spend?</h3>
+                    <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">What's your minimum ad spend?</h3>
                     {openFaqIndex === 3 ? (
                       <ChevronUp className="w-5 h-5 text-slate-950 flex-shrink-0" />
                     ) : (
@@ -428,7 +437,7 @@ export default function PPCPage() {
                   </button>
                   {openFaqIndex === 3 && (
                     <div className="px-8 pb-6">
-                      <p className="font-open-sans text-md md:leading-[1.7] my-8 text-slate-950">
+                      <p className="font-open-sans text-sm md:leading-[1.7] my-8 text-slate-950">
                         We typically recommend a minimum monthly ad spend of $3,000-5,000 for meaningful testing and results, though this varies by industry, competition level, and campaign objectives. We'll provide specific budget recommendations during our initial audit based on your goals and market landscape.
                       </p>
                     </div>
@@ -440,7 +449,7 @@ export default function PPCPage() {
                     onClick={() => setOpenFaqIndex(openFaqIndex === 4 ? null : 4)}
                     className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                   >
-                    <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">How do you report results?</h3>
+                    <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">How do you report results?</h3>
                     {openFaqIndex === 4 ? (
                       <ChevronUp className="w-5 h-5 text-slate-950 flex-shrink-0" />
                     ) : (
@@ -449,7 +458,7 @@ export default function PPCPage() {
                   </button>
                   {openFaqIndex === 4 && (
                     <div className="px-8 pb-6">
-                      <p className="font-open-sans text-md md:leading-[1.7] my-8 text-slate-950">
+                      <p className="font-open-sans text-sm md:leading-[1.7] my-8 text-slate-950">
                         We provide monthly performance dashboards via Looker Studio or Data Studio, showing key metrics like ROAS, CPC, conversion rates, and attribution across channels. Reports include strategic insights, optimization actions taken, and clear recommendations for the next period—all tied to your business objectives.
                       </p>
                     </div>
@@ -461,7 +470,7 @@ export default function PPCPage() {
                     onClick={() => setOpenFaqIndex(openFaqIndex === 5 ? null : 5)}
                     className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                   >
-                    <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">Do you create ad copy and landing pages?</h3>
+                    <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">Do you create ad copy and landing pages?</h3>
                     {openFaqIndex === 5 ? (
                       <ChevronUp className="w-5 h-5 text-slate-950 flex-shrink-0" />
                     ) : (
@@ -470,7 +479,7 @@ export default function PPCPage() {
                   </button>
                   {openFaqIndex === 5 && (
                     <div className="px-8 pb-6">
-                      <p className="font-open-sans text-md md:leading-[1.7] my-8 text-slate-950">
+                      <p className="font-open-sans text-sm md:leading-[1.7] my-8 text-slate-950">
                         Yes. We develop ad copy, creative assets, and landing page recommendations aligned with your brand voice and conversion goals. For complex landing page builds, we can collaborate with your team or recommend development partners to ensure conversion-optimized experiences.
                       </p>
                     </div>
@@ -482,7 +491,7 @@ export default function PPCPage() {
                     onClick={() => setOpenFaqIndex(openFaqIndex === 6 ? null : 6)}
                     className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                   >
-                    <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">How quickly can campaigns launch?</h3>
+                    <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">How quickly can campaigns launch?</h3>
                     {openFaqIndex === 6 ? (
                       <ChevronUp className="w-5 h-5 text-slate-950 flex-shrink-0" />
                     ) : (
@@ -491,7 +500,7 @@ export default function PPCPage() {
                   </button>
                   {openFaqIndex === 6 && (
                     <div className="px-8 pb-6">
-                      <p className="font-open-sans text-md md:leading-[1.7] my-8 text-slate-950">
+                      <p className="font-open-sans text-sm md:leading-[1.7] my-8 text-slate-950">
                         Initial campaigns can launch within 1-2 weeks after kickoff, including account setup, audience research, keyword planning, creative development, and tracking configuration. Full optimization and scaling typically develop over 4-8 weeks as we gather performance data and refine strategies.
                       </p>
                     </div>
@@ -503,7 +512,7 @@ export default function PPCPage() {
                     onClick={() => setOpenFaqIndex(openFaqIndex === 7 ? null : 7)}
                     className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                   >
-                    <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">What makes VISIBI's paid media different?</h3>
+                    <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">What makes VISIBI's paid media different?</h3>
                     {openFaqIndex === 7 ? (
                       <ChevronUp className="w-5 h-5 text-slate-950 flex-shrink-0" />
                     ) : (
@@ -512,7 +521,7 @@ export default function PPCPage() {
                   </button>
                   {openFaqIndex === 7 && (
                     <div className="px-8 pb-6">
-                      <p className="font-open-sans text-md md:leading-[1.7] my-8 text-slate-950">
+                      <p className="font-open-sans text-sm md:leading-[1.7] my-8 text-slate-950">
                         We integrate paid media with your broader AI visibility strategy. Campaigns aren't siloed—they amplify content optimized for GEO, test messaging that informs SEO, and generate audience insights that improve overall brand discoverability across traditional search, AI platforms, and social channels.
                       </p>
                     </div>
@@ -524,7 +533,7 @@ export default function PPCPage() {
                     onClick={() => setOpenFaqIndex(openFaqIndex === 8 ? null : 8)}
                     className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                   >
-                    <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">How do you measure campaign success?</h3>
+                    <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">How do you measure campaign success?</h3>
                     {openFaqIndex === 8 ? (
                       <ChevronUp className="w-5 h-5 text-slate-950 flex-shrink-0" />
                     ) : (
@@ -533,7 +542,7 @@ export default function PPCPage() {
                   </button>
                   {openFaqIndex === 8 && (
                     <div className="px-8 pb-6">
-                      <p className="font-open-sans text-md md:leading-[1.7] my-8 text-slate-950">
+                      <p className="font-open-sans text-sm md:leading-[1.7] my-8 text-slate-950">
                         We track ROAS (Return on Ad Spend), CPC (Cost Per Click), conversion rates, quality scores, and customer acquisition cost. Most importantly, we tie these metrics to business outcomes—qualified leads, pipeline value, revenue attribution, and customer lifetime value—not just vanity metrics.
                       </p>
                     </div>
@@ -545,7 +554,7 @@ export default function PPCPage() {
                     onClick={() => setOpenFaqIndex(openFaqIndex === 9 ? null : 9)}
                     className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                   >
-                    <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">Can you take over existing campaigns?</h3>
+                    <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">Can you take over existing campaigns?</h3>
                     {openFaqIndex === 9 ? (
                       <ChevronUp className="w-5 h-5 text-slate-950 flex-shrink-0" />
                     ) : (
@@ -554,7 +563,7 @@ export default function PPCPage() {
                   </button>
                   {openFaqIndex === 9 && (
                     <div className="px-8 pb-6">
-                      <p className="font-open-sans text-md md:leading-[1.7] my-8 text-slate-950">
+                      <p className="font-open-sans text-sm md:leading-[1.7] my-8 text-slate-950">
                         Absolutely. We conduct a comprehensive audit of your existing campaigns, identify optimization opportunities, and create a transition plan that minimizes disruption while improving performance. Most clients see measurable improvements within the first 60-90 days of our management.
                       </p>
                     </div>
@@ -617,29 +626,40 @@ export default function PPCPage() {
               </div>
             </div>
           </section>
-
-          {/* Final CTA Section */}
-          <section className="py-12 mb-12 border-t border-slate-200">
-            <div className="max-w-3xl mx-auto text-center space-y-6 md:px-16">
-              <h2 className="font-open-sans font-thin text-4xl md:text-5xl md:leading-[1.3] text-slate-950">
-                Amplify Your Reach. Accelerate Your Conversions.
-              </h2>
-              <p className="font-open-sans text-xl leading-[1.7] text-slate-950 pb-8">
-                Get a comprehensive paid media audit and discover how to drive immediate visibility while building long-term authority.
-              </p>
-              <Link to="/contact">
-                <Button className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  Book Paid Media Audit
-                </Button>
-              </Link>
-            </div>
-          </section>
         </div>
       </main>
 
+      {/* Final CTA Section */}
+      <section className="max-w-[90%] mx-auto px-12 py-24 relative z-10 bg-[#FAFAFB] rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-32 overflow-hidden">
+        {/* Graph paper style background with gradient fade */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Graph paper grid pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
+          {/* Gradient fade */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
+        </div>
+
+        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
+        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
+
+        <div className="max-w-3xl mx-auto text-center space-y-6 relative z-10">
+          <h2 className="font-open-sans font-thin text-4xl md:text-5xl md:leading-[1.3] text-slate-950">
+            Amplify Your Reach. Accelerate Your Conversions.
+          </h2>
+          <p className="font-open-sans text-xl leading-[1.7] text-slate-950 pb-8">
+            Get a comprehensive paid media audit and discover how to drive immediate visibility while building long-term authority.
+          </p>
+          <Link to="/contact">
+            <Button className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
+              <Sparkles className="w-5 h-5 mr-2" />
+              Book Paid Media Audit
+            </Button>
+          </Link>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
+      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-0 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">

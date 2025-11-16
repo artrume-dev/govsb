@@ -34,7 +34,15 @@ export default function HomePage() {
   const inputRef = useRef(null)
   const mainSectionRef = useRef(null)
 
-  const aiEngines = ['ChatGPT', 'Gemini', 'Claude', 'Bing Copilot', 'Perplexity', 'Mistral', 'Grok']
+  const aiEngines = [
+    { name: 'ChatGPT', logo: '/ai-logos/ChatGPT.svg' },
+    { name: 'Claude', logo: '/ai-logos/claude.svg' },
+    { name: 'Copilot', logo: '/ai-logos/copilot.svg' },
+    { name: 'Perplexity', logo: '/ai-logos/perplexity.svg' },
+    { name: 'Grok', logo: '/ai-logos/grok.svg' },
+    { name: 'Cohere', logo: '/ai-logos/cohere.svg' },
+    { name: 'DeepSeek', logo: '/ai-logos/deepseek.svg' }
+  ]
 
   const handleUrlSubmit = (e) => {
     e.preventDefault()
@@ -293,12 +301,13 @@ export default function HomePage() {
                   We optimise your brand for the new discovery layer, where platforms like ChatGPT, Gemini, and Perplexity determine which businesses to recommend. VISIBI ensures your content is visible, accurately interpreted, and positively referenced by Gen AI systems.
                 </h2>
                 <div className="flex flex-col sm:flex-row gap-4 justify-left">
-                  <Link to="/tool">
-                    <Button className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
-                      <Sparkles className="w-5 h-5 mr-2" />
-                      Request My Gen AI Visibility Audit
-                    </Button>
-                  </Link>
+                  <Button 
+                    onClick={scrollToForm}
+                    className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors"
+                  >
+                    <Sparkles className="w-5 h-5 mr-2" />
+                    Request Gen AI Visibility Audit
+                  </Button>
                   <Link to="/geo">
                     <Button className="inline-flex items-center px-8 py-6 bg-white text-slate-950 border border-slate-300 rounded-full font-medium hover:bg-slate-50 transition-colors">
                       Learn How GEO Works
@@ -310,10 +319,19 @@ export default function HomePage() {
 
               {/* Right Column - 40% (2 out of 5 columns) */}
               <div className="lg:col-span-2 flex items-center justify-center">
+                <style>{`
+                  @keyframes subtleBounce {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                  }
+                  .animate-subtle-bounce {
+                    animation: subtleBounce 4s ease-in-out infinite;
+                  }
+                `}</style>
                 <img 
                   src="/vi/visibi-llms.png" 
                   alt="AI platforms and visibility optimization illustration" 
-                  className="w-full h-auto max-w-md"
+                  className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
               </div>
             </div>
@@ -324,7 +342,7 @@ export default function HomePage() {
       {/* AI Engines Marquee */}
       <section className="max-w-[90%] mx-auto bg-white border-l border-r border-b border-slate-200 py-16">
         <div className="px-4 lg:px-8">
-          <p className="font-space-mono text-sm text-slate-950 text-center mb-8 uppercase tracking-wide">
+          <p className="font-space-mono text-xl text-slate-950 text-center mb-12 uppercase tracking-wide">
             Visible where decisions start
           </p>
 
@@ -338,15 +356,19 @@ export default function HomePage() {
                 animation: marquee 30s linear infinite;
               }
             `}</style>
-            <div className="flex gap-4 animate-marquee whitespace-nowrap">
+            <div className="flex gap-8 animate-marquee whitespace-nowrap items-center">
               {[...aiEngines, ...aiEngines, ...aiEngines].map((engine, idx) => (
-                <span
+                <div
                   key={idx}
-                  className="inline-flex items-center gap-2 px-4 py-2 border border-slate-300 rounded-full font-space-mono text-sm text-slate-950"
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-white"
                 >
-                  <Bot className="w-4 h-4" />
-                  {engine}
-                </span>
+                  <img 
+                    src={engine.logo} 
+                    alt={`${engine.name} logo`}
+                    className="h-6 w-auto object-contain"
+                  />
+                  <span className="font-space-mono text-sm text-slate-950">{engine.name}</span>
+                </div>
               ))}
             </div>
           </div>
@@ -354,7 +376,7 @@ export default function HomePage() {
       </section>
 
       {/* Brand Analysis Section */}
-      <main ref={mainSectionRef} className="max-w-[90%] mx-auto px-8 py-12 relative z-10 bg-white border-l border-r border-slate-300 mb-1">
+      <main ref={mainSectionRef} className="max-w-[90%] mx-auto px-8 py-16 relative z-10 bg-white border-l border-r border-slate-300 mb-1">
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background"></div>
 
@@ -694,7 +716,7 @@ export default function HomePage() {
           </section>
 
           {/* Why VISIBI */}
-          <section className="py-24 mb-12">
+          <section className="py-16 mb-6">
             <div className="max-w-7xl mx-auto md:px-16">
               <div className="text-center mb-12">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
@@ -702,11 +724,11 @@ export default function HomePage() {
                 </h2>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-3 gap-6 pattern-background p-4 border-slate-300 border">
                 {whyVisibi.map((item, index) => {
                   const Icon = item.icon
                   return (
-                    <div key={index} className="text-center">
+                    <div key={index} className="bg-white border border-slate-300 p-8 text-center">
                       <div className="flex justify-center mb-6">
                         <Icon size={32} strokeWidth={1.25} className="text-slate-950" />
                       </div>
@@ -724,7 +746,7 @@ export default function HomePage() {
           </section>
 
           {/* CTA Divider */}
-          <section className="py-16 border-b border-slate-200">
+          <section className="pt-0 pb-16 border-b border-slate-200">
             <div className="text-center">
               <Link to="/tool">
                 <Button className="inline-flex items-center px-6 py-6 bg-white text-slate-950 border border-slate-950 rounded-full font-medium hover:bg-slate-950 hover:text-white transition-colors">
@@ -795,7 +817,7 @@ export default function HomePage() {
                       onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
                       className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                     >
-                      <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">{faq.question}</h3>
+                      <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">{faq.question}</h3>
                       {openFaqIndex === index ? (
                         <ChevronUp className="w-5 h-5 text-slate-950 flex-shrink-0" />
                       ) : (
@@ -827,11 +849,19 @@ export default function HomePage() {
       </main>
 
       {/* Final CTA Section */}
-      <section className="max-w-[90%] mx-auto px-12 py-24 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-32">
+      <section className="max-w-[90%] mx-auto px-12 py-24 relative z-10 bg-[#FAFAFB] rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-32 overflow-hidden">
+        {/* Graph paper style background with gradient fade */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Graph paper grid pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
+          {/* Gradient fade */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
+        </div>
+
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
 
-        <div className="max-w-3xl mx-auto text-center space-y-6">
+        <div className="max-w-3xl mx-auto text-center space-y-6 relative z-10">
           <h2 className="font-open-sans font-thin text-4xl md:text-5xl md:leading-[1.3] text-slate-950">
             Discover how Gen AI platforms describe your brand.
           </h2>

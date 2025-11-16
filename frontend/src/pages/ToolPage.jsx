@@ -269,7 +269,7 @@ export default function ToolPage() {
                       onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
                       className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                     >
-                      <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">{faq.question}</h3>
+                      <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">{faq.question}</h3>
                       {openFaqIndex === index ? (
                         <ChevronUp className="w-5 h-5 text-slate-950 flex-shrink-0" />
                       ) : (
@@ -278,7 +278,7 @@ export default function ToolPage() {
                     </button>
                     {openFaqIndex === index && (
                       <div className="px-8 pb-6">
-                        <p className="font-open-sans text-md md:leading-[1.7] my-8 text-slate-950">{faq.answer}</p>
+                        <p className="font-open-sans text-sm md:leading-[1.7] my-8 text-slate-950">{faq.answer}</p>
                       </div>
                     )}
                   </div>

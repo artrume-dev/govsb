@@ -258,10 +258,19 @@ export default function AIAgentsPage() {
 
               {/* Right Column - 40% (2 out of 5 columns) */}
               <div className="lg:col-span-2 flex items-center justify-center">
+                <style>{`
+                  @keyframes subtleBounce {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                  }
+                  .animate-subtle-bounce {
+                    animation: subtleBounce 4s ease-in-out infinite;
+                  }
+                `}</style>
                 <img
                   src="/vi/visibi-ai-agents.png"
                   alt="AI agent development and automation illustration"
-                  className="w-full h-auto max-w-md"
+                  className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
               </div>
             </div>
@@ -270,7 +279,7 @@ export default function AIAgentsPage() {
       </section>
 
       {/* Main Content */}
-      <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-2">
+      <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none rounded-bl-none rounded-br-none border-t border-r border-l border-slate-300 mb-2">
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
 
@@ -468,7 +477,7 @@ export default function AIAgentsPage() {
           </section>
 
           {/* FAQ Section */}
-          <section className="py-12 mb-12 border-b border-slate-200">
+          <section className="py-12 mb-12">
             <div className="md:max-w-3xl max-w-full mx-auto md:text-left md:px-16 px-0">
               <div className="text-center mb-12">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
@@ -487,7 +496,7 @@ export default function AIAgentsPage() {
                       onClick={() => toggleFaq(index)}
                       className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                     >
-                      <h3 className="font-space-mono font-normal text-md md:text-lg text-slate-950 pr-4">
+                      <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">
                         {faq.question}
                       </h3>
                       <ChevronDown
@@ -508,29 +517,40 @@ export default function AIAgentsPage() {
               </div>
             </div>
           </section>
-
-          {/* Final CTA Section */}
-          <section className="py-12 mb-12">
-            <div className="max-w-3xl mx-auto text-center space-y-6 md:px-16">
-              <h2 className="font-open-sans font-thin text-4xl md:text-5xl md:leading-[1.3] text-slate-950">
-                Book an Agentic AI Discovery Call
-              </h2>
-              <p className="font-open-sans text-xl leading-[1.7] text-slate-950 pb-8">
-                If you're exploring how AI agents could automate workflows, augment teams or unlock value from your existing data, we can help you move from idea to working prototype.
-              </p>
-              <Link to="/contact">
-                <Button className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  Book a Discovery Call
-                </Button>
-              </Link>
-            </div>
-          </section>
         </div>
       </main>
 
+      {/* Final CTA Section */}
+      <section className="max-w-[90%] mx-auto px-12 py-24 relative z-10 bg-[#FAFAFB] rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-32 overflow-hidden">
+        {/* Graph paper style background with gradient fade */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Graph paper grid pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
+          {/* Gradient fade */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
+        </div>
+
+        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
+        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
+
+        <div className="max-w-3xl mx-auto text-center space-y-6 relative z-10">
+          <h2 className="font-open-sans font-thin text-4xl md:text-5xl md:leading-[1.3] text-slate-950">
+            Book an Agentic AI Discovery Call
+          </h2>
+          <p className="font-open-sans text-xl leading-[1.7] text-slate-950 pb-8">
+            If you're exploring how AI agents could automate workflows, augment teams or unlock value from your existing data, we can help you move from idea to working prototype.
+          </p>
+          <Link to="/contact">
+            <Button className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
+              <Sparkles className="w-5 h-5 mr-2" />
+              Book a Discovery Call
+            </Button>
+          </Link>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
+      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-0 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
