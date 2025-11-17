@@ -5,6 +5,13 @@ from email.mime.multipart import MIMEMultipart
 from typing import Dict, Optional
 from abc import ABC, abstractmethod
 
+try:
+    import resend
+    RESEND_AVAILABLE = True
+except ImportError:
+    RESEND_AVAILABLE = False
+    print("⚠️  Resend package not installed. SMTP will be used as fallback.")
+
 class EmailProvider(ABC):
     """Abstract base class for email providers"""
 
@@ -78,6 +85,38 @@ class ConsoleEmailProvider(EmailProvider):
         return True
 
 
+class ResendEmailProvider(EmailProvider):
+    """Resend email provider (works great with Railway)"""
+
+    def __init__(self, api_key: str, from_email: str):
+        self.api_key = api_key
+        self.from_email = from_email
+        resend.api_key = api_key
+
+    def send_email(self, to_email: str, subject: str, html_content: str, text_content: str) -> bool:
+        """Send email via Resend"""
+        try:
+            print(f"🔄 Attempting to send email via Resend to {to_email}")
+            print(f"   From: {self.from_email}")
+            
+            params = {
+                "from": self.from_email,
+                "to": [to_email],
+                "subject": subject,
+                "html": html_content,
+            }
+            
+            email = resend.Emails.send(params)
+            print(f"✅ Email sent successfully via Resend to {to_email}")
+            print(f"   Email ID: {email.get('id', 'N/A')}")
+            return True
+        except Exception as e:
+            print(f"❌ Failed to send email via Resend: {type(e).__name__}: {e}")
+            import traceback
+            print(traceback.format_exc())
+            return False
+
+
 class EmailService:
     """Email service for sending waitlist notifications"""
 
@@ -90,7 +129,19 @@ class EmailService:
 
     def _initialize_provider(self) -> EmailProvider:
         """Initialize email provider from environment variables"""
-        # Check for SMTP configuration
+        # Try Resend first (recommended for Railway)
+        if RESEND_AVAILABLE:
+            resend_api_key = os.getenv('RESEND_API_KEY')
+            from_email = os.getenv('FROM_EMAIL', 'onboarding@resend.dev')
+            
+            if resend_api_key:
+                print("✅ Using Resend email provider")
+                return ResendEmailProvider(
+                    api_key=resend_api_key,
+                    from_email=from_email
+                )
+        
+        # Fallback to SMTP
         smtp_host = os.getenv('SMTP_HOST')
         smtp_port = os.getenv('SMTP_PORT', '587')
         smtp_user = os.getenv('SMTP_USER')
@@ -98,6 +149,7 @@ class EmailService:
         from_email = os.getenv('FROM_EMAIL')
 
         if smtp_host and smtp_user and smtp_password and from_email:
+            print("⚠️  Using SMTP email provider (may not work on Railway)")
             return SMTPEmailProvider(
                 smtp_host=smtp_host,
                 smtp_port=int(smtp_port),
@@ -108,7 +160,8 @@ class EmailService:
 
         # Default to console provider for development
         print("⚠️  No email configuration found. Using console output mode.")
-        print("   To enable email sending, set these environment variables:")
+        print("   To enable email sending, set one of:")
+        print("   - RESEND_API_KEY + FROM_EMAIL (recommended for Railway)")
         print("   - SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, FROM_EMAIL")
         return ConsoleEmailProvider()
 
