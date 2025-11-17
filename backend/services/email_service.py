@@ -27,6 +27,11 @@ class SMTPEmailProvider(EmailProvider):
     def send_email(self, to_email: str, subject: str, html_content: str, text_content: str) -> bool:
         """Send email via SMTP"""
         try:
+            print(f"🔄 Attempting to send email to {to_email}")
+            print(f"   SMTP Host: {self.smtp_host}:{self.smtp_port}")
+            print(f"   From: {self.from_email}")
+            print(f"   Username: {self.username}")
+            
             msg = MIMEMultipart('alternative')
             msg['Subject'] = subject
             msg['From'] = self.from_email
@@ -39,14 +44,21 @@ class SMTPEmailProvider(EmailProvider):
             msg.attach(part2)
 
             # Send email with timeout
+            print(f"   Connecting to SMTP server...")
             with smtplib.SMTP(self.smtp_host, self.smtp_port, timeout=10) as server:
+                print(f"   Starting TLS...")
                 server.starttls()
+                print(f"   Logging in...")
                 server.login(self.username, self.password)
+                print(f"   Sending email...")
                 server.sendmail(self.from_email, to_email, msg.as_string())
+                print(f"✅ Email sent successfully to {to_email}")
 
             return True
         except Exception as e:
-            print(f"Failed to send email via SMTP: {e}")
+            print(f"❌ Failed to send email via SMTP: {type(e).__name__}: {e}")
+            import traceback
+            print(traceback.format_exc())
             return False
 
 
