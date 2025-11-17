@@ -54,7 +54,20 @@ app = FastAPI(
 
 # Add CORS middleware
 # Get allowed origins from environment or use defaults
-allowed_origins = os.getenv("ALLOWED_ORIGINS", "*").split(",")
+allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "")
+if allowed_origins_str:
+    allowed_origins = allowed_origins_str.split(",")
+else:
+    # Default allowed origins including Vercel deployments
+    allowed_origins = [
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "http://127.0.0.1:5173",
+        "https://visibi-app-git-main-adnan-hkas-projects.vercel.app",
+        "https://visibi-app.vercel.app",
+        "https://*.vercel.app",  # Allow all Vercel preview deployments
+    ]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
