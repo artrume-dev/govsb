@@ -21,7 +21,7 @@ export default function HomePage() {
     document.documentElement.classList.remove('dark')
   }, [])
 
-  const [openFaqIndex, setOpenFaqIndex] = useState(null)
+  const [openFaqIndex, setOpenFaqIndex] = useState(0)
   const [step, setStep] = useState(1)
   const [brandUrl, setBrandUrl] = useState('')
   const [email, setEmail] = useState('')
@@ -33,6 +33,7 @@ export default function HomePage() {
   const [preview, setPreview] = useState(null)
   const inputRef = useRef(null)
   const mainSectionRef = useRef(null)
+  const thankYouRef = useRef(null)
 
   const aiEngines = [
     { name: 'ChatGPT', logo: '/ai-logos/ChatGPT.svg' },
@@ -104,6 +105,11 @@ export default function HomePage() {
         sentiment: 'PENDING'
       })
       setStep(3)
+      
+      // Scroll to thank you section after a brief delay
+      setTimeout(() => {
+        thankYouRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }, 100)
     } catch (err) {
       setError(err.message || 'Something went wrong. Please try again.')
     } finally {
@@ -294,10 +300,12 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
               {/* Left Column - 60% (3 out of 5 columns) */}
               <div className="lg:col-span-3 space-y-4 text-left">
-                <h1 className="font-open-sans text-3xl md:text-4xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
-                  Generative Engine Optimisation (GEO): Visibility That Moves Beyond Search
+                <h1 className="font-open-sans text-3xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
+                  Generative Engine Optimisation (GEO)
+                  {/* <span className="text-3xl md:text-4xl font-thin block pt-8 pb-3"> Visibility That Moves Beyond Search</span> */}
+                  <span className="text-3xl md:text-4xl font-thin block pt-3 md:leading-[1.2]">Know where your Brand appears in AI Conversations</span>
                 </h1>
-                <h2 className="text-md md:text-md md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
+                <h2 className="text-md md:text-lg md:leading-[1.7] tracking-tight font-light text-slate-950 pt-2 pb-8 font-open-sans">
                   We optimise your brand for the new discovery layer, where platforms like ChatGPT, Gemini, and Perplexity determine which businesses to recommend. VISIBI ensures your content is visible, accurately interpreted, and positively referenced by Gen AI systems.
                 </h2>
                 <div className="flex flex-col sm:flex-row gap-4 justify-left">
@@ -329,7 +337,7 @@ export default function HomePage() {
                   }
                 `}</style>
                 <img 
-                  src="/vi/visibi-llms.png" 
+                  src="/vi/visibi-about.png" 
                   alt="AI platforms and visibility optimization illustration" 
                   className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
@@ -533,7 +541,7 @@ export default function HomePage() {
                     </Button>
                     
                     <Button type="submit" size="lg" className="flex-1 h-12 rounded-3xl bg-blue-700 text-white" disabled={loading}>
-                      {loading ? 'Analyzing...' : 'Get my Free Analysis'}
+                      {loading ? 'Analyzing...' : 'Get my free analysis'}
                       {!loading && <ArrowRight className="ml-2 h-5 w-5" />}
                     </Button>
                   </div>
@@ -550,7 +558,7 @@ export default function HomePage() {
         )}
 
         {step === 3 && preview && (
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div ref={thankYouRef} className="max-w-4xl mx-auto space-y-8">
             <Card className="bg-white border-2 border-blue-700">
               <CardHeader className="text-center py-12">
                 <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -611,7 +619,7 @@ export default function HomePage() {
               <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-8">
                 The Gen AI Search Revolution
               </h2>
-              <div className="font-open-sans text-xl leading-[1.7] text-slate-950 space-y-6">
+              <div className="font-open-sans font-normal text-lg leading-[1.7] text-slate-950 space-y-6">
                 <p>
                   Gen AI has changed how customers discover brands. Large Language Models (LLMs) such as ChatGPT, Claude, Bing, Perplexity, and Gemini now serve as research tools, answering questions and influencing trust before customers visit your website.
                 </p>
@@ -632,7 +640,7 @@ export default function HomePage() {
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
                   What GEO Really Means
                 </h2>
-                <p className="font-open-sans text-xl leading-[1.5] text-slate-950 max-w-3xl mx-auto">
+                <p className="font-open-sans text-lg leading-[1.5] text-slate-950 max-w-3xl mx-auto">
                   GEO - Generative Engine Optimisation - is the evolution of SEO for the Gen AI Search Era. It ensures Gen AI systems interpret, reference, and recommend your brand with confidence and consistency.
                 </p>
               </div>
@@ -760,32 +768,54 @@ export default function HomePage() {
           {/* Featured Insights */}
           <section className="py-24 mb-12 border-b border-slate-200">
             <div className="max-w-7xl mx-auto md:px-16">
-              <div className="text-center mb-12">
-                <p className="font-open-sans text-lg leading-[1.5] text-slate-950 max-w-3xl mx-auto">
+              <div className="max-w-4xl text-left mb-12 mx-0">
+                <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
                   Discover how Gen AI search is transforming digital visibility and learn practical strategies to maintain your competitive edge.
-                </p>
+                </h2>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 mb-8 border-slate-300 border pattern-background p-4">
                 {insights.map((insight, index) => {
                   const Icon = insight.icon
                   return (
-                    <div key={index} className="bg-white border border-slate-300 p-8">
-                      <div className="mb-6">
-                        <Icon size={32} strokeWidth={1.25} className="text-slate-950" />
+                    <div key={index} className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-slate-300 transition-all duration-300">
+                      {/* Icon Section */}
+                      <div className="h-64 bg-slate-50 border-b border-slate-200 flex items-center justify-center">
+                        <Icon size={48} strokeWidth={1.25} className="text-slate-950" />
                       </div>
-                      <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-4 uppercase">
-                        {insight.title}
-                      </h3>
-                      <p className="font-open-sans text-md leading-[1.5] text-slate-950 mb-6">
-                        {insight.description}
-                      </p>
-                      <Link to="/insights">
-                        <Button className="inline-flex items-center px-4 py-2 bg-white text-slate-950 border border-slate-300 rounded-full text-sm font-medium hover:bg-slate-50 transition-colors">
-                          Read More
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
-                      </Link>
+                      
+                      {/* Content Section */}
+                      <div className="p-8">
+                        {/* Category Badge and Read Time */}
+                        <div className="flex items-center gap-3 mb-4">
+                          <span className="font-space-mono text-xs text-slate-950 bg-white border border-slate-950 px-4 py-1.5 rounded-full uppercase tracking-wide">
+                            GEO
+                          </span>
+                          <span className="font-space-mono text-sm text-slate-600">
+                            8 min read
+                          </span>
+                        </div>
+                        
+                        {/* Title */}
+                        <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-4 uppercase">
+                          {insight.title}
+                        </h3>
+                        
+                        {/* Description */}
+                        <p className="font-open-sans text-base leading-[1.6] text-slate-950 mb-6">
+                          {insight.description}
+                        </p>
+                        
+                        {/* Footer with Date and Read More */}
+                        <div className="flex items-center justify-between pt-4 border-t border-slate-200">
+                          <span className="font-space-mono text-sm text-slate-600">
+                            Oct 15, 2025
+                          </span>
+                          <Link to="/insights" className="font-space-mono text-sm text-slate-950 hover:text-blue-700 inline-flex items-center gap-2 transition-colors">
+                            Read More <ArrowRight className="w-4 h-4" />
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   )
                 })}

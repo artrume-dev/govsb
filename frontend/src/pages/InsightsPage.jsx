@@ -141,11 +141,11 @@ export default function InsightsPage() {
           <div className="relative z-10 py-16 border-l border-r border-slate-200">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
               {/* Left Column - 60% (3 out of 5 columns) */}
-              <div className="lg:col-span-3 space-y-8 text-left">
-                <h1 className="font-open-sans text-4xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
+              <div className="lg:col-span-3 space-y-4 text-left">
+                <h1 className="font-open-sans text-3xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
                   AI Visibility Insights & Research
                 </h1>
-                <h2 className="text-md md:text-xl md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
+                <h2 className="font-open-sans text-2xl md:text-3xl font-thin block md:leading-[1.4] pb-8">
                   Deep dives, case studies, and strategic frameworks for mastering visibility in the age of generative AI.
                 </h2>
               </div>

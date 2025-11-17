@@ -191,7 +191,7 @@ export default function AIAgentsPage() {
     }
   ]
 
-  const [openFaqIndex, setOpenFaqIndex] = useState(null)
+  const [openFaqIndex, setOpenFaqIndex] = useState(0)
 
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index)
@@ -234,13 +234,17 @@ export default function AIAgentsPage() {
           <div className="relative z-10 py-16 border-l border-r border-slate-200">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
               {/* Left Column - 60% (3 out of 5 columns) */}
-              <div className="lg:col-span-3 space-y-8 text-left">
-                <h1 className="font-open-sans text-4xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
+              <div className="lg:col-span-3 space-y-4 text-left">
+                <h1 className="font-open-sans text-3xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
                   Agentic AI Development
                 </h1>
-                <h2 className="text-md md:text-xl md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
-                  Build intelligent AI agents that automate workflows, make decisions, and scale your operations. We design, develop and deploy agentic AI systems that work across your data, tools and processes — built safely, transparently and fully aligned with your business goals.
+                <h2 className="font-open-sans text-2xl md:text-3xl font-thin block md:leading-[1.4] pb-2">
+                  Build intelligent AI agents that automate workflows, make decisions, and scale your operations. 
+                  
                 </h2>
+
+                <h3 className="text-xl md:text-xl font-thin md:leading-[1.7] b  pb-8">We design, develop and deploy agentic AI systems that work across your data, tools and processes, built safely, transparently and fully aligned with your business goals.</h3>
+
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/contact">
                     <Button className="inline-flex items-center px-6 py-3 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">

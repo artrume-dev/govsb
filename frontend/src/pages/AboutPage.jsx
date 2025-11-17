@@ -40,18 +40,47 @@ export default function AboutPage() {
       <Navigation currentPage="about" />
 
       {/* Hero Section */}
-      <section className="max-w-[90%] mx-auto items-center lg:px-[5rem] mb-0 mt-12 relative bg-white border border-b-0 border-slate-300 dark:border-gray-800 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200">
-        <div className="lg:block h-full w-full ">
-        <div className="relative z-10 py-16 flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16 border-l border-r border-slate-200 dark:border-gray-800">
-          <div className="max-w-3xl px-16 space-y-8">
-             <h1 className="font-open-sans text-4xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
-              Born from Search.<span className="block">Built for Gen AI.</span>
-            </h1>
-            <h2 className="text-md md:text-xl md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
-              Two decades of search expertise, reimagined for the era of generative AI.
-            </h2>
-          </div>
+      <section className="max-w-[90%] mx-auto items-center lg:px-[5rem] mb-0 mt-12 relative bg-[#FAFAFB] border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200 overflow-hidden">
+        {/* Graph paper style background with gradient fade at bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-64 pointer-events-none">
+          {/* Graph paper grid pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
+          {/* Gradient fade from white to gray-50 */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
         </div>
+
+        <div className="lg:block h-full w-full">
+          <div className="relative z-10 py-16 border-l border-r border-slate-200">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
+              {/* Left Column - 60% (3 out of 5 columns) */}
+              <div className="lg:col-span-3 space-y-4 text-left">
+                <h1 className="font-open-sans text-3xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
+                  Born from Search.<span className="block">Built for Gen AI.</span>
+                </h1>
+                <h2 className="font-open-sans text-2xl md:text-3xl font-thin block md:leading-[1.4] pb-8">
+                  Two decades of search expertise, reimagined for the era of generative AI.
+                </h2>
+              </div>
+
+              {/* Right Column - 40% (2 out of 5 columns) */}
+              <div className="lg:col-span-2 flex items-center justify-center">
+                <style>{`
+                  @keyframes subtleBounce {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                  }
+                  .animate-subtle-bounce {
+                    animation: subtleBounce 4s ease-in-out infinite;
+                  }
+                `}</style>
+                <img 
+                  src="/vi/visibi-llms.png" 
+                  alt="VISIBI team expertise in AI visibility and search optimization" 
+                  className="w-full h-auto max-w-md animate-subtle-bounce"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -11,7 +11,7 @@ export default function HowWeWorkPage() {
     document.documentElement.classList.remove('dark')
   }, [])
 
-  const [openFaqIndex, setOpenFaqIndex] = useState(null)
+  const [openFaqIndex, setOpenFaqIndex] = useState(0)
 
   const attributes = [
     {
@@ -156,21 +156,30 @@ export default function HowWeWorkPage() {
           <div className="relative z-10 py-16 border-l border-r border-slate-200">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
               {/* Left Column - 60% (3 out of 5 columns) */}
-              <div className="lg:col-span-3 space-y-8 text-left">
-                <h1 className="font-open-sans text-4xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
+              <div className="lg:col-span-3 space-y-4 text-left">
+                <h1 className="font-open-sans text-3xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
                   Strategy, Transparency & Trust
                 </h1>
-                <h2 className="text-md md:text-xl md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
+                <h2 className="font-open-sans text-2xl md:text-3xl font-thin block md:leading-[1.4] pb-8">
                   How we partner with brands to build lasting Gen AI visibility through data-driven strategy, ethical tactics, and relentless optimization.
                 </h2>
               </div>
 
               {/* Right Column - 40% (2 out of 5 columns) */}
               <div className="lg:col-span-2 flex items-center justify-center">
+                <style>{`
+                  @keyframes subtleBounce {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                  }
+                  .animate-subtle-bounce {
+                    animation: subtleBounce 4s ease-in-out infinite;
+                  }
+                `}</style>
                 <img 
-                  src="/vi/visibi-tool.png" 
+                  src="/vi/visibi-welcome.png" 
                   alt="Strategic planning and transparent methodology for AI visibility optimization" 
-                  className="w-full h-auto max-w-md"
+                  className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
               </div>
             </div>
@@ -238,7 +247,7 @@ export default function HowWeWorkPage() {
           </section>
 
           {/* Ethics */}
-          <section className="py-12 mb-12 border-t border-slate-200">
+          <section className="py-24 mb-12 border-t border-slate-200">
             <div className="max-w-4xl mx-auto md:px-16">
               <div className="mb-12 text-left">
                 <h2 className="font-inter font-medium text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
@@ -289,7 +298,7 @@ export default function HowWeWorkPage() {
                       onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
                       className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                     >
-                      <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">{faq.question}</h3>
+                      <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">{faq.question}</h3>
                       {openFaqIndex === index ? (
                         <ChevronUp className="w-5 h-5 text-slate-950 flex-shrink-0" />
                       ) : (
@@ -309,35 +318,36 @@ export default function HowWeWorkPage() {
         </div>
       </main>
 
-             {/* CTA Section */}
+      {/* CTA Section */}
+      <section className="max-w-[90%] mx-auto px-12 py-24 relative z-10 bg-[#FAFAFB] rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-32 overflow-hidden">
+        {/* Graph paper style background with gradient fade */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Graph paper grid pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
+          {/* Gradient fade */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
+        </div>
 
-          <section className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white dark:bg-gray-950 rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 dark:border-gray-800 mb-32">
-            
-             <div className="lg:block absolute h-full w-0 md:w-10 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 dark:border-gray-800 left-0 top-0 pattern-background rounded-bl-xl"></div>
-            <div className="lg:block absolute h-full w-0 md:w-10 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 dark:border-gray-800 right-0 top-0 pattern-background rounded-br-xl"></div>
-        
-        
-            <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h2 className="font-open-sans font-medium text-4xl md:leading-[1.3] text-slate-950 dark:text-white">
-                Ready to Work Together?
-              </h2>
-              <p className="font-open-sans text-xl leading-[1.7] text-slate-950 dark:text-gray-300 pb-8">
-                Let's discuss your AI visibility goals and explore whether VISIBI is the right partner for your brand.
+        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
+        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
 
-
-              </p>
-              <Link to="/">
-                <Button
-                className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
-                  Start a Conversation
-                </Button>
-              </Link>
-            </div>
-          </section>
-
+        <div className="max-w-3xl mx-auto text-center space-y-6 relative z-10">
+          <h2 className="font-open-sans font-thin text-4xl md:text-5xl md:leading-[1.3] text-slate-950">
+            Ready to Work Together?
+          </h2>
+          <p className="font-open-sans text-xl leading-[1.7] text-slate-950 pb-8">
+            Let's discuss your AI visibility goals and explore whether VISIBI is the right partner for your brand.
+          </p>
+          <Link to="/">
+            <Button className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
+              Start a Conversation
+            </Button>
+          </Link>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
+      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-0 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">

@@ -11,7 +11,7 @@ export default function ToolPage() {
     document.documentElement.classList.remove('dark')
   }, [])
 
-  const [openFaqIndex, setOpenFaqIndex] = useState(null)
+  const [openFaqIndex, setOpenFaqIndex] = useState(0)
 
   const features = [
     {
@@ -133,11 +133,11 @@ export default function ToolPage() {
           <div className="relative z-10 py-24 border-l border-r border-slate-200">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
               {/* Left Column - 60% (3 out of 5 columns) */}
-              <div className="lg:col-span-3 space-y-8 text-left">
-                <h1 className="font-open-sans text-4xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
+              <div className="lg:col-span-3 space-y-4 text-left">
+                <h1 className="font-open-sans text-3xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
                   See how Gen AI talks about your Brand
                 </h1>
-                <h2 className="text-md md:text-xl md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
+                <h2 className="font-open-sans text-2xl md:text-3xl font-thin block md:leading-[1.4] pb-8">
                   Track mentions, citations, sentiment, and competitive positioning across ChatGPT, Gemini, Perplexity, and other Gen AI platforms.
                 </h2>
                 <Link to="/">
@@ -160,7 +160,7 @@ export default function ToolPage() {
                   }
                 `}</style>
                 <img 
-                  src="/vi/visibi-welcome.png" 
+                  src="/vi/visibi-howewework.png" 
                   alt="AI visibility tracking and monitoring platform interface" 
                   className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
@@ -183,7 +183,7 @@ export default function ToolPage() {
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
                   Comprehensive AI Visibility Intelligence
                 </h2>
-                <p className="font-open-sans text-xl leading-[1.5] text-slate-950 max-w-2xl">
+                <p className="font-open-sans text-lg leading-[1.5] text-slate-950 max-w-2xl">
                   Everything you need to measure, monitor, and improve your brand's presence in the AI era.
                 </p>
               </div>
@@ -209,7 +209,7 @@ export default function ToolPage() {
 
           {/* Why It Matters */}
           <section className="py-12 mb-12">
-            <div className="max-w-2xl mx-0 md:px-16">
+            <div className="md:max-w-xl max-w-full mx-0 md:px-16">
               <div className="mb-12 text-left">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
                   Why AI Visibility Tracking Matters
@@ -247,7 +247,7 @@ export default function ToolPage() {
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
                   Powerful Insights, Intuitive Interface
                 </h2>
-                <p className="font-open-sans text-xl leading-[1.5] text-slate-950">
+                <p className="font-open-sans text-lg leading-[1.5] text-slate-950">
                   Access all your AI visibility data through clean, actionable dashboards designed for both tactical optimization and executive reporting.
                 </p>
               </div>
@@ -302,17 +302,24 @@ export default function ToolPage() {
       </main>
 
         {/* CTA Section */}
-          <section className="max-w-[90%] mx-auto px-12 py-24 relative z-10 bg-white dark:bg-gray-950 rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 dark:border-gray-800 mb-32">
-            
-             <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 dark:border-gray-800 left-0 top-0 pattern-background rounded-bl-xl"></div>
-            <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 dark:border-gray-800 right-0 top-0 pattern-background rounded-br-xl"></div>
+          <section className="max-w-[90%] mx-auto px-12 py-24 relative z-10 bg-[#FAFAFB] rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-32 overflow-hidden">
+            {/* Graph paper style background with gradient fade */}
+            <div className="absolute inset-0 pointer-events-none">
+              {/* Graph paper grid pattern */}
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
+              {/* Gradient fade */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
+            </div>
+
+            <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
+            <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
         
         
-            <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h2 className="font-open-sans font-medium text-4xl md:leading-[1.3] text-slate-950 dark:text-white">
+            <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+              <h2 className="font-open-sans font-thin text-4xl md:text-5xl md:leading-[1.3] text-slate-950">
                  Request early access to the VISIBI Tool
               </h2>
-              <p className="font-open-sans text-xl leading-[1.7] text-slate-950 dark:text-gray-300 pb-8">
+              <p className="font-open-sans text-lg leading-[1.7] text-slate-950 pb-8">
                See exactly how AI platforms currently describe your brand and get visibility insights your competitors don't have.
               </p>
               <Link to="/">
@@ -326,7 +333,7 @@ export default function ToolPage() {
 
 
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
+      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-0 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
