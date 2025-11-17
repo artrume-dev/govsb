@@ -56,25 +56,31 @@ app = FastAPI(
 # Get allowed origins from environment or use defaults
 allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "")
 if allowed_origins_str:
-    allowed_origins = allowed_origins_str.split(",")
+    allowed_origins = [origin.strip() for origin in allowed_origins_str.split(",")]
+    use_regex = False
 else:
-    # Default allowed origins including Vercel deployments
-    allowed_origins = [
-        "http://localhost:5173",
-        "http://localhost:3000",
-        "http://127.0.0.1:5173",
-        "https://visibi-app-git-main-adnan-hkas-projects.vercel.app",
-        "https://visibi-app.vercel.app",
-        "https://*.vercel.app",  # Allow all Vercel preview deployments
-    ]
+    # For development, allow all origins with regex
+    allowed_origins = ["*"]
+    use_regex = False
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=allowed_origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# Configure CORS
+if use_regex:
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=allowed_origins,
+        allow_origin_regex=r"https://.*\.vercel\.app",
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+else:
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=allowed_origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
 # Initialize services
 brand_analyzer = BrandAnalyzer()
