@@ -39,8 +39,11 @@ class Config:
     @classmethod
     def validate(cls):
         """Validate required configuration"""
-        if not cls.OPENAI_API_KEY:
-            raise ValueError("OPENAI_API_KEY is required")
+        # OpenAI is now optional - only validate if you're using it
+        if cls.OPENAI_API_KEY:
+            print("✅ OpenAI API Key configured")
+        else:
+            print("⚠️  OpenAI API Key not configured (optional - some features disabled)")
         return True
 
 
