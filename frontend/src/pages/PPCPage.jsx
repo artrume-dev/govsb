@@ -32,6 +32,96 @@ export default function PPCPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="PPC Management Services | VISIBI" />
         <meta name="twitter:description" content="Performance campaigns that boost visibility and drive conversions across all major platforms." />
+
+        {/* Structured Data - FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What PPC platforms do you manage?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We manage Google Ads (Search, Display, Shopping, YouTube), Microsoft Ads (Bing), LinkedIn Ads for B2B targeting, and Meta (Facebook & Instagram) campaigns. We select platforms based on where your target audience is most active and where we can achieve the best ROI for your specific goals."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do you use AI in ad optimisation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We leverage AI-powered bidding strategies, automated audience targeting, dynamic creative optimization, and predictive performance modeling. We also use AI tools to test ad copy variations, analyze competitor strategies, and identify high-performing audience segments—all while maintaining strategic human oversight."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can PPC help improve AI visibility?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Paid campaigns drive traffic to high-quality content that signals authority to AI platforms. They also generate user engagement data, test messaging that can inform GEO strategies, and amplify content that's already optimized for AI citations—creating a virtuous cycle between paid, organic, and AI visibility."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What's your minimum ad spend?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We typically recommend a minimum monthly ad spend of $3,000-5,000 for meaningful testing and results, though this varies by industry, competition level, and campaign objectives. We'll provide specific budget recommendations during our initial audit based on your goals and market landscape."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do you report results?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We provide monthly performance dashboards via Looker Studio or Data Studio, showing key metrics like ROAS, CPC, conversion rates, and attribution across channels. Reports include strategic insights, optimization actions taken, and clear recommendations for the next period—all tied to your business objectives."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you create ad copy and landing pages?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We develop ad copy, creative assets, and landing page recommendations aligned with your brand voice and conversion goals. For complex landing page builds, we can collaborate with your team or recommend development partners to ensure conversion-optimized experiences."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How quickly can campaigns launch?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Initial campaigns can launch within 1-2 weeks after kickoff, including account setup, audience research, keyword planning, creative development, and tracking configuration. Full optimization and scaling typically develop over 4-8 weeks as we gather performance data and refine strategies."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What makes VISIBI's paid media different?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We integrate paid media with your broader AI visibility strategy. Campaigns aren't siloed—they amplify content optimized for GEO, test messaging that informs SEO, and generate audience insights that improve overall brand discoverability across traditional search, AI platforms, and social channels."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do you measure campaign success?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We track ROAS (Return on Ad Spend), CPC (Cost Per Click), conversion rates, quality scores, and customer acquisition cost. Most importantly, we tie these metrics to business outcomes—qualified leads, pipeline value, revenue attribution, and customer lifetime value—not just vanity metrics."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can you take over existing campaigns?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolutely. We conduct a comprehensive audit of your existing campaigns, identify optimization opportunities, and create a transition plan that minimizes disruption while improving performance. Most clients see measurable improvements within the first 60-90 days of our management."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>

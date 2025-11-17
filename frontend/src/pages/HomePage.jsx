@@ -307,8 +307,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
               {/* Left Column - 60% (3 out of 5 columns) */}
               <div className="lg:col-span-3 space-y-4 text-left">
-                <h1 className="font-open-sans text-3xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
-                  Generative Engine Optimisation (GEO)
+                <h1 className="font-open-sans text-3xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">Know where your Brand appears in AI Conversations
                   {/* <span className="text-3xl md:text-4xl font-thin block pt-8 pb-3"> Visibility That Moves Beyond Search</span> */}
                   <span className="text-3xl md:text-4xl font-thin block pt-3 md:leading-[1.2]">Know where your Brand appears in AI Conversations</span>
                 </h1>

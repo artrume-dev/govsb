@@ -157,6 +157,22 @@ export default function GEOPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="GEO Services - Generative Engine Optimization" />
         <meta name="twitter:description" content="Maximize your brand's visibility across AI platforms. Get cited by ChatGPT, Gemini, and Perplexity." />
+
+        {/* Structured Data - FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
+          })}
+        </script>
       </Helmet>
 
       {/* Background Grid Pattern */}
