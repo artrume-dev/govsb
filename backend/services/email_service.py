@@ -20,7 +20,6 @@ class EmailProvider(ABC):
         """Send an email"""
         pass
 
-
 class SMTPEmailProvider(EmailProvider):
     """SMTP email provider (works with Gmail, custom SMTP servers)"""
 
