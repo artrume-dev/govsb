@@ -624,6 +624,38 @@ async def submit_brand_analysis(request: BrandAnalysisRequest, background_tasks:
         )
 
 
+@app.get("/test-email", tags=["Testing"])
+async def test_email(to: str = "spacegigx@gmail.com"):
+    """
+    Test email sending functionality
+    Query param: ?to=email@example.com
+    """
+    try:
+        success = email_service.send_brand_analysis_confirmation(
+            to_email=to,
+            brand_url="https://test.com"
+        )
+        
+        if success:
+            return {
+                "status": "success",
+                "message": f"Test email sent to {to}",
+                "smtp_configured": True
+            }
+        else:
+            return {
+                "status": "failed",
+                "message": "Email sending failed (check logs)",
+                "smtp_configured": bool(os.getenv('SMTP_HOST'))
+            }
+    except Exception as e:
+        return {
+            "status": "error",
+            "message": str(e),
+            "smtp_configured": bool(os.getenv('SMTP_HOST'))
+        }
+
+
 # Startup event
 @app.on_event("startup")
 async def startup_event():
@@ -632,12 +664,31 @@ async def startup_event():
     print(f"📝 API Documentation: http://localhost:8000/docs")
     print(f"🔍 Debug mode: {config.DEBUG}")
     
+    # Check email configuration
+    smtp_host = os.getenv('SMTP_HOST')
+    smtp_user = os.getenv('SMTP_USER')
+    smtp_password = os.getenv('SMTP_PASSWORD')
+    from_email = os.getenv('FROM_EMAIL')
+    admin_email = os.getenv('ADMIN_EMAIL')
+    
+    print("\n📧 Email Configuration:")
+    print(f"   SMTP_HOST: {smtp_host or '❌ NOT SET'}")
+    print(f"   SMTP_USER: {smtp_user or '❌ NOT SET'}")
+    print(f"   SMTP_PASSWORD: {'✅ SET' if smtp_password else '❌ NOT SET'}")
+    print(f"   FROM_EMAIL: {from_email or '❌ NOT SET'}")
+    print(f"   ADMIN_EMAIL: {admin_email or '❌ NOT SET'}")
+    
+    if smtp_host and smtp_user and smtp_password:
+        print("   ✅ Email service configured (SMTP)")
+    else:
+        print("   ⚠️  Email service will use console mode (emails won't be sent)")
+    
     # Validate configuration
     try:
         config.validate()
-        print("✅ Configuration validated")
+        print("\n✅ Configuration validated\n")
     except ValueError as e:
-        print(f"❌ Configuration error: {e}")
+        print(f"\n❌ Configuration error: {e}\n")
 
 
 # Shutdown event
