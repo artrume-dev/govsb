@@ -38,8 +38,8 @@ class SMTPEmailProvider(EmailProvider):
             msg.attach(part1)
             msg.attach(part2)
 
-            # Send email
-            with smtplib.SMTP(self.smtp_host, self.smtp_port) as server:
+            # Send email with timeout
+            with smtplib.SMTP(self.smtp_host, self.smtp_port, timeout=10) as server:
                 server.starttls()
                 server.login(self.username, self.password)
                 server.sendmail(self.from_email, to_email, msg.as_string())

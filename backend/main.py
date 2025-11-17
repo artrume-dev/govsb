@@ -3,7 +3,7 @@ VISIBI - AI Brand Monitor FastAPI Application
 Main application entry point with API endpoints
 """
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from datetime import datetime
 from typing import List
@@ -557,15 +557,15 @@ async def send_contact_email(request: ContactRequest):
 
 
 @app.post("/api/brand-analysis", response_model=BrandAnalysisResponse, tags=["Brand Analysis"])
-async def submit_brand_analysis(request: BrandAnalysisRequest):
+async def submit_brand_analysis(request: BrandAnalysisRequest, background_tasks: BackgroundTasks):
     """
     Submit brand analysis request (simplified - no OpenAI, just sends email)
 
     This endpoint:
     1. Validates form data
-    2. Sends confirmation email to user
-    3. Sends notification email to admin with form details
-    4. Returns success response
+    2. Sends confirmation email to user (in background)
+    3. Sends notification email to admin with form details (in background)
+    4. Returns success response immediately
     """
     try:
         # Validate email format
@@ -576,28 +576,36 @@ async def submit_brand_analysis(request: BrandAnalysisRequest):
         if not request.brand_url:
             raise HTTPException(status_code=400, detail="Brand URL is required")
 
-        # Send confirmation email to user
-        try:
-            email_service.send_brand_analysis_confirmation(
-                to_email=request.email,
-                brand_url=request.brand_url
-            )
-        except Exception as e:
-            print(f"Warning: Failed to send confirmation email: {e}")
+        # Define background task functions
+        def send_emails():
+            try:
+                # Send confirmation email to user
+                email_service.send_brand_analysis_confirmation(
+                    to_email=request.email,
+                    brand_url=request.brand_url
+                )
+                print(f"✅ Sent confirmation email to {request.email}")
+            except Exception as e:
+                print(f"❌ Failed to send confirmation email: {e}")
 
-        # Send notification to admin
-        admin_email = os.getenv('ADMIN_EMAIL', 'spacegigx@gmail.com')
-        try:
-            email_service.send_brand_analysis_notification(
-                admin_email=admin_email,
-                brand_url=request.brand_url,
-                user_email=request.email,
-                custom_queries=request.custom_queries,
-                custom_keywords=request.custom_keywords
-            )
-        except Exception as e:
-            print(f"Warning: Failed to send admin notification: {e}")
+            try:
+                # Send notification to admin
+                admin_email = os.getenv('ADMIN_EMAIL', 'samar@teamstack.co')
+                email_service.send_brand_analysis_notification(
+                    admin_email=admin_email,
+                    brand_url=request.brand_url,
+                    user_email=request.email,
+                    custom_queries=request.custom_queries,
+                    custom_keywords=request.custom_keywords
+                )
+                print(f"✅ Sent admin notification to {admin_email}")
+            except Exception as e:
+                print(f"❌ Failed to send admin notification: {e}")
 
+        # Add email sending to background tasks
+        background_tasks.add_task(send_emails)
+
+        # Return immediately without waiting for emails
         return BrandAnalysisResponse(
             message="Thank you! We'll send your brand analysis report to your email within 24-48 hours.",
             email=request.email,
