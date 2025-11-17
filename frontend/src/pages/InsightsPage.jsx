@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { Brain, Search, TrendingUp, Target, BookOpen, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Navigation from '@/components/Navigation'
+import { getPublishedArticles, getArticlesByCategory, getCategories } from '@/data/articles'
 
 export default function InsightsPage() {
   useEffect(() => {
@@ -13,94 +14,8 @@ export default function InsightsPage() {
 
   const [selectedCategory, setSelectedCategory] = useState('All')
 
-  const categories = ['All', 'GEO', 'SEO', 'Strategy', 'Analytics', 'Case Studies']
-
-  const insights = [
-    {
-      title: "How ChatGPT Discovers & Cites Brands in 2025",
-      category: "GEO",
-      date: "Oct 15, 2025",
-      excerpt: "Deep analysis of the technical mechanisms ChatGPT uses to source information and how brands can optimize for citations.",
-      readTime: "8 min read"
-    },
-    {
-      title: "The Complete Guide to AI Search Optimization",
-      category: "Strategy",
-      date: "Oct 10, 2025",
-      excerpt: "Everything you need to know about optimizing your brand's presence across AI platforms—from fundamentals to advanced tactics.",
-      readTime: "12 min read"
-    },
-    {
-      title: "Measuring Brand Visibility Across AI Platforms",
-      category: "Analytics",
-      date: "Oct 5, 2025",
-      excerpt: "How to track, measure, and report on your AI visibility performance with quantitative frameworks and tools.",
-      readTime: "10 min read"
-    },
-    {
-      title: "GEO vs SEO: Understanding the Strategic Difference",
-      category: "GEO",
-      date: "Sep 28, 2025",
-      excerpt: "Why generative engine optimization requires fundamentally different tactics than traditional search engine optimization.",
-      readTime: "7 min read"
-    },
-    {
-      title: "The Authority Signals AI Platforms Trust",
-      category: "Strategy",
-      date: "Sep 20, 2025",
-      excerpt: "Research findings on what makes AI engines more likely to cite certain sources over others.",
-      readTime: "9 min read"
-    },
-    {
-      title: "Case Study: 300% Increase in AI Mentions in 6 Months",
-      category: "Case Studies",
-      date: "Sep 15, 2025",
-      excerpt: "How a B2B SaaS company transformed their AI visibility through structured GEO strategy.",
-      readTime: "11 min read"
-    },
-    {
-      title: "Content Structure for Maximum AI Comprehension",
-      category: "GEO",
-      date: "Sep 8, 2025",
-      excerpt: "Technical best practices for structuring content so AI platforms can easily extract and cite information.",
-      readTime: "8 min read"
-    },
-    {
-      title: "The Future of Search: 2026 Predictions",
-      category: "Strategy",
-      date: "Sep 1, 2025",
-      excerpt: "Expert predictions on how AI-powered search will evolve and what brands should prepare for.",
-      readTime: "10 min read"
-    },
-    {
-      title: "Schema Markup for AI Platforms",
-      category: "SEO",
-      date: "Aug 25, 2025",
-      excerpt: "How structured data influences both traditional search rankings and AI platform understanding.",
-      readTime: "9 min read"
-    }
-  ]
-
-  const filteredInsights = selectedCategory === 'All'
-    ? insights
-    : insights.filter(insight => insight.category === selectedCategory)
-
-  const getCategoryIcon = (category) => {
-    switch(category) {
-      case 'GEO':
-        return Brain
-      case 'SEO':
-        return Search
-      case 'Strategy':
-        return Target
-      case 'Analytics':
-        return TrendingUp
-      case 'Case Studies':
-        return BookOpen
-      default:
-        return Brain
-    }
-  }
+  const categories = getCategories()
+  const filteredInsights = getArticlesByCategory(selectedCategory)
 
   return (
     <div className="min-h-screen relative line-pattern">
@@ -201,33 +116,36 @@ export default function InsightsPage() {
           {/* Insights Grid */}
           <section className="py-12 mb-12">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:px-16">
-              {filteredInsights.map((insight, index) => {
-                const IconComponent = getCategoryIcon(insight.category)
+              {filteredInsights.map((insight) => {
+                const IconComponent = insight.icon
                 return (
-                  <article
-                    key={index}
-                    className="bg-white border border-slate-300 rounded-xl overflow-hidden hover:border-blue-700 transition-all duration-300 cursor-pointer"
+                  <Link 
+                    key={insight.id}
+                    to={insight.slug}
+                    className="block"
                   >
-                    <div className="h-48 bg-slate-50 border-b border-slate-300 flex items-center justify-center">
-                      <IconComponent size={32} strokeWidth={1.25} className="text-slate-950" />
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="font-space-mono text-xs text-slate-950 bg-white border border-slate-950 px-3 py-1 rounded-full uppercase">
-                          {insight.category}
-                        </span>
-                        <span className="font-space-mono text-xs text-slate-600">{insight.readTime}</span>
+                    <article className="bg-white border border-slate-300 rounded-xl overflow-hidden hover:border-blue-700 transition-all duration-300 cursor-pointer h-full">
+                      <div className="h-48 bg-slate-50 border-b border-slate-300 flex items-center justify-center">
+                        <IconComponent size={32} strokeWidth={1.25} className="text-slate-950" />
                       </div>
-                      <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">{insight.title}</h3>
-                      <p className="font-open-sans text-md leading-[1.5] text-slate-950 mb-4">{insight.excerpt}</p>
-                      <div className="flex items-center justify-between">
-                        <span className="font-space-mono text-xs text-slate-600">{insight.date}</span>
-                        <button className="font-space-mono text-sm text-slate-950 hover:text-blue-700 inline-flex items-center gap-1 transition-colors">
-                          Read More <ArrowRight className="w-4 h-4" />
-                        </button>
+                      <div className="p-6">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="font-space-mono text-xs text-slate-950 bg-white border border-slate-950 px-3 py-1 rounded-full uppercase">
+                            {insight.category}
+                          </span>
+                          <span className="font-space-mono text-xs text-slate-600">{insight.readTime}</span>
+                        </div>
+                        <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">{insight.title}</h3>
+                        <p className="font-open-sans text-md leading-[1.5] text-slate-950 mb-4">{insight.excerpt}</p>
+                        <div className="flex items-center justify-between">
+                          <span className="font-space-mono text-xs text-slate-600">{insight.displayDate}</span>
+                          <span className="font-space-mono text-sm text-slate-950 hover:text-blue-700 inline-flex items-center gap-1 transition-colors">
+                            Read More <ArrowRight className="w-4 h-4" />
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  </article>
+                    </article>
+                  </Link>
                 )
               })}
             </div>

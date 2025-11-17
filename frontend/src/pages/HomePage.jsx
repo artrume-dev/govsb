@@ -15,6 +15,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Badge } from '@/components/ui/badge'
 import Navigation from '@/components/Navigation'
 import QueryCustomizer from '@/components/QueryCustomizer'
+import { getLatestArticles } from '@/data/articles'
 
 export default function HomePage() {
   useEffect(() => {
@@ -34,6 +35,9 @@ export default function HomePage() {
   const inputRef = useRef(null)
   const mainSectionRef = useRef(null)
   const thankYouRef = useRef(null)
+
+  // Get latest 2 published articles dynamically
+  const latestInsights = getLatestArticles(2)
 
   const aiEngines = [
     { name: 'ChatGPT', logo: '/ai-logos/ChatGPT.svg' },
@@ -213,19 +217,6 @@ export default function HomePage() {
       icon: Award,
       title: 'Proven Expertise',
       description: 'With 20 years of experience in SEO, paid media, and digital strategy, we now drive measurable visibility, perception, and trust in the Gen AI Search era.'
-    }
-  ]
-
-  const insights = [
-    {
-      icon: Sparkles,
-      title: 'The Rise of Generative Search: Why GEO Is the New SEO',
-      description: 'Search is now Gen AI-driven, conversational, and context-aware. Learn why structured data and authority are more important than backlinks - and how to stay discoverable across Gen AI ecosystems such as ChatGPT, Gemini, and Bing Copilot.'
-    },
-    {
-      icon: Settings,
-      title: 'How Gen AI Engines Choose What (and Who) to Cite',
-      description: 'Why do Gen AI engines reference some brands but ignore others? This article explains Gen AI citation logic, from training data trust signals to clear entity markup.'
     }
   ]
 
@@ -775,48 +766,55 @@ export default function HomePage() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 mb-8 border-slate-300 border pattern-background p-4">
-                {insights.map((insight, index) => {
+                {latestInsights.map((insight) => {
                   const Icon = insight.icon
+                  
                   return (
-                    <div key={index} className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-slate-300 transition-all duration-300">
-                      {/* Icon Section */}
-                      <div className="h-64 bg-slate-50 border-b border-slate-200 flex items-center justify-center">
-                        <Icon size={48} strokeWidth={1.25} className="text-slate-950" />
-                      </div>
-                      
-                      {/* Content Section */}
-                      <div className="p-8">
-                        {/* Category Badge and Read Time */}
-                        <div className="flex items-center gap-3 mb-4">
-                          <span className="font-space-mono text-xs text-slate-950 bg-white border border-slate-950 px-4 py-1.5 rounded-full uppercase tracking-wide">
-                            GEO
-                          </span>
-                          <span className="font-space-mono text-sm text-slate-600">
-                            8 min read
-                          </span>
+                    <Link 
+                      key={insight.id} 
+                      to={insight.slug}
+                      className="block"
+                    >
+                      <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-slate-300 transition-all duration-300">
+                        {/* Icon Section */}
+                        <div className="h-64 bg-slate-50 border-b border-slate-200 flex items-center justify-center">
+                          <Icon size={48} strokeWidth={1.25} className="text-slate-950" />
                         </div>
                         
-                        {/* Title */}
-                        <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-4 uppercase">
-                          {insight.title}
-                        </h3>
-                        
-                        {/* Description */}
-                        <p className="font-open-sans text-base leading-[1.6] text-slate-950 mb-6">
-                          {insight.description}
-                        </p>
-                        
-                        {/* Footer with Date and Read More */}
-                        <div className="flex items-center justify-between pt-4 border-t border-slate-200">
-                          <span className="font-space-mono text-sm text-slate-600">
-                            Oct 15, 2025
-                          </span>
-                          <Link to="/insights" className="font-space-mono text-sm text-slate-950 hover:text-blue-700 inline-flex items-center gap-2 transition-colors">
-                            Read More <ArrowRight className="w-4 h-4" />
-                          </Link>
+                        {/* Content Section */}
+                        <div className="p-8">
+                          {/* Category Badge and Read Time */}
+                          <div className="flex items-center gap-3 mb-4">
+                            <span className="font-space-mono text-xs text-slate-950 bg-white border border-slate-950 px-4 py-1.5 rounded-full uppercase tracking-wide">
+                              {insight.category}
+                            </span>
+                            <span className="font-space-mono text-sm text-slate-600">
+                              {insight.readTime}
+                            </span>
+                          </div>
+                          
+                          {/* Title */}
+                          <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-4 uppercase">
+                            {insight.title}
+                          </h3>
+                          
+                          {/* Description */}
+                          <p className="font-open-sans text-base leading-[1.6] text-slate-950 mb-6">
+                            {insight.description}
+                          </p>
+                          
+                          {/* Footer with Date and Read More */}
+                          <div className="flex items-center justify-between pt-4 border-t border-slate-200">
+                            <span className="font-space-mono text-sm text-slate-600">
+                              {insight.displayDate}
+                            </span>
+                            <span className="font-space-mono text-sm text-slate-950 hover:text-blue-700 inline-flex items-center gap-2 transition-colors">
+                              Read More <ArrowRight className="w-4 h-4" />
+                            </span>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   )
                 })}
               </div>

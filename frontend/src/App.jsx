@@ -10,6 +10,7 @@ import ToolPage from './pages/ToolPage'
 import HowWeWorkPage from './pages/HowWeWorkPage'
 import ContactPage from './pages/ContactPage'
 import AIAgentsPage from './pages/AIAgentsPage'
+import ChatGPTBrandDiscovery from './pages/insights/ChatGPTBrandDiscovery'
 import ScrollToTop from './components/ScrollToTop'
 import './index.css'
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/ppc" element={<PPCPage />} />
         <Route path="/ai-agents" element={<AIAgentsPage />} />
         <Route path="/insights" element={<InsightsPage />} />
+        <Route path="/insights/chatgpt-brand-discovery" element={<ChatGPTBrandDiscovery />} />
         <Route path="/tool" element={<ToolPage />} />
         <Route path="/how-we-work" element={<HowWeWorkPage />} />
         <Route path="/contact" element={<ContactPage />} />
