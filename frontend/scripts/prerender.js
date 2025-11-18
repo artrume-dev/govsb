@@ -29,14 +29,15 @@ async function prerender() {
   console.log('🎨 Starting pre-render process...');
   console.log(`📄 Pre-rendering ${routes.length} marketing pages for SEO\n`);
 
-  // Detect environment
-  const isProduction = process.env.NODE_ENV === 'production' || process.env.RAILWAY_ENVIRONMENT;
-  
+  // Detect environment - use serverless Chromium on cloud platforms
+  const isCloudPlatform = process.env.NODE_ENV === 'production' || process.env.RAILWAY_ENVIRONMENT || process.env.VERCEL;
+
   // Launch browser with optimized settings
   let browser;
   try {
-    if (isProduction) {
-      console.log('🚀 Production mode: Using @sparticuz/chromium (optimized for Railway)');
+    if (isCloudPlatform) {
+      const platform = process.env.VERCEL ? 'Vercel' : process.env.RAILWAY_ENVIRONMENT ? 'Railway' : 'Production';
+      console.log(`🚀 ${platform} mode: Using @sparticuz/chromium (serverless-optimized)`);
       browser = await puppeteer.launch({
         args: chromium.args,
         defaultViewport: chromium.defaultViewport,
@@ -46,13 +47,13 @@ async function prerender() {
     } else {
       console.log('💻 Development mode: Using local Chrome');
       // Try to find local Chrome installation
-      const executablePath = 
-        process.platform === 'darwin' 
+      const executablePath =
+        process.platform === 'darwin'
           ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
           : process.platform === 'linux'
           ? '/usr/bin/google-chrome'
           : 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
-      
+
       browser = await puppeteer.launch({
         headless: true,
         executablePath,
