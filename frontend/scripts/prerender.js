@@ -38,11 +38,27 @@ async function prerender() {
     if (isCloudPlatform) {
       const platform = process.env.VERCEL ? 'Vercel' : process.env.RAILWAY_ENVIRONMENT ? 'Railway' : 'Production';
       console.log(`🚀 ${platform} mode: Using @sparticuz/chromium (serverless-optimized)`);
+
+      // Disable graphics mode for Vercel (fixes libnss3.so error)
+      if (process.env.VERCEL) {
+        chromium.setGraphicsMode = false;
+      }
+
+      // Additional args for Vercel compatibility
+      const extraArgs = [
+        '--single-process',
+        '--no-zygote',
+        '--disable-gpu',
+        '--disable-dev-shm-usage',
+        '--disable-software-rasterizer',
+      ];
+
       browser = await puppeteer.launch({
-        args: chromium.args,
+        args: [...chromium.args, ...extraArgs],
         defaultViewport: chromium.defaultViewport,
         executablePath: await chromium.executablePath(),
         headless: chromium.headless,
+        ignoreHTTPSErrors: true,
       });
     } else {
       console.log('💻 Development mode: Using local Chrome');
