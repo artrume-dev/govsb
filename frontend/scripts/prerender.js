@@ -91,20 +91,21 @@ async function prerender() {
 
       const page = await browser.newPage();
 
-      // Set a reasonable timeout (reduce from 30s to 15s)
-      page.setDefaultTimeout(15000);
+      // Set aggressive timeout for CI/CD (reduce to 10s)
+      page.setDefaultTimeout(10000);
 
       // Navigate to the route
       const url = `http://localhost:${port}${route}`;
       
       try {
+        // Use 'load' instead of 'networkidle0' for faster rendering
         await page.goto(url, {
-          waitUntil: 'networkidle0',
-          timeout: 15000
+          waitUntil: 'load',
+          timeout: 10000
         });
 
-        // Wait a bit for any client-side rendering
-        await new Promise(resolve => setTimeout(resolve, 500));
+        // Minimal wait for hydration (reduce from 500ms to 200ms)
+        await new Promise(resolve => setTimeout(resolve, 200));
 
         // Get the rendered HTML
         const html = await page.content();

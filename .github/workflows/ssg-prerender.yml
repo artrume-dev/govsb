@@ -26,6 +26,16 @@ jobs:
           cache: 'npm'
           cache-dependency-path: frontend/package-lock.json
 
+      - name: Cache Chromium
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/puppeteer
+            node_modules/@sparticuz/chromium
+          key: chromium-${{ runner.os }}-${{ hashFiles('frontend/package-lock.json') }}
+          restore-keys: |
+            chromium-${{ runner.os }}-
+
       - name: Install dependencies
         working-directory: ./frontend
         run: npm ci

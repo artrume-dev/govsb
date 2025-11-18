@@ -7,8 +7,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const PORT = process.env.PORT || 5173;
-const MAX_RETRIES = 30; // 30 seconds max wait time
-const RETRY_INTERVAL = 1000; // 1 second between retries
+const MAX_RETRIES = 15; // 15 seconds max wait time (reduced for CI/CD)
+const RETRY_INTERVAL = 500; // 0.5 second between retries (faster polling)
 
 // ANSI color codes for better logging
 const colors = {
