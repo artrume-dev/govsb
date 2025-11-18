@@ -13,7 +13,7 @@ const routes = [
   '/about',
   '/geo',
   '/seo',
-  '/ppc',
+  // '/ppc', // Temporarily hidden for launch - may re-add later
   '/ai-agents',
   '/tool',
   '/insights',
