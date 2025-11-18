@@ -14,9 +14,12 @@ const routes = [
   '/geo',
   '/seo',
   '/ppc',
+  '/ai-agents',
   '/tool',
   '/insights',
-  '/how-we-work'
+  '/insights/chatgpt-brand-discovery',
+  '/how-we-work',
+  '/contact'
 ];
 
 const distPath = path.join(__dirname, '..', 'dist');
