@@ -5,6 +5,7 @@ import { Mail, MessageSquare, CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Navigation from '@/components/Navigation'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -72,6 +73,12 @@ export default function ContactPage() {
         <div className="lg:block h-full w-full">
           <div className="relative z-10 py-16 flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16 border-l border-r border-slate-200">
             <div className="max-w-3xl px-16 space-y-8">
+              <div className="text-left pb-8">
+              <Breadcrumbs items={[
+                { label: "Home", path: "/" },
+                { label: "Contact" }
+              ]} />
+              </div>
                <h1 className="font-open-sans text-4xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
                 Let's Make Your Brand Visible in Gen AI Search
               </h1>

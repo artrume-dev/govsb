@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import Navigation from '../../components/Navigation'
+import Breadcrumbs from '../../components/Breadcrumbs'
 import { Button } from '../../components/Button'
 import { ArrowLeft, Calendar, Clock, Share2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
@@ -47,6 +48,14 @@ export default function ChatGPTBrandDiscovery() {
                   </span>
                 </Button>
               </Link>
+
+              <div className="text-left pb-8">
+              <Breadcrumbs items={[
+                { label: "Home", path: "/" },
+                { label: "Insights", path: "/insights" },
+                { label: "ChatGPT Brand Discovery" }
+              ]} />
+              </div>
 
               <div className="space-y-4">
                 <div className="flex items-center gap-4 text-sm text-slate-600 font-space-mono">

@@ -5,6 +5,7 @@ import { Heart, Brain, Target, Users, TrendingUp, Shield, Lightbulb, ChevronDown
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Navigation from '@/components/Navigation'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export default function HowWeWorkPage() {
   useEffect(() => {
@@ -173,6 +174,12 @@ export default function HowWeWorkPage() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
               {/* Left Column - 60% (3 out of 5 columns) */}
               <div className="lg:col-span-3 space-y-4 text-left">
+                <div className="text-left pb-8">
+                <Breadcrumbs items={[
+                  { label: "Home", path: "/" },
+                  { label: "How We Work" }
+                ]} />
+                </div>
                 <h1 className="font-open-sans text-3xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
                   Strategy, Transparency & Trust
                 </h1>

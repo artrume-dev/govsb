@@ -35,7 +35,7 @@ export default function Navigation({ currentPage = 'home' }) {
   return (
     <header className="max-w-[90%] mx-auto rounded-xl bg-white/90 backdrop-blur-sm sticky top-4 z-[100] shadow-sm relative">
       <div className="mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-1 cursor-pointer">
+        <Link to="/" className="flex items-center gap-2 cursor-pointer">
           <div className="flex-shrink-0">
             <img 
               src="/govisibi-logo.png" 
@@ -116,7 +116,8 @@ export default function Navigation({ currentPage = 'home' }) {
                       </p>
                     </Link>
 
-                    <Link
+                    {/* Temporarily hidden for launch - may re-add later */}
+                    {/* <Link
                       to="/ppc"
                       onClick={() => setConsultingDropdownOpen(false)}
                       className="block px-6 py-4 hover:bg-slate-50 transition-colors border-b border-slate-100 last:border-0"
@@ -127,7 +128,7 @@ export default function Navigation({ currentPage = 'home' }) {
                       <p className="text-sm text-slate-600">
                         Paid advertising strategies for maximum ROI
                       </p>
-                    </Link>
+                    </Link> */}
 
                     <Link
                       to="/ai-agents"
@@ -297,7 +298,8 @@ export default function Navigation({ currentPage = 'home' }) {
                     SEO - Search Engine Optimization
                   </Link>
 
-                  <Link
+                  {/* Temporarily hidden for launch - may re-add later */}
+                  {/* <Link
                     to="/ppc"
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block text-sm transition-colors py-2 ${
@@ -307,7 +309,7 @@ export default function Navigation({ currentPage = 'home' }) {
                     }`}
                   >
                     PPC - Pay-Per-Click Advertising
-                  </Link>
+                  </Link> */}
 
                   <Link
                     to="/ai-agents"

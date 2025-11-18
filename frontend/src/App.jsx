@@ -24,7 +24,8 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/geo" element={<GEOPage />} />
         <Route path="/seo" element={<SEOPage />} />
-        <Route path="/ppc" element={<PPCPage />} />
+        {/* Temporarily hidden for launch - may re-add later */}
+        {/* <Route path="/ppc" element={<PPCPage />} /> */}
         <Route path="/ai-agents" element={<AIAgentsPage />} />
         <Route path="/insights" element={<InsightsPage />} />
         <Route path="/insights/chatgpt-brand-discovery" element={<ChatGPTBrandDiscovery />} />
