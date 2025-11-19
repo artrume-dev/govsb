@@ -1,12 +1,14 @@
 name: SSG Pre-rendering
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'frontend/**'
-      - '.github/workflows/ssg-prerender.yml'
+  workflow_dispatch:  # Manual trigger only
+  # Automatic trigger disabled due to workflow timeout issues
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - 'frontend/**'
+  #     - '.github/workflows/ssg-prerender.yml'
 
 jobs:
   prerender:
