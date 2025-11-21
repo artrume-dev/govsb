@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import {
   Sparkles, ArrowRight, Database, Search, Users, Shield, Heart,
   BarChart3, Workflow, Award, Bot, BrainCircuit, FileText,
-  Link2, GraduationCap, Settings, ChevronDown, ChevronUp,
+  Link2, GraduationCap, ChevronDown, ChevronUp,
   Speaker, MessageSquareMore, Check, Zap, ShieldCheck,
   ArrowLeft, Megaphone, Globe, Eye, FileCheck, Scale, ShoppingCart,
   MessageCircle, TrendingUp, Briefcase, PenTool, LineChart
@@ -225,18 +225,6 @@ export default function HomePage() {
     }
   ]
 
-  const insights = [
-    {
-      icon: Sparkles,
-      title: 'How Agentic Commerce Collapses the Funnel',
-      description: 'AI agents convert directly inside the chat interface. 8 min read'
-    },
-    {
-      icon: Settings,
-      title: 'Building Digital Workers With Multi-Agent Systems',
-      description: 'A practical guide for enterprises. 7 min read'
-    }
-  ]
 
   const faqs = [
     {
@@ -688,7 +676,7 @@ export default function HomePage() {
 
               {/* Funnel Collapse Visualization */}
               <div className="my-16">
-                <h3 className="font-space-mono font-normal text-2xl md:text-3xl text-center text-slate-950 mb-12 uppercase">
+                <h3 className="font-open-sans font-normal text-2xl md:text-3xl text-center text-slate-950 mb-12 border-t border-slate-200 pt-24">
                   The Funnel Collapses: <span className="text-slate-950">6 Steps</span> → <span className="text-slate-950">3 Steps</span>
                 </h3>
                 
@@ -800,7 +788,7 @@ export default function HomePage() {
 
               {/* What Disappears */}
               <div className="my-16">
-                <h4 className="font-space-mono font-normal text-2xl text-slate-950 mb-8 text-center uppercase">What Disappears in the AI Era:</h4>
+                <h4 className="font-open-sans font-normal text-2xl text-slate-950 mb-12 text-center  border-t border-slate-200 pt-24">What Disappears in the AI Era</h4>
                 <div className="grid md:grid-cols-4 gap-4 pattern-background p-4 border-slate-300 border">
                   <div className="bg-white border border-slate-300 p-6 text-center">
                     <div className="text-slate-950 text-3xl mb-3">✕</div>
@@ -823,7 +811,7 @@ export default function HomePage() {
 
               {/* Organizational Transformation */}
               <div className="my-16">
-                <h4 className="font-space-mono font-normal text-2xl text-slate-950 mb-8 text-center uppercase">Inside Organizations: AI Agents Automate Everything</h4>
+                <h4 className="font-open-sans font-normal text-2xl text-slate-950 mb-12  border-t border-slate-200 pt-24 text-center">Inside Organizations<span className="font-thin block"> AI Agents Automate Everything</span></h4>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pattern-background p-4 border-slate-300 border mb-6">
                   <div className="bg-white border border-slate-300 p-6 text-center">
                     <PenTool size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
@@ -893,9 +881,11 @@ export default function HomePage() {
                 })}
               </div>
 
-              <p className="font-open-sans text-md md:text-lg leading-[1.5] text-slate-950">
-                One partner for AI discovery + AI productivity.
-              </p>
+              <div className="text-center mt-8">
+                <p className="font-open-sans text-xl md:text-2xl font-semibold text-slate-950 bg-blue-50 border border-blue-700 py-4 px-8 inline-block">
+                  One partner for AI discovery + AI productivity.
+                </p>
+              </div>
             </div>
           </section>
 
@@ -1170,27 +1160,37 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-8 border-slate-300 border pattern-background p-4">
-                {insights.map((insight, index) => {
-                  const Icon = insight.icon
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                {latestInsights.map((insight) => {
+                  const IconComponent = insight.icon
                   return (
-                    <div key={index} className="bg-white border border-slate-300 p-8">
-                      <div className="mb-6">
-                        <Icon size={32} strokeWidth={1.25} className="text-slate-950" />
-                      </div>
-                      <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-4 uppercase">
-                        {insight.title}
-                      </h3>
-                      <p className="font-open-sans text-md leading-[1.5] text-slate-950 mb-6">
-                        {insight.description}
-                      </p>
-                      <Link to="/insights">
-                        <Button className="inline-flex items-center px-4 py-2 bg-white text-slate-950 border border-slate-300 rounded-full text-sm font-medium hover:bg-slate-50 transition-colors">
-                          Read More
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
-                      </Link>
-                    </div>
+                    <Link
+                      key={insight.id}
+                      to={insight.slug}
+                      className="block"
+                    >
+                      <article className="bg-white border border-slate-300 rounded-xl overflow-hidden hover:border-blue-700 transition-all duration-300 cursor-pointer h-full">
+                        <div className="h-48 bg-slate-50 border-b border-slate-300 flex items-center justify-center">
+                          <IconComponent size={32} strokeWidth={1.25} className="text-slate-950" />
+                        </div>
+                        <div className="p-6">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="font-space-mono text-xs text-slate-950 bg-white border border-slate-950 px-3 py-1 rounded-full uppercase">
+                              {insight.category}
+                            </span>
+                            <span className="font-space-mono text-xs text-slate-600">{insight.readTime}</span>
+                          </div>
+                          <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">{insight.title}</h3>
+                          <p className="font-open-sans text-md leading-[1.5] text-slate-950 mb-4">{insight.description}</p>
+                          <div className="flex items-center justify-between">
+                            <span className="font-space-mono text-xs text-slate-600">{insight.displayDate}</span>
+                            <span className="font-space-mono text-sm text-slate-950 hover:text-blue-700 inline-flex items-center gap-1 transition-colors">
+                              Read More <ArrowRight className="w-4 h-4" />
+                            </span>
+                          </div>
+                        </div>
+                      </article>
+                    </Link>
                   )
                 })}
               </div>
