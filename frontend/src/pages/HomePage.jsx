@@ -7,7 +7,7 @@ import {
   Link2, GraduationCap, ChevronDown, ChevronUp,
   Speaker, MessageSquareMore, Check, Zap, ShieldCheck,
   ArrowLeft, Megaphone, Globe, Eye, FileCheck, Scale, ShoppingCart,
-  MessageCircle, TrendingUp, Briefcase, PenTool, LineChart
+  MessageCircle, TrendingUp, Briefcase, PenTool, LineChart, X
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -321,14 +321,14 @@ export default function HomePage() {
           <div className="relative z-10 py-24 border-l border-r border-slate-200">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
               {/* Left Column - 60% (3 out of 5 columns) */}
-              <div className="lg:col-span-3 space-y-4 text-left">
-                <h1 className="font-open-sans text-3xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
-                  Make Your Brand Visible to AI.
+              <div className="lg:col-span-3 space-y-4 text-left pr-0 lg:pr-16">
+                <h1 className="font-open-sans text-3xl md:text-7xl font-semibold tracking-tight text-slate-950 md:leading-[1]">
+                  Make your Brand visible to AI.
                 </h1>
-                <h2 className="font-open-sans text-2xl md:text-3xl font-thin block md:leading-[1.4] pb-8">
-                  Make Your Business More Productive With AI. 
+                <h2 className="font-open-sans text-3xl md:text-5xl font-thin block md:leading-[1] pb-4 tracking-tight text-slate-950">
+                  Make your business more productive with AI. 
                 </h2>
-                <p className="font-open-sans text-md md:text-lg md:leading-[1.6] text-slate-950 pb-8">
+                <p className="font-open-sans text-md md:text-lg md:leading-[1.6] text-slate-700 pb-8">
                   AI engines decide what brands appear. AI agents decide how work gets done. If AI systems can't find your brand, you're out of buyer consideration. If your teams don't use agents, competitors move faster.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-left">
@@ -631,15 +631,15 @@ export default function HomePage() {
       </main>
 
       {/* Main Content */}
-      <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none rounded-bl-none rounded-br-none border-t border-r border-l border-slate-300 mb-2">
+      <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none rounded-bl-none rounded-br-none border-t border-r border-l border-slate-300 mb-0">
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
 
         <div className="max-w-7xl mx-auto">
           {/* The AI Shift */}
-          <section className="py-16 mb-12 border-b border-slate-200">
+          <section className="py-24 border-b border-slate-200">
             <div className="max-w-6xl mx-auto md:px-16">
-              <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-6 text-center">
+              <h2 className="font-open-sans font-thin text-3xl md:text-4xl md:leading-[1.3] text-slate-950 mb-2 text-center">
                 Discovery, Decision & Action Now Begin Inside AI.
               </h2>
               <p className="font-open-sans text-md md:text-lg text-center text-slate-950 mb-12 max-w-3xl mx-auto">
@@ -647,26 +647,26 @@ export default function HomePage() {
               </p>
               
               {/* AI Query Examples */}
-              <div className="grid md:grid-cols-2 gap-4 mb-16 max-w-4xl mx-auto">
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-2xl p-5 shadow-sm">
+              <div className="grid md:grid-cols-2 gap-4 mb-24 max-w-4xl mx-auto">
+                <div className="bg-white border border-slate-300 p-6">
                   <div className="flex items-start gap-3">
                     <MessageCircle className="w-6 h-6 text-blue-700 flex-shrink-0 mt-1" />
                     <p className="font-open-sans text-base text-slate-950 italic">"What's the best solution for my team?"</p>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-2xl p-5 shadow-sm">
+                <div className="bg-white border border-slate-300 p-6">
                   <div className="flex items-start gap-3">
                     <MessageCircle className="w-6 h-6 text-blue-700 flex-shrink-0 mt-1" />
                     <p className="font-open-sans text-base text-slate-950 italic">"Which product is most reliable?"</p>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-2xl p-5 shadow-sm">
+                <div className="bg-white border border-slate-300 p-6">
                   <div className="flex items-start gap-3">
                     <MessageCircle className="w-6 h-6 text-blue-700 flex-shrink-0 mt-1" />
                     <p className="font-open-sans text-base text-slate-950 italic">"Plan my trip - and book the best options."</p>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-2xl p-5 shadow-sm">
+                <div className="bg-white border border-slate-300 p-6">
                   <div className="flex items-start gap-3">
                     <MessageCircle className="w-6 h-6 text-blue-700 flex-shrink-0 mt-1" />
                     <p className="font-open-sans text-base text-slate-950 italic">"Find the top software for small businesses."</p>
@@ -675,8 +675,8 @@ export default function HomePage() {
               </div>
 
               {/* Funnel Collapse Visualization */}
-              <div className="my-16">
-                <h3 className="font-open-sans font-normal text-2xl md:text-3xl text-center text-slate-950 mb-12 border-t border-slate-200 pt-24">
+              <div className="my-24">
+                <h3 className="font-open-sans font-thin text-xl md:text-3xl md:leading-[1.3] text-slate-950 mb-4 pt-16 pb-8 border-t border-slate-200 text-center">
                   The Funnel Collapses: <span className="text-slate-950">6 Steps</span> → <span className="text-slate-950">3 Steps</span>
                 </h3>
                 
@@ -787,23 +787,24 @@ export default function HomePage() {
               </div>
 
               {/* What Disappears */}
-              <div className="my-16">
-                <h4 className="font-open-sans font-normal text-2xl text-slate-950 mb-12 text-center  border-t border-slate-200 pt-24">What Disappears in the AI Era</h4>
+              <div className="my-24">
+                <h4 className="font-open-sans font-thin text-xl md:text-3xl md:leading-[1.3] text-slate-950 mb-4 pt-16 pb-8 border-t border-slate-200 text-center">
+                  What Disappears in the AI Era</h4>
                 <div className="grid md:grid-cols-4 gap-4 pattern-background p-4 border-slate-300 border">
                   <div className="bg-white border border-slate-300 p-6 text-center">
-                    <div className="text-slate-950 text-3xl mb-3">✕</div>
+                    <X size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
                     <p className="font-open-sans text-md text-slate-950">Pageviews</p>
                   </div>
                   <div className="bg-white border border-slate-300 p-6 text-center">
-                    <div className="text-slate-950 text-3xl mb-3">✕</div>
+                    <X size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
                     <p className="font-open-sans text-md text-slate-950">Landing Pages</p>
                   </div>
                   <div className="bg-white border border-slate-300 p-6 text-center">
-                    <div className="text-slate-950 text-3xl mb-3">✕</div>
+                    <X size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
                     <p className="font-open-sans text-md text-slate-950">Scroll Depth</p>
                   </div>
                   <div className="bg-white border border-slate-300 p-6 text-center">
-                    <div className="text-slate-950 text-3xl mb-3">✕</div>
+                    <X size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
                     <p className="font-open-sans text-md text-slate-950">Retargeting</p>
                   </div>
                 </div>
@@ -811,7 +812,7 @@ export default function HomePage() {
 
               {/* Organizational Transformation */}
               <div className="my-16">
-                <h4 className="font-open-sans font-normal text-2xl text-slate-950 mb-12  border-t border-slate-200 pt-24 text-center">Inside Organizations<span className="font-thin block"> AI Agents Automate Everything</span></h4>
+                <h4 className="font-open-sans font-semibold text-xl md:text-3xl md:leading-[1.3] text-slate-950 mb-4 pt-16 pb-8 border-t border-slate-200 text-center">Inside Organizations<span className="font-thin block"> AI Agents Automate Everything</span></h4>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pattern-background p-4 border-slate-300 border mb-6">
                   <div className="bg-white border border-slate-300 p-6 text-center">
                     <PenTool size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
@@ -855,10 +856,10 @@ export default function HomePage() {
           </section>
 
           {/* What We Do */}
-          <section className="py-16 mb-12 border-b border-slate-200 mx-auto">
+          <section className="py-24 border-b border-slate-200">
             <div className="max-w-7xl mx-auto md:px-16">
-              <div className="text-center mb-12">
-                <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-2">
+              <div className="text-center mb-8">
+                <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950">
                   What We Do
                 </h2>
                 <p className="font-open-sans text-md md:text-lg leading-[1.5] text-slate-950 max-w-3xl mx-auto">
@@ -890,9 +891,9 @@ export default function HomePage() {
           </section>
 
           {/* Core Services */}
-          <section className="py-16 mb-12">
+          <section className="py-24 border-b border-slate-200">
             <div className="max-w-7xl mx-auto md:px-16">
-              <div className="text-center mb-12">
+              <div className="text-center mb-8">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-2">
                   The Two Core VISIBI Solutions
                 </h2>
@@ -948,9 +949,9 @@ export default function HomePage() {
           </section>
 
           {/* Why This Matters */}
-          <section className="py-16 mb-12 border-b border-slate-200">
-            <div className="max-w-6xl mx-auto md:px-16">
-              <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-12 text-center">
+          <section className="py-24 border-b border-slate-200">
+            <div className="max-w-7xl mx-auto md:px-16">
+              <h2 className="font-open-sans font-thin text-3xl md:text-4xl md:leading-[1.3] text-slate-950 mb-8 text-center max-w-full md:max-w-4xl mx-auto">
                 The New Competition Happens Inside the Model - Not on the Webpage
               </h2>
               
@@ -1004,7 +1005,7 @@ export default function HomePage() {
           </section>
 
           {/* Our Proven Approach */}
-          <section className="py-16 mb-12 border-b border-slate-200">
+          <section className="py-24 border-b border-slate-200">
             <div className="max-w-6xl mx-auto md:px-16">
               <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-12 text-center">
                 Our Proven Approach: Step by Step to AI Visibility and Productivity
@@ -1064,7 +1065,7 @@ export default function HomePage() {
           </section>
 
           {/* Core Services List */}
-          <section className="py-16 mb-12 border-b border-slate-200">
+          <section className="py-24 border-b border-slate-200">
             <div className="max-w-6xl mx-auto md:px-16">
               <h2 className="font-open-sans font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-12 text-center">
                 Core Services
@@ -1087,7 +1088,7 @@ export default function HomePage() {
           </section>
 
           {/* CTA Divider */}
-          <section className="pt-0 pb-16 border-b border-slate-200 mx-auto">
+          <section className="py-24 border-b border-slate-200">
             <div className="text-center">
               <Link to="/tool">
                 <Button className="inline-flex items-center px-6 py-6 bg-white text-slate-950 border border-slate-950 rounded-full font-medium hover:bg-slate-950 hover:text-white transition-colors">
@@ -1099,7 +1100,7 @@ export default function HomePage() {
           </section>
 
           {/* Why VISIBI */}
-          <section className="py-24 mb-12">
+          <section className="py-24 border-b border-slate-200">
             <div className="max-w-7xl mx-auto md:px-16">
               <div className="text-center mb-12">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-2">
@@ -1137,7 +1138,7 @@ export default function HomePage() {
           </section>
 
           {/* CTA Divider */}
-          <section className="pt-0 pb-16 border-b border-slate-200">
+          <section className="py-24 border-b border-slate-200">
             <div className="text-center">
               <Link to="/tool">
                 <Button className="inline-flex items-center px-6 py-6 bg-white text-slate-950 border border-slate-950 rounded-full font-medium hover:bg-slate-950 hover:text-white transition-colors">
@@ -1149,7 +1150,7 @@ export default function HomePage() {
           </section>
 
           {/* Featured Insights */}
-          <section className="py-24 mb-12 border-b border-slate-200">
+          <section className="py-24 border-b border-slate-200">
             <div className="max-w-7xl mx-auto md:px-16">
               <div className="text-center mb-12">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-2">
@@ -1207,7 +1208,7 @@ export default function HomePage() {
           </section>
 
           {/* FAQ */}
-          <section className="py-24 mb-12 border-b border-slate-200">
+          <section className="py-24 border-b border-slate-200">
             <div className="max-w-4xl mx-auto md:px-16">
               <div className="text-center mb-12">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl leading-[1.3] text-slate-950 mb-4">
@@ -1217,32 +1218,27 @@ export default function HomePage() {
                   Everything you need to know about AI visibility and agents
                 </p>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {faqs.map((faq, index) => (
-                  <div key={index} className="bg-white border-2 border-slate-200 overflow-hidden rounded-lg hover:border-blue-700 transition-all">
+                  <div key={index} className="border border-slate-300 bg-white">
                     <button
                       onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
-                      className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-blue-50/30 transition-colors"
+                      className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
                     >
-                      <div className="flex items-start gap-4 flex-1">
-                        <span className="flex-shrink-0 w-8 h-8 bg-blue-700 text-white rounded-full flex items-center justify-center text-sm font-bold font-space-mono">
-                          {index + 1}
-                        </span>
-                        <h3 className="font-open-sans font-semibold text-lg text-slate-950 pr-4">{faq.question}</h3>
-                      </div>
-                      <div className="flex-shrink-0 w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center">
-                        {openFaqIndex === index ? (
-                          <ChevronUp className="w-5 h-5 text-slate-950" />
-                        ) : (
-                          <ChevronDown className="w-5 h-5 text-slate-950" />
-                        )}
-                      </div>
+                      <h3 className="font-open-sans font-normal text-sm md:text-base text-slate-950 pr-4">
+                        {faq.question}
+                      </h3>
+                      <ChevronDown
+                        className={`w-5 h-5 text-slate-950 flex-shrink-0 transition-transform ${
+                          openFaqIndex === index ? 'rotate-180' : ''
+                        }`}
+                      />
                     </button>
                     {openFaqIndex === index && (
-                      <div className="px-6 pb-5 pt-2 bg-blue-50/20 border-t border-slate-200">
-                        <div className="ml-12">
-                          <p className="font-open-sans text-sm leading-[1.6] text-slate-950">{faq.answer}</p>
-                        </div>
+                      <div className="px-6 pb-6 pt-2">
+                        <p className="font-open-sans text-sm leading-[1.6] text-slate-950">
+                          {faq.answer}
+                        </p>
                       </div>
                     )}
                   </div>
@@ -1252,7 +1248,7 @@ export default function HomePage() {
           </section>
 
           {/* CTA Divider */}
-          <section className="py-8 border-b border-slate-200">
+          <section className="py-24 border-b border-slate-200">
             <div className="text-center">
               <Link to="/how-we-work">
                 <Button className="inline-flex items-center px-6 py-3 bg-white text-slate-950 border border-slate-950 rounded-full font-medium hover:bg-slate-950 hover:text-white transition-colors">

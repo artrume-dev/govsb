@@ -25,7 +25,8 @@
       "Bash(__NEW_LINE__ if [ -f \"$file\" ])",
       "Bash(echo:*)",
       "Bash(done)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(open http://localhost:61599)"
     ],
     "deny": [],
     "ask": []

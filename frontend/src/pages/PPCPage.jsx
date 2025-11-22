@@ -137,7 +137,7 @@ export default function PPCPage() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
           {/* Gradient fade from white to gray-50 */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
-        </div>
+        </div>#
         <div className="lg:block h-full w-full">
           <div className="relative z-10 py-16 border-l border-r border-slate-200">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
