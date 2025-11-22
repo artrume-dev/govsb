@@ -526,7 +526,7 @@ async def send_contact_email(request: ContactRequest):
             print(f"Warning: Failed to send confirmation email: {e}")
 
         # Send notification to admin
-        admin_email = os.getenv('ADMIN_EMAIL', 'spacegigx@gmail.com')
+        admin_email = os.getenv('ADMIN_EMAIL', 'info@govisibi.ai')
         try:
             email_service.send_contact_notification(
                 admin_email=admin_email,
@@ -590,7 +590,7 @@ async def submit_brand_analysis(request: BrandAnalysisRequest, background_tasks:
 
             try:
                 # Send notification to admin
-                admin_email = os.getenv('ADMIN_EMAIL', 'samar@teamstack.co')
+                admin_email = os.getenv('ADMIN_EMAIL', 'info@govisibi.ai')
                 email_service.send_brand_analysis_notification(
                     admin_email=admin_email,
                     brand_url=request.brand_url,

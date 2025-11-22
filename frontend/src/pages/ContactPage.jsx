@@ -35,7 +35,7 @@ export default function ContactPage() {
       })
       .catch((err) => {
         console.error('Failed to send contact message', err)
-        alert('Sorry — something went wrong sending your message. Please try again or email us directly at hello@govisibi.ai')
+        alert('Sorry — something went wrong sending your message. Please try again or email us directly at info@govisibi.ai')
       })
   }
 
@@ -210,10 +210,10 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-space-mono font-normal text-xl uppercase leading-[1.3] text-slate-950 mb-2">Email</h3>
                       <a
-                        href="mailto:hello@govisibi.ai"
+                        href="mailto:info@govisibi.ai"
                         className="font-space-mono text-md text-slate-950 hover:text-blue-700 transition-colors"
                       >
-                        hello@govisibi.ai
+                        info@govisibi.ai
                       </a>
                     </div>
                   </div>

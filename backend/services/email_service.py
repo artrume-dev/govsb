@@ -40,25 +40,41 @@ class SMTPEmailProvider(EmailProvider):
             
             msg = MIMEMultipart('alternative')
             msg['Subject'] = subject
-            msg['From'] = self.from_email
+            msg['From'] = f'VISIBI <{self.from_email}>'
             msg['To'] = to_email
+            msg['Reply-To'] = self.from_email
+            
+            # Add headers to improve deliverability
+            msg['X-Mailer'] = 'VISIBI Email Service'
+            msg['X-Priority'] = '3'
+            msg['Importance'] = 'Normal'
 
             # Add text and HTML parts
-            part1 = MIMEText(text_content, 'plain')
-            part2 = MIMEText(html_content, 'html')
+            part1 = MIMEText(text_content, 'plain', 'utf-8')
+            part2 = MIMEText(html_content, 'html', 'utf-8')
             msg.attach(part1)
             msg.attach(part2)
 
-            # Send email with timeout
+            # Send email with SSL (port 465) or STARTTLS (port 587)
             print(f"   Connecting to SMTP server...")
-            with smtplib.SMTP(self.smtp_host, self.smtp_port, timeout=10) as server:
-                print(f"   Starting TLS...")
-                server.starttls()
-                print(f"   Logging in...")
-                server.login(self.username, self.password)
-                print(f"   Sending email...")
-                server.sendmail(self.from_email, to_email, msg.as_string())
-                print(f"✅ Email sent successfully to {to_email}")
+            if self.smtp_port == 465:
+                # Use SMTP_SSL for port 465
+                with smtplib.SMTP_SSL(self.smtp_host, self.smtp_port, timeout=10) as server:
+                    print(f"   Logging in...")
+                    server.login(self.username, self.password)
+                    print(f"   Sending email...")
+                    server.sendmail(self.from_email, to_email, msg.as_string())
+                    print(f"✅ Email sent successfully to {to_email}")
+            else:
+                # Use STARTTLS for other ports (587, etc.)
+                with smtplib.SMTP(self.smtp_host, self.smtp_port, timeout=10) as server:
+                    print(f"   Starting TLS...")
+                    server.starttls()
+                    print(f"   Logging in...")
+                    server.login(self.username, self.password)
+                    print(f"   Sending email...")
+                    server.sendmail(self.from_email, to_email, msg.as_string())
+                    print(f"✅ Email sent successfully to {to_email}")
 
             return True
         except Exception as e:
@@ -378,7 +394,7 @@ This is an automated notification from VISIBI.
                         <li>If needed, we'll schedule a call to discuss your goals</li>
                     </ul>
 
-                    <p>In the meantime, feel free to explore our services at <a href="https://visibi.com">visibi.com</a></p>
+                    <p>In the meantime, feel free to explore our services at <a href="https://govisibi.ai">govisibi.ai</a></p>
                 </div>
 
                 <div class="footer">
@@ -402,7 +418,7 @@ What happens next:
 - We'll respond to your email within 24 hours
 - If needed, we'll schedule a call to discuss your goals
 
-In the meantime, feel free to explore our services at visibi.com
+In the meantime, feel free to explore our services at https://govisibi.ai
 
 ---
 VISIBI - Generative Engine Optimisation
