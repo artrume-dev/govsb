@@ -211,14 +211,7 @@ export default function HomePage() {
     {
       icon: Award,
       title: 'Founded by Industry Experts',
-      description: 'Built by senior specialists with over 60 years of combined expertise across:',
-      bullets: [
-        'Software engineering',
-        'SEO & digital strategy',
-        'AI visibility (GEO & AIO)',
-        'Agent development & orchestration',
-        'Enterprise Scale Creative Engineer'
-      ]
+      description: 'Built by senior specialists with over 60 years of combined expertise across software engineering, SEO & digital strategy, AI visibility (GEO & AIO), agent development & orchestration, and design systems & enterprise UX.'
     },
     {
       icon: BarChart3,
@@ -330,16 +323,13 @@ export default function HomePage() {
               {/* Left Column - 60% (3 out of 5 columns) */}
               <div className="lg:col-span-3 space-y-4 text-left pr-0 lg:pr-16">
                 <h1 className="font-open-sans text-3xl md:text-7xl font-semibold tracking-tight text-slate-950 md:leading-[1]">
-                  Make Your Brand Visible to AI.
+                  Make your Brand visible to AI.
                 </h1>
                 <h2 className="font-open-sans text-3xl md:text-5xl font-thin block md:leading-[1] pb-4 tracking-tight text-slate-950">
-                  Make Your Business More Productive With AI.
+                  Make your business more productive with AI. 
                 </h2>
-                <h3 className="font-open-sans text-xl md:text-2xl font-normal block md:leading-[1.3] text-slate-950">
-                  AI agents decide how work gets done.
-                </h3>
                 <p className="font-open-sans text-md md:text-lg md:leading-[1.6] text-slate-700 pb-8">
-                  If AI systems can't find your brand, you're out of buyer consideration. If your teams don't use agents, competitors move faster.
+                  AI engines decide what brands appear. AI agents decide how work gets done. If AI systems can't find your brand, you're out of buyer consideration. If your teams don't use agents, competitors move faster.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-left">
                   <Button
@@ -416,283 +406,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* VISIBI helps you win in both worlds Section */}
-      <section className="max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-1">
-        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
-        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background"></div>
-
-        <div className="max-w-6xl mx-auto text-center space-y-8">
-          <h2 className="font-open-sans font-semibold text-3xl md:text-5xl md:leading-[1.3] text-slate-950">
-            VISIBI helps you win in both worlds
-            <span className="font-open-sans font-thin text-md md:text-5xl leading-[1.5] md:leading-[1.3] text-slate-950 block">AI discovery and AI automation.</span>
-          </h2>
-          <p className="font-open-sans text-md md:text-lg leading-[1.5] text-slate-950 max-w-3xl mx-auto">
-            VISIBI is the only agency engineered to optimise your brand for AI engines and build autonomous agents that transform how your business operates.
-          </p>
-          <p className="font-open-sans text-md md:text-lg leading-[1.5] text-slate-950 max-w-3xl mx-auto">
-            Experience a surge in business growth with increased leads, faster workflows, and significant cost savings. Our solutions ensure your brand is not only visible but also more efficient, providing tangible results that drive business success.
-          </p>
-        </div>
-      </section>
-
-      {/* THE TWO CORE VISIBI SOLUTIONS */}
-      <section className="max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-1">
-        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
-        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background"></div>
-
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-12 text-center">
-            The two core VISIBI solutions
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-white border border-slate-300 p-8">
-              <h3 className="font-space-mono font-medium text-xl text-slate-950 uppercase mb-4">
-                1. AI Visibility (GEO)
-              </h3>
-              <p className="font-open-sans text-md leading-[1.5] text-slate-950 mb-3">
-                Get found, understood, and recommended by AI.
-              </p>
-              <p className="font-open-sans text-md leading-[1.5] text-slate-950">
-                Make your brand discoverable, trusted, and accurately represented inside ChatGPT, Gemini, Claude, Perplexity, Copilot, and the AI engines where customers now begin their journey.
-              </p>
-            </div>
-            <div className="bg-white border border-slate-300 p-8">
-              <h3 className="font-space-mono font-medium text-xl text-slate-950 uppercase mb-4">
-                2. AI Agents
-              </h3>
-              <p className="font-open-sans text-md leading-[1.5] text-slate-950 mb-3">
-                Automate workflows with autonomous digital workers.
-              </p>
-              <p className="font-open-sans text-md leading-[1.5] text-slate-950">
-                Deploy autonomous, safe, integrated AI agents that complete real business tasks across marketing, sales, support, finance, HR, operations, and more, helping your teams increase efficiency, reduce manual effort, and speed up processes. Our agents seamlessly integrate with major platforms and existing systems, ensuring a smooth implementation process that reassures leaders of its feasibility and minimal disruption.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-8 max-w-4xl mx-auto">
-            <p className="font-open-sans text-4xl md:text-6xl font-semibold text-slate-950 py-4 px-8 inline-block">
-              One partner for AI discovery <span className="font-open-sans font-thin text-md md:text-5xl leading-[1.5] md:leading-[1.3] text-blue-700 inline-block">+</span> AI productivity.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* THE AI SHIFT */}
-      <section className="max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-1">
-        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
-        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background"></div>
-
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-open-sans font-semibold text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-8 text-center">
-            The AI Shift
-          </h2>
-          <h3 className="font-open-sans font-thin text-2xl md:text-4xl md:leading-[1.3] text-slate-950 mb-2 text-center">
-            Discovery, Decision & Action Now Begin Inside AI.
-          </h3>
-          <p className="font-open-sans text-md md:text-lg text-center text-slate-950 mb-12 max-w-3xl mx-auto">
-            Consumers no longer start with Google. They begin by asking AI:
-          </p>
-          
-          {/* AI Query Examples */}
-          <div className="grid md:grid-cols-2 gap-4 mb-24 max-w-4xl mx-auto">
-            <div className="bg-white border border-slate-300 p-6">
-              <div className="flex items-start gap-3">
-                <MessageCircle className="w-6 h-6 text-blue-700 flex-shrink-0 mt-1" />
-                <p className="font-open-sans text-base text-slate-950 italic">"What's the best solution for my team?"</p>
-              </div>
-            </div>
-            <div className="bg-white border border-slate-300 p-6">
-              <div className="flex items-start gap-3">
-                <MessageCircle className="w-6 h-6 text-blue-700 flex-shrink-0 mt-1" />
-                <p className="font-open-sans text-base text-slate-950 italic">"Which product is most reliable?"</p>
-              </div>
-            </div>
-            <div className="bg-white border border-slate-300 p-6">
-              <div className="flex items-start gap-3">
-                <MessageCircle className="w-6 h-6 text-blue-700 flex-shrink-0 mt-1" />
-                <p className="font-open-sans text-base text-slate-950 italic">"Plan my trip - and book the best options."</p>
-              </div>
-            </div>
-            <div className="bg-white border border-slate-300 p-6">
-              <div className="flex items-start gap-3">
-                <MessageCircle className="w-6 h-6 text-blue-700 flex-shrink-0 mt-1" />
-                <p className="font-open-sans text-base text-slate-950 italic">"Find the top software for small businesses."</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mb-12">
-            <div className="grid md:grid-cols-2 gap-6 pattern-background p-4 border-slate-300 border max-w-4xl mx-auto">
-              <div className="bg-white border border-slate-300 p-8 text-center">
-                <p className="font-open-sans text-lg md:text-xl text-slate-950 font-semibold">
-                  AI engines generate the answers.
-                </p>
-              </div>
-              <div className="bg-white border border-slate-300 p-8 text-center">
-                <p className="font-open-sans text-lg md:text-xl text-slate-950 font-semibold">
-                  Agentic systems complete the actions.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* How the Funnel Has Changed */}
-          <div className="my-24">
-            <h3 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-6 text-center border-t border-slate-200 pt-16">
-              How the funnel has changed
-            </h3>
-            <p className="font-open-sans text-md md:text-lg text-center text-slate-950 mb-6 max-w-3xl mx-auto">
-              The classic funnel — Awareness → Search → Click → Visit → Compare → Purchase is collapsing into a single AI-led interaction:
-            </p>
-            <p className="font-open-sans text-lg md:text-xl font-semibold text-center text-slate-950 mb-12">
-              Query → AI Recommendation → Purchase
-            </p>
-            
-            <div className="grid md:grid-cols-2 gap-6 pattern-background p-4 border-slate-300 border">
-              {/* Left Side - Traditional Funnel (Fading) */}
-              <div className="bg-white border border-slate-300 p-8">
-                <div className="text-center mb-8">
-                  <h4 className="font-space-mono font-normal text-xl text-slate-950 uppercase mb-2">Traditional Web Funnel</h4>
-                  <p className="font-open-sans text-sm text-slate-600">⚠ Obsolete & Fading</p>
-                </div>
-                
-                <div className="space-y-3 opacity-60">
-                  <div className="bg-white border border-slate-300 p-4">
-                    <div className="flex items-center gap-4">
-                      <Megaphone size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
-                      <div>
-                        <span className="font-space-mono text-xs text-slate-600">STEP 1</span>
-                        <p className="font-open-sans text-md text-slate-950">Awareness</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white border border-slate-300 p-4">
-                    <div className="flex items-center gap-4">
-                      <Search size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
-                      <div>
-                        <span className="font-space-mono text-xs text-slate-600">STEP 2</span>
-                        <p className="font-open-sans text-md text-slate-950">Search</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white border border-slate-300 p-4">
-                    <div className="flex items-center gap-4">
-                      <Globe size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
-                      <div>
-                        <span className="font-space-mono text-xs text-slate-600">STEP 3</span>
-                        <p className="font-open-sans text-md text-slate-950">Visit</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white border border-slate-300 p-4">
-                    <div className="flex items-center gap-4">
-                      <Eye size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
-                      <div>
-                        <span className="font-space-mono text-xs text-slate-600">STEP 4</span>
-                        <p className="font-open-sans text-md text-slate-950">Read</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white border border-slate-300 p-4">
-                    <div className="flex items-center gap-4">
-                      <Scale size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
-                      <div>
-                        <span className="font-space-mono text-xs text-slate-600">STEP 5</span>
-                        <p className="font-open-sans text-md text-slate-950">Compare</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white border border-slate-300 p-4">
-                    <div className="flex items-center gap-4">
-                      <ShoppingCart size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
-                      <div>
-                        <span className="font-space-mono text-xs text-slate-600">STEP 6</span>
-                        <p className="font-open-sans text-md text-slate-950">Buy</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Right Side - AI Funnel (Bright) */}
-              <div className="bg-white border border-slate-300 p-8">
-                <div className="text-center mb-8">
-                  <h4 className="font-space-mono font-normal text-xl text-slate-950 uppercase mb-2">AI-Powered Funnel</h4>
-                  <p className="font-open-sans text-sm text-slate-600">✓ Fast, Direct, Now</p>
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="bg-white border border-slate-300 p-6 hover:border-blue-700 transition-all">
-                    <div className="flex items-center gap-4">
-                      <MessageCircle size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
-                      <div>
-                        <span className="font-space-mono text-xs text-slate-600">STEP 1</span>
-                        <p className="font-open-sans text-md text-slate-950 font-semibold">Prompt</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white border border-slate-300 p-6 hover:border-blue-700 transition-all">
-                    <div className="flex items-center gap-4">
-                      <BrainCircuit size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
-                      <div>
-                        <span className="font-space-mono text-xs text-slate-600">STEP 2</span>
-                        <p className="font-open-sans text-md text-slate-950 font-semibold">AI Recommendation</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white border border-slate-300 p-6 hover:border-blue-700 transition-all">
-                    <div className="flex items-center gap-4">
-                      <Check size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
-                      <div>
-                        <span className="font-space-mono text-xs text-slate-600">STEP 3</span>
-                        <p className="font-open-sans text-md text-slate-950 font-semibold">Purchase</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* What Disappears */}
-          <section className="py-16 border-t border-slate-200">
-            <div className="max-w-5xl mx-auto md:px-16">
-              <div className="text-center mb-8">
-                <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 pb-8">
-                  What Disappears?
-                </h2>
-                <p className="font-open-sans text-md md:text-xl leading-[1.7] md:leading-[1.9] text-slate-950">
-                  There are no pageviews. No landing pages. No scroll depth. No retargeting window.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-1 gap-4 border-slate-300 border transition-colors pattern-background mb-8 p-2">
-                <div className="bg-white p-8">
-                  <div className="space-y-2">
-                    <p className="font-open-sans text-md leading-[1.6] text-slate-950">                    
-                    </p>
-                    <p className="font-open-sans text-xl md:text-2xl font-thin leading-[1.4] md:leading-[1.5] text-slate-950">
-                    Meanwhile, inside organisations, the same transformation is happening.
-                      AI agents are now automating research, writing, analysis, operations, planning, reporting, and thousands of micro tasks per day.
-                      If your brand doesn't surface in AI, you're invisible. If your teams don't leverage agents, you're slow.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-white p-8">
-                  <div className="space-y-2">
-                       <p className="font-open-sans text-xl md:text-3xl font-medium leading-[1.4] md:leading-[1.5] text-slate-950">VISIBI ensures you stay visible and competitive.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </section>
-        </div>
-      </section>
-
       {/* Brand Analysis Section */}
       <main ref={mainSectionRef} className="max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-1">
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
@@ -702,64 +415,41 @@ export default function HomePage() {
           <div className="space-y-8">
             <Card className="max-w-4xl mx-auto border-0 shadow-none bg-transparent">
               <CardContent className="px-0 md:px-6">
-                {/* VISIBI AI Scanner Section */}
-                <div className="mb-12 max-w-4xl mx-auto">
-                  <div className="text-center mb-8">
-                    <h2 className="font-open-sans font-semibold text-2xl md:text-4xl md:leading-[1.3] text-slate-950 mb-4">
-                      VISIBI AI Scanner
-                    </h2>
-                    <p className="font-open-sans text-md md:text-lg leading-[1.5] text-slate-950">
-                      See How AI Engines Understand Your Brand. Enter your domain and up to five keywords.
-                    </p>
+                <div className="mb-8 text-center space-y-6">
+                  <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950">
+                    VISIBI helps you win in both worlds: AI discovery and AI automation.
+                  </h2>
+                  <p className="font-open-sans text-md md:text-lg leading-[1.5] text-slate-950 max-w-3xl mx-auto">
+                    Experience a surge in business growth with increased leads, faster workflows, and significant cost savings. Our solutions ensure your brand is not only visible but also more efficient, providing tangible results that drive business success.
+                  </p>
+                  <div className="flex flex-col md:flex-row gap-4 justify-center items-stretch mt-6">
+                    <div className="bg-white border border-slate-300 p-8 text-center flex-1 min-w-[300px] max-w-md">
+                      <p className="font-space-mono font-normal text-xl text-slate-950 uppercase">
+                        GEO <span className="font-normal">→</span> Get found, understood, and recommended by AI.
+                      </p>
+                    </div>
+                    <div className="bg-white border border-slate-300 p-8 text-center flex-1 min-w-[300px] max-w-md">
+                      <p className="font-space-mono font-normal text-xl text-slate-950 uppercase">
+                        Agents <span className="font-normal">→</span> Automate workflows with autonomous digital workers.
+                      </p>
+                    </div>
                   </div>
-                  
-                  <Card className="bg-blue-50/30 border border-blue-200">
-                    <CardContent className="p-8">
-                      <h4 className="font-space-mono font-semibold text-sm uppercase text-slate-950 mb-4">
-                        VISIBI instantly analyses AI engines for:
-                      </h4>
-                      <div className="grid md:grid-cols-2 gap-3">
-                        <div className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-blue-700 flex-shrink-0 mt-1" />
-                          <span className="font-open-sans text-sm text-slate-950">Brand mentions</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-blue-700 flex-shrink-0 mt-1" />
-                          <span className="font-open-sans text-sm text-slate-950">Accuracy of description</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-blue-700 flex-shrink-0 mt-1" />
-                          <span className="font-open-sans text-sm text-slate-950">Sentiment & trust indicators</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-blue-700 flex-shrink-0 mt-1" />
-                          <span className="font-open-sans text-sm text-slate-950">Citation frequency</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-blue-700 flex-shrink-0 mt-1" />
-                          <span className="font-open-sans text-sm text-slate-950">Competitor comparisons</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-blue-700 flex-shrink-0 mt-1" />
-                          <span className="font-open-sans text-sm text-slate-950">Knowledge gaps</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-blue-700 flex-shrink-0 mt-1" />
-                          <span className="font-open-sans text-sm text-slate-950">Entity conflicts</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-blue-700 flex-shrink-0 mt-1" />
-                          <span className="font-open-sans text-sm text-slate-950">Structured data issues</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-blue-700 flex-shrink-0 mt-1" />
-                          <span className="font-open-sans text-sm text-slate-950">Recommendation likelihood</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                    <Button
+                      onClick={scrollToForm}
+                      className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors"
+                    >
+                      <Sparkles className="w-5 h-5 mr-2" />
+                      Get Your Free AI Visibility Audit
+                    </Button>
+                    <Link to="/contact">
+                      <Button className="inline-flex items-center px-8 py-6 bg-white text-slate-950 border border-slate-300 rounded-full font-medium hover:bg-slate-50 transition-colors">
+                        Talk to an Expert
+                        <ArrowRight className="w-5 h-5 ml-2" />
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
-
                 <form onSubmit={handleUrlSubmit} className="space-y-4 mt-8">
                   <div className="flex gap-3 md:flex-row flex-col">
                     <Input
@@ -975,6 +665,228 @@ export default function HomePage() {
         <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
 
         <div className="max-w-7xl mx-auto">
+            {/* The AI Shift */}
+            <section className="py-24 border-b border-slate-200">
+              <div className="max-w-6xl mx-auto md:px-16">
+                <h2 className="font-open-sans font-thin text-3xl md:text-6xl md:leading-[1.3] text-slate-950 mb-8 text-center">
+                  The AI Shift
+                </h2>
+                <h3 className="font-open-sans font-thin text-2xl md:text-4xl md:leading-[1.3] text-slate-950 mb-2 text-center">
+                  Discovery, Decision & Action Now Begin Inside AI.
+                </h3>
+              <p className="font-open-sans text-md md:text-lg text-center text-slate-950 mb-12 max-w-3xl mx-auto">
+                Consumers no longer start with Google. They begin by asking AI:
+              </p>
+              
+              {/* AI Query Examples */}
+              <div className="grid md:grid-cols-2 gap-4 mb-24 max-w-4xl mx-auto">
+                <div className="bg-white border border-slate-300 p-6">
+                  <div className="flex items-start gap-3">
+                    <MessageCircle className="w-6 h-6 text-blue-700 flex-shrink-0 mt-1" />
+                    <p className="font-open-sans text-base text-slate-950 italic">"What's the best solution for my team?"</p>
+                  </div>
+                </div>
+                <div className="bg-white border border-slate-300 p-6">
+                  <div className="flex items-start gap-3">
+                    <MessageCircle className="w-6 h-6 text-blue-700 flex-shrink-0 mt-1" />
+                    <p className="font-open-sans text-base text-slate-950 italic">"Which product is most reliable?"</p>
+                  </div>
+                </div>
+                <div className="bg-white border border-slate-300 p-6">
+                  <div className="flex items-start gap-3">
+                    <MessageCircle className="w-6 h-6 text-blue-700 flex-shrink-0 mt-1" />
+                    <p className="font-open-sans text-base text-slate-950 italic">"Plan my trip - and book the best options."</p>
+                  </div>
+                </div>
+                <div className="bg-white border border-slate-300 p-6">
+                  <div className="flex items-start gap-3">
+                    <MessageCircle className="w-6 h-6 text-blue-700 flex-shrink-0 mt-1" />
+                    <p className="font-open-sans text-base text-slate-950 italic">"Find the top software for small businesses."</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Funnel Collapse Visualization */}
+              <div className="my-24">
+                <h3 className="font-open-sans font-thin text-xl md:text-3xl md:leading-[1.3] text-slate-950 mb-4 pt-16 pb-8 border-t border-slate-200 text-center">
+                  The Funnel Collapses: <span className="text-slate-950">6 Steps</span> → <span className="text-slate-950">3 Steps</span>
+                </h3>
+                
+                <div className="grid md:grid-cols-2 gap-6 pattern-background p-4 border-slate-300 border">
+                  {/* Left Side - Traditional Funnel (Fading) */}
+                  <div className="bg-white border border-slate-300 p-8">
+                    <div className="text-center mb-8">
+                      <h4 className="font-space-mono font-normal text-xl text-slate-950 uppercase mb-2">Traditional Web Funnel</h4>
+                      <p className="font-open-sans text-sm text-slate-600">⚠ Obsolete & Fading</p>
+                    </div>
+                    
+                    <div className="space-y-3 opacity-60">
+                      <div className="bg-white border border-slate-300 p-4">
+                        <div className="flex items-center gap-4">
+                          <Megaphone size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
+                          <div>
+                            <span className="font-space-mono text-xs text-slate-600">STEP 1</span>
+                            <p className="font-open-sans text-md text-slate-950">Awareness</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-white border border-slate-300 p-4">
+                        <div className="flex items-center gap-4">
+                          <Search size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
+                          <div>
+                            <span className="font-space-mono text-xs text-slate-600">STEP 2</span>
+                            <p className="font-open-sans text-md text-slate-950">Search</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-white border border-slate-300 p-4">
+                        <div className="flex items-center gap-4">
+                          <Globe size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
+                          <div>
+                            <span className="font-space-mono text-xs text-slate-600">STEP 3</span>
+                            <p className="font-open-sans text-md text-slate-950">Visit</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-white border border-slate-300 p-4">
+                        <div className="flex items-center gap-4">
+                          <Eye size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
+                          <div>
+                            <span className="font-space-mono text-xs text-slate-600">STEP 4</span>
+                            <p className="font-open-sans text-md text-slate-950">Read</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-white border border-slate-300 p-4">
+                        <div className="flex items-center gap-4">
+                          <Scale size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
+                          <div>
+                            <span className="font-space-mono text-xs text-slate-600">STEP 5</span>
+                            <p className="font-open-sans text-md text-slate-950">Compare</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-white border border-slate-300 p-4">
+                        <div className="flex items-center gap-4">
+                          <ShoppingCart size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
+                          <div>
+                            <span className="font-space-mono text-xs text-slate-600">STEP 6</span>
+                            <p className="font-open-sans text-md text-slate-950">Buy</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Right Side - AI Funnel (Bright) */}
+                  <div className="bg-white border border-slate-300 p-8">
+                    <div className="text-center mb-8">
+                      <h4 className="font-space-mono font-normal text-xl text-slate-950 uppercase mb-2">AI-Powered Funnel</h4>
+                      <p className="font-open-sans text-sm text-slate-600">✓ Fast, Direct, Now</p>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <div className="bg-white border border-slate-300 p-6 hover:border-blue-700 transition-all">
+                        <div className="flex items-center gap-4">
+                          <MessageCircle size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
+                          <div>
+                            <span className="font-space-mono text-xs text-slate-600">STEP 1</span>
+                            <p className="font-open-sans text-md text-slate-950 font-semibold">Prompt</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-white border border-slate-300 p-6 hover:border-blue-700 transition-all">
+                        <div className="flex items-center gap-4">
+                          <BrainCircuit size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
+                          <div>
+                            <span className="font-space-mono text-xs text-slate-600">STEP 2</span>
+                            <p className="font-open-sans text-md text-slate-950 font-semibold">AI Recommendation</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-white border border-slate-300 p-6 hover:border-blue-700 transition-all">
+                        <div className="flex items-center gap-4">
+                          <Check size={32} strokeWidth={1.25} className="text-slate-950 flex-shrink-0" />
+                          <div>
+                            <span className="font-space-mono text-xs text-slate-600">STEP 3</span>
+                            <p className="font-open-sans text-md text-slate-950 font-semibold">Purchase</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* What Disappears */}
+              <div className="my-24">
+                <h4 className="font-open-sans font-thin text-xl md:text-3xl md:leading-[1.3] text-slate-950 mb-4 pt-16 pb-8 border-t border-slate-200 text-center">
+                  What Disappears in the AI Era</h4>
+                <div className="grid md:grid-cols-4 gap-4 pattern-background p-4 border-slate-300 border">
+                  <div className="bg-white border border-slate-300 p-6 text-center">
+                    <X size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
+                    <p className="font-open-sans text-md text-slate-950">Pageviews</p>
+                  </div>
+                  <div className="bg-white border border-slate-300 p-6 text-center">
+                    <X size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
+                    <p className="font-open-sans text-md text-slate-950">Landing Pages</p>
+                  </div>
+                  <div className="bg-white border border-slate-300 p-6 text-center">
+                    <X size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
+                    <p className="font-open-sans text-md text-slate-950">Scroll Depth</p>
+                  </div>
+                  <div className="bg-white border border-slate-300 p-6 text-center">
+                    <X size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
+                    <p className="font-open-sans text-md text-slate-950">Retargeting</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Organizational Transformation */}
+              <div className="my-16">
+                <h4 className="font-open-sans font-semibold text-xl md:text-3xl md:leading-[1.3] text-slate-950 mb-4 pt-16 pb-8 border-t border-slate-200 text-center">Inside Organizations<span className="font-thin block"> AI Agents Automate Everything</span></h4>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pattern-background p-4 border-slate-300 border mb-6">
+                  <div className="bg-white border border-slate-300 p-6 text-center">
+                    <PenTool size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
+                    <p className="font-open-sans text-md text-slate-950">Writing</p>
+                  </div>
+                  <div className="bg-white border border-slate-300 p-6 text-center">
+                    <Search size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
+                    <p className="font-open-sans text-md text-slate-950">Research</p>
+                  </div>
+                  <div className="bg-white border border-slate-300 p-6 text-center">
+                    <LineChart size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
+                    <p className="font-open-sans text-md text-slate-950">Analysis</p>
+                  </div>
+                  <div className="bg-white border border-slate-300 p-6 text-center">
+                    <Workflow size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
+                    <p className="font-open-sans text-md text-slate-950">Operations</p>
+                  </div>
+                  <div className="bg-white border border-slate-300 p-6 text-center">
+                    <Briefcase size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
+                    <p className="font-open-sans text-md text-slate-950">Planning</p>
+                  </div>
+                  <div className="bg-white border border-slate-300 p-6 text-center">
+                    <BarChart3 size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
+                    <p className="font-open-sans text-md text-slate-950">Reporting</p>
+                  </div>
+                  <div className="bg-white border border-slate-300 p-6 text-center">
+                    <FileCheck size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
+                    <p className="font-open-sans text-md text-slate-950">Approvals</p>
+                  </div>
+                  <div className="bg-white border border-slate-300 p-6 text-center">
+                    <Bot size={32} strokeWidth={1.25} className="text-slate-950 mx-auto mb-3" />
+                    <p className="font-open-sans text-md text-slate-950">+ 1000s more</p>
+                  </div>
+                </div>
+                <p className="text-center font-open-sans text-md text-slate-950 italic">
+                  AI agents now handle thousands of micro tasks per day
+                </p>
+              </div>
+              
+            </div>
+          </section>
+
           {/* What We Do */}
           <section className="py-24 border-b border-slate-200">
             <div className="max-w-7xl mx-auto md:px-16">
@@ -1010,16 +922,13 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* The Two Core VISIBI Solutions - Detailed */}
+          {/* Core Services */}
           <section className="py-24 border-b border-slate-200">
             <div className="max-w-7xl mx-auto md:px-16">
               <div className="text-center mb-8">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-2">
                   The Two Core VISIBI Solutions
                 </h2>
-                <p className="font-open-sans text-md md:text-lg leading-[1.5] text-slate-950 max-w-3xl mx-auto">
-                  In-depth breakdown of our GEO and AI Agent services
-                </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 pattern-background p-4 border-slate-300 border">
@@ -1245,15 +1154,6 @@ export default function HomePage() {
                       <p className="font-open-sans text-md leading-[1.5] text-slate-950">
                         {item.description}
                       </p>
-                      {item.bullets && (
-                        <ul className="mt-4 space-y-2 text-left max-w-sm mx-auto">
-                          {item.bullets.map((bullet, bIdx) => (
-                            <li key={bIdx} className="font-open-sans text-sm text-slate-950">
-                              - {bullet}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
                     </div>
                   )
                 })}
@@ -1278,150 +1178,6 @@ export default function HomePage() {
                    <MessageSquareMore className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
-            </div>
-          </section>
-
-          {/* How We Work */}
-          <section className="py-24 border-b border-slate-200">
-            <div className="max-w-7xl mx-auto md:px-16">
-              <div className="text-center mb-12">
-                <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
-                  How We Work
-                </h2>
-                <p className="font-open-sans text-md md:text-lg leading-[1.5] text-slate-950 max-w-3xl mx-auto">
-                  Choose the path that matches where you are today. You can engage VISIBI just for GEO or just for AI agents – each has its own dedicated framework.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6 pattern-background p-4 border-slate-300 border">
-                {/* Path A - GEO: AI Visibility Framework */}
-                <div className="bg-white border border-slate-300 p-8">
-                  <h3 className="font-space-mono font-normal text-xl uppercase text-slate-950 mb-6 text-center">
-                    Path A — GEO: AI Visibility Framework
-                  </h3>
-                  <div className="space-y-6">
-                    <div>
-                      <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-3">
-                        1
-                      </div>
-                      <h4 className="font-open-sans text-md font-semibold text-slate-950 mb-2">
-                        AI Visibility & GEO Audit <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Free</span>
-                      </h4>
-                      <p className="font-open-sans text-sm leading-[1.5] text-slate-950">
-                        Full analysis of how AI engines currently interpret your brand, entities, and competitors.
-                      </p>
-                    </div>
-                    <div>
-                      <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-3">
-                        2
-                      </div>
-                      <h4 className="font-open-sans text-md font-semibold text-slate-950 mb-2">
-                        Entity & Knowledge Structuring
-                      </h4>
-                      <p className="font-open-sans text-sm leading-[1.5] text-slate-950">
-                        Rebuild your brand's machine-readable foundation: entities, relationships, schemas, and core knowledge sources.
-                      </p>
-                    </div>
-                    <div>
-                      <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-3">
-                        3
-                      </div>
-                      <h4 className="font-open-sans text-md font-semibold text-slate-950 mb-2">
-                        GEO Implementation
-                      </h4>
-                      <p className="font-open-sans text-sm leading-[1.5] text-slate-950">
-                        Implement structured data, content frameworks, entity reinforcement, and authority alignment across priority pages and properties.
-                      </p>
-                    </div>
-                    <div>
-                      <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-3">
-                        4
-                      </div>
-                      <h4 className="font-open-sans text-md font-semibold text-slate-950 mb-2">
-                        Measurement & Iteration
-                      </h4>
-                      <p className="font-open-sans text-sm leading-[1.5] text-slate-950">
-                        Review how AI outputs change over time – descriptions, citations, sentiment, and recommendation frequency for key queries.
-                      </p>
-                    </div>
-                    <div>
-                      <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-3">
-                        5
-                      </div>
-                      <h4 className="font-open-sans text-md font-semibold text-slate-950 mb-2">
-                        Continuous AI Visibility Tracking
-                      </h4>
-                      <p className="font-open-sans text-sm leading-[1.5] text-slate-950">
-                        Ongoing monitoring via dashboard: citations, mentions, sentiment, and competitor presence across major AI platforms.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Path B - AI Agents: Digital Workforce Framework */}
-                <div className="bg-white border border-slate-300 p-8">
-                  <h3 className="font-space-mono font-normal text-xl uppercase text-slate-950 mb-6 text-center">
-                    Path B — AI Agents: Digital Workforce Framework
-                  </h3>
-                  <div className="space-y-6">
-                    <div>
-                      <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-3">
-                        1
-                      </div>
-                      <h4 className="font-open-sans text-md font-semibold text-slate-950 mb-2">
-                        Agent Opportunity Mapping
-                      </h4>
-                      <p className="font-open-sans text-sm leading-[1.5] text-slate-950">
-                        Identify the specific departments, workflows, and use cases where agents will deliver the highest ROI.
-                      </p>
-                    </div>
-                    <div>
-                      <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-3">
-                        2
-                      </div>
-                      <h4 className="font-open-sans text-md font-semibold text-slate-950 mb-2">
-                        Solution & Safety Design
-                      </h4>
-                      <p className="font-open-sans text-sm leading-[1.5] text-slate-950">
-                        Define agent roles, guardrails, permissions, data access, tools, and integration requirements with your current tech stack.
-                      </p>
-                    </div>
-                    <div>
-                      <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-3">
-                        3
-                      </div>
-                      <h4 className="font-open-sans text-md font-semibold text-slate-950 mb-2">
-                        Custom Agent Development
-                      </h4>
-                      <p className="font-open-sans text-sm leading-[1.5] text-slate-950">
-                        Build agents around real workflows: reasoning, tools, APIs, guardrails, and knowledge bases tailored to your environment.
-                      </p>
-                    </div>
-                    <div>
-                      <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-3">
-                        4
-                      </div>
-                      <h4 className="font-open-sans text-md font-semibold text-slate-950 mb-2">
-                        Deployment & AgentOps
-                      </h4>
-                      <p className="font-open-sans text-sm leading-[1.5] text-slate-950">
-                        Deploy into production with monitoring, observability, optimisation, compliance, and human-in-the-loop where required.
-                      </p>
-                    </div>
-                    <div>
-                      <div className="w-8 h-8 border border-slate-950 text-slate-950 rounded-full flex items-center justify-center font-open-sans font-semibold text-md mb-3">
-                        5
-                      </div>
-                      <h4 className="font-open-sans text-md font-semibold text-slate-950 mb-2">
-                        Optimisation & Scale
-                      </h4>
-                      <p className="font-open-sans text-sm leading-[1.5] text-slate-950">
-                        Extend from one use case to many: more agents, more workflows, more teams – based on proven impact and internal adoption.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </section>
 
@@ -1621,3 +1377,5 @@ export default function HomePage() {
     </div>
   )
 }
+
+
