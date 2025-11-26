@@ -97,10 +97,10 @@ Your `vercel.json` has been updated to:
 
 ```json
 {
-  "buildCommand": "cd frontend && npm run build",
+  "buildCommand": "cd frontend && npm run build:csr",
   "outputDirectory": "frontend/dist",
   "framework": null,
-  "installCommand": "cd frontend && npm install",
+  "installCommand": "cd frontend && npm ci --production=false",
   "rewrites": [
     {
       "source": "/(.*)",
@@ -111,10 +111,21 @@ Your `vercel.json` has been updated to:
 ```
 
 This configuration:
-- ✅ Installs dependencies from `frontend/package.json`
-- ✅ Builds the project using your build script
-- ✅ Serves pre-rendered static files from `frontend/dist/`
+- ✅ Installs dependencies from `frontend/package.json` using `npm ci` (faster, more reliable)
+- ✅ Builds using `build:csr` (Client-Side Rendering) - skips pre-rendering
+- ✅ Serves static files from `frontend/dist/`
 - ✅ Handles client-side routing with SPA rewrites
+- ✅ SEO handled by React Helmet (meta tags injected client-side)
+
+### Why CSR on Vercel?
+
+Pre-rendering requires Puppeteer and Chromium which are:
+- ❌ Large dependencies (~300MB+)
+- ❌ Slow to install on Vercel
+- ❌ Can cause build timeouts
+- ❌ Not necessary for good SEO (React Helmet handles meta tags)
+
+**Solution:** Pre-render locally, push to Git, Vercel serves pre-built files OR use CSR mode with React Helmet.
 
 ---
 

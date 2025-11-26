@@ -6,7 +6,7 @@ import http from 'http';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const PORT = process.env.PORT || 5173;
+const PORT = process.env.PORT || 5174;
 const MAX_RETRIES = 15; // 15 seconds max wait time (reduced for CI/CD)
 const RETRY_INTERVAL = 500; // 0.5 second between retries (faster polling)
 

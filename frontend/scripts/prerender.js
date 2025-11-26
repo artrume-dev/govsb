@@ -23,7 +23,7 @@ const routes = [
 ];
 
 const distPath = path.join(__dirname, '..', 'dist');
-const port = 5173;
+const port = process.env.PORT || 5174;
 
 async function prerender() {
   console.log('🎨 Starting pre-render process...');
