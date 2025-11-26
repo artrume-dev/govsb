@@ -19,14 +19,21 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    // Use backend API URL from environment variable or default
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://govisibi.up.railway.app'
+    
     // Post the form to our backend API
-    fetch('/api/send-email', {
+    fetch(`${apiUrl}/api/send-email`, {
       method: 'POST',
+      mode: 'cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     })
       .then(async (res) => {
-        if (!res.ok) throw new Error((await res.text()) || 'Server error')
+        if (!res.ok) {
+          const errorData = await res.json().catch(() => ({}))
+          throw new Error(errorData.detail || 'Server error')
+        }
         setSubmitted(true)
         setTimeout(() => {
           setSubmitted(false)
