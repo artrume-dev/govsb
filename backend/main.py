@@ -56,7 +56,8 @@ app = FastAPI(
 # Get allowed origins from environment or use defaults
 allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "")
 if allowed_origins_str:
-    allowed_origins = [origin.strip() for origin in allowed_origins_str.split(",")]
+    allowed_origins = [origin.strip() for origin in allowed_origins_str.split(",") if origin.strip()]
+    print(f"📋 Using ALLOWED_ORIGINS from environment: {allowed_origins}")
 else:
     # For development, allow common local development origins
     allowed_origins = [
@@ -71,8 +72,11 @@ else:
         "https://govisibi.ai",
         "https://www.govisibi.ai",
     ]
+    print(f"📋 Using default ALLOWED_ORIGINS: {allowed_origins}")
 
 # Configure CORS with regex support for Vercel and other deployment platforms
+print(f"🔧 Configuring CORS with {len(allowed_origins)} allowed origins")
+print(f"🔧 CORS regex pattern: https://.*\\.vercel\\.app|https://.*\\.railway\\.app")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
@@ -81,6 +85,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+print("✅ CORS middleware configured successfully")
 
 # Initialize services
 brand_analyzer = BrandAnalyzer()
