@@ -1,5 +1,5 @@
 {
-  "buildCommand": "echo 'Serving pre-built files from frontend/dist'",
+  "buildCommand": "ls -la frontend/dist/index.html && echo 'Pre-built files ready'",
   "outputDirectory": "frontend/dist",
   "framework": null,
   "installCommand": "echo 'No installation needed'",
