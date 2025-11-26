@@ -69,31 +69,60 @@ export default function ContactPage() {
       <Navigation currentPage="contact" />
 
       {/* Hero */}
-      <section className="max-w-[90%] mx-auto items-center lg:px-[5rem] mb-0 mt-12 relative bg-white border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200">
+      <section className="max-w-full md:max-w-[90%] mx-auto items-center  mb-0 mt-12 relative bg-[#FAFAFB] border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200 overflow-hidden">
+        {/* Graph paper style background with gradient fade at bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-64 pointer-events-none">
+          {/* Graph paper grid pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
+          {/* Gradient fade from white to gray-50 */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
+        </div>
+
         <div className="lg:block h-full w-full">
-          <div className="relative z-10 py-16 flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16 border-l border-r border-slate-200">
-            <div className="max-w-3xl px-16 space-y-8">
-              <div className="text-left pb-8">
-              <Breadcrumbs items={[
-                { label: "Home", path: "/" },
-                { label: "Contact" }
-              ]} />
+          <div className="relative z-10 py-16 border-l border-r border-slate-200">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
+              {/* Left Column - 60% (3 out of 5 columns) */}
+              <div className="lg:col-span-3 space-y-4 text-left">
+                <div className="text-left pb-8">
+                  <Breadcrumbs items={[
+                    { label: "Home", path: "/" },
+                    { label: "Contact" }
+                  ]} />
+                </div>
+                <h1 className="font-open-sans text-3xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
+                  Let's Make Your Brand Visible in Gen AI Search
+                </h1>
+                <h2 className="font-open-sans text-2xl md:text-3xl font-thin block md:leading-[1.4] pb-8">
+                  Tell us about your Gen AI visibility goals and we'll show you how VISIBI can help you get discovered, cited, and trusted by millions.
+                </h2>
               </div>
-               <h1 className="font-open-sans text-4xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
-                Let's Make Your Brand Visible in Gen AI Search
-              </h1>
-              <h2 className="text-md md:text-xl md:leading-[1.7] tracking-tight font-thin text-slate-950 pb-8">
-                Tell us about your Gen AI visibility goals and we'll show you how VISIBI can help you get discovered, cited, and trusted by millions.
-              </h2>
+
+              {/* Right Column - 40% (2 out of 5 columns) */}
+              <div className="lg:col-span-2 flex items-center justify-center">
+                <style>{`
+                  @keyframes subtleBounce {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                  }
+                  .animate-subtle-bounce {
+                    animation: subtleBounce 4s ease-in-out infinite;
+                  }
+                `}</style>
+                <img 
+                  src="/vi/visibi-ppc-ai.png" 
+                  alt="VISIBI contact - Get in touch for AI visibility solutions" 
+                  className="w-full h-auto max-w-md animate-subtle-bounce"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Main Content */}
-      <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-2">
-        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
-        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
+      <main className="max-w-full md:max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-2">
+        <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
+        <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
 
         <div className="max-w-7xl mx-auto">
           {/* Contact Form */}
@@ -208,7 +237,7 @@ export default function ContactPage() {
                       <Mail className="w-6 h-6 text-slate-950" />
                     </div>
                     <div>
-                      <h3 className="font-space-mono font-normal text-xl uppercase leading-[1.3] text-slate-950 mb-2">Email</h3>
+                      <h3 className="font-open-sans font-normal text-xl leading-[1.3] text-slate-950 mb-2">Email</h3>
                       <a
                         href="mailto:info@govisibi.ai"
                         className="font-space-mono text-md text-slate-950 hover:text-blue-700 transition-colors"
@@ -225,8 +254,8 @@ export default function ContactPage() {
                       <MessageSquare className="w-6 h-6 text-slate-950" />
                     </div>
                     <div>
-                      <h3 className="font-space-mono font-normal text-xl uppercase leading-[1.3] text-slate-950 mb-2">What to Expect</h3>
-                      <ul className="font-space-mono text-sm leading-[1.5] text-slate-950 space-y-2">
+                      <h3 className="font-open-sans font-normal text-xl leading-[1.3] text-slate-950 mb-2">What to Expect</h3>
+                      <ul className="font-open-sans text-sm leading-[1.5] text-slate-950 space-y-2">
                         <li className="flex gap-2">
                           <span className="flex-shrink-0">•</span>
                           <span>Response within 24 hours</span>
@@ -249,7 +278,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="bg-white border-2 border-blue-700 rounded-xl p-8">
-                  <h3 className="font-space-mono font-normal text-xl uppercase leading-[1.3] text-slate-950 mb-3">Need an AI Visibility Audit?</h3>
+                  <h3 className="font-open-sans font-normal text-xl leading-[1.3] text-slate-950 mb-3">Need an AI Visibility Audit?</h3>
                   <p className="font-open-sans text-md leading-[1.5] text-slate-950 mb-4">
                     Get a comprehensive analysis of how your brand currently appears across AI platforms, plus strategic recommendations.
                   </p>
@@ -311,7 +340,7 @@ export default function ContactPage() {
       </main>
 
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
+      <footer className="max-w-full md:max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">

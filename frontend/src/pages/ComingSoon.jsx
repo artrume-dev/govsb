@@ -188,7 +188,7 @@ export default function ComingSoon() {
       {/** adding new hero header */}
      
       {/* Hero Section */}
-      <section className="max-w-[90%] mx-auto items-left px-4 lg:px-[5rem] mb-4 mt-12 relative">
+      <section className="max-w-full md:max-w-[90%] mx-auto items-left px-4  mb-4 mt-12 relative">
 
         <div className="lg:block absolute h-full w-full bg-white/90 border border-slate-300 dark:border-gray-800 left-0 top-2 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200"></div>
         
@@ -314,11 +314,11 @@ export default function ComingSoon() {
 
       {/** End new nav header */}
       {/* Main Content */}
-      <main ref={mainSectionRef} className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white dark:bg-gray-950 rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 dark:border-gray-800 mb-32">
+      <main ref={mainSectionRef} className="max-w-full md:max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white dark:bg-gray-950 rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 dark:border-gray-800 mb-32">
 
       {/** lines Section */}
-      <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 dark:border-gray-800 left-0 top-0 pattern-background rounded-bl-xl"></div>
-      <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 dark:border-gray-800 right-0 top-0 pattern-background rounded-br-xl"></div>
+      <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 dark:border-gray-800 left-0 top-0 pattern-background rounded-bl-xl"></div>
+      <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 dark:border-gray-800 right-0 top-0 pattern-background rounded-br-xl"></div>
         
         {step === 1 && (
           <div className="space-y-8">
@@ -752,7 +752,7 @@ export default function ComingSoon() {
       </main>
 
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-950">
+      <footer className="max-w-full md:max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-950">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Left Column - Logo and Description */}
           <div className="space-y-6">

@@ -41,7 +41,7 @@ export default function AboutPage() {
       <Navigation currentPage="about" />
 
       {/* Hero Section */}
-      <section className="max-w-[90%] mx-auto items-center lg:px-[5rem] mb-0 mt-12 relative bg-[#FAFAFB] border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200 overflow-hidden">
+      <section className="max-w-full md:max-w-[90%] mx-auto items-center  mb-0 mt-12 relative bg-[#FAFAFB] border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200 overflow-hidden">
         {/* Graph paper style background with gradient fade at bottom */}
         <div className="absolute inset-x-0 bottom-0 h-64 pointer-events-none">
           {/* Graph paper grid pattern */}
@@ -94,10 +94,10 @@ export default function AboutPage() {
       </section>
 
       {/* Main Content Area */}
-      <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white dark:bg-gray-950 border-t border-b border-r border-l border-slate-300 dark:border-gray-800 mb-2">
+      <main className="max-w-full md:max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white dark:bg-gray-950 border-t border-b border-r border-l border-slate-300 dark:border-gray-800 mb-2">
         {/* Side Pattern Lines */}
-        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 dark:border-gray-800 left-0 top-0 pattern-background rounded-bl-xl"></div>
-        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 dark:border-gray-800 right-0 top-0 pattern-background rounded-br-xl"></div>
+        <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 dark:border-gray-800 left-0 top-0 pattern-background rounded-bl-xl"></div>
+        <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 dark:border-gray-800 right-0 top-0 pattern-background rounded-br-xl"></div>
 
         <div className="max-w-7xl mx-auto">
           {/* Founder Story */}
@@ -249,33 +249,44 @@ export default function AboutPage() {
       </main>
 
 
-         {/* CTA Section */}
+             {/* CTA Section */}
+             <section className="max-w-full md:max-w-[90%] mx-auto px-12 py-24 relative z-10 bg-[#FAFAFB] rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 mb-32 overflow-hidden">
+            {/* Graph paper style background with gradient fade */}
+            <div className="absolute inset-0 pointer-events-none">
+              {/* Graph paper grid pattern */}
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
+              {/* Gradient fade */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
+            </div>
 
-          <section className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white dark:bg-gray-950 rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 dark:border-gray-800 mb-32">
-            
-             <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 dark:border-gray-800 left-0 top-0 pattern-background rounded-bl-xl"></div>
-            <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 dark:border-gray-800 right-0 top-0 pattern-background rounded-br-xl"></div>
+            <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
+            <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
         
         
-            <div className="max-w-3xl mx-auto text-center space-y-6">
-              <h2 className="font-open-sans font-medium text-4xl md:leading-[1.3] text-slate-950 dark:text-white">
-                Let's Build Your AI Visibility Strategy
+            <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+              <h2 className="font-open-sans font-thin text-4xl md:text-5xl md:leading-[1.3] text-slate-950">
+              Let's Build Your AI Visibility Strategy
               </h2>
-              <p className="font-open-sans text-xl leading-[1.7] text-slate-950 dark:text-gray-300 pb-8">
-                Ready to work with a team that combines decades of search expertise with cutting-edge AI optimization?
+              <p className="font-open-sans text-xl leading-[1.5] text-slate-950 mb-8 pb-8">
+              Ready to work with a team that combines decades of search expertise with cutting-edge AI optimization?
               </p>
-              <Link to="/">
+
+              <Link to="/contact">
                 <Button className="inline-flex items-center px-6 py-3 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
                   Talk to a Specialist
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
+
+
+              
             </div>
           </section>
 
 
+
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-950 rounded-xl rounded-bl-none rounded-br-none z-10">
+      <footer className="max-w-full md:max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-950 rounded-xl rounded-bl-none rounded-br-none z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Left Column - Logo and Description */}
           <div className="space-y-6">

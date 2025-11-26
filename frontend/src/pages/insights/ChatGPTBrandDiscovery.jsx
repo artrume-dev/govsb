@@ -31,7 +31,7 @@ export default function ChatGPTBrandDiscovery() {
       <Navigation currentPage="insights" />
 
       {/* Hero Section */}
-      <section className="max-w-[90%] mx-auto lg:px-[5rem] mb-0 mt-12 relative bg-[#FAFAFB] border border-b border-slate-200 rounded-xl rounded-bl-none rounded-br-none overflow-hidden">
+      <section className="max-w-full md:max-w-[90%] mx-auto  mb-0 mt-12 relative bg-[#FAFAFB] border border-b border-slate-200 rounded-xl rounded-bl-none rounded-br-none overflow-hidden">
         <div className="absolute inset-x-0 bottom-0 h-64 pointer-events-none">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
@@ -84,9 +84,9 @@ export default function ChatGPTBrandDiscovery() {
       </section>
 
       {/* Main Content */}
-      <main className="max-w-[90%] mx-auto px-8 py-16 relative z-10 bg-white border-l border-r border-slate-300 mb-16 rounded-b-xl">
-        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
-        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background"></div>
+      <main className="max-w-full md:max-w-[90%] mx-auto px-8 py-16 relative z-10 bg-white border-l border-r border-slate-300 mb-16 rounded-b-xl">
+        <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
+        <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background"></div>
 
         <article className="max-w-4xl mx-auto md:px-16">
           <div className="prose prose-lg max-w-none">
@@ -395,7 +395,7 @@ export default function ChatGPTBrandDiscovery() {
       </main>
 
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-0 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none">
+      <footer className="max-w-full md:max-w-[90%] mx-auto px-8 py-12 mt-0 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">

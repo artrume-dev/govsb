@@ -23,7 +23,7 @@ export default function EditorialPageAlt() {
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
 
       {/* Header */}
-      <header className="max-w-[90%] mx-auto rounded-xl bg-white/90 dark:bg-slate-900/10 backdrop-blur-sm sticky top-8 z-[100] shadow-sm relative">
+      <header className="max-w-full md:max-w-[90%] mx-auto rounded-xl bg-white/90 dark:bg-slate-900/10 backdrop-blur-sm sticky top-8 z-[100] shadow-sm relative">
         <div className="mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img src="/goVisibi-icon.svg" alt="VISIBI Logo" className="h-8 w-8" />
@@ -95,7 +95,7 @@ export default function EditorialPageAlt() {
       </header>
 
       {/* Hero Section */}
-      <section className="max-w-[90%] mx-auto items-center px-4 lg:px-[5rem] mb-4 mt-12 relative">
+      <section className="max-w-full md:max-w-[90%] mx-auto items-center px-4  mb-4 mt-12 relative">
         <div className="lg:block absolute h-full w-full bg-white/90 border border-slate-300 dark:border-gray-800 left-0 top-2 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200"></div>
 
         <div className="relative z-10 py-16 top-4">
@@ -111,10 +111,10 @@ export default function EditorialPageAlt() {
       </section>
 
       {/* Main Content Area */}
-      <main className="max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white dark:bg-gray-950 rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 dark:border-gray-800 mb-32">
+      <main className="max-w-full md:max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white dark:bg-gray-950 rounded-xl rounded-tl-none rounded-tr-none border-t border-b border-r border-l border-slate-300 dark:border-gray-800 mb-32">
         {/* Side Pattern Lines */}
-        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 dark:border-gray-800 left-0 top-0 pattern-background rounded-bl-xl"></div>
-        <div className="lg:block absolute h-full w-0 md:w-20 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 dark:border-gray-800 right-0 top-0 pattern-background rounded-br-xl"></div>
+        <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 dark:border-gray-800 left-0 top-0 pattern-background rounded-bl-xl"></div>
+        <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 dark:border-gray-800 right-0 top-0 pattern-background rounded-br-xl"></div>
 
         <div className="max-w-7xl mx-auto">
           {/* Founder Story */}
@@ -286,7 +286,7 @@ export default function EditorialPageAlt() {
       </main>
 
       {/* Footer */}
-      <footer className="max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-950 rounded-xl">
+      <footer className="max-w-full md:max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-950 rounded-xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Left Column - Logo and Description */}
           <div className="space-y-6">
