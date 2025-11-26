@@ -80,8 +80,11 @@ export default function HomePage() {
     try {
       // Use backend API URL from environment variable or default
       const apiUrl = import.meta.env.VITE_API_URL || 'https://govisibi.up.railway.app'
+      
+      // Add mode: 'cors' to explicitly handle CORS
       const response = await fetch(`${apiUrl}/api/brand-analysis`, {
         method: 'POST',
+        mode: 'cors',
         headers: {
           'Content-Type': 'application/json',
         },
