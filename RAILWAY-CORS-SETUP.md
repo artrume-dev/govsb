@@ -17,10 +17,12 @@ The brand analysis form is getting CORS errors because Railway backend needs to 
    - **Variable Name**: `ALLOWED_ORIGINS`
    - **Variable Value** (copy this EXACT value without any spaces after commas): 
      ```
-     https://visibi-app-git-main-adnan-hkas-projects.vercel.app,https://visibi-app.vercel.app,https://visibi-app-tawny.vercel.app,https://visibiwebproject.vercel.app,http://localhost:5174,http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173,http://127.0.0.1:5174,https://visibi.com,https://www.visibi.com,https://govisibi.ai,https://www.govisibi.ai
+     https://visibi-app-git-main-adnan-hkas-projects.vercel.app,https://visibi-app.vercel.app,https://visibi-app-tawny.vercel.app,https://visibiwebproject.vercel.app,http://localhost:5174,http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173,http://127.0.0.1:5174,https://visibi.com,https://www.visibi.com,https://govisibi.ai,https://www.govisibi.ai,https://visibiapp-production.up.railway.app
      ```
 
 **IMPORTANT**: Make sure there are NO spaces after the commas in the value!
+
+**Note**: Your backend Railway URL is `visibiapp-production.up.railway.app` (not govisibi.up.railway.app)
 
 ### Step 3: Redeploy
 1. After adding the variable, Railway will automatically redeploy

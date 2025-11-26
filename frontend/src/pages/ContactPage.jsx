@@ -20,7 +20,7 @@ export default function ContactPage() {
   const handleSubmit = (e) => {
     e.preventDefault()
     // Use backend API URL from environment variable or default
-    const apiUrl = import.meta.env.VITE_API_URL || 'https://govisibi.up.railway.app'
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://visibiapp-production.up.railway.app'
     
     // Post the form to our backend API
     fetch(`${apiUrl}/api/send-email`, {
