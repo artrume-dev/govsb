@@ -1,8 +1,8 @@
 {
-  "buildCommand": "echo 'Using pre-rendered files from GitHub Actions'",
+  "buildCommand": "cd frontend && npm run build",
   "outputDirectory": "frontend/dist",
   "framework": null,
-  "installCommand": "echo 'No build needed - serving pre-rendered files'",
+  "installCommand": "cd frontend && npm install",
   "rewrites": [
     {
       "source": "/(.*)",
