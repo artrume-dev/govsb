@@ -1,8 +1,8 @@
 {
-  "buildCommand": "cd frontend && npm run build:csr",
+  "buildCommand": "echo 'Serving pre-built files from frontend/dist'",
   "outputDirectory": "frontend/dist",
   "framework": null,
-  "installCommand": "cd frontend && npm ci --production=false",
+  "installCommand": "echo 'No installation needed'",
   "rewrites": [
     {
       "source": "/(.*)",
