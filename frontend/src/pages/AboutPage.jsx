@@ -41,7 +41,7 @@ export default function AboutPage() {
       <Navigation currentPage="about" />
 
       {/* Hero Section */}
-      <section className="max-w-full md:max-w-[90%] mx-auto items-center  mb-0 mt-12 relative bg-[#FAFAFB] border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200 overflow-hidden">
+      <section className="max-w-full md:max-w-[90%] mx-auto items-center mb-0 mt-12 relative bg-[#FAFAFB] border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none overflow-hidden">
         {/* Graph paper style background with gradient fade at bottom */}
         <div className="absolute inset-x-0 bottom-0 h-64 pointer-events-none">
           {/* Graph paper grid pattern */}
@@ -51,8 +51,7 @@ export default function AboutPage() {
         </div>
 
         <div className="lg:block h-full w-full">
-          <div className="relative z-10 py-16 border-l border-r border-slate
-          -200">
+          <div className="relative z-10 py-16 border-l border-r border-slate-200">
              
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-16">
               {/* Left Column - 60% (3 out of 5 columns) */}

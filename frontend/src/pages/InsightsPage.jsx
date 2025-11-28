@@ -44,7 +44,7 @@ export default function InsightsPage() {
       <Navigation currentPage="insights" />
 
       {/* Hero */}
-      <section className="max-w-full md:max-w-[90%] mx-auto items-center  mb-0 mt-12 relative bg-[#FAFAFB] border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200 overflow-hidden">
+      <section className="max-w-full md:max-w-[90%] mx-auto items-center  mb-0 mt-12 relative bg-[#FAFAFB] border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none overflow-hidden">
         {/* Graph paper style background with gradient fade at bottom */}
         <div className="absolute inset-x-0 bottom-0 h-64 pointer-events-none">
           {/* Graph paper grid pattern */}

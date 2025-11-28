@@ -78,8 +78,7 @@ export default function HomePage() {
     setError('')
 
     try {
-      // Use backend API URL from environment variable or default
-      const apiUrl = import.meta.env.VITE_API_URL || 'https://visibiapp-production.up.railway.app'
+      const apiUrl = (import.meta.env.VITE_API_URL || 'https://visibiapp-production.up.railway.app').replace(/\/$/, '')
       
       // Add mode: 'cors' to explicitly handle CORS
       const response = await fetch(`${apiUrl}/api/brand-analysis`, {
@@ -305,14 +304,14 @@ export default function HomePage() {
       <Navigation currentPage="home" />
 
       {/* Hero */}
-      <section className="max-w-full md:max-w-[90%] md:max-w-[90%] mx-auto items-center mb-0 mt-12 relative bg-[#FAFAFB] border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200 overflow-hidden">
+      <section className="max-w-full md:max-w-[90%] mx-auto items-center px-8 md:px-16 mb-0 mt-8 relative bg-[#FAFAFB] border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none overflow-hidden">
         <div className="absolute inset-x-0 bottom-0 h-64 pointer-events-none">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
         </div>
 
         <div className="lg:block h-full w-full">
-          <div className="relative z-10 py-24 border-l border-r border-slate-200">
+          <div className="relative z-10 py-16 border-l border-r border-slate-300 border-dashed">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center px-8 md:px-16">
               {/* Left Column - 60% (3 out of 5 columns) */}
               <div className="lg:col-span-3 space-y-4 text-left pr-0 lg:pr-16 max-w-2xl">
@@ -365,7 +364,7 @@ export default function HomePage() {
       </section>
 
       {/* AI Engines Marquee */}
-      <section className="max-w-full md:max-w-[90%] mx-auto bg-white border-l border-r border-b border-slate-200 py-16">
+      <section className="max-w-full md:max-w-[90%] mx-auto bg-white border-l border-r border-b border-slate-200 py-8">
         <div className="px-4 lg:px-16">
           <p className="font-space-mono text-sm text-slate-950 text-center mb-8 uppercase tracking-wide">
             Trusted Across the AI Discovery Layer
@@ -420,7 +419,7 @@ export default function HomePage() {
       </section>
 
       {/* THE TWO CORE VISIBI SOLUTIONS */}
-      <section className="max-w-full md:max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-0.5">
+      <section className="max-w-full md:max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-0">
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background"></div>
 
@@ -453,14 +452,28 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+        </div>
+          
+      </section>
 
-          <div className="text-center mt-8 max-w-4xl mx-auto">
-            <p className="font-open-sans text-4xl md:text-6xl font-semibold text-slate-950 py-4 px-8 inline-block">
+
+    <section className="max-w-full md:max-w-[90%] mx-auto px-8 md:px-32 py-12 relative z-10 bg-slate-100 rounded-none border-b border-r border-l border-slate-300 mb-0 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[length:14px_14px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFB] via-white/40 to-[#FAFAFB]"></div>
+        </div>
+
+         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-300 border-dashed left-0 top-0 pattern-background rounded-none"></div>
+        <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-300 border-dashed right-0 top-0 pattern-background rounded-none"></div>
+
+    
+          <div className="max-w-4xl mx-0 text-left space-y-8 relative z-10 mb-8">
+            <p className="font-open-sans text-4xl md:text-6xl font-semibold text-slate-950 inline-block">
               One partner for AI discovery <span className="font-open-sans font-thin text-md md:text-5xl leading-[1.5] md:leading-[1.3] text-blue-700 inline-block">+</span> AI productivity.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-left mt-4 mx-0 relative z-10">
             <Button
               onClick={scrollToForm}
               className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors"
@@ -475,8 +488,13 @@ export default function HomePage() {
               </Button>
             </Link>
           </div>
-        </div>
-      </section>
+
+</section>
+
+     
+      
+    
+     
 
       {/* THE AI SHIFT */}
       <section className="max-w-full md:max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-1">

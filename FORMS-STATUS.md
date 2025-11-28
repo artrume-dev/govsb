@@ -126,12 +126,15 @@ The backend also needs email configuration to actually send emails:
 
 ### Required Environment Variables in Railway:
 ```
-SMTP_HOST=mail.govisibi.ai
-SMTP_PORT=465
-SMTP_USER=info@govisibi.ai
-SMTP_PASSWORD=your_password
-FROM_EMAIL=info@govisibi.ai
-ADMIN_EMAIL=info@govisibi.ai
+RESEND_API_KEY=your_resend_api_key   # Recommended for Railway (SMTP blocked on hobby)
+FROM_EMAIL=info@govisibi.ai          # Verified sender in Resend
+ADMIN_EMAIL=info@govisibi.ai         # Where contact/analysis notifications go
+
+# Optional legacy SMTP (keep commented on Railway)
+# SMTP_HOST=mail.govisibi.ai
+# SMTP_PORT=465
+# SMTP_USER=info@govisibi.ai
+# SMTP_PASSWORD=your_password
 ```
 
 Without these, emails will be printed to console only (development mode).
@@ -152,4 +155,3 @@ When everything is working correctly:
 3. Deploy frontend to production (Vercel)
 4. Test forms on production domain
 5. Monitor Railway logs for any errors
-

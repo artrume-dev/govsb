@@ -9,6 +9,8 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -17,33 +19,37 @@ export default function ContactPage() {
     message: ''
   })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Use backend API URL from environment variable or default
-    const apiUrl = import.meta.env.VITE_API_URL || 'https://visibiapp-production.up.railway.app'
-    
-    // Post the form to our backend API
-    fetch(`${apiUrl}/api/send-email`, {
-      method: 'POST',
-      mode: 'cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    })
-      .then(async (res) => {
-        if (!res.ok) {
-          const errorData = await res.json().catch(() => ({}))
-          throw new Error(errorData.detail || 'Server error')
-        }
-        setSubmitted(true)
-        setTimeout(() => {
-          setSubmitted(false)
-          setFormData({ name: '', company: '', email: '', topic: '', message: '' })
-        }, 5000)
+    setError('')
+    setLoading(true)
+
+    try {
+      const apiUrl = (import.meta.env.VITE_API_URL || 'https://visibiapp-production.up.railway.app').replace(/\/$/, '')
+
+      const res = await fetch(`${apiUrl}/api/send-email`, {
+        method: 'POST',
+        mode: 'cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       })
-      .catch((err) => {
-        console.error('Failed to send contact message', err)
-        alert('Sorry — something went wrong sending your message. Please try again or email us directly at info@govisibi.ai')
-      })
+
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}))
+        throw new Error(errorData.detail || 'Server error')
+      }
+
+      setSubmitted(true)
+      setTimeout(() => {
+        setSubmitted(false)
+        setFormData({ name: '', company: '', email: '', topic: '', message: '' })
+      }, 5000)
+    } catch (err) {
+      console.error('Failed to send contact message', err)
+      setError('Sorry — something went wrong sending your message. Please try again or email us directly at info@govisibi.ai')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const handleChange = (field, value) => {
@@ -76,7 +82,7 @@ export default function ContactPage() {
       <Navigation currentPage="contact" />
 
       {/* Hero */}
-      <section className="max-w-full md:max-w-[90%] mx-auto items-center  mb-0 mt-12 relative bg-[#FAFAFB] border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none shadow-sm shadow-blue-200 overflow-hidden">
+      <section className="max-w-full md:max-w-[90%] mx-auto items-center  mb-0 mt-12 relative bg-[#FAFAFB] border border-b-0 border-slate-300 rounded-xl rounded-bl-none rounded-br-none overflow-hidden">
         {/* Graph paper style background with gradient fade at bottom */}
         <div className="absolute inset-x-0 bottom-0 h-64 pointer-events-none">
           {/* Graph paper grid pattern */}
@@ -221,10 +227,14 @@ export default function ContactPage() {
 
                     <Button
                       type="submit"
-                      className="bg-blue-700 text-white hover:bg-blue-800 rounded-full py-3 px-6 h-auto font-inter font-semibold text-md transition-all"
+                      disabled={loading}
+                      className="bg-blue-700 text-white hover:bg-blue-800 rounded-full py-3 px-6 h-auto font-inter font-semibold text-md transition-all disabled:opacity-70 disabled:cursor-not-allowed"
                     >
-                      Submit Request
+                      {loading ? 'Sending...' : 'Submit Request'}
                     </Button>
+                    {error && (
+                      <p className="text-sm text-red-600 font-space-mono">{error}</p>
+                    )}
                   </form>
                 )}
               </div>

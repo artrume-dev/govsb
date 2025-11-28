@@ -141,6 +141,14 @@ class EmailService:
         else:
             # Try to initialize from environment variables
             self.provider = self._initialize_provider()
+        
+        # Small startup log to verify which provider is active after deploys
+        try:
+            provider_name = self.provider.__class__.__name__
+            from_email = os.getenv('FROM_EMAIL', 'not-set')
+            print(f"📧 EmailService initialized with provider={provider_name}, from_email={from_email}")
+        except Exception:
+            pass
 
     def _initialize_provider(self) -> EmailProvider:
         """Initialize email provider from environment variables"""
@@ -380,7 +388,12 @@ This is an automated notification from VISIBI.
         <body>
             <div class="container">
                 <div class="header">
-                    <h1>VISIBI</h1>
+                    <img src="https://visibi-app-tawny.vercel.app/govisibi-logo.png" 
+                             alt="VISIBI Logo" 
+                             width="50" 
+                             height="50" 
+                             style="display: block; margin: 0 auto 15px; width: 50px; height: 50px; border: 0;">
+                             <h1>VISIBI</h1>
                 </div>
 
                 <div class="content">
@@ -517,7 +530,7 @@ This is an automated notification from VISIBI Contact Form.
                 <!-- Header with Logo -->
                 <tr>
                     <td style="background-color: #f1f5f9; padding: 40px 30px; text-align: center; border-bottom: 1px solid #e2e8f0;">
-                        <img src="https://govisibi.up.railway.app/govisibi-logo.png" 
+                        <img src="https://visibi-app-tawny.vercel.app/govisibi-logo.png" 
                              alt="VISIBI Logo" 
                              width="50" 
                              height="50" 
