@@ -242,20 +242,20 @@ export default function ToolPage() {
               <div className="md:max-w-7xl max-w-full mx-auto md:px-16">
               <div className="space-y-0 grid grid-cols-1 lg:grid-cols-3 gap-6 border-slate-300 border transition-colors pattern-background">
                 <div className="bg-white p-8">
-                  <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">You Can't Optimize What You Don't Measure</h3>
-                  <p className="font-open-sans text-md leading-[1.5] text-slate-950">
+                  <h3 className="font-space-mono font-normal text-2xl leading-[1.3] text-slate-950 mb-3 uppercase">You Can't Optimize What You Don't Measure</h3>
+                  <p className="font-open-sans text-sm leading-[1.7] text-slate-700">
                     Traditional analytics show website traffic after users discover you. AI visibility tracking reveals how users discover you in the first place—the critical awareness stage that determines whether prospects ever reach your website.
                   </p>
                 </div>
                 <div className="bg-white p-8">
-                  <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">Competitive Intelligence</h3>
-                  <p className="font-open-sans text-md leading-[1.5] text-slate-950">
+                  <h3 className="font-space-mono font-normal text-2xl leading-[1.3] text-slate-950 mb-3 uppercase">Competitive Intelligence</h3>
+                  <p className="font-open-sans text-sm leading-[1.7] text-slate-700">
                     See exactly how your visibility compares to competitors. Identify which brands dominate AI mentions in your category and understand the specific contexts where they're being cited instead of you.
                   </p>
                 </div>
                 <div className="bg-white p-8">
-                  <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">Prove ROI of GEO Investments</h3>
-                  <p className="font-open-sans text-md leading-[1.5] text-slate-950">
+                  <h3 className="font-space-mono font-normal text-2xl leading-[1.3] text-slate-950 mb-3 uppercase">Prove ROI of GEO Investments</h3>
+                  <p className="font-open-sans text-sm leading-[1.7] text-slate-700">
                     Demonstrate the impact of GEO efforts with quantitative data. Track mention growth, sentiment improvements, and citation quality over time to show stakeholders the value of AI visibility optimization.
                   </p>
                 </div>
@@ -264,7 +264,7 @@ export default function ToolPage() {
           </section>
 
           {/* Dashboard Preview */}
-          <section className="py-24 mb-12 border-t border-slate-200">
+          {/* <section className="py-24 mb-12 border-t border-slate-200">
             <div className="max-w-4xl mx-auto md:px-16">
               <div className="text-center mb-12">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
@@ -275,16 +275,16 @@ export default function ToolPage() {
                 </p>
               </div>
               <div className="bg-white p-12 text-center">
-                <div className="max-w-3xl mx-auto">
-                   <img src='./sample-dash.png' alt='VISIBI AI visibility tracking dashboard interface showing mention trends, citation analysis, sentiment scores, and competitive positioning metrics across AI platforms' className="rounded-xl border border-slate-200 pattern-background p-2 mb-8"></img>
-                  {/* <BarChart3 className="w-32 h-32 text-slate-950 mx-auto mb-6" strokeWidth={1.25} /> */}
+                <div className="max-w-7xl mx-auto">
+                   <img src='/vi/visibi-welcome.png' alt='VISIBI AI visibility tracking dashboard interface showing mention trends, citation analysis, sentiment scores, and competitive positioning metrics across AI platforms' className="rounded-xl border border-slate-200 pattern-background p-2 mb-8"></img>
+                
                   <p className="font-open-sans text-md leading-[1.5] text-slate-950">
                     Interactive dashboards showing real-time AI visibility metrics, historical trends, competitive benchmarks, and actionable recommendations.
                   </p>
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* FAQ */}
           <section className="py-24 mb-12 border-t border-slate-200">

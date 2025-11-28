@@ -417,19 +417,19 @@ export default function HomePage() {
                 <h2 className="font-open-sans text-3xl md:text-5xl font-thin block md:leading-[1] pb-4 tracking-tight text-slate-950">
                   Make Your Business More Productive With AI.
                 </h2>
-                <p className="font-open-sans text-md md:text-lg md:leading-[1.6] text-slate-700 pb-8">
+                <p className="font-open-sans text-md md:text-lg md:leading-[1.6] text-slate-700 pb-4">
                 AI agents decide how work gets done. If AI systems can't find your brand, you're out of buyer consideration. If your teams don't use agents, competitors move faster.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-left">
-                  <Button
+                  {/* <Button
                     onClick={scrollToForm}
                     className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors"
                   >
                     <Sparkles className="w-5 h-5 mr-2" />
                     Get Your Free AI Visibility Audit
-                  </Button>
+                  </Button> */}
                   <Link to="/contact">
-                    <Button className="inline-flex items-center px-8 py-6 bg-white text-slate-950 border border-slate-300 rounded-full font-medium hover:bg-slate-50 transition-colors">
+                    <Button className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
                       Talk to an Expert
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
@@ -594,7 +594,7 @@ export default function HomePage() {
      
 
       {/* THE AI SHIFT */}
-      <section className="max-w-full md:max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-1">
+      <section className="max-w-full md:max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-0">
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background"></div>
 
@@ -722,13 +722,13 @@ export default function HomePage() {
           VISIBI ensures you stay visible and competitive.
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
+            {/* <Button
               onClick={scrollToForm}
               className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors"
             >
               <Sparkles className="w-5 h-5 mr-2" />
               Get Your Free AI Visibility Audit
-            </Button>
+            </Button> */}
             <Link to="/contact">
               <Button className="inline-flex items-center px-8 py-6 bg-white text-slate-950 border border-slate-300 rounded-full font-medium hover:bg-slate-50 transition-colors">
                 Book a Strategy Call
@@ -740,18 +740,15 @@ export default function HomePage() {
       </section>
 
       {/* Brand Analysis Request (Contact-style form) */}
-      <section className="max-w-full md:max-w-[90%] mx-auto items-center px-8 md:px-16 py-16 relative bg-white border-l border-r border-b border-slate-300">
+      <section ref={mainSectionRef} className="max-w-full md:max-w-[90%] mx-auto items-center px-8 md:px-16 py-16 relative bg-white border-l border-r border-b border-slate-300 mb-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <p className="font-space-mono text-xs uppercase tracking-[0.3em] text-slate-600">Request Your Free Analysis</p>
-            <h2 className="font-open-sans text-3xl md:text-5xl font-semibold text-slate-950 leading-tight">
-              Your AI Visibility Audit Starts Here
+            <h2 className="font-open-sans text-3xl md:text-6xl font-semibold text-slate-950 leading-tight">
+              Your AI visibility audit starts here
             </h2>
-            <p className="font-open-sans text-lg text-slate-700 leading-relaxed">
-              Tell us the brand you want analysed. We&apos;ll review how AI engines describe, cite, and recommend you.
-              This quick intake mirrors the contact form layout for a consistent experience.
-            </p>
-            <ul className="space-y-2 font-open-sans text-slate-900">
+          
+            {/* <ul className="space-y-2 font-open-sans text-slate-900">
               <li className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-blue-700" />
                 Insights delivered within 24-48 hours
@@ -764,7 +761,7 @@ export default function HomePage() {
                 <Check className="w-4 h-4 text-blue-700" />
                 Same secure delivery pipeline as our Contact form
               </li>
-            </ul>
+            </ul> */}
           </div>
 
           <div className="bg-[#FAFAFB] border border-slate-200 rounded-2xl p-8">
@@ -805,9 +802,7 @@ export default function HomePage() {
                     }}
                     className="rounded-full border-slate-300 bg-white font-space-mono"
                   />
-                  <p className="text-xs text-slate-500 font-space-mono mt-1">
-                    We pre-fill this from your URL. Update it if you want a different label.
-                  </p>
+                 
                 </div>
 
                 <div>
@@ -826,7 +821,7 @@ export default function HomePage() {
                 <Button
                   type="submit"
                   disabled={newFormLoading}
-                  className="w-full bg-blue-700 text-white rounded-full py-6 h-auto font-space-mono text-sm uppercase tracking-wide disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {newFormLoading ? 'Sending...' : 'Request AI Visibility Audit'}
                 </Button>
@@ -843,7 +838,7 @@ export default function HomePage() {
 
       {/* Legacy Brand Analysis Section (temporarily disabled, see FORMS-STATUS.md) */}
       {showLegacyBrandAnalysis && (
-      <main ref={mainSectionRef} className="max-w-full md:max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-0.5">
+      <main ref={mainSectionRef} className="max-w-full md:max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-0">
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background"></div>
 
@@ -1124,7 +1119,7 @@ export default function HomePage() {
       )}
 
       {/* Main Content */}
-      <main className="max-w-full md:max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none rounded-bl-none rounded-br-none border-t border-r border-l border-slate-300 mb-0">
+      <main className="max-w-full md:max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none rounded-bl-none rounded-br-none border-r border-l border-slate-300 mb-0">
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
 

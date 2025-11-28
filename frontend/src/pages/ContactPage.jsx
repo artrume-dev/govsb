@@ -62,11 +62,11 @@ export default function ContactPage() {
         <title>Contact Us - Get in Touch with VISIBI | Gen AI Visibility</title>
         <meta name="description" content="Ready to improve your brand's visibility across AI platforms? Contact VISIBI for GEO, SEO, and PPC services. We'll respond within 24 hours." />
         <meta name="keywords" content="contact VISIBI, GEO consultation, AI visibility inquiry, brand consultation" />
-        <link rel="canonical" href="https://visibi.com/contact" />
+        <link rel="canonical" href="https://govisibi.ai/contact" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/contact" />
+        <meta property="og:url" content="https://govisibi.ai/contact" />
         <meta property="og:title" content="Contact Us | VISIBI" />
         <meta property="og:description" content="Get in touch with VISIBI for Gen AI visibility services." />
         <meta property="og:site_name" content="VISIBI" />
@@ -335,14 +335,14 @@ export default function ContactPage() {
                   <span className="font-space-mono text-md">SEO FAQs</span>
                 </Button>
               </Link>
-              <Link to="/ppc">
+              {/* <Link to="/ppc">
                 <Button
                   variant="outline"
                   className="w-full bg-transparent text-slate-950 border border-slate-300 hover:border-blue-700 hover:bg-blue-700 hover:text-white rounded-md p-6 h-auto flex flex-col items-center gap-2 transition-all"
                 >
                   <span className="font-space-mono text-md">PPC FAQs</span>
                 </Button>
-              </Link>
+              </Link> */}
               <Link to="/how-we-work">
                 <Button
                   variant="outline"
