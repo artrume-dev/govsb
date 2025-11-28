@@ -7,7 +7,7 @@ import {
   Link2, GraduationCap, ChevronDown, ChevronUp,
   Speaker, MessageSquareMore, Check, Zap, ShieldCheck,
   ArrowLeft, Megaphone, Globe, Eye, FileCheck, Scale, ShoppingCart,
-  MessageCircle, TrendingUp, Briefcase, PenTool, LineChart, X
+  MessageCircle, TrendingUp, Briefcase, PenTool, LineChart, X, CheckCircle2
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -33,11 +33,20 @@ export default function HomePage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [preview, setPreview] = useState(null)
+  const [newBrandUrl, setNewBrandUrl] = useState('')
+  const [newCompanyName, setNewCompanyName] = useState('')
+  const [companyManuallyEdited, setCompanyManuallyEdited] = useState(false)
+  const [newEmail, setNewEmail] = useState('')
+  const [newFormLoading, setNewFormLoading] = useState(false)
+  const [newFormError, setNewFormError] = useState('')
+  const [newFormSuccess, setNewFormSuccess] = useState(false)
   const inputRef = useRef(null)
   const mainSectionRef = useRef(null)
 
   // Get latest 2 published articles dynamically
   const latestInsights = getLatestArticles(2)
+
+  const showLegacyBrandAnalysis = false
 
   const aiEngines = [
     { name: 'ChatGPT', logo: '/ai-logos/ChatGPT.svg' },
@@ -48,6 +57,93 @@ export default function HomePage() {
     { name: 'Cohere', logo: '/ai-logos/cohere.svg' },
     { name: 'DeepSeek', logo: '/ai-logos/deepseek.svg' }
   ]
+
+  const deriveCompanyName = (url) => {
+    if (!url) return ''
+    try {
+      const normalizedUrl = url.match(/^https?:\/\//i) ? url : `https://${url}`
+      const { hostname } = new URL(normalizedUrl)
+      const cleanedHost = hostname.replace(/^www\./i, '')
+      const base = cleanedHost.split('.')[0]
+      if (!base) return ''
+      return base
+        .replace(/[-_]/g, ' ')
+        .split(' ')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ')
+    } catch {
+      return ''
+    }
+  }
+
+  const handleNewBrandUrlChange = (value) => {
+    setNewBrandUrl(value)
+    if (!companyManuallyEdited || !newCompanyName) {
+      const derived = deriveCompanyName(value)
+      setNewCompanyName(derived)
+    }
+  }
+
+  const handleNewBrandAnalysisSubmit = async (e) => {
+    e.preventDefault()
+    setNewFormError('')
+
+    if (!newBrandUrl.trim()) {
+      setNewFormError('Please enter a brand URL')
+      return
+    }
+
+    if (!newCompanyName.trim()) {
+      setNewFormError('Please confirm your company name')
+      return
+    }
+
+    if (!newEmail.trim() || !newEmail.includes('@')) {
+      setNewFormError('Please enter a valid email address')
+      return
+    }
+
+    setNewFormLoading(true)
+
+    try {
+      let formattedUrl = newBrandUrl.trim()
+      if (!formattedUrl.match(/^https?:\/\//i)) {
+        formattedUrl = 'https://' + formattedUrl
+      }
+
+      const apiUrl = (import.meta.env.VITE_API_URL || 'https://visibiapp-production.up.railway.app').replace(/\/$/, '')
+
+      const response = await fetch(`${apiUrl}/api/brand-analysis`, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          brand_url: formattedUrl,
+          email: newEmail.trim(),
+          custom_queries: [],
+          custom_keywords: newCompanyName ? [newCompanyName] : [],
+        }),
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        throw new Error(errorData.detail || 'Failed to submit your request')
+      }
+
+      setNewFormSuccess(true)
+      setNewBrandUrl('')
+      setNewCompanyName('')
+      setNewEmail('')
+      setCompanyManuallyEdited(false)
+      setTimeout(() => setNewFormSuccess(false), 5000)
+    } catch (err) {
+      setNewFormError(err.message || 'Something went wrong. Please try again.')
+    } finally {
+      setNewFormLoading(false)
+    }
+  }
 
   const handleUrlSubmit = (e) => {
     e.preventDefault()
@@ -399,6 +495,7 @@ export default function HomePage() {
         </div>
       </section>
 
+
       {/* VISIBI helps you win in both worlds Section */}
       <section className="max-w-full md:max-w-[90%] mx-auto px-4 md:px-16 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-0.5">
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
@@ -642,8 +739,110 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Brand Analysis Request (Contact-style form) */}
+      <section className="max-w-full md:max-w-[90%] mx-auto items-center px-8 md:px-16 py-16 relative bg-white border-l border-r border-b border-slate-300">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="space-y-6">
+            <p className="font-space-mono text-xs uppercase tracking-[0.3em] text-slate-600">Request Your Free Analysis</p>
+            <h2 className="font-open-sans text-3xl md:text-5xl font-semibold text-slate-950 leading-tight">
+              Your AI Visibility Audit Starts Here
+            </h2>
+            <p className="font-open-sans text-lg text-slate-700 leading-relaxed">
+              Tell us the brand you want analysed. We&apos;ll review how AI engines describe, cite, and recommend you.
+              This quick intake mirrors the contact form layout for a consistent experience.
+            </p>
+            <ul className="space-y-2 font-open-sans text-slate-900">
+              <li className="flex items-center gap-2">
+                <Check className="w-4 h-4 text-blue-700" />
+                Insights delivered within 24-48 hours
+              </li>
+              <li className="flex items-center gap-2">
+                <Check className="w-4 h-4 text-blue-700" />
+                Brand profile, sentiment, and ranking gaps
+              </li>
+              <li className="flex items-center gap-2">
+                <Check className="w-4 h-4 text-blue-700" />
+                Same secure delivery pipeline as our Contact form
+              </li>
+            </ul>
+          </div>
 
-      {/* Brand Analysis Section */}
+          <div className="bg-[#FAFAFB] border border-slate-200 rounded-2xl p-8">
+            {newFormSuccess ? (
+              <div className="text-center space-y-4 py-8">
+                <CheckCircle2 className="w-16 h-16 text-blue-700 mx-auto" />
+                <h3 className="font-space-mono text-2xl text-slate-950">Request Received</h3>
+                <p className="font-open-sans text-slate-700">
+                  We&apos;re preparing your AI visibility audit. Check your inbox for a confirmation email.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleNewBrandAnalysisSubmit} className="space-y-6">
+                <div>
+                  <label className="font-space-mono text-xs uppercase text-slate-700 block mb-2">
+                    Brand URL *
+                  </label>
+                  <Input
+                    type="text"
+                    placeholder="https://www.yourbrand.com"
+                    value={newBrandUrl}
+                    onChange={(e) => handleNewBrandUrlChange(e.target.value)}
+                    className="rounded-full border-slate-300 bg-white font-space-mono"
+                  />
+                </div>
+
+                <div>
+                  <label className="font-space-mono text-xs uppercase text-slate-700 block mb-2">
+                    Company Name *
+                  </label>
+                  <Input
+                    type="text"
+                    placeholder="Auto-detected from URL"
+                    value={newCompanyName}
+                    onChange={(e) => {
+                      setNewCompanyName(e.target.value)
+                      setCompanyManuallyEdited(true)
+                    }}
+                    className="rounded-full border-slate-300 bg-white font-space-mono"
+                  />
+                  <p className="text-xs text-slate-500 font-space-mono mt-1">
+                    We pre-fill this from your URL. Update it if you want a different label.
+                  </p>
+                </div>
+
+                <div>
+                  <label className="font-space-mono text-xs uppercase text-slate-700 block mb-2">
+                    Email Address *
+                  </label>
+                  <Input
+                    type="email"
+                    placeholder="you@company.com"
+                    value={newEmail}
+                    onChange={(e) => setNewEmail(e.target.value)}
+                    className="rounded-full border-slate-300 bg-white font-space-mono"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  disabled={newFormLoading}
+                  className="w-full bg-blue-700 text-white rounded-full py-6 h-auto font-space-mono text-sm uppercase tracking-wide disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {newFormLoading ? 'Sending...' : 'Request AI Visibility Audit'}
+                </Button>
+
+                {newFormError && (
+                  <p className="text-sm text-red-600 font-space-mono text-center">{newFormError}</p>
+                )}
+              </form>
+            )}
+          </div>
+        </div>
+      </section>
+
+
+      {/* Legacy Brand Analysis Section (temporarily disabled, see FORMS-STATUS.md) */}
+      {showLegacyBrandAnalysis && (
       <main ref={mainSectionRef} className="max-w-full md:max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-0.5">
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background"></div>
@@ -922,6 +1121,7 @@ export default function HomePage() {
           </div>
         )}
       </main>
+      )}
 
       {/* Main Content */}
       <main className="max-w-full md:max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none rounded-bl-none rounded-br-none border-t border-r border-l border-slate-300 mb-0">

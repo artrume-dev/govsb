@@ -71,6 +71,8 @@ https://visibi-app-git-main-adnan-hkas-projects.vercel.app,https://visibi-app.ve
 - **Method**: POST
 - **Data**: `{ brand_url, email, custom_queries, custom_keywords }`
 
+> **Update (Contact-style intake):** The multi-step brand analysis UI on `HomePage.jsx` is currently disabled via the `showLegacyBrandAnalysis` flag (see in-file note). A lightweight form mirroring the Contact page now captures `brand_url`, auto-detected `company_name` (editable), and `email`. `company_name` is sent in `custom_keywords` so admin notifications still include it. Set the flag back to `true` to re-enable the full experience.
+
 ### Contact Form (ContactPage)
 - **Frontend**: `http://localhost:5174/contact`
 - **Backend API**: `https://govisibi.up.railway.app/api/send-email`
