@@ -379,9 +379,9 @@ This is an automated notification from VISIBI.
         <head>
             <style>
                 body {{ font-family: 'Space Mono', monospace; line-height: 1.6; color: #000; }}
-                .container {{ max-width: 600px; margin: 0 auto; padding: 20px; }}
-                .header {{ background: #000; color: white; padding: 30px; text-align: center; }}
-                .content {{ background: #fff; padding: 30px; margin: 20px 0; border: 1px solid #EAEAEA; }}
+                .container {{ max-width: 600px; margin: 0 auto; padding: 16px; background: #e2e8f0; border-radius: 16x; 1px solid #cbd5e1 }}
+                .header {{ background: #fff; color: #222; padding: 10px; text-align: center; border-radius: 16x; }}
+                .content {{ background: #fff; padding: 30px; margin: 20px 0; border-radius: 16x; border: 1px solid #e2e8f0; }}
                 .footer {{ text-align: center; padding: 20px; color: #7A7A7A; font-size: 12px; }}
             </style>
         </head>
@@ -411,8 +411,9 @@ This is an automated notification from VISIBI.
                 </div>
 
                 <div class="footer">
-                    <p>VISIBI - Generative Engine Optimisation</p>
-                    <p>Making your brand visible in Gen AI search</p>
+                    <p>Make Your Brand Visible to AI.</p>
+                    <p>Make Your Business More Productive With AI./p>
+                 
                 </div>
             </div>
         </body>
