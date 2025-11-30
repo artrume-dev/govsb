@@ -820,12 +820,12 @@ export default function ComingSoon() {
             >
               Terms of Use
             </a>
-            <a
-              href="#"
+            <Link
+              to="/privacy-policy"
               className="font-space-mono text-xs text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
             >
               Privacy Policy
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

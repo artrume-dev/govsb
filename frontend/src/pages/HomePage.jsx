@@ -1702,9 +1702,9 @@ export default function HomePage() {
             <a href="#" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
               Terms of Use
             </a>
-            <a href="#" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+            <Link to="/privacy-policy" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
               Privacy Policy
-            </a>
+            </Link>
           </div>
         </div>
       </footer>
