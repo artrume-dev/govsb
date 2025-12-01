@@ -7,6 +7,19 @@ import { Brain, Search, TrendingUp, Target, BookOpen } from 'lucide-react'
  */
 export const articles = [
   {
+    id: 'geo-playbook-2026',
+    title: "The 2026 GEO Playbook: How to Win in AI-Enabled Search",
+    category: "Strategy",
+    icon: Target,
+    date: "2025-12-01", // ISO format for proper sorting
+    displayDate: "Dec 1, 2025",
+    excerpt: "Search has quietly crossed a line. Learn the 7 key signals for organic success in 2026 and strategies for optimizing AI-enabled search.",
+    description: "Search has quietly crossed a line. Learn the 7 key signals for organic success in 2026 and strategies for optimizing AI-enabled search.",
+    readTime: "12 min read",
+    slug: "/insights/geo-playbook-2026",
+    published: true
+  },
+  {
     id: 'small-business-ai-visibility',
     title: "Can't See Your Business in AI Results? 7 Practical Steps for Small Businesses",
     category: "Strategy",

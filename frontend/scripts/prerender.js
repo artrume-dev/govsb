@@ -19,6 +19,7 @@ const routes = [
   '/insights',
   '/insights/chatgpt-brand-discovery',
   '/insights/small-business-ai-visibility-guide',
+  '/insights/geo-playbook-2026',
   '/how-we-work',
   '/contact',
   '/privacy-policy',
