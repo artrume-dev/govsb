@@ -24,7 +24,7 @@ export default function InsightsPage() {
         <title>Insights & Resources on AI Visibility & Agents | Visibi Ai</title>
         <meta name="description" content="Explore Visibi Ai insights on AI visibility (GEO), AI agents and the discovery funnel. Learn how to be the brand AI finds and the business AI accelerates." />
         <meta name="keywords" content="GEO insights, AI visibility research, ChatGPT optimization guide, AI search strategy, generative AI marketing, SEO case studies" />
-        <link rel="canonical" href="https://govisibi.ai/insights" />
+        <link rel="canonical" href="https://www.govisibi.ai/insights" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />

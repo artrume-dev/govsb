@@ -19,7 +19,7 @@ export default function ChatGPTBrandDiscovery() {
         <meta name="description" content="Deep dive into how ChatGPT sources, interprets and cites brands in 2025, and what GEO tactics help you earn more AI citations, mentions and recommendations." />
         <meta name="keywords" content="ChatGPT, AI citations, brand discovery, GEO, generative AI, LLM optimization" />
         <meta name="author" content="Sam" />
-        <link rel="canonical" href="https://govisibi.ai/insights/how-chatgpt-discovers-and-cites-brands-2025" />
+        <link rel="canonical" href="https://www.govisibi.ai/insights/how-chatgpt-discovers-and-cites-brands-2025" />
         
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://govisibi.ai/insights/how-chatgpt-discovers-and-cites-brands-2025" />

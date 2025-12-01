@@ -19,7 +19,7 @@ export default function GEOPlaybook2026() {
         <meta name="description" content="Search has quietly crossed a line. Learn the 7 key signals for organic success in 2026 and strategies for optimizing AI-enabled search." />
         <meta name="keywords" content="GEO, AI search, generative engine optimization, AI visibility, search strategy 2026" />
         <meta name="author" content="Dan" />
-        <link rel="canonical" href="https://govisibi.ai/insights/geo-playbook-2026" />
+        <link rel="canonical" href="https://www.govisibi.ai/insights/geo-playbook-2026" />
         <meta property="og:title" content="The 2026 GEO Playbook: How to Win in AI-Enabled Search | Visibi Ai" />
         <meta property="og:description" content="Search has quietly crossed a line. Learn the 7 key signals for organic success in 2026 and strategies for optimizing AI-enabled search." />
         <meta property="og:url" content="https://govisibi.ai/insights/geo-playbook-2026" />

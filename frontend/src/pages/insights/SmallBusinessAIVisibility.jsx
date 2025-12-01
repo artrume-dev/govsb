@@ -19,7 +19,7 @@ export default function SmallBusinessAIVisibility() {
         <meta name="description" content="7 practical, low-cost steps any small business can take to improve AI visibility. Show up in ChatGPT, Google AI Overviews & more without breaking the bank." />
         <meta name="keywords" content="small business AI visibility, GEO for small business, ChatGPT local business, Google Business Profile optimization, AI search results" />
         <meta name="author" content="Dan" />
-        <link rel="canonical" href="https://govisibi.ai/insights/small-business-ai-visibility-guide" />
+        <link rel="canonical" href="https://www.govisibi.ai/insights/small-business-ai-visibility-guide" />
         
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://govisibi.ai/insights/small-business-ai-visibility-guide" />

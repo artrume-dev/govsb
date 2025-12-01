@@ -364,7 +364,7 @@ export default function HomePage() {
         <title>Visibi Ai | AI Visibility (GEO) & Autonomous AI Agents</title>
         <meta name="description" content="Visibi Ai makes brands visible to AI and builds autonomous agents that act as digital workers. Get found in ChatGPT, Claude & Perplexity and speed up workflows." />
         <meta name="keywords" content="GEO, generative engine optimization, AI visibility, AI agents, ChatGPT optimization, Gemini, Claude, Perplexity, AI automation, autonomous agents" />
-        <link rel="canonical" href="https://govisibi.ai/" />
+        <link rel="canonical" href="https://www.govisibi.ai/" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />

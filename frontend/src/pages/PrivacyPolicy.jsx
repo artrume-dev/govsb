@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
         <title>Privacy Policy | Visibi Ai</title>
         <meta name="description" content="Learn how Visibi Ai collects, uses and protects your data, including GA4 analytics, cookies, AI services and your GDPR rights when you use govisibi.ai." />
         <meta name="robots" content="noindex, nofollow" />
-        <link rel="canonical" href="https://govisibi.ai/privacy-policy" />
+        <link rel="canonical" href="https://www.govisibi.ai/privacy-policy" />
       </Helmet>
 
       {/* Background Grid Pattern */}
