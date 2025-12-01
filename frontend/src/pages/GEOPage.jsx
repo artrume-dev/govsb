@@ -143,6 +143,7 @@ export default function GEOPage() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>GEO Services - Generative Engine Optimization | VISIBI</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="Get discovered and cited by ChatGPT, Gemini, and Perplexity. Expert GEO (Generative Engine Optimization) services to maximize your AI visibility and brand mentions." />
         <meta name="keywords" content="GEO, generative engine optimization, ChatGPT optimization, AI platform visibility, Gemini SEO, Perplexity optimization" />
         <link rel="canonical" href="https://www.govisibi.ai/geo" />

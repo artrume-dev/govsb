@@ -15,6 +15,7 @@ export default function PrivacyPolicy() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>Privacy Policy | Visibi Ai</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="Learn how Visibi Ai collects, uses and protects your data, including GA4 analytics, cookies, AI services and your GDPR rights when you use govisibi.ai." />
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href="https://www.govisibi.ai/privacy-policy" />

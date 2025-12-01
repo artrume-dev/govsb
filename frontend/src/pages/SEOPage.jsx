@@ -103,6 +103,7 @@ export default function SEOPage() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>AI-Ready SEO Services - Search + AI Optimization | VISIBI</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="SEO that feeds your AI visibility. Build search rankings and AI citations simultaneously with technical SEO, content strategy, and authority building that works across Google and AI platforms." />
         <meta name="keywords" content="AI-ready SEO, technical SEO, content optimization, link building, E-E-A-T, search engine optimization, AI citations" />
         <link rel="canonical" href="https://www.govisibi.ai/seo" />

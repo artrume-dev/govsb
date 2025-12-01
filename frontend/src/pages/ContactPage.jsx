@@ -60,6 +60,7 @@ export default function ContactPage() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>Contact Us - Get in Touch with VISIBI | Gen AI Visibility</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="Ready to improve your brand's visibility across AI platforms? Contact VISIBI for GEO, SEO, and PPC services. We'll respond within 24 hours." />
         <meta name="keywords" content="contact VISIBI, GEO consultation, AI visibility inquiry, brand consultation" />
         <link rel="canonical" href="https://www.govisibi.ai/contact" />

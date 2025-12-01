@@ -15,6 +15,7 @@ export default function TermsOfUse() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>Terms &amp; Conditions | Visibi Ai</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="Read the terms that govern your use of govisibi.ai, including acceptable use, intellectual property, AI limitations, liability and governing law for Visibi Ai." />
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href="https://www.govisibi.ai/terms" />

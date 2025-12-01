@@ -16,6 +16,7 @@ export default function SmallBusinessAIVisibility() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>Can't See Your Business in AI Results? 7 Practical Steps for Small Businesses | Visibi Ai</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="7 practical, low-cost steps any small business can take to improve AI visibility. Show up in ChatGPT, Google AI Overviews & more without breaking the bank." />
         <meta name="keywords" content="small business AI visibility, GEO for small business, ChatGPT local business, Google Business Profile optimization, AI search results" />
         <meta name="author" content="Dan" />

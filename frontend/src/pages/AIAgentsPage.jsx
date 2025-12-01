@@ -202,6 +202,7 @@ export default function AIAgentsPage() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>Agentic AI Development - Custom Intelligent Automation | VISIBI</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="Build intelligent AI agents that automate workflows, make decisions, and scale your operations. We design, develop and deploy agentic AI systems built safely and transparently." />
         <meta name="keywords" content="agentic AI, AI agents, intelligent automation, custom AI development, workflow automation, AI integration, autonomous agents" />
         <link rel="canonical" href="https://www.govisibi.ai/ai-agents" />

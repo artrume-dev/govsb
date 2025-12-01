@@ -16,6 +16,7 @@ export default function ChatGPTBrandDiscovery() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>How ChatGPT Discovers & Cites Brands in 2025 | Visibi Ai</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="Deep dive into how ChatGPT sources, interprets and cites brands in 2025, and what GEO tactics help you earn more AI citations, mentions and recommendations." />
         <meta name="keywords" content="ChatGPT, AI citations, brand discovery, GEO, generative AI, LLM optimization" />
         <meta name="author" content="Sam" />

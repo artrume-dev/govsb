@@ -122,6 +122,7 @@ export default function HowWeWorkPage() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>How We Work - Strategy, Transparency & Trust | VISIBI</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="Partner with VISIBI for data-driven AI visibility strategy. Learn our values, process, and approach to building lasting Gen AI presence through ethical tactics and relentless optimization." />
         <meta name="keywords" content="GEO methodology, AI visibility strategy, transparent SEO agency, data-driven marketing, ethical optimization" />
         <link rel="canonical" href="https://www.govisibi.ai/how-we-work" />

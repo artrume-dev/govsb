@@ -22,6 +22,7 @@ export default function InsightsPage() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>Insights & Resources on AI Visibility & Agents | Visibi Ai</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="Explore Visibi Ai insights on AI visibility (GEO), AI agents and the discovery funnel. Learn how to be the brand AI finds and the business AI accelerates." />
         <meta name="keywords" content="GEO insights, AI visibility research, ChatGPT optimization guide, AI search strategy, generative AI marketing, SEO case studies" />
         <link rel="canonical" href="https://www.govisibi.ai/insights" />

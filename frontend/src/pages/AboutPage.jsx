@@ -18,6 +18,7 @@ export default function AboutPage() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>About VISIBI - 20+ Years Search Expertise | AI Visibility Pioneers</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="VISIBI was founded by search marketing veterans with 20+ years experience. We combine deep SEO expertise with cutting-edge AI research to help brands dominate AI-powered discovery." />
         <meta name="keywords" content="VISIBI team, AI visibility experts, SEO professionals, GEO consultants, search marketing veterans" />
         <link rel="canonical" href="https://www.govisibi.ai/about" />

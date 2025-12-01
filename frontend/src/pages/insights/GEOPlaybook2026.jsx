@@ -16,6 +16,7 @@ export default function GEOPlaybook2026() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>The 2026 GEO Playbook: How to Win in AI-Enabled Search | Visibi Ai</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="Search has quietly crossed a line. Learn the 7 key signals for organic success in 2026 and strategies for optimizing AI-enabled search." />
         <meta name="keywords" content="GEO, AI search, generative engine optimization, AI visibility, search strategy 2026" />
         <meta name="author" content="Dan" />

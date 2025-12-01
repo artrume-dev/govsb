@@ -99,6 +99,7 @@ export default function ToolPage() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>AI Visibility Tracking Tool - Monitor Brand Mentions Across AI Platforms | VISIBI</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="Track mentions, citations, sentiment, and competitive positioning across ChatGPT, Gemini, Perplexity, and Claude. Proprietary AI visibility analytics platform with real-time alerts." />
         <meta name="keywords" content="AI visibility tool, ChatGPT tracking, AI mention monitoring, brand sentiment analysis, AI platform analytics, citation tracking" />
         <link rel="canonical" href="https://www.govisibi.ai/tool" />
