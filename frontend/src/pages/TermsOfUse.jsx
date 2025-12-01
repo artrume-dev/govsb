@@ -1,7 +1,10 @@
 import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
 import Navigation from '../components/Navigation'
 import Breadcrumbs from '../components/Breadcrumbs'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 
 export default function TermsOfUse() {
   useEffect(() => {
@@ -16,6 +19,9 @@ export default function TermsOfUse() {
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href="https://govisibi.ai/terms-of-use" />
       </Helmet>
+
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
 
       <Navigation />
       <Breadcrumbs 
@@ -299,6 +305,62 @@ export default function TermsOfUse() {
           </section>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="max-w-full md:max-w-[90%] mx-auto px-8 py-12 mt-0 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div className="space-y-6">
+            <div className="flex items-center gap-2">
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
+              <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
+            </div>
+            <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
+              Track and manage your brand's presence across leading AI platforms.
+            </p>
+
+            <div className="flex gap-6">
+              <a
+                href="https://github.com"
+                className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide"
+              >
+                Github
+              </a>
+              <a
+                href="https://linkedin.com"
+                className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide"
+              >
+                LinkedIn
+              </a>
+            </div>
+
+          </div>
+          <div className="space-y-8">
+            <div>
+              <h3 className="font-sans text-xl text-slate-950 mb-2">
+                Want your brand to stand out in the age of AI conversations?
+              </h3>
+              <p className="text-sm text-slate-600">
+                Stay informed with expert updates on brand visibility across AI platforms.
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <Input type="email" placeholder="Email Address" className="flex-1 font-space-mono text-sm placeholder:text-gray-400 rounded-full text-gray-900" />
+              <Button className="bg-slate-900 text-white hover:bg-gray-800 font-space-mono text-sm uppercase px-6 rounded-full">Start Now</Button>
+            </div>
+          </div>
+        </div>
+        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="font-space-mono text-xs text-gray-500">© 2025 VISIBI — ALL RIGHTS RESERVED</p>
+          <div className="flex gap-6">
+            <Link to="/terms-of-use" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+              Terms of Use
+            </Link>
+            <Link to="/privacy-policy" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+              Privacy Policy
+            </Link>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
