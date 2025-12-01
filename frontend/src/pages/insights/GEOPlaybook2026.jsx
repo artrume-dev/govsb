@@ -808,62 +808,80 @@ export default function GEOPlaybook2026() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-slate-200 bg-slate-50 mt-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              {/* Newsletter */}
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-4 font-open-sans">Subscribe to Our Newsletter</h3>
-                <p className="text-slate-600 mb-4 font-open-sans">Get the latest insights on AI visibility and GEO strategies.</p>
-                <form className="flex gap-2">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1"
-                  />
-                  <Button type="submit" variant="primary">
-                    Subscribe
-                  </Button>
-                </form>
+        <footer className="max-w-full md:max-w-[90%] mx-auto px-8 py-12 mt-24 border-t border-gray-200 bg-white rounded-xl rounded-bl-none rounded-br-none z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            {/* Left Column - Logo and Description */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-2">
+                <img src="/govisibi-logo.png" alt="VISIBI Logo" width="32" height="32" className="h-8 w-8" />
+                <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">
+                  VISIBI
+                </span>
               </div>
-
-              {/* Social Links */}
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-4 font-open-sans">Follow Us</h3>
-                <div className="flex gap-4">
-                  <a
-                    href="https://x.com/VisibiAI"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-600 hover:text-slate-900 transition-colors font-open-sans"
-                  >
-                    X
-                  </a>
-                  <a
-                    href="http://linkedin.com/company/visibi-ai"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-600 hover:text-slate-900 transition-colors font-open-sans"
-                  >
-                    LinkedIn
-                  </a>
-                </div>
+              <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
+                Track and manage your brand's presence across leading AI platforms.
+              </p>
+              <div className="flex gap-6">
+                <a
+                  href="https://x.com/VisibiAI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide"
+                >
+                  X
+                </a>
+                <a
+                  href="http://linkedin.com/company/visibi-ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide"
+                >
+                  LinkedIn
+                </a>
               </div>
             </div>
 
-            {/* Bottom Bar */}
-            <div className="border-t border-slate-200 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-slate-600 text-sm font-open-sans">
-                © 2025 Visibi Ai. All rights reserved.
-              </p>
-              <div className="flex gap-6 text-sm">
-                <a href="/privacy-policy" className="text-slate-600 hover:text-slate-900 transition-colors font-open-sans">
-                  Privacy Policy
-                </a>
-                <a href="/terms" className="text-slate-600 hover:text-slate-900 transition-colors font-open-sans">
-                  Terms of Use
-                </a>
+            {/* Right Column - Newsletter */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-sans text-xl text-slate-950 mb-2">
+                  Want your brand to stand out in the age of AI conversations?
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Stay informed with expert updates on brand visibility across AI platforms.
+                </p>
               </div>
+              <div className="flex gap-2">
+                <Input
+                  type="email"
+                  placeholder="Email Address"
+                  className="flex-1 font-space-mono text-sm placeholder:text-gray-400 rounded-full text-gray-900"
+                />
+                <Button className="bg-slate-900 text-white hover:bg-gray-800 font-space-mono text-sm uppercase px-6 rounded-full">
+                  Start Now
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Row - Links and Copyright */}
+          <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="font-space-mono text-xs text-gray-500">
+              © 2025 VISIBI — ALL RIGHTS RESERVED
+            </p>
+            <div className="flex gap-6">
+              <Link
+                to="/terms-of-use"
+                className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide"
+              >
+                Terms of Use
+              </Link>
+              <Link
+                to="/privacy-policy"
+                className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide"
+              >
+                Privacy Policy
+              </Link>
             </div>
           </div>
         </footer>
