@@ -11,6 +11,7 @@ import HowWeWorkPage from './pages/HowWeWorkPage'
 import ContactPage from './pages/ContactPage'
 import AIAgentsPage from './pages/AIAgentsPage'
 import ChatGPTBrandDiscovery from './pages/insights/ChatGPTBrandDiscovery'
+import SmallBusinessAIVisibility from './pages/insights/SmallBusinessAIVisibility'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfUse from './pages/TermsOfUse'
 import ScrollToTop from './components/ScrollToTop'
@@ -31,6 +32,7 @@ function App() {
         <Route path="/ai-agents" element={<AIAgentsPage />} />
         <Route path="/insights" element={<InsightsPage />} />
         <Route path="/insights/chatgpt-brand-discovery" element={<ChatGPTBrandDiscovery />} />
+        <Route path="/insights/small-business-ai-visibility-guide" element={<SmallBusinessAIVisibility />} />
         <Route path="/tool" element={<ToolPage />} />
         <Route path="/how-we-work" element={<HowWeWorkPage />} />
         <Route path="/contact" element={<ContactPage />} />
