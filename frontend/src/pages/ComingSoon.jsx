@@ -814,12 +814,12 @@ export default function ComingSoon() {
             © 2025 VISIBI — ALL RIGHTS RESERVED
           </p>
           <div className="flex gap-6">
-            <a
-              href="#"
+            <Link
+              to="/terms-of-use"
               className="font-space-mono text-xs text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
             >
               Terms of Use
-            </a>
+            </Link>
             <Link
               to="/privacy-policy"
               className="font-space-mono text-xs text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"

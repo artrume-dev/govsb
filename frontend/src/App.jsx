@@ -12,6 +12,7 @@ import ContactPage from './pages/ContactPage'
 import AIAgentsPage from './pages/AIAgentsPage'
 import ChatGPTBrandDiscovery from './pages/insights/ChatGPTBrandDiscovery'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfUse from './pages/TermsOfUse'
 import ScrollToTop from './components/ScrollToTop'
 import './index.css'
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/how-we-work" element={<HowWeWorkPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-use" element={<TermsOfUse />} />
       </Routes>
     </Router>
   )

@@ -20,7 +20,8 @@ const routes = [
   '/insights/chatgpt-brand-discovery',
   '/how-we-work',
   '/contact',
-  '/privacy-policy'
+  '/privacy-policy',
+  '/terms-of-use'
 ];
 
 const distPath = path.join(__dirname, '..', 'dist');
