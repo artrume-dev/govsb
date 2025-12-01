@@ -21,17 +21,17 @@ export default function InsightsPage() {
   return (
     <div className="min-h-screen relative line-pattern">
       <Helmet>
-        <title>AI Visibility Insights & Research - GEO Strategy Frameworks | VISIBI</title>
-        <meta name="description" content="Deep dives, case studies, and strategic frameworks for mastering visibility in generative AI. Learn how to optimize for ChatGPT, Gemini, and Perplexity with expert insights." />
+        <title>Insights & Resources on AI Visibility & Agents | Visibi Ai</title>
+        <meta name="description" content="Explore Visibi Ai insights on AI visibility (GEO), AI agents and the discovery funnel. Learn how to be the brand AI finds and the business AI accelerates." />
         <meta name="keywords" content="GEO insights, AI visibility research, ChatGPT optimization guide, AI search strategy, generative AI marketing, SEO case studies" />
-        <link rel="canonical" href="https://visibi.com/insights" />
+        <link rel="canonical" href="https://govisibi.ai/insights" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/insights" />
-        <meta property="og:title" content="AI Visibility Insights & Research - GEO Strategy Frameworks | VISIBI" />
-        <meta property="og:description" content="Expert insights, case studies, and frameworks for optimizing brand visibility across AI platforms." />
-        <meta property="og:site_name" content="VISIBI" />
+        <meta property="og:url" content="https://govisibi.ai/insights" />
+        <meta property="og:title" content="Insights & Resources on AI Visibility & Agents | Visibi Ai" />
+        <meta property="og:description" content="Explore Visibi Ai insights on AI visibility (GEO), AI agents and the discovery funnel. Learn how to be the brand AI finds and the business AI accelerates." />
+        <meta property="og:site_name" content="Visibi Ai" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />

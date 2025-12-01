@@ -15,15 +15,15 @@ export default function ChatGPTBrandDiscovery() {
   return (
     <div className="min-h-screen relative line-pattern">
       <Helmet>
-        <title>How ChatGPT Discovers & Cites Brands in 2025 | VISIBI Insights</title>
-        <meta name="description" content="Deep analysis of the technical mechanisms ChatGPT uses to source information and how brands can optimize for citations in AI-generated responses." />
+        <title>How ChatGPT Discovers & Cites Brands in 2025 | Visibi Ai</title>
+        <meta name="description" content="Deep dive into how ChatGPT sources, interprets and cites brands in 2025, and what GEO tactics help you earn more AI citations, mentions and recommendations." />
         <meta name="keywords" content="ChatGPT, AI citations, brand discovery, GEO, generative AI, LLM optimization" />
-        <link rel="canonical" href="https://visibi.com/insights/how-chatgpt-discovers-cites-brands-2025" />
+        <link rel="canonical" href="https://govisibi.ai/insights/how-chatgpt-discovers-and-cites-brands-2025" />
         
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://visibi.com/insights/how-chatgpt-discovers-cites-brands-2025" />
-        <meta property="og:title" content="How ChatGPT Discovers & Cites Brands in 2025" />
-        <meta property="og:description" content="Understanding the technical mechanisms behind ChatGPT's brand discovery and citation logic." />
+        <meta property="og:url" content="https://govisibi.ai/insights/how-chatgpt-discovers-and-cites-brands-2025" />
+        <meta property="og:title" content="How ChatGPT Discovers & Cites Brands in 2025 | Visibi Ai" />
+        <meta property="og:description" content="Deep dive into how ChatGPT sources, interprets and cites brands in 2025, and what GEO tactics help you earn more AI citations, mentions and recommendations." />
       </Helmet>
 
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>

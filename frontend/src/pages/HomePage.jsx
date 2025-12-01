@@ -361,22 +361,22 @@ export default function HomePage() {
   return (
     <div className="min-h-screen relative line-pattern">
       <Helmet>
-        <title>Make Your Brand Visible to AI | VISIBI - AI Visibility & Agent Development</title>
-        <meta name="description" content="VISIBI helps you win in both worlds: AI discovery and AI automation. Get found, understood, and recommended by AI engines like ChatGPT, Gemini, Claude. Deploy autonomous AI agents for real business tasks." />
+        <title>Visibi Ai | AI Visibility (GEO) & Autonomous AI Agents</title>
+        <meta name="description" content="Visibi Ai makes brands visible to AI and builds autonomous agents that act as digital workers. Get found in ChatGPT, Claude & Perplexity and speed up workflows." />
         <meta name="keywords" content="GEO, generative engine optimization, AI visibility, AI agents, ChatGPT optimization, Gemini, Claude, Perplexity, AI automation, autonomous agents" />
-        <link rel="canonical" href="https://visibi.com/" />
+        <link rel="canonical" href="https://govisibi.ai/" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/" />
-        <meta property="og:title" content="Make Your Brand Visible to AI | VISIBI" />
-        <meta property="og:description" content="AI discovery and AI automation. Ensure your brand is visible and your business is productive with AI." />
-        <meta property="og:site_name" content="VISIBI" />
+        <meta property="og:url" content="https://govisibi.ai/" />
+        <meta property="og:title" content="Visibi Ai | AI Visibility (GEO) & Autonomous AI Agents" />
+        <meta property="og:description" content="Visibi Ai makes brands visible to AI and builds autonomous agents that act as digital workers. Get found in ChatGPT, Claude & Perplexity and speed up workflows." />
+        <meta property="og:site_name" content="Visibi Ai" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Make Your Brand Visible to AI | VISIBI" />
-        <meta name="twitter:description" content="Get found by AI engines. Automate workflows with AI agents. One partner for visibility and productivity." />
+        <meta name="twitter:title" content="Visibi Ai | AI Visibility (GEO) & Autonomous AI Agents" />
+        <meta name="twitter:description" content="Visibi Ai makes brands visible to AI and builds autonomous agents that act as digital workers. Get found in ChatGPT, Claude & Perplexity and speed up workflows." />
 
         {/* Structured Data - FAQ Schema */}
         <script type="application/ld+json">

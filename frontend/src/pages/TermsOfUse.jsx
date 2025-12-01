@@ -14,10 +14,10 @@ export default function TermsOfUse() {
   return (
     <div className="min-h-screen relative line-pattern">
       <Helmet>
-        <title>Terms &amp; Conditions | VISIBI</title>
-        <meta name="description" content="Terms and Conditions for Visibi Ai - govisibi.ai. Read our website usage terms, intellectual property, liability limitations, and legal information." />
+        <title>Terms &amp; Conditions | Visibi Ai</title>
+        <meta name="description" content="Read the terms that govern your use of govisibi.ai, including acceptable use, intellectual property, AI limitations, liability and governing law for Visibi Ai." />
         <meta name="robots" content="noindex, nofollow" />
-        <link rel="canonical" href="https://govisibi.ai/terms-of-use" />
+        <link rel="canonical" href="https://govisibi.ai/terms" />
       </Helmet>
 
       {/* Background Grid Pattern */}
