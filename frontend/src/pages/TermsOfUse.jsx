@@ -24,14 +24,17 @@ export default function TermsOfUse() {
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
 
       <Navigation />
-      <Breadcrumbs 
-        items={[
-          { label: 'Home', path: '/' },
-          { label: 'Terms of Use', path: '/terms-of-use' }
-        ]}
-      />
 
-      <main className="max-w-4xl mx-auto px-6 py-16">
+      <div className="max-w-full md:max-w-[90%] mx-auto px-6 md:px-16 mt-8">
+        <Breadcrumbs 
+          items={[
+            { label: 'Home', path: '/' },
+            { label: 'Terms of Use', path: '/terms-of-use' }
+          ]}
+        />
+      </div>
+
+      <main className="max-w-4xl mx-auto px-6 py-8">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Terms &amp; Conditions &ndash; Visibi Ai / govisibi.ai</h1>
         <p className="text-gray-600 mb-8"><strong>Last updated:</strong> 1 December 2025</p>
         
