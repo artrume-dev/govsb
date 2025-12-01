@@ -18,12 +18,47 @@ export default function SmallBusinessAIVisibility() {
         <title>Can't See Your Business in AI Results? 7 Practical Steps for Small Businesses | Visibi Ai</title>
         <meta name="description" content="7 practical, low-cost steps any small business can take to improve AI visibility. Show up in ChatGPT, Google AI Overviews & more without breaking the bank." />
         <meta name="keywords" content="small business AI visibility, GEO for small business, ChatGPT local business, Google Business Profile optimization, AI search results" />
+        <meta name="author" content="Dan" />
         <link rel="canonical" href="https://govisibi.ai/insights/small-business-ai-visibility-guide" />
         
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://govisibi.ai/insights/small-business-ai-visibility-guide" />
         <meta property="og:title" content="Can't See Your Business in AI Results? 7 Practical Steps for Small Businesses" />
         <meta property="og:description" content="7 practical, low-cost steps any small business can take to improve AI visibility without breaking the bank." />
+        <meta property="article:author" content="Dan" />
+        <meta property="article:published_time" content="2025-12-01" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Can't See Your Business in AI Results? 7 Practical Steps for Small Businesses",
+            "description": "7 practical, low-cost steps any small business can take to improve AI visibility. Show up in ChatGPT, Google AI Overviews & more without breaking the bank.",
+            "image": "https://govisibi.ai/og-image.jpg",
+            "datePublished": "2025-12-01",
+            "dateModified": "2025-12-01",
+            "author": {
+              "@type": "Person",
+              "name": "Dan",
+              "jobTitle": "Founder & Head of GEO Strategy",
+              "url": "https://www.linkedin.com/in/adnan-khan-5a1a1858/",
+              "image": "https://media.licdn.com/dms/image/v2/C4E03AQFpavOujT8QHg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1654520723970?e=1766016000&v=beta&t=obPe99SCKsDgrA5ahyRoO_KPHuaMrMN8S3C6DUGFU1g"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Visibi Ai",
+              "url": "https://govisibi.ai",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://govisibi.ai/logo.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://govisibi.ai/insights/small-business-ai-visibility-guide"
+            }
+          })}
+        </script>
       </Helmet>
 
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
@@ -42,6 +77,26 @@ export default function SmallBusinessAIVisibility() {
 
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto px-4 py-12">
+        {/* Author Card */}
+        <div className="flex items-center gap-4 mb-6 bg-white rounded-lg shadow-sm border border-slate-200 p-4">
+          <img 
+            src="https://media.licdn.com/dms/image/v2/C4E03AQFpavOujT8QHg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1654520723970?e=1766016000&v=beta&t=obPe99SCKsDgrA5ahyRoO_KPHuaMrMN8S3C6DUGFU1g"
+            alt="Dan"
+            className="w-12 h-12 rounded-full object-cover"
+          />
+          <div className="flex-1">
+            <div className="font-semibold text-slate-900 font-open-sans">Dan</div>
+            <div className="text-sm text-slate-600 font-open-sans">Founder & Head of GEO Strategy, govisibi.ai</div>
+          </div>
+          <a 
+            href="https://www.linkedin.com/in/adnan-khan-5a1a1858/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+          >
+            LinkedIn →
+          </a>
+        </div>
         <div className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
           <img 
             src="https://images.unsplash.com/photo-1645397925426-cf18e08fc019?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFsbCUyMGJ1c2luZXNzJTIwQUklMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc2NDYwNzU2OXww&ixlib=rb-4.1.0&q=80&w=1080"

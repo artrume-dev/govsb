@@ -18,14 +18,49 @@ export default function GEOPlaybook2026() {
         <title>The 2026 GEO Playbook: How to Win in AI-Enabled Search | Visibi Ai</title>
         <meta name="description" content="Search has quietly crossed a line. Learn the 7 key signals for organic success in 2026 and strategies for optimizing AI-enabled search." />
         <meta name="keywords" content="GEO, AI search, generative engine optimization, AI visibility, search strategy 2026" />
+        <meta name="author" content="Dan" />
         <link rel="canonical" href="https://govisibi.ai/insights/geo-playbook-2026" />
         <meta property="og:title" content="The 2026 GEO Playbook: How to Win in AI-Enabled Search | Visibi Ai" />
         <meta property="og:description" content="Search has quietly crossed a line. Learn the 7 key signals for organic success in 2026 and strategies for optimizing AI-enabled search." />
         <meta property="og:url" content="https://govisibi.ai/insights/geo-playbook-2026" />
         <meta property="og:type" content="article" />
+        <meta property="article:author" content="Dan" />
+        <meta property="article:published_time" content="2025-12-01" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="The 2026 GEO Playbook: How to Win in AI-Enabled Search | Visibi Ai" />
         <meta name="twitter:description" content="Search has quietly crossed a line. Learn the 7 key signals for organic success in 2026 and strategies for optimizing AI-enabled search." />
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "The 2026 GEO Playbook: How to Win in AI-Enabled Search",
+            "description": "Search has quietly crossed a line. Learn the 7 key signals for organic success in 2026 and strategies for optimizing AI-enabled search.",
+            "image": "https://govisibi.ai/og-image.jpg",
+            "datePublished": "2025-12-01",
+            "dateModified": "2025-12-01",
+            "author": {
+              "@type": "Person",
+              "name": "Dan",
+              "jobTitle": "Founder & Head of GEO Strategy",
+              "url": "https://www.linkedin.com/in/adnan-khan-5a1a1858/",
+              "image": "https://media.licdn.com/dms/image/v2/C4E03AQFpavOujT8QHg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1654520723970?e=1766016000&v=beta&t=obPe99SCKsDgrA5ahyRoO_KPHuaMrMN8S3C6DUGFU1g"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Visibi Ai",
+              "url": "https://govisibi.ai",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://govisibi.ai/logo.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://govisibi.ai/insights/geo-playbook-2026"
+            }
+          })}
+        </script>
       </Helmet>
 
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
@@ -75,6 +110,27 @@ export default function GEOPlaybook2026() {
                 <h1 className="font-open-sans text-4xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
                   The 2026 GEO Playbook: How to Win in AI-Enabled Search
                 </h1>
+
+                {/* Author Card */}
+                <div className="flex items-center gap-4 py-4">
+                  <img 
+                    src="https://media.licdn.com/dms/image/v2/C4E03AQFpavOujT8QHg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1654520723970?e=1766016000&v=beta&t=obPe99SCKsDgrA5ahyRoO_KPHuaMrMN8S3C6DUGFU1g"
+                    alt="Dan"
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <div className="font-semibold text-slate-900 font-open-sans">Dan</div>
+                    <div className="text-sm text-slate-600 font-open-sans">Founder & Head of GEO Strategy, govisibi.ai</div>
+                  </div>
+                  <a 
+                    href="https://www.linkedin.com/in/adnan-khan-5a1a1858/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="ml-auto text-blue-600 hover:text-blue-700 text-sm font-medium"
+                  >
+                    LinkedIn →
+                  </a>
+                </div>
 
                 <p className="text-xl md:text-2xl font-light text-slate-700 font-open-sans leading-relaxed">
                   Search has quietly crossed a line. Ranking first on Google is still positive, but it no longer guarantees that users see or trust your brand.
