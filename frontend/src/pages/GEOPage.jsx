@@ -145,11 +145,11 @@ export default function GEOPage() {
         <title>GEO Services - Generative Engine Optimization | VISIBI</title>
         <meta name="description" content="Get discovered and cited by ChatGPT, Gemini, and Perplexity. Expert GEO (Generative Engine Optimization) services to maximize your AI visibility and brand mentions." />
         <meta name="keywords" content="GEO, generative engine optimization, ChatGPT optimization, AI platform visibility, Gemini SEO, Perplexity optimization" />
-        <link rel="canonical" href="https://visibi.com/geo" />
+        <link rel="canonical" href="https://www.govisibi.ai/geo" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/geo" />
+        <meta property="og:url" content="https://www.govisibi.ai/geo" />
         <meta property="og:title" content="GEO Services - Generative Engine Optimization | VISIBI" />
         <meta property="og:description" content="Get discovered and cited by ChatGPT, Gemini, and Perplexity. Expert GEO services to maximize your AI visibility." />
         <meta property="og:site_name" content="VISIBI" />

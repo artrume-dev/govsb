@@ -105,11 +105,11 @@ export default function SEOPage() {
         <title>AI-Ready SEO Services - Search + AI Optimization | VISIBI</title>
         <meta name="description" content="SEO that feeds your AI visibility. Build search rankings and AI citations simultaneously with technical SEO, content strategy, and authority building that works across Google and AI platforms." />
         <meta name="keywords" content="AI-ready SEO, technical SEO, content optimization, link building, E-E-A-T, search engine optimization, AI citations" />
-        <link rel="canonical" href="https://visibi.com/seo" />
+        <link rel="canonical" href="https://www.govisibi.ai/seo" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/seo" />
+        <meta property="og:url" content="https://www.govisibi.ai/seo" />
         <meta property="og:title" content="AI-Ready SEO Services - Search + AI Optimization | VISIBI" />
         <meta property="og:description" content="SEO that powers both Google rankings and AI platform citations. Technical excellence meets AI-first content strategy." />
         <meta property="og:site_name" content="VISIBI" />

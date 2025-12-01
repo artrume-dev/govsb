@@ -101,11 +101,11 @@ export default function ToolPage() {
         <title>AI Visibility Tracking Tool - Monitor Brand Mentions Across AI Platforms | VISIBI</title>
         <meta name="description" content="Track mentions, citations, sentiment, and competitive positioning across ChatGPT, Gemini, Perplexity, and Claude. Proprietary AI visibility analytics platform with real-time alerts." />
         <meta name="keywords" content="AI visibility tool, ChatGPT tracking, AI mention monitoring, brand sentiment analysis, AI platform analytics, citation tracking" />
-        <link rel="canonical" href="https://visibi.com/tool" />
+        <link rel="canonical" href="https://www.govisibi.ai/tool" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/tool" />
+        <meta property="og:url" content="https://www.govisibi.ai/tool" />
         <meta property="og:title" content="AI Visibility Tracking Tool - Monitor Brand Mentions | VISIBI" />
         <meta property="og:description" content="Track your brand's mentions, citations, and sentiment across all major AI platforms with powerful analytics and real-time alerts." />
         <meta property="og:site_name" content="VISIBI" />

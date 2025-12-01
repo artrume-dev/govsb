@@ -204,11 +204,11 @@ export default function AIAgentsPage() {
         <title>Agentic AI Development - Custom Intelligent Automation | VISIBI</title>
         <meta name="description" content="Build intelligent AI agents that automate workflows, make decisions, and scale your operations. We design, develop and deploy agentic AI systems built safely and transparently." />
         <meta name="keywords" content="agentic AI, AI agents, intelligent automation, custom AI development, workflow automation, AI integration, autonomous agents" />
-        <link rel="canonical" href="https://visibi.com/ai-agents" />
+        <link rel="canonical" href="https://www.govisibi.ai/ai-agents" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/ai-agents" />
+        <meta property="og:url" content="https://www.govisibi.ai/ai-agents" />
         <meta property="og:title" content="Agentic AI Development | VISIBI" />
         <meta property="og:description" content="Intelligent AI agents that automate workflows, make decisions, and scale operations." />
         <meta property="og:site_name" content="VISIBI" />

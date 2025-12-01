@@ -124,11 +124,11 @@ export default function HowWeWorkPage() {
         <title>How We Work - Strategy, Transparency & Trust | VISIBI</title>
         <meta name="description" content="Partner with VISIBI for data-driven AI visibility strategy. Learn our values, process, and approach to building lasting Gen AI presence through ethical tactics and relentless optimization." />
         <meta name="keywords" content="GEO methodology, AI visibility strategy, transparent SEO agency, data-driven marketing, ethical optimization" />
-        <link rel="canonical" href="https://visibi.com/how-we-work" />
+        <link rel="canonical" href="https://www.govisibi.ai/how-we-work" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/how-we-work" />
+        <meta property="og:url" content="https://www.govisibi.ai/how-we-work" />
         <meta property="og:title" content="How We Work - Strategy, Transparency & Trust | VISIBI" />
         <meta property="og:description" content="Discover our values, methodology, and commitment to transparent, data-driven AI visibility optimization." />
         <meta property="og:site_name" content="VISIBI" />
