@@ -465,7 +465,7 @@ export default function SEOPage() {
                 X
               </a>
               <a
-                href="https://linkedin.com/company/visibi-ai/"
+                href="http://linkedin.com/company/visibi-ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"

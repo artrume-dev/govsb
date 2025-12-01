@@ -1676,7 +1676,7 @@ export default function HomePage() {
               <a href="https://x.com/VisibiAI" target="_blank" rel="noopener noreferrer" className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide">
                 X
               </a>
-              <a href="https://linkedin.com/company/visibi-ai/" target="_blank" rel="noopener noreferrer" className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+              <a href="http://linkedin.com/company/visibi-ai" target="_blank" rel="noopener noreferrer" className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide">
                 LinkedIn
               </a>
             </div>

@@ -331,7 +331,7 @@ export default function TermsOfUse() {
                 X
               </a>
               <a
-                href="https://linkedin.com/company/visibi-ai/"
+                href="http://linkedin.com/company/visibi-ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide"
