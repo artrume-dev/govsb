@@ -51,6 +51,7 @@ export default function HomePage() {
   const aiEngines = [
     { name: 'ChatGPT', logo: '/ai-logos/ChatGPT.svg' },
     { name: 'Claude', logo: '/ai-logos/claude.svg' },
+    { name: 'Gemini', logo: '/ai-logos/gemini.svg' },
     { name: 'Copilot', logo: '/ai-logos/copilot.svg' },
     { name: 'Perplexity', logo: '/ai-logos/perplexity.svg' },
     { name: 'Grok', logo: '/ai-logos/grok.svg' },
