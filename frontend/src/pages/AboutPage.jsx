@@ -85,6 +85,8 @@ export default function AboutPage() {
                 <img 
                   src="/vi/visibi-llms.png" 
                   alt="VISIBI team expertise in AI visibility and search optimization" 
+                  width="448"
+                  height="448"
                   className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
               </div>
@@ -291,7 +293,7 @@ export default function AboutPage() {
           {/* Left Column - Logo and Description */}
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" width="32" height="32" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 dark:bg-white bg-clip-text text-transparent">
                 VISIBI
               </span>

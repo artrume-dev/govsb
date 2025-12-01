@@ -83,6 +83,8 @@ export default function SmallBusinessAIVisibility() {
           <img 
             src="https://media.licdn.com/dms/image/v2/C4E03AQFpavOujT8QHg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1654520723970?e=1766016000&v=beta&t=obPe99SCKsDgrA5ahyRoO_KPHuaMrMN8S3C6DUGFU1g"
             alt="Dan"
+            width="48"
+            height="48"
             className="w-12 h-12 rounded-full object-cover"
           />
           <div className="flex-1">
@@ -102,6 +104,8 @@ export default function SmallBusinessAIVisibility() {
           <img 
             src="https://images.unsplash.com/photo-1645397925426-cf18e08fc019?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFsbCUyMGJ1c2luZXNzJTIwQUklMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc2NDYwNzU2OXww&ixlib=rb-4.1.0&q=80&w=1080"
             alt="AI Technology for Small Business"
+            width="1080"
+            height="256"
             className="w-full h-64 object-cover"
           />
           <div className="p-8">
@@ -140,7 +144,7 @@ export default function SmallBusinessAIVisibility() {
           <img 
             src="https://images.unsplash.com/photo-1551590192-8070a16d9f67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGluZm9ybWF0aW9uJTIwY2xhcml0eXxlbnwxfHx8fDE3NjQ2MDc1NzB8MA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Clear business information"
-            className="w-full h-56 object-cover"
+            width="1080" height="224" className="w-full h-56 object-cover"
           />
           <div className="p-8">
             <div className="flex items-center gap-3 mb-4">
@@ -207,7 +211,7 @@ export default function SmallBusinessAIVisibility() {
           <img 
             src="https://images.unsplash.com/photo-1633632799503-c8cff57c17f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb29nbGUlMjBidXNpbmVzcyUyMHN0b3JlZnJvbnR8ZW58MXx8fHwxNzY0NjA3NTY5fDA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Google Business Profile"
-            className="w-full h-56 object-cover"
+            width="1080" height="224" className="w-full h-56 object-cover"
           />
           <div className="p-8">
             <div className="flex items-center gap-3 mb-4">
@@ -275,7 +279,7 @@ export default function SmallBusinessAIVisibility() {
           <img 
             src="https://images.unsplash.com/photo-1587116987844-bd3d2f866f16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHF1ZXN0aW9ucyUyMEZBUXxlbnwxfHx8fDE3NjQ2MDc1NzB8MA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Customer questions and answers"
-            className="w-full h-56 object-cover"
+            width="1080" height="224" className="w-full h-56 object-cover"
           />
           <div className="p-8">
             <div className="flex items-center gap-3 mb-4">
@@ -334,7 +338,7 @@ export default function SmallBusinessAIVisibility() {
           <img 
             src="https://images.unsplash.com/photo-1762330471287-be883db470c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwc2VydmljZSUyMHBhZ2VzfGVufDF8fHx8MTc2NDYwNzU3MHww&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Website service pages"
-            className="w-full h-56 object-cover"
+            width="1080" height="224" className="w-full h-56 object-cover"
           />
           <div className="p-8">
             <div className="flex items-center gap-3 mb-4">
@@ -394,7 +398,7 @@ export default function SmallBusinessAIVisibility() {
           <img 
             src="https://images.unsplash.com/photo-1632961974688-fae53de3cabc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHJldmlld3MlMjB0cnVzdHxlbnwxfHx8fDE3NjQ2MDc1NzB8MA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Customer reviews and trust"
-            className="w-full h-56 object-cover"
+            width="1080" height="224" className="w-full h-56 object-cover"
           />
           <div className="p-8">
             <div className="flex items-center gap-3 mb-4">
@@ -475,7 +479,7 @@ export default function SmallBusinessAIVisibility() {
           <img 
             src="https://images.unsplash.com/photo-1562577309-2ca9a61ab410?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBSSUyMGF1ZGl0JTIwZGlnaXRhbCUyMHRvb2xzfGVufDF8fHx8MTc2NDYwNzU3MXww&ixlib=rb-4.1.0&q=80&w=1080"
             alt="AI audit tools"
-            className="w-full h-56 object-cover"
+            width="1080" height="224" className="w-full h-56 object-cover"
           />
           <div className="p-8">
             <div className="flex items-center gap-3 mb-4">
@@ -547,7 +551,7 @@ export default function SmallBusinessAIVisibility() {
           <img 
             src="https://images.unsplash.com/photo-1725797951116-98dc0cce8ac8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGJ1ZGdldCUyMHByaW9yaXRpZXN8ZW58MXx8fHwxNzY0NjA3NTcxfDA&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Business budget priorities"
-            className="w-full h-56 object-cover"
+            width="1080" height="224" className="w-full h-56 object-cover"
           />
           <div className="p-8">
             <div className="flex items-center gap-3 mb-4">
@@ -729,7 +733,7 @@ export default function SmallBusinessAIVisibility() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" width="32" height="32" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
@@ -774,3 +778,4 @@ export default function SmallBusinessAIVisibility() {
     </div>
   )
 }
+

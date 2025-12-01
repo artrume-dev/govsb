@@ -115,6 +115,8 @@ export default function ChatGPTBrandDiscovery() {
                   <img 
                     src="https://media.licdn.com/dms/image/v2/D4E03AQEXB4ZeluUyhw/profile-displayphoto-scale_200_200/B4EZmFs_G2KoAY-/0/1758884787225?e=1766016000&v=beta&t=gkpPYRuWSNTxFXYWnOJw0_fyhW3Di17Cxd7XaN5WTTg"
                     alt="Sam"
+                    width="48"
+                    height="48"
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
@@ -456,7 +458,7 @@ export default function ChatGPTBrandDiscovery() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" width="32" height="32" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">

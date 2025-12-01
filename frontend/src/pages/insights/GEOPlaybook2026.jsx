@@ -117,6 +117,8 @@ export default function GEOPlaybook2026() {
                   <img 
                     src="https://media.licdn.com/dms/image/v2/C4E03AQFpavOujT8QHg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1654520723970?e=1766016000&v=beta&t=obPe99SCKsDgrA5ahyRoO_KPHuaMrMN8S3C6DUGFU1g"
                     alt="Dan"
+                    width="48"
+                    height="48"
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>

@@ -40,6 +40,8 @@ export default function Navigation({ currentPage = 'home' }) {
             <img 
               src="/govisibi-logo.png" 
               alt="VISIBI Logo" 
+              width="24"
+              height="24"
               className={`h-6 w-6 transition-transform duration-500 ease-out ${
                 isScrolled ? 'rotate-[360deg]' : 'rotate-[315deg]'
               }`}

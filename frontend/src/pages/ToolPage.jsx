@@ -186,6 +186,8 @@ export default function ToolPage() {
                 <img 
                   src="/vi/visibi-howewework.png" 
                   alt="AI visibility tracking and monitoring platform interface" 
+                  width="448"
+                  height="448"
                   className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
               </div>
@@ -277,7 +279,7 @@ export default function ToolPage() {
               </div>
               <div className="bg-white p-12 text-center">
                 <div className="max-w-7xl mx-auto">
-                   <img src='/vi/visibi-welcome.png' alt='VISIBI AI visibility tracking dashboard interface showing mention trends, citation analysis, sentiment scores, and competitive positioning metrics across AI platforms' className="rounded-xl border border-slate-200 pattern-background p-2 mb-8"></img>
+                   <img src='/vi/visibi-welcome.png' alt='VISIBI AI visibility tracking dashboard interface showing mention trends, citation analysis, sentiment scores, and competitive positioning metrics across AI platforms' width="1200" height="800" className="rounded-xl border border-slate-200 pattern-background p-2 mb-8"></img>
                 
                   <p className="font-open-sans text-md leading-[1.5] text-slate-950">
                     Interactive dashboards showing real-time AI visibility metrics, historical trends, competitive benchmarks, and actionable recommendations.
@@ -361,7 +363,7 @@ export default function ToolPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" width="32" height="32" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
