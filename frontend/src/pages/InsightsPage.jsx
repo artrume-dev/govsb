@@ -244,6 +244,14 @@ export default function InsightsPage() {
         </div>
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-space-mono text-xs text-gray-500">© 2025 VISIBI — ALL RIGHTS RESERVED</p>
+          <div className="flex gap-6">
+            <Link to="/terms-of-use" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+              Terms of Use
+            </Link>
+            <Link to="/privacy-policy" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
