@@ -10,6 +10,7 @@ from typing import List
 import sys
 import os
 from pathlib import Path
+import requests
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -109,6 +110,33 @@ else:
 
 # In-memory storage for MVP (will be replaced with database in Phase 2)
 analysis_history: List[dict] = []
+
+
+def verify_recaptcha(token: str) -> bool:
+    """Verify reCAPTCHA token using Google's verification endpoint"""
+    secret_key = os.getenv("RECAPTCHA_SECRET_KEY")
+    if not secret_key or not token:
+        print("⚠️ Missing reCAPTCHA secret key or token")
+        return False
+
+    try:
+        response = requests.post(
+            "https://www.google.com/recaptcha/api/siteverify",
+            data={"secret": secret_key, "response": token},
+            timeout=10
+        )
+        result = response.json()
+    except Exception as e:
+        print(f"⚠️ Error verifying reCAPTCHA: {e}")
+        return False
+
+    success = result.get("success", False)
+    score = result.get("score", 0)
+
+    if not success or score < 0.5:
+        print(f"⚠️ reCAPTCHA verification failed: {result}")
+
+    return success and score >= 0.5
 
 
 def get_chatgpt_response(query: str):
@@ -517,6 +545,15 @@ async def send_contact_email(request: ContactRequest):
     4. Returns success response
     """
     try:
+        # Validate reCAPTCHA before processing
+        if not request.recaptchaToken:
+            raise HTTPException(status_code=400, detail="Missing reCAPTCHA token")
+        if not verify_recaptcha(request.recaptchaToken):
+            raise HTTPException(
+                status_code=400,
+                detail="reCAPTCHA verification failed. Please try again."
+            )
+
         # Validate email format
         if not request.email or '@' not in request.email:
             raise HTTPException(status_code=400, detail="Invalid email address")
