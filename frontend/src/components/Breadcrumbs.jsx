@@ -11,7 +11,7 @@ const Breadcrumbs = ({ items }) => {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.label,
-      ...(item.path && { "item": `https://visibi.com${item.path}` })
+      ...(item.path && { "item": `https://www.govisibi.ai${item.path}` })
     }))
   };
 

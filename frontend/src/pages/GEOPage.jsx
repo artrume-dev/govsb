@@ -143,13 +143,14 @@ export default function GEOPage() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>GEO Services - Generative Engine Optimization | VISIBI</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="Get discovered and cited by ChatGPT, Gemini, and Perplexity. Expert GEO (Generative Engine Optimization) services to maximize your AI visibility and brand mentions." />
         <meta name="keywords" content="GEO, generative engine optimization, ChatGPT optimization, AI platform visibility, Gemini SEO, Perplexity optimization" />
-        <link rel="canonical" href="https://visibi.com/geo" />
+        <link rel="canonical" href="https://www.govisibi.ai/geo" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/geo" />
+        <meta property="og:url" content="https://www.govisibi.ai/geo" />
         <meta property="og:title" content="GEO Services - Generative Engine Optimization | VISIBI" />
         <meta property="og:description" content="Get discovered and cited by ChatGPT, Gemini, and Perplexity. Expert GEO services to maximize your AI visibility." />
         <meta property="og:site_name" content="VISIBI" />
@@ -230,6 +231,8 @@ export default function GEOPage() {
                 <img
                   src="vi/visibi-geo-ai.png"
                   alt="Person analyzing AI-generated content discovery with magnifying glass over networked documents"
+                  width="448"
+                  height="448"
                   className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
               </div>
@@ -495,7 +498,7 @@ export default function GEOPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" width="32" height="32" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
@@ -504,13 +507,17 @@ export default function GEOPage() {
 
             <div className="flex gap-6">
               <a
-                href="https://github.com"
+                href="https://x.com/VisibiAI"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide"
               >
-                Github
+                X
               </a>
               <a
-                href="https://linkedin.com"
+                href="http://linkedin.com/company/visibi-ai"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide"
               >
                 LinkedIn
@@ -535,6 +542,14 @@ export default function GEOPage() {
         </div>
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-space-mono text-xs text-gray-500">© 2025 VISIBI — ALL RIGHTS RESERVED</p>
+          <div className="flex gap-6">
+            <Link to="/terms-of-use" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+              Terms of Use
+            </Link>
+            <Link to="/privacy-policy" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </footer>
     </div>

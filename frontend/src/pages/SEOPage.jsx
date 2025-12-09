@@ -103,13 +103,14 @@ export default function SEOPage() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>AI-Ready SEO Services - Search + AI Optimization | VISIBI</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="SEO that feeds your AI visibility. Build search rankings and AI citations simultaneously with technical SEO, content strategy, and authority building that works across Google and AI platforms." />
         <meta name="keywords" content="AI-ready SEO, technical SEO, content optimization, link building, E-E-A-T, search engine optimization, AI citations" />
-        <link rel="canonical" href="https://visibi.com/seo" />
+        <link rel="canonical" href="https://www.govisibi.ai/seo" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/seo" />
+        <meta property="og:url" content="https://www.govisibi.ai/seo" />
         <meta property="og:title" content="AI-Ready SEO Services - Search + AI Optimization | VISIBI" />
         <meta property="og:description" content="SEO that powers both Google rankings and AI platform citations. Technical excellence meets AI-first content strategy." />
         <meta property="og:site_name" content="VISIBI" />
@@ -189,6 +190,8 @@ export default function SEOPage() {
                 <img 
                   src="/vi/visibi-seo-ai.png" 
                   alt="Search engine optimization strategy and content planning illustration" 
+                  width="448"
+                  height="448"
                   className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
               </div>
@@ -449,7 +452,7 @@ export default function SEOPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" width="32" height="32" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
@@ -457,15 +460,15 @@ export default function SEOPage() {
             </p>
                         <div className="flex gap-6">
               <a
-                href="https://github.com"
+                href="https://x.com/VisibiAI"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
               >
-                Github
+                X
               </a>
               <a
-                href="https://linkedin.com"
+                href="http://linkedin.com/company/visibi-ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
@@ -491,6 +494,14 @@ export default function SEOPage() {
         </div>
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-space-mono text-xs text-gray-500">© 2025 VISIBI — ALL RIGHTS RESERVED</p>
+          <div className="flex gap-6">
+            <Link to="/terms-of-use" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+              Terms of Use
+            </Link>
+            <Link to="/privacy-policy" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </footer>
     </div>

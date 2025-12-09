@@ -264,6 +264,7 @@ class ContactRequest(BaseModel):
     email: str
     topic: str
     message: str
+    recaptchaToken: str
 
     class Config:
         json_schema_extra = {
@@ -272,7 +273,8 @@ class ContactRequest(BaseModel):
                 "company": "Acme Corp",
                 "email": "john@acme.com",
                 "topic": "geo",
-                "message": "I'm interested in learning more about GEO services."
+                "message": "I'm interested in learning more about GEO services.",
+                "recaptchaToken": "token-from-client"
             }
         }
 

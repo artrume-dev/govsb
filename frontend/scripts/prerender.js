@@ -18,8 +18,12 @@ const routes = [
   '/tool',
   '/insights',
   '/insights/chatgpt-brand-discovery',
+  '/insights/small-business-ai-visibility-guide',
+  '/insights/geo-playbook-2026',
   '/how-we-work',
-  '/contact'
+  '/contact',
+  '/privacy-policy',
+  '/terms-of-use'
 ];
 
 const distPath = path.join(__dirname, '..', 'dist');

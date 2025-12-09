@@ -122,13 +122,14 @@ export default function HowWeWorkPage() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>How We Work - Strategy, Transparency & Trust | VISIBI</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="Partner with VISIBI for data-driven AI visibility strategy. Learn our values, process, and approach to building lasting Gen AI presence through ethical tactics and relentless optimization." />
         <meta name="keywords" content="GEO methodology, AI visibility strategy, transparent SEO agency, data-driven marketing, ethical optimization" />
-        <link rel="canonical" href="https://visibi.com/how-we-work" />
+        <link rel="canonical" href="https://www.govisibi.ai/how-we-work" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/how-we-work" />
+        <meta property="og:url" content="https://www.govisibi.ai/how-we-work" />
         <meta property="og:title" content="How We Work - Strategy, Transparency & Trust | VISIBI" />
         <meta property="og:description" content="Discover our values, methodology, and commitment to transparent, data-driven AI visibility optimization." />
         <meta property="og:site_name" content="VISIBI" />
@@ -202,6 +203,8 @@ export default function HowWeWorkPage() {
                 <img 
                   src="/vi/visibi-welcome.png" 
                   alt="Strategic planning and transparent methodology for AI visibility optimization" 
+                  width="448"
+                  height="448"
                   className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
               </div>
@@ -374,7 +377,7 @@ export default function HowWeWorkPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" width="32" height="32" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
@@ -383,15 +386,15 @@ export default function HowWeWorkPage() {
 
                         <div className="flex gap-6">
               <a
-                href="https://github.com"
+                href="https://x.com/VisibiAI"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
               >
-                Github
+                X
               </a>
               <a
-                href="https://linkedin.com"
+                href="http://linkedin.com/company/visibi-ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
@@ -418,6 +421,20 @@ export default function HowWeWorkPage() {
         </div>
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-space-mono text-xs text-gray-500">© 2025 VISIBI — ALL RIGHTS RESERVED</p>
+          <div className="flex gap-6">
+            <Link
+              to="/terms-of-use"
+              className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide"
+            >
+              Terms of Use
+            </Link>
+            <Link
+              to="/privacy-policy"
+              className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide"
+            >
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </footer>
     </div>

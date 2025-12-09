@@ -60,13 +60,14 @@ export default function ContactPage() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>Contact Us - Get in Touch with VISIBI | Gen AI Visibility</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="Ready to improve your brand's visibility across AI platforms? Contact VISIBI for GEO, SEO, and PPC services. We'll respond within 24 hours." />
         <meta name="keywords" content="contact VISIBI, GEO consultation, AI visibility inquiry, brand consultation" />
-        <link rel="canonical" href="https://visibi.com/contact" />
+        <link rel="canonical" href="https://www.govisibi.ai/contact" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/contact" />
+        <meta property="og:url" content="https://govisibi.ai/contact" />
         <meta property="og:title" content="Contact Us | VISIBI" />
         <meta property="og:description" content="Get in touch with VISIBI for Gen AI visibility services." />
         <meta property="og:site_name" content="VISIBI" />
@@ -124,6 +125,8 @@ export default function ContactPage() {
                 <img 
                   src="/vi/visibi-ppc-ai.png" 
                   alt="VISIBI contact - Get in touch for AI visibility solutions" 
+                  width="448"
+                  height="448"
                   className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
               </div>
@@ -335,14 +338,14 @@ export default function ContactPage() {
                   <span className="font-space-mono text-md">SEO FAQs</span>
                 </Button>
               </Link>
-              <Link to="/ppc">
+              {/* <Link to="/ppc">
                 <Button
                   variant="outline"
                   className="w-full bg-transparent text-slate-950 border border-slate-300 hover:border-blue-700 hover:bg-blue-700 hover:text-white rounded-md p-6 h-auto flex flex-col items-center gap-2 transition-all"
                 >
                   <span className="font-space-mono text-md">PPC FAQs</span>
                 </Button>
-              </Link>
+              </Link> */}
               <Link to="/how-we-work">
                 <Button
                   variant="outline"
@@ -361,7 +364,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" width="32" height="32" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
@@ -369,15 +372,15 @@ export default function ContactPage() {
             </p>
             <div className="flex gap-6">
               <a
-                href="https://github.com"
+                href="https://x.com/VisibiAI"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide"
               >
-                Github
+                X
               </a>
               <a
-                href="https://linkedin.com"
+                href="http://linkedin.com/company/visibi-ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide"

@@ -15,15 +15,51 @@ export default function ChatGPTBrandDiscovery() {
   return (
     <div className="min-h-screen relative line-pattern">
       <Helmet>
-        <title>How ChatGPT Discovers & Cites Brands in 2025 | VISIBI Insights</title>
-        <meta name="description" content="Deep analysis of the technical mechanisms ChatGPT uses to source information and how brands can optimize for citations in AI-generated responses." />
+        <title>How ChatGPT Discovers & Cites Brands in 2025 | Visibi Ai</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta name="description" content="Deep dive into how ChatGPT sources, interprets and cites brands in 2025, and what GEO tactics help you earn more AI citations, mentions and recommendations." />
         <meta name="keywords" content="ChatGPT, AI citations, brand discovery, GEO, generative AI, LLM optimization" />
-        <link rel="canonical" href="https://visibi.com/insights/how-chatgpt-discovers-cites-brands-2025" />
+        <meta name="author" content="Sam" />
+        <link rel="canonical" href="https://www.govisibi.ai/insights/chatgpt-brand-discovery" />
         
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://visibi.com/insights/how-chatgpt-discovers-cites-brands-2025" />
-        <meta property="og:title" content="How ChatGPT Discovers & Cites Brands in 2025" />
-        <meta property="og:description" content="Understanding the technical mechanisms behind ChatGPT's brand discovery and citation logic." />
+        <meta property="og:url" content="https://www.govisibi.ai/insights/chatgpt-brand-discovery" />
+        <meta property="og:title" content="How ChatGPT Discovers & Cites Brands in 2025 | Visibi Ai" />
+        <meta property="og:description" content="Deep dive into how ChatGPT sources, interprets and cites brands in 2025, and what GEO tactics help you earn more AI citations, mentions and recommendations." />
+        <meta property="article:author" content="Sam" />
+        <meta property="article:published_time" content="2025-11-17" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "How ChatGPT Discovers & Cites Brands in 2025",
+            "description": "Deep dive into how ChatGPT sources, interprets and cites brands in 2025, and what GEO tactics help you earn more AI citations, mentions and recommendations.",
+            "image": "https://govisibi.ai/og-image.jpg",
+            "datePublished": "2025-11-17",
+            "dateModified": "2025-11-17",
+            "author": {
+              "@type": "Person",
+              "name": "Sam",
+              "jobTitle": "Co-founder & Agentic AI Lead",
+              "url": "https://www.linkedin.com/in/samarmustafa/",
+              "image": "https://media.licdn.com/dms/image/v2/D4E03AQEXB4ZeluUyhw/profile-displayphoto-scale_200_200/B4EZmFs_G2KoAY-/0/1758884787225?e=1766016000&v=beta&t=gkpPYRuWSNTxFXYWnOJw0_fyhW3Di17Cxd7XaN5WTTg"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Visibi Ai",
+              "url": "https://govisibi.ai",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://govisibi.ai/logo.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://govisibi.ai/insights/how-chatgpt-discovers-and-cites-brands-2025"
+            }
+          })}
+        </script>
       </Helmet>
 
       <div className="absolute inset-0 -z-10 h-full w-full bg-slate-300/60 bg-[linear-gradient(to_right,#1d4ed80A_1px,transparent_1px),linear-gradient(to_bottom,#1d4ed80A_1px,transparent_1px)] bg-[size:128px_104px]"></div>
@@ -73,6 +109,29 @@ export default function ChatGPTBrandDiscovery() {
                 <h1 className="font-open-sans text-4xl md:text-6xl font-semibold tracking-tight text-slate-950 md:leading-[1.15]">
                   How ChatGPT Discovers & Cites Brands in 2025
                 </h1>
+
+                {/* Author Card */}
+                <div className="flex items-center gap-4 py-4">
+                  <img 
+                    src="https://media.licdn.com/dms/image/v2/D4E03AQEXB4ZeluUyhw/profile-displayphoto-scale_200_200/B4EZmFs_G2KoAY-/0/1758884787225?e=1766016000&v=beta&t=gkpPYRuWSNTxFXYWnOJw0_fyhW3Di17Cxd7XaN5WTTg"
+                    alt="Sam"
+                    width="48"
+                    height="48"
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <div className="font-semibold text-slate-900 font-open-sans">Sam</div>
+                    <div className="text-sm text-slate-600 font-open-sans">Co-founder & Agentic AI Lead, govisibi.ai</div>
+                  </div>
+                  <a 
+                    href="https://www.linkedin.com/in/samarmustafa/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="ml-auto text-blue-600 hover:text-blue-700 text-sm font-medium"
+                  >
+                    LinkedIn →
+                  </a>
+                </div>
 
                 <p className="text-xl md:text-2xl font-light text-slate-700 font-open-sans leading-relaxed">
                   Deep analysis of the technical mechanisms ChatGPT uses to source information and how brands can optimize for citations.
@@ -399,7 +458,7 @@ export default function ChatGPTBrandDiscovery() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" width="32" height="32" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">

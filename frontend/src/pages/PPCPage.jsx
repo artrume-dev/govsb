@@ -20,11 +20,11 @@ export default function PPCPage() {
         <title>PPC Management Services - Paid Media That Amplifies Visibility | VISIBI</title>
         <meta name="description" content="Performance-driven PPC campaigns across Google Ads, LinkedIn, Meta, and YouTube. Boost visibility, drive conversions, and reinforce your organic and AI search presence." />
         <meta name="keywords" content="PPC management, Google Ads, LinkedIn advertising, Meta ads, YouTube ads, paid media strategy, performance marketing" />
-        <link rel="canonical" href="https://visibi.com/ppc" />
+        <link rel="canonical" href="https://www.govisibi.ai/ppc" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/ppc" />
+        <meta property="og:url" content="https://www.govisibi.ai/ppc" />
         <meta property="og:title" content="PPC Management Services - Paid Media That Amplifies Visibility | VISIBI" />
         <meta property="og:description" content="Data-driven PPC campaigns across Google Ads, LinkedIn, Meta, and YouTube that amplify your brand visibility." />
         <meta property="og:site_name" content="VISIBI" />
@@ -767,15 +767,15 @@ export default function PPCPage() {
             </p>
                         <div className="flex gap-6">
               <a
-                href="https://github.com"
+                href="https://x.com/VisibiAI"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
               >
-                Github
+                X
               </a>
               <a
-                href="https://linkedin.com"
+                href="http://linkedin.com/company/visibi-ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"

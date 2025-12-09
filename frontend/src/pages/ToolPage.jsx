@@ -99,13 +99,14 @@ export default function ToolPage() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>AI Visibility Tracking Tool - Monitor Brand Mentions Across AI Platforms | VISIBI</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="Track mentions, citations, sentiment, and competitive positioning across ChatGPT, Gemini, Perplexity, and Claude. Proprietary AI visibility analytics platform with real-time alerts." />
         <meta name="keywords" content="AI visibility tool, ChatGPT tracking, AI mention monitoring, brand sentiment analysis, AI platform analytics, citation tracking" />
-        <link rel="canonical" href="https://visibi.com/tool" />
+        <link rel="canonical" href="https://www.govisibi.ai/tool" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/tool" />
+        <meta property="og:url" content="https://www.govisibi.ai/tool" />
         <meta property="og:title" content="AI Visibility Tracking Tool - Monitor Brand Mentions | VISIBI" />
         <meta property="og:description" content="Track your brand's mentions, citations, and sentiment across all major AI platforms with powerful analytics and real-time alerts." />
         <meta property="og:site_name" content="VISIBI" />
@@ -185,6 +186,8 @@ export default function ToolPage() {
                 <img 
                   src="/vi/visibi-howewework.png" 
                   alt="AI visibility tracking and monitoring platform interface" 
+                  width="448"
+                  height="448"
                   className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
               </div>
@@ -242,20 +245,20 @@ export default function ToolPage() {
               <div className="md:max-w-7xl max-w-full mx-auto md:px-16">
               <div className="space-y-0 grid grid-cols-1 lg:grid-cols-3 gap-6 border-slate-300 border transition-colors pattern-background">
                 <div className="bg-white p-8">
-                  <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">You Can't Optimize What You Don't Measure</h3>
-                  <p className="font-open-sans text-md leading-[1.5] text-slate-950">
+                  <h3 className="font-space-mono font-normal text-2xl leading-[1.3] text-slate-950 mb-3 uppercase">You Can't Optimize What You Don't Measure</h3>
+                  <p className="font-open-sans text-sm leading-[1.7] text-slate-700">
                     Traditional analytics show website traffic after users discover you. AI visibility tracking reveals how users discover you in the first place—the critical awareness stage that determines whether prospects ever reach your website.
                   </p>
                 </div>
                 <div className="bg-white p-8">
-                  <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">Competitive Intelligence</h3>
-                  <p className="font-open-sans text-md leading-[1.5] text-slate-950">
+                  <h3 className="font-space-mono font-normal text-2xl leading-[1.3] text-slate-950 mb-3 uppercase">Competitive Intelligence</h3>
+                  <p className="font-open-sans text-sm leading-[1.7] text-slate-700">
                     See exactly how your visibility compares to competitors. Identify which brands dominate AI mentions in your category and understand the specific contexts where they're being cited instead of you.
                   </p>
                 </div>
                 <div className="bg-white p-8">
-                  <h3 className="font-space-mono font-normal text-xl leading-[1.3] text-slate-950 mb-3 uppercase">Prove ROI of GEO Investments</h3>
-                  <p className="font-open-sans text-md leading-[1.5] text-slate-950">
+                  <h3 className="font-space-mono font-normal text-2xl leading-[1.3] text-slate-950 mb-3 uppercase">Prove ROI of GEO Investments</h3>
+                  <p className="font-open-sans text-sm leading-[1.7] text-slate-700">
                     Demonstrate the impact of GEO efforts with quantitative data. Track mention growth, sentiment improvements, and citation quality over time to show stakeholders the value of AI visibility optimization.
                   </p>
                 </div>
@@ -264,7 +267,7 @@ export default function ToolPage() {
           </section>
 
           {/* Dashboard Preview */}
-          <section className="py-24 mb-12 border-t border-slate-200">
+          {/* <section className="py-24 mb-12 border-t border-slate-200">
             <div className="max-w-4xl mx-auto md:px-16">
               <div className="text-center mb-12">
                 <h2 className="font-open-sans font-thin text-3xl md:text-5xl md:leading-[1.3] text-slate-950 mb-4">
@@ -275,16 +278,16 @@ export default function ToolPage() {
                 </p>
               </div>
               <div className="bg-white p-12 text-center">
-                <div className="max-w-3xl mx-auto">
-                   <img src='./sample-dash.png' alt='VISIBI AI visibility tracking dashboard interface showing mention trends, citation analysis, sentiment scores, and competitive positioning metrics across AI platforms' className="rounded-xl border border-slate-200 pattern-background p-2 mb-8"></img>
-                  {/* <BarChart3 className="w-32 h-32 text-slate-950 mx-auto mb-6" strokeWidth={1.25} /> */}
+                <div className="max-w-7xl mx-auto">
+                   <img src='/vi/visibi-welcome.png' alt='VISIBI AI visibility tracking dashboard interface showing mention trends, citation analysis, sentiment scores, and competitive positioning metrics across AI platforms' width="1200" height="800" className="rounded-xl border border-slate-200 pattern-background p-2 mb-8"></img>
+                
                   <p className="font-open-sans text-md leading-[1.5] text-slate-950">
                     Interactive dashboards showing real-time AI visibility metrics, historical trends, competitive benchmarks, and actionable recommendations.
                   </p>
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* FAQ */}
           <section className="py-24 mb-12 border-t border-slate-200">
@@ -360,7 +363,7 @@ export default function ToolPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" width="32" height="32" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
@@ -368,15 +371,15 @@ export default function ToolPage() {
             </p>
             <div className="flex gap-6">
               <a
-                href="https://github.com"
+                href="https://x.com/VisibiAI"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
               >
-                Github
+                X
               </a>
               <a
-                href="https://linkedin.com"
+                href="http://linkedin.com/company/visibi-ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"

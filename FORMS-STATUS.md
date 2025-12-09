@@ -36,7 +36,7 @@ The backend is rejecting requests from `http://localhost:5174` because:
 4. **Set this EXACT value** (copy-paste, NO spaces after commas):
 
 ```
-https://visibi-app-git-main-adnan-hkas-projects.vercel.app,https://visibi-app.vercel.app,https://visibi-app-tawny.vercel.app,https://visibiwebproject.vercel.app,http://localhost:5174,http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173,http://127.0.0.1:5174,https://visibi.com,https://www.visibi.com,https://govisibi.ai,https://www.govisibi.ai
+   https://visibi-app-git-main-adnan-hkas-projects.vercel.app,https://visibi-app.vercel.app,https://visibi-app-tawny.vercel.app,https://visibiwebproject.vercel.app,http://localhost:5174,http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173,http://127.0.0.1:5174,https://visibi.com,https://www.visibi.com,https://govisibi.ai,https://www.govisibi.ai
 ```
 
 **CRITICAL**: Make sure there are **NO SPACES** after any comma!
@@ -70,8 +70,6 @@ https://visibi-app-git-main-adnan-hkas-projects.vercel.app,https://visibi-app.ve
 - **Backend API**: `https://govisibi.up.railway.app/api/brand-analysis`
 - **Method**: POST
 - **Data**: `{ brand_url, email, custom_queries, custom_keywords }`
-
-> **Update (Contact-style intake):** The multi-step brand analysis UI on `HomePage.jsx` is currently disabled via the `showLegacyBrandAnalysis` flag (see in-file note). A lightweight form mirroring the Contact page now captures `brand_url`, auto-detected `company_name` (editable), and `email`. `company_name` is sent in `custom_keywords` so admin notifications still include it. Set the flag back to `true` to re-enable the full experience.
 
 ### Contact Form (ContactPage)
 - **Frontend**: `http://localhost:5174/contact`

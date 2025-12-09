@@ -18,13 +18,14 @@ export default function AboutPage() {
     <div className="min-h-screen relative line-pattern">
       <Helmet>
         <title>About VISIBI - 20+ Years Search Expertise | AI Visibility Pioneers</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta name="description" content="VISIBI was founded by search marketing veterans with 20+ years experience. We combine deep SEO expertise with cutting-edge AI research to help brands dominate AI-powered discovery." />
         <meta name="keywords" content="VISIBI team, AI visibility experts, SEO professionals, GEO consultants, search marketing veterans" />
-        <link rel="canonical" href="https://visibi.com/about" />
+        <link rel="canonical" href="https://www.govisibi.ai/about" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/about" />
+        <meta property="og:url" content="https://www.govisibi.ai/about" />
         <meta property="og:title" content="About VISIBI - 20+ Years Search Expertise | AI Visibility Pioneers" />
         <meta property="og:description" content="Founded by search marketing veterans with 20+ years experience. We help brands dominate AI-powered discovery across ChatGPT, Gemini, and Perplexity." />
         <meta property="og:site_name" content="VISIBI" />
@@ -84,6 +85,8 @@ export default function AboutPage() {
                 <img 
                   src="/vi/visibi-llms.png" 
                   alt="VISIBI team expertise in AI visibility and search optimization" 
+                  width="448"
+                  height="448"
                   className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
               </div>
@@ -290,7 +293,7 @@ export default function AboutPage() {
           {/* Left Column - Logo and Description */}
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" width="32" height="32" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 dark:bg-white bg-clip-text text-transparent">
                 VISIBI
               </span>
@@ -300,15 +303,15 @@ export default function AboutPage() {
             </p>
             <div className="flex gap-6">
               <a
-                href="https://github.com"
+                href="https://x.com/VisibiAI"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
               >
-                Github
+                X
               </a>
               <a
-                href="https://linkedin.com"
+                href="http://linkedin.com/company/visibi-ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-space-mono text-sm text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
@@ -347,18 +350,18 @@ export default function AboutPage() {
             © 2025 VISIBI — ALL RIGHTS RESERVED
           </p>
           <div className="flex gap-6">
-            <a
-              href="#"
+            <Link
+              to="/terms-of-use"
               className="font-space-mono text-xs text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
             >
               Terms of Use
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/privacy-policy"
               className="font-space-mono text-xs text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-400 uppercase tracking-wide"
             >
               Privacy Policy
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

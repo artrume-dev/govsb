@@ -51,6 +51,7 @@ export default function HomePage() {
   const aiEngines = [
     { name: 'ChatGPT', logo: '/ai-logos/ChatGPT.svg' },
     { name: 'Claude', logo: '/ai-logos/claude.svg' },
+    { name: 'Gemini', logo: '/ai-logos/gemini.svg' },
     { name: 'Copilot', logo: '/ai-logos/copilot.svg' },
     { name: 'Perplexity', logo: '/ai-logos/perplexity.svg' },
     { name: 'Grok', logo: '/ai-logos/grok.svg' },
@@ -361,22 +362,23 @@ export default function HomePage() {
   return (
     <div className="min-h-screen relative line-pattern">
       <Helmet>
-        <title>Make Your Brand Visible to AI | VISIBI - AI Visibility & Agent Development</title>
-        <meta name="description" content="VISIBI helps you win in both worlds: AI discovery and AI automation. Get found, understood, and recommended by AI engines like ChatGPT, Gemini, Claude. Deploy autonomous AI agents for real business tasks." />
+        <title>Visibi Ai | AI Visibility (GEO) & Autonomous AI Agents</title>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta name="description" content="Visibi Ai makes brands visible to AI and builds autonomous agents that act as digital workers. Get found in ChatGPT, Claude & Perplexity and speed up workflows." />
         <meta name="keywords" content="GEO, generative engine optimization, AI visibility, AI agents, ChatGPT optimization, Gemini, Claude, Perplexity, AI automation, autonomous agents" />
-        <link rel="canonical" href="https://visibi.com/" />
+        <link rel="canonical" href="https://www.govisibi.ai/" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://visibi.com/" />
-        <meta property="og:title" content="Make Your Brand Visible to AI | VISIBI" />
-        <meta property="og:description" content="AI discovery and AI automation. Ensure your brand is visible and your business is productive with AI." />
-        <meta property="og:site_name" content="VISIBI" />
+        <meta property="og:url" content="https://govisibi.ai/" />
+        <meta property="og:title" content="Visibi Ai | AI Visibility (GEO) & Autonomous AI Agents" />
+        <meta property="og:description" content="Visibi Ai makes brands visible to AI and builds autonomous agents that act as digital workers. Get found in ChatGPT, Claude & Perplexity and speed up workflows." />
+        <meta property="og:site_name" content="Visibi Ai" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Make Your Brand Visible to AI | VISIBI" />
-        <meta name="twitter:description" content="Get found by AI engines. Automate workflows with AI agents. One partner for visibility and productivity." />
+        <meta name="twitter:title" content="Visibi Ai | AI Visibility (GEO) & Autonomous AI Agents" />
+        <meta name="twitter:description" content="Visibi Ai makes brands visible to AI and builds autonomous agents that act as digital workers. Get found in ChatGPT, Claude & Perplexity and speed up workflows." />
 
         {/* Structured Data - FAQ Schema */}
         <script type="application/ld+json">
@@ -417,19 +419,19 @@ export default function HomePage() {
                 <h2 className="font-open-sans text-3xl md:text-5xl font-thin block md:leading-[1] pb-4 tracking-tight text-slate-950">
                   Make Your Business More Productive With AI.
                 </h2>
-                <p className="font-open-sans text-md md:text-lg md:leading-[1.6] text-slate-700 pb-8">
+                <p className="font-open-sans text-md md:text-lg md:leading-[1.6] text-slate-700 pb-4">
                 AI agents decide how work gets done. If AI systems can't find your brand, you're out of buyer consideration. If your teams don't use agents, competitors move faster.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-left">
-                  <Button
+                  {/* <Button
                     onClick={scrollToForm}
                     className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors"
                   >
                     <Sparkles className="w-5 h-5 mr-2" />
                     Get Your Free AI Visibility Audit
-                  </Button>
+                  </Button> */}
                   <Link to="/contact">
-                    <Button className="inline-flex items-center px-8 py-6 bg-white text-slate-950 border border-slate-300 rounded-full font-medium hover:bg-slate-50 transition-colors">
+                    <Button className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors">
                       Talk to an Expert
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
@@ -451,6 +453,8 @@ export default function HomePage() {
                 <img
                   src="/vi/visibi-about.png"
                   alt="AI platforms and visibility optimization illustration"
+                  width="448"
+                  height="448"
                   className="w-full h-auto max-w-md animate-subtle-bounce"
                 />
               </div>
@@ -485,6 +489,8 @@ export default function HomePage() {
                   <img
                     src={engine.logo}
                     alt={`${engine.name} logo`}
+                    width="96"
+                    height="24"
                     className="h-6 w-auto object-contain"
                   />
                   <span className="font-space-mono text-sm text-slate-950">{engine.name}</span>
@@ -594,7 +600,7 @@ export default function HomePage() {
      
 
       {/* THE AI SHIFT */}
-      <section className="max-w-full md:max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-1">
+      <section className="max-w-full md:max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-0">
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background"></div>
 
@@ -722,13 +728,13 @@ export default function HomePage() {
           VISIBI ensures you stay visible and competitive.
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
+            {/* <Button
               onClick={scrollToForm}
               className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors"
             >
               <Sparkles className="w-5 h-5 mr-2" />
               Get Your Free AI Visibility Audit
-            </Button>
+            </Button> */}
             <Link to="/contact">
               <Button className="inline-flex items-center px-8 py-6 bg-white text-slate-950 border border-slate-300 rounded-full font-medium hover:bg-slate-50 transition-colors">
                 Book a Strategy Call
@@ -740,18 +746,15 @@ export default function HomePage() {
       </section>
 
       {/* Brand Analysis Request (Contact-style form) */}
-      <section className="max-w-full md:max-w-[90%] mx-auto items-center px-8 md:px-16 py-16 relative bg-white border-l border-r border-b border-slate-300">
+      <section ref={mainSectionRef} className="max-w-full md:max-w-[90%] mx-auto items-center px-8 md:px-16 py-16 relative bg-white border-l border-r border-b border-slate-300 mb-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <p className="font-space-mono text-xs uppercase tracking-[0.3em] text-slate-600">Request Your Free Analysis</p>
-            <h2 className="font-open-sans text-3xl md:text-5xl font-semibold text-slate-950 leading-tight">
-              Your AI Visibility Audit Starts Here
+            <h2 className="font-open-sans text-3xl md:text-6xl font-semibold text-slate-950 leading-tight">
+              Your AI visibility audit starts here
             </h2>
-            <p className="font-open-sans text-lg text-slate-700 leading-relaxed">
-              Tell us the brand you want analysed. We&apos;ll review how AI engines describe, cite, and recommend you.
-              This quick intake mirrors the contact form layout for a consistent experience.
-            </p>
-            <ul className="space-y-2 font-open-sans text-slate-900">
+          
+            {/* <ul className="space-y-2 font-open-sans text-slate-900">
               <li className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-blue-700" />
                 Insights delivered within 24-48 hours
@@ -764,7 +767,7 @@ export default function HomePage() {
                 <Check className="w-4 h-4 text-blue-700" />
                 Same secure delivery pipeline as our Contact form
               </li>
-            </ul>
+            </ul> */}
           </div>
 
           <div className="bg-[#FAFAFB] border border-slate-200 rounded-2xl p-8">
@@ -805,9 +808,7 @@ export default function HomePage() {
                     }}
                     className="rounded-full border-slate-300 bg-white font-space-mono"
                   />
-                  <p className="text-xs text-slate-500 font-space-mono mt-1">
-                    We pre-fill this from your URL. Update it if you want a different label.
-                  </p>
+                 
                 </div>
 
                 <div>
@@ -826,7 +827,7 @@ export default function HomePage() {
                 <Button
                   type="submit"
                   disabled={newFormLoading}
-                  className="w-full bg-blue-700 text-white rounded-full py-6 h-auto font-space-mono text-sm uppercase tracking-wide disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="inline-flex items-center px-8 py-6 bg-blue-700 text-white rounded-full font-medium hover:bg-blue-800 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {newFormLoading ? 'Sending...' : 'Request AI Visibility Audit'}
                 </Button>
@@ -843,7 +844,7 @@ export default function HomePage() {
 
       {/* Legacy Brand Analysis Section (temporarily disabled, see FORMS-STATUS.md) */}
       {showLegacyBrandAnalysis && (
-      <main ref={mainSectionRef} className="max-w-full md:max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-0.5">
+      <main ref={mainSectionRef} className="max-w-full md:max-w-[90%] mx-auto px-4 md:px-8 py-20 md:py-24 relative z-10 bg-white border-l border-r border-slate-300 mb-0">
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background"></div>
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background"></div>
 
@@ -1124,7 +1125,7 @@ export default function HomePage() {
       )}
 
       {/* Main Content */}
-      <main className="max-w-full md:max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none rounded-bl-none rounded-br-none border-t border-r border-l border-slate-300 mb-0">
+      <main className="max-w-full md:max-w-[90%] mx-auto px-12 py-12 relative z-10 bg-white rounded-xl rounded-tl-none rounded-tr-none rounded-bl-none rounded-br-none border-r border-l border-slate-300 mb-0">
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-r md:border-t-0 md:border-slate-200 left-0 top-0 pattern-background rounded-bl-xl"></div>
         <div className="lg:block absolute h-full w-0 md:w-16 bg-slate-200/20 border-0 md:border-l md:border-t-0 md:border-slate-200 right-0 top-0 pattern-background rounded-br-xl"></div>
 
@@ -1671,17 +1672,17 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/govisibi-logo.png" alt="VISIBI Logo" className="h-8 w-8" />
+              <img src="/govisibi-logo.png" alt="VISIBI Logo" width="32" height="32" className="h-8 w-8" />
               <span className="text-2xl font-bold bg-slate-950 bg-clip-text text-transparent">VISIBI</span>
             </div>
             <p className="font-open-sans text-lg text-slate-900 max-w-md leading-relaxed">
               Track and manage your brand's presence across leading AI platforms.
             </p>
             <div className="flex gap-6">
-              <a href="https://github.com" className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide">
-                Github
+              <a href="https://x.com/VisibiAI" target="_blank" rel="noopener noreferrer" className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+                X
               </a>
-              <a href="https://linkedin.com" className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+              <a href="http://linkedin.com/company/visibi-ai" target="_blank" rel="noopener noreferrer" className="font-space-mono text-sm text-gray-600 hover:text-blue-700 uppercase tracking-wide">
                 LinkedIn
               </a>
             </div>
@@ -1704,12 +1705,12 @@ export default function HomePage() {
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-space-mono text-xs text-gray-500">© 2025 VISIBI — ALL RIGHTS RESERVED</p>
           <div className="flex gap-6">
-            <a href="#" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+            <Link to="/terms-of-use" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
               Terms of Use
-            </a>
-            <a href="#" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
+            </Link>
+            <Link to="/privacy-policy" className="font-space-mono text-xs text-gray-600 hover:text-blue-700 uppercase tracking-wide">
               Privacy Policy
-            </a>
+            </Link>
           </div>
         </div>
       </footer>
